@@ -2862,3 +2862,40 @@ EXEC: git rev-parse HEAD
 {"@ID": 2, "data": "JOB_START: a0f7b984 (50)", "ts": "2026-01-19T19:07:27.280231"}
 {"@ID": 5, "data": "OPS_STEP: Creating Isolation Branch", "ts": "2026-01-19T19:07:27.280375"}
 {"@ID": 5, "data": "OPS_STEP: Staging Artifacts", "ts": "2026-01-19T19:07:27.284045"}
+{"@ID": 2, "data": "JOB_START: offload-001 (50)", "ts": "2026-01-19T19:10:34.661710"}
+{"@ID": 5, "data": "OPS_STEP: Creating Isolation Branch", "ts": "2026-01-19T19:10:34.662267"}
+{"@ID": 5, "data": "OPS_STEP: Staging Artifacts", "ts": "2026-01-19T19:10:34.668934"}
+{"@ID": 5, "data": "OPS_STEP: Checking Status", "ts": "2026-01-19T19:10:35.841589"}
+{"@ID": 5, "data": "OPS_STEP: Committing: ANVIL_TASK: Offload 'sys_18_64Bit_Cloud' and 'sys_17_32Bit_Era'. 1. Add them to .gitignore. 2. git rm -r --cached oss_sovereignty/sys_18_64Bit_Cloud oss_sovereignty/sys_17_32Bit_Era. 3. rm -rf oss_sovereignty/sys_18_64Bit_Cloud oss_sovereignty/sys_17_32Bit_Era. 4. Commit as 'chore: offload legacy eras to history'.", "ts": "2026-01-19T19:10:36.762983"}
+{"@ID": 5, "data": "OPS_STEP: Pushing to Remote", "ts": "2026-01-19T19:10:37.244098"}
+{"@ID": 5, "data": "OPS_STEP: Opening Pull Request", "ts": "2026-01-19T19:10:38.193938"}
+{"@ID": 3, "data": "OPS FAILURE: Command failed: gh pr create --title OPS: ANVIL_TASK: Offload 'sys_18_64Bit_Cloud' and 'sys_17_32Bit_Era'. 1. Add them to .gitignore. 2. git rm -r --cached oss_sovereignty/sys_18_64Bit_Cloud oss_sovereignty/sys_17_32Bit_Era. 3. rm -rf oss_sovereignty/sys_18_64Bit_Cloud oss_sovereignty/sys_17_32Bit_Era. 4. Commit as 'chore: offload legacy eras to history'. --body Automated Action by Big Iron.\nJob ID: offload-001 --base main --head ops/job-offload-\nError: pull request create failed: GraphQL: Resource not accessible by personal access token (createPullRequest)\n", "ts": "2026-01-19T19:10:39.618084"}
+{"@ID": 3, "data": "JOB_FAILED: offload-001", "ts": "2026-01-19T19:10:39.962594"}
+{"@ID": 1, "data": "BIG IRON v3.0 ONLINE. Watching /home/aimeat/github/anvilos_beta/runtime/hydrogen.db", "ts": "2026-01-19T19:26:02.475452"}
+{"@ID": 2, "data": "JOB_START: test-hw-20260119 (50)", "ts": "2026-01-19T19:34:22.664852"}
+{"@ID": 5, "data": "OPS_STEP: Creating Isolation Branch", "ts": "2026-01-19T19:34:22.665057"}
+{"@ID": 5, "data": "OPS_STEP: Staging Artifacts", "ts": "2026-01-19T19:34:22.669411"}
+{"@ID": 5, "data": "OPS_STEP: Checking Status", "ts": "2026-01-19T19:34:23.764999"}
+{"@ID": 5, "data": "OPS_STEP: Committing: print('Hello World - Card System Test Pulse')", "ts": "2026-01-19T19:34:24.614298"}
+{"@ID": 5, "data": "OPS_STEP: Pushing to Remote", "ts": "2026-01-19T19:34:25.042017"}
+{"@ID": 5, "data": "OPS_STEP: Opening Pull Request", "ts": "2026-01-19T19:34:26.290264"}
+{"@ID": 3, "data": "OPS FAILURE: Command failed: gh pr create --title OPS: print('Hello World - Card System Test Pulse') --body Automated Action by Big Iron.\nJob ID: test-hw-20260119 --base main --head ops/job-test-hw-\nError: pull request create failed: GraphQL: Resource not accessible by personal access token (createPullRequest)\n", "ts": "2026-01-19T19:34:29.331529"}
+{"@ID": 3, "data": "JOB_FAILED: test-hw-20260119", "ts": "2026-01-19T19:34:29.794962"}
+{"@ID": 2, "data": "JOB_START: oss-report-20260119 (50)", "ts": "2026-01-19T19:35:28.783684"}
+{"@ID": 5, "data": "OPS_STEP: Creating Isolation Branch", "ts": "2026-01-19T19:35:28.784115"}
+{"@ID": 5, "data": "OPS_STEP: Staging Artifacts", "ts": "2026-01-19T19:35:28.788952"}
+{"@ID": 5, "data": "OPS_STEP: Checking Status", "ts": "2026-01-19T19:35:29.890493"}
+{"@ID": 5, "data": "OPS_STEP: Committing: Generate report on oss_sovereignty directories.", "ts": "2026-01-19T19:35:30.769766"}
+{"@ID": 5, "data": "OPS_STEP: Pushing to Remote", "ts": "2026-01-19T19:35:31.192617"}
+{"@ID": 5, "data": "OPS_STEP: Opening Pull Request", "ts": "2026-01-19T19:35:32.263587"}
+{"@ID": 3, "data": "OPS FAILURE: Command failed: gh pr create --title OPS: Generate report on oss_sovereignty directories. --body Automated Action by Big Iron.\nJob ID: oss-report-20260119 --base main --head ops/job-oss-repo\nError: pull request create failed: GraphQL: Resource not accessible by personal access token (createPullRequest)\n", "ts": "2026-01-19T19:35:33.345148"}
+{"@ID": 3, "data": "JOB_FAILED: oss-report-20260119", "ts": "2026-01-19T19:35:33.761026"}
+{"@ID": 2, "data": "JOB_START: test-hw-20260119 (50)", "ts": "2026-01-19T19:36:09.790342"}
+{"@ID": 5, "data": "OPS_STEP: Creating Isolation Branch", "ts": "2026-01-19T19:36:09.790474"}
+{"@ID": 3, "data": "OPS FAILURE: Command failed: git checkout -b ops/job-test-hw-\nError: fatal: a branch named 'ops/job-test-hw-' already exists\n", "ts": "2026-01-19T19:36:09.793247"}
+{"@ID": 3, "data": "JOB_FAILED: test-hw-20260119", "ts": "2026-01-19T19:36:10.223057"}
+{"@ID": 1, "data": "BIG IRON v3.0 ONLINE. Watching /home/aimeat/github/anvilos_beta/runtime/hydrogen.db", "ts": "2026-01-19T19:36:58.985029"}
+{"@ID": 1, "data": "BIG IRON v3.0 ONLINE. Watching /home/aimeat/github/anvilos_beta/runtime/hydrogen.db", "ts": "2026-01-19T19:36:59.084750"}
+{"@ID": 2, "data": "JOB_START: oss-report-20260119 (50)", "ts": "2026-01-19T19:38:35.047919"}
+{"@ID": 5, "data": "OPS_STEP: Creating Isolation Branch", "ts": "2026-01-19T19:38:35.048049"}
+{"@ID": 5, "data": "OPS_STEP: Staging Artifacts", "ts": "2026-01-19T19:38:35.051481"}
