@@ -1,7 +1,7 @@
 import sys
 import os
 
-VERSION = "0.1.0-ALPHA"
+VERSION = "1.0.0"
 
 def log(msg):
     print(f">> [ANVIL] {msg}")
