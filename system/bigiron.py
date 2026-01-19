@@ -12,11 +12,13 @@ from rich.table import Table
 from rich.console import Console
 from rich.text import Text
 from rich import box
+from rich.align import Align
 
 # THEME: LESBIAN CYBERPUNK 90S HACKER
-C_PRIMARY = "bold #9D00FF" # Purple
-C_SECONDARY = "bold #FF00FF" # Neon Pink
-C_ACCENT = "bold #00FF00" # Neon Green
+C_PRIMARY = "bold #9D00FF" # Deep Purple
+C_SECONDARY = "bold #FF0080" # Hot Pink
+C_ACCENT = "bold #00FF00" # Hacker Green
+C_WARN = "bold #FF5F00" # Safety Orange
 C_BORDER = "#4B0082" # Indigo
 C_TEXT = "white"
 
@@ -55,27 +57,36 @@ class Header:
     def __rich__(self) -> Panel:
         grid = Table.grid(expand=True)
         grid.add_column(justify="left", ratio=1)
-        grid.add_column(justify="right")
-        grid.add_row(
-            Text.from_markup(f"🔮 [white]BIGIRON[/white] // [purple]MONITOR_V1.0[/purple]"),
-            Text.from_markup(f"[white]{datetime.now().strftime('%H:%M:%S')}[/white]")
-        )
-        return Panel(grid, style=f"on {C_BORDER}", box=box.ASCII)
+        grid.add_column(justify="center", ratio=1)
+        grid.add_column(justify="right", ratio=1)
+        
+        # Cyberpunk ASCII / Text
+        title = Text.from_markup(f"🔮 [{C_PRIMARY}]BIG[/][{C_SECONDARY}]IRON[/] // [{C_ACCENT}]CONSTRUCT_V1[/]")
+        sub = Text.from_markup(f"[{C_BORDER}]OPERATOR: bigiron[/]")
+        time_str = Text.from_markup(f"[{C_SECONDARY}]TIME:[/{C_SECONDARY}] [{C_TEXT}]{datetime.now().strftime('%H:%M:%S')}[/{C_TEXT}]")
+        
+        grid.add_row(title, sub, time_str)
+        return Panel(grid, style=f"on #1a001a", border_style=C_SECONDARY, box=box.HEAVY)
 
 class Footer:
     def __rich__(self) -> Panel:
+        # Integrity Bar
+        bar = "█" * 20
+        status_line = Text.from_markup(f"🧬 [{C_PRIMARY}]INTEGRITY:[/][{C_ACCENT}]{bar}[/] | 🩸 [{C_PRIMARY}]AUTH:[/][{C_TEXT}] OMEGA[/] | ⛓️ [{C_PRIMARY}]UPLINK:[/][{C_SECONDARY}] SECURE[/]")
         return Panel(
-            Text.from_markup(f"🧬 [purple]STATUS:[/purple] [green]STABLE[/green] | 🩸 [purple]AUTH:[/purple] [white]bigiron[/white] | ⛓️ [purple]LINK:[/purple] [green]ACTIVE[/green]"),
-            style=f"on {C_BORDER}",
-            box=box.ASCII
+            Align.center(status_line),
+            style=f"on #1a001a",
+            border_style=C_SECONDARY,
+            box=box.HEAVY
         )
 
 def generate_panel(title, content, color=C_PRIMARY):
     return Panel(
         content,
         title=f"[{color}]{title}[/{color}]",
-        border_style=C_BORDER,
-        box=box.DOUBLE
+        border_style=color,
+        box=box.HEAVY, # Chunky 90s look
+        style="on #0d001a" # Very dark purple bg
     )
 
 def get_service_health():
@@ -90,16 +101,16 @@ def get_service_health():
         status = result.stdout.strip()
         
         if status == "active":
-            status_text = f"[{C_ACCENT}]● ONLINE[/{C_ACCENT}]"
-            details = f"[dim]PID: {os.getpid()} (Simulated)[/dim]" # Placeholder for actual PID
+            status_text = f"[{C_ACCENT}]● SYSTEM_ONLINE[/{C_ACCENT}]"
+            details = f"[{C_TEXT}]PID: {os.getpid()} (EMULATED)[/{C_TEXT}]"
         else:
             status_text = f"[bold red]● {status.upper()}[/bold red]"
-            details = "[dim]Check system logs[/dim]"
+            details = "[dim]CHECK_SYSTEM_LOGS[/dim]"
 
         grid = Table.grid(expand=True)
         grid.add_column()
-        grid.add_row(f"SERVICE: {SERVICE_NAME}")
-        grid.add_row(f"STATUS:  {status_text}")
+        grid.add_row(f"[{C_SECONDARY}]TARGET :[/{C_SECONDARY}] {SERVICE_NAME}")
+        grid.add_row(f"[{C_SECONDARY}]STATUS :[/{C_SECONDARY}] {status_text}")
         grid.add_row(details)
         
         return grid
@@ -139,18 +150,18 @@ def get_queue_data():
     stats_grid.add_column(justify="left")
     stats_grid.add_column(justify="right")
     
-    stats_grid.add_row(f"[{C_TEXT}]PENDING:[/{C_TEXT}]", f"[{C_SECONDARY}]{pending}[/{C_SECONDARY}]")
-    stats_grid.add_row(f"[{C_TEXT}]WORKING:[/{C_TEXT}]", f"[{C_ACCENT}]{working}[/{C_ACCENT}]")
-    stats_grid.add_row(f"[{C_TEXT}]FAILED :[/{C_TEXT}]", f"[red]{failed}[/red]")
-    stats_grid.add_row(f"[{C_TEXT}]DONE   :[/{C_TEXT}]", f"[blue]{complete}[/blue]")
+    stats_grid.add_row(f"[{C_TEXT}]PENDING :[/{C_TEXT}]", f"[{C_SECONDARY}]{pending}[/{C_SECONDARY}]")
+    stats_grid.add_row(f"[{C_TEXT}]WORKING :[/{C_TEXT}]", f"[{C_ACCENT}]{working}[/{C_ACCENT}]")
+    stats_grid.add_row(f"[{C_TEXT}]FAILED  :[/{C_TEXT}]", f"[red]{failed}[/red]")
+    stats_grid.add_row(f"[{C_TEXT}]ARCHIVED:[/{C_TEXT}]", f"[blue]{complete}[/blue]")
     
     # Build Task Display
     if current_task:
         task_text = Text()
-        task_text.append(f"ID: {current_task.get('id', '???')}\n", style=C_SECONDARY)
-        task_text.append(f"{current_task.get('description', 'No description')[:100]}...", style="dim white")
+        task_text.append(f"🆔 {current_task.get('id', '???')}\n", style=C_SECONDARY)
+        task_text.append(f"{current_task.get('description', 'No description')[:100]}...", style="white")
     else:
-        task_text = Text("No active tasks.", style="dim italic")
+        task_text = Text("💤 SYSTEM_IDLE", style="dim italic")
 
     return stats_grid, task_text
 
@@ -163,9 +174,6 @@ class FileWatcher:
     def scan(self):
         try:
             # Find modified files (excluding hidden and common junk)
-            # %T@ = modification time (seconds since epoch)
-            # %p = path
-            # %s = size
             cmd = [
                 "find", ".", 
                 "-type", "f", 
@@ -183,10 +191,7 @@ class FileWatcher:
 
             for line in lines:
                 if not line: continue
-                parts = line.split(' ', 2) # Limit split to ensure path handles spaces? 
-                                           # Wait, printf output is space separated. Path might have spaces.
-                                           # Better: %T@|%s|%p
-                # Re-do command for robustness? Keep simple for now. Assumes no spaces in timestamps/sizes.
+                parts = line.split(' ', 2)
                 if len(parts) < 3: continue
                 
                 mtime = float(parts[0])
@@ -198,13 +203,10 @@ class FileWatcher:
                 # Check if new or updated
                 if path in self.last_files:
                     if mtime > self.last_files[path]:
-                        events.append((mtime, f"MODIFIED -> {path} ({size}b)"))
+                        events.append((mtime, f"MODIFIED -> {path}"))
                 elif not self.first_run:
-                     # Only show new files after first run (avoid dumping 1000 files on startup)
-                     # But maybe we want to show *recent* files on startup?
-                     # Let's show files modified in last 10 seconds on startup
                      if time.time() - mtime < 10:
-                         events.append((mtime, f"CREATED -> {path} ({size}b)"))
+                         events.append((mtime, f"INJECTED -> {path}"))
 
             self.last_files = current_files
             self.first_run = False
@@ -215,20 +217,20 @@ class FileWatcher:
                 self.buffer.append(msg)
                 
         except Exception as e:
-             self.buffer.append(f"[red]Error scanning files: {e}[/red]")
+             self.buffer.append(f"[red]SCAN_ERROR: {e}[/red]")
 
     def get_renderable(self):
         text = Text()
         for line in self.buffer:
             # Colorize key words
             if "MODIFIED" in line:
-                text.append("⚡ ", style=C_SECONDARY)
+                text.append("⚡ ", style=C_WARN)
                 text.append(line + "\n", style=C_TEXT)
-            elif "CREATED" in line:
+            elif "INJECTED" in line:
                 text.append("✨ ", style=C_ACCENT)
-                text.append(line + "\n", style=C_TEXT)
+                text.append(line + "\n", style=C_SECONDARY)
             else:
-                text.append(f"> {line}\n", style="dim white")
+                text.append(f"> {line}\n", style="dim purple")
         return text
 
 def main():
@@ -239,25 +241,25 @@ def main():
     layout["header"].update(Header())
     layout["footer"].update(Footer())
 
-    with Live(layout, refresh_per_second=2, screen=True) as live:
+    with Live(layout, refresh_per_second=4, screen=True) as live:
         try:
             while True:
                 # 1. Update Service Health
-                layout["service_status"].update(generate_panel("📡 INT30_WARDEN", get_service_health(), C_SECONDARY))
+                layout["service_status"].update(generate_panel("📡 WARDEN_LINK", get_service_health(), C_SECONDARY))
                 
                 # 2. Update Queue Stats & Current Task
                 stats, task_info = get_queue_data()
-                layout["queue_stats"].update(generate_panel("📊 QUEUE_METRICS", stats, C_ACCENT))
-                layout["current_task"].update(generate_panel("⚒️ ACTIVE_CARD", task_info, C_PRIMARY))
+                layout["queue_stats"].update(generate_panel("📊 QUEUE_DATA", stats, C_ACCENT))
+                layout["current_task"].update(generate_panel("⚒️ CURRENT_OP", task_info, C_PRIMARY))
                 
                 # 3. Update Matrix Stream
                 watcher.scan()
-                layout["tty_stream"].update(generate_panel("📟 TTY_STREAM", watcher.get_renderable(), C_PRIMARY))
+                layout["tty_stream"].update(generate_panel("📟 MATRIX_FEED", watcher.get_renderable(), C_PRIMARY))
                 
                 # 4. Update Header Time
                 layout["header"].update(Header())
                 
-                time.sleep(1)
+                time.sleep(0.5) # Faster refresh for that cyberpunk feel
         except KeyboardInterrupt:
             pass
 
