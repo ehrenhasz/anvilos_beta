@@ -1,9 +1,9 @@
 {
   "sovereignty_level": "assimilated",
-  "assimilated_at": "2026-01-19T04:19:25.105827",
+  "assimilated_at": "2026-01-19T04:41:01.342338",
   "origin": {
     "url": "https://github.com/ARM-software/arm-trusted-firmware.git",
-    "commit": "8fd4c786594239de20669f062e416fe1a37ca59e",
+    "commit": "unknown",
     "policy": "monitor_only"
   },
   "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."

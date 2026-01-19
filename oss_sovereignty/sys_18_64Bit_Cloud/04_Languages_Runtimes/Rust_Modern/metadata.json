@@ -2,5 +2,12 @@
   "id": "sys_18_64Bit_Cloud.Rust_Modern",
   "name": "Rust_Modern",
   "category": "04_Languages_Runtimes",
-  "mandate": "PRESERVE AND REIMPLEMENT"
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL.",
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T04:41:01.370937",
+  "origin": {
+    "url": "https://github.com/rust-lang/rust.git",
+    "commit": "unknown",
+    "policy": "monitor_only"
+  }
 }
