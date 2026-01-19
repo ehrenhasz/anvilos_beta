@@ -2855,3 +2855,6 @@ EXEC: git rev-parse HEAD
 {"@ID": 3, "data": "OPS FAILURE: Command failed: gh pr create --title OPS: Finalize Big Iron v3.0, Acid Burn Dashboard, and OP CLI Integration --body Automated Action by Big Iron.\nJob ID: 6ec05bc2-929a-4772-8d39-1d093fb440ec --base main --head ops/job-6ec05bc2\nError: pull request create failed: GraphQL: Resource not accessible by personal access token (createPullRequest)\n", "ts": "2026-01-19T18:52:56.198134"}
 {"@ID": 3, "data": "JOB_FAILED: 6ec05bc2-929a-4772-8d39-1d093fb440ec", "ts": "2026-01-19T18:52:56.639120"}
 {"@ID": 2, "data": "JOB_COMPLETE: 31d1e2ea-df7c-4733-bb7e-cc073e5c50cc", "ts": "2026-01-19T18:52:57.951978"}
+{"@ID": 2, "data": "JOB_START: 89389446 (50)", "ts": "2026-01-19T19:05:10.282549"}
+{"@ID": 5, "data": "OPS_STEP: Creating Isolation Branch", "ts": "2026-01-19T19:05:10.282722"}
+{"@ID": 5, "data": "OPS_STEP: Staging Artifacts", "ts": "2026-01-19T19:05:10.286558"}
