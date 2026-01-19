@@ -13,7 +13,7 @@ sleep 1
 i3-msg "split h"
 
 # 3. Launch Top Right: Big Iron
-xfce4-terminal --title="BIG_IRON" --command="bash -c 'python3 $REPO_DIR/system/dashboard.py'" &
+xfce4-terminal --title="BIG_IRON" --command="bash -c 'python3 $REPO_DIR/system/bigiron.py'" &
 sleep 1
 
 # 4. Split Vertical (Prepare for Bottom Right)
