@@ -1,0 +1,42 @@
+# Makefile to build AHI.
+
+include $(SRCDIR)/config/aros.cfg
+
+#MM- AHI : workbench-devs-AHI
+#MM- AHI-quick : workbench-devs-AHI-quick
+
+#MM- workbench-devs-AHI : workbench-devs-AHI-subsystem AHI-drivers
+#MM- workbench-devs-AHI-quick : workbench-devs-AHI-subsystem-quick AHI-drivers-quick
+
+#MM- AHI-hosted-stubs : \
+#MM                         AHI-alsa-bridge-$(AROS_TARGET_ARCH) \
+#MM                         AHI-pulseaudio-bridge-$(AROS_TARGET_ARCH) \
+#MM                         AHI-WASAPI-bridge-$(AROS_TARGET_ARCH)
+
+#MM workbench-devs-AHI-subsystem : includes \
+#MM                         linklibs \
+#MM                         AHI-hosted-stubs \
+#MM                         workbench-libs-muimaster-includes
+
+EXEDIR := $(AROSDIR)
+
+NOWARN_FLAGS := $(NOWARN_POINTER_SIGN)
+USER_CPPFLAGS := $(NOWARN_FLAGS)
+AHI_OPTIONS=--with-os-includedir=$(AROS_INCLUDES)
+
+# AHI's configure script will not set the needed preprocessor
+# flags if cppflags is already defined, so we pass them using
+# the configure option.
+USER_CFLAGS := $(CFLAGS_NO_BUILTIN_FLOOR) 
+AHI_OPTIONS+=--with-target-cppflags="$(TARGET_CPPFLAGS)"
+
+#
+# AHI uses GAS syntax, which LLVM AS
+# doesnt understand, so use clang with the 
+# configure'd AFLAGS to use the system AS.
+#
+TARGET_AS:=$(strip $(CC) $(TARGET_SYSROOT))
+AHI_OPTIONS+=--with-target-asflags="$(AFLAGS)"
+
+%build_with_configure mmake=workbench-devs-AHI-subsystem prefix=$(EXEDIR) \
+    extraoptions="$(AHI_OPTIONS)" usecppflags=no gnuflags=no

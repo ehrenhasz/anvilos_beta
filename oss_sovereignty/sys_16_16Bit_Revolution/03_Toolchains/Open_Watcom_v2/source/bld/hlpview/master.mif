@@ -1,0 +1,42 @@
+proj_name = whelp
+
+whelp_autodepends = .AUTODEPEND
+
+whelp_dos_extender = causeway
+
+whelp_trmem = 1
+
+!include cproj.mif
+!include defrule.mif
+!include deftarg.mif
+!include trmem.mif
+
+!include $(ui_dir)/client.mif
+!include $(hlpview_dir)/client.mif
+
+#
+# cflags
+#
+.c: ../c;$(trmem_dir)
+
+inc_dirs =  $(cli_hlpview_inc_dirs) $(cli_ui_inc_dirs)
+
+extra_cpp_flags_f_helpmem  = $(trmem_cpp_flags)
+extra_cpp_flags_f_trmemcvr = $(trmem_cpp_flags)
+
+extra_c_flags_f_trmemcvr = $(trmem_cover_cflags)
+
+# explicit rules
+#################
+
+#
+# EXE
+#
+exetarg_objs = &
+    main.obj &
+    filelist.obj &
+    $(cli_hlpview_objs) &
+    helpmem.obj &
+    $(trmem_objs) $(trmemcvr_objs)
+exetarg_libs = $(cli_ui_libs)
+!include exetarg.mif

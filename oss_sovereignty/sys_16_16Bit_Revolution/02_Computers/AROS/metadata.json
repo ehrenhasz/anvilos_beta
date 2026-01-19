@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T03:35:05.921511",
+  "origin": {
+    "url": "https://github.com/aros-development-team/AROS.git",
+    "commit": "18eee105189b83397f5ebdf933a710659dbd4e71",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

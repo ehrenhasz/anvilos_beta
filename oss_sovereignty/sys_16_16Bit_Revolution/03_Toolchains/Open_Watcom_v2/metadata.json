@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T03:37:33.195649",
+  "origin": {
+    "url": "https://github.com/open-watcom/open-watcom-v2.git",
+    "commit": "625f3343e6e1a92ab33b70b1a85e5a4c3b098e0a",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

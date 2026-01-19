@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T03:37:36.245432",
+  "origin": {
+    "url": "https://github.com/gooofy/aqb.git",
+    "commit": "c60916f0c60a9efee6c9d6993cc2b04eb339c06f",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

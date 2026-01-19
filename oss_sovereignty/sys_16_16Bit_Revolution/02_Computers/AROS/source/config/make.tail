@@ -1,0 +1,18 @@
+#   Copyright © 1995-2021, The AROS Development Team. All rights reserved.
+#   $Id$
+#
+#   Desc: General rules included at the end of a generated mmakefile
+#
+
+GLOB_MKDIRS := $(sort $(GLOB_MKDIRS))
+ifneq ($(GLOB_MKDIRS),)
+$(GLOB_MKDIRS) :
+	@$(MKDIR) $@
+endif
+
+include $(SRCDIR)/tools/genmodule/Makefile.deps
+
+# Rules for the AROS build tools
+$(GENMODULE) : $(GENMODULE_DEPS)
+	@$(CALL) $(MAKE) $(MKARGS) -C $(SRCDIR)/tools/genmodule TOP=$(TOP) SRCDIR=$(SRCDIR) $(GENMODULE)
+

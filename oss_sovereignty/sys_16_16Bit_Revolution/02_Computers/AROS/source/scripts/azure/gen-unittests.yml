@@ -1,0 +1,89 @@
+# Update unittests.html based on remote unit test files
+# Requires secrets:
+# - SF_RSYNC_USER
+
+trigger:
+- master
+
+schedules:
+- cron: "15 */6 * * *"    # Every 6 hours
+  branches:
+    include:
+    - master
+  always: true
+  batch: false
+  displayName: Every 6 hours
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  PROJWEBDIR: '/home/project-web/arosdev/htdocs'
+  REMOTE_UNITTETS_DIR: '/home/project-web/arosdev/htdocs/unittests'
+  LOCAL_WORKDIR: '$(Build.SourcesDirectory)/scripts/web'
+
+steps:
+
+- task: DownloadSecureFile@1
+  name: GetSSHKey
+  inputs:
+    secureFile: 'sf-azure-key'
+
+- bash: |
+    echo "Setting up SSH key..."
+    mkdir -p ~/.ssh
+    cp "$(GetSSHKey.secureFilePath)" ~/.ssh/id_rsa
+    chmod 600 ~/.ssh/id_rsa
+    chmod 700 ~/.ssh
+
+    ssh-keyscan -t rsa shell.sourceforge.net >> ~/.ssh/known_hosts
+    ssh-keyscan -t rsa web.sourceforge.net >> ~/.ssh/known_hosts
+
+    echo "Host web.sourceforge.net" > ~/.ssh/config
+    echo "    IdentityFile ~/.ssh/id_rsa" >> ~/.ssh/config
+    echo "    IdentitiesOnly yes" >> ~/.ssh/config
+    echo "    StrictHostKeyChecking yes" >> ~/.ssh/config
+    echo "    Port 22" >> ~/.ssh/config
+    chmod 600 ~/.ssh/config
+
+    echo "SSH key and config setup complete."
+  displayName: 'Setup SSH Key and SSH Config for SourceForge'
+
+- script: |
+    echo "Checking shell access..."
+    if ! ssh -o StrictHostKeyChecking=no "$(SF_RSYNC_USER)"@shell.sourceforge.net true; then
+      echo "Shell not active yet. Creating shell..."
+      ssh -t "$(SF_RSYNC_USER)"@shell.sourceforge.net create
+
+      echo "Waiting for shell to become active (retrying up to 5 times)..."
+      for i in $(seq 1 5); do
+        if ssh -o StrictHostKeyChecking=no "$(SF_RSYNC_USER)"@shell.sourceforge.net true; then
+          echo "Shell is ready."
+          break
+        else
+          echo "Shell not ready yet, waiting 5 seconds (attempt $i)..."
+          sleep 5
+        fi
+      done
+    else
+      echo "Shell already active."
+    fi
+
+    echo "Fetch remote unittest file list..."
+    ssh -o StrictHostKeyChecking=yes "$(SF_RSYNC_USER)"@shell.sourceforge.net \
+      "ls -1 $(REMOTE_UNITTETS_DIR)" > unittest_file_list.txt
+
+    echo "Fetch current unittests.html..."
+    rsync -e "ssh -o StrictHostKeyChecking=yes" \
+      "$(SF_RSYNC_USER)"@shell.sourceforge.net:$(PROJWEBDIR)/unittests.html .
+
+    echo "Run local unittest html update script..."
+    python3 $(LOCAL_WORKDIR)/updateunittests --filelist unittest_file_list.txt --htmlfile unittests.html
+
+    echo "Upload updated unittests.html back to remote..."
+    rsync -e "ssh -o StrictHostKeyChecking=yes" unittests.html \
+      "$(SF_RSYNC_USER)"@shell.sourceforge.net:$(PROJWEBDIR)/unittests.html
+  env:
+    SF_RSYNC_USER: $(SF_RSYNC_USER)
+  displayName: 'Fetch, Update and Upload Unittests.html'
+  

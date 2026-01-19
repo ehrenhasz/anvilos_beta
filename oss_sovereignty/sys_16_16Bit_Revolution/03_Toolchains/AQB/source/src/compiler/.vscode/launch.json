@@ -1,0 +1,364 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "test",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../../target/x86_64-linux/bin/aqb",
+            "args": ["-v", "-L", "../../../src/lib", "-O", "-d", "_brt", "-a", "/tmp/foo.asm","-p", "/tmp/foo.o", "foo.bas"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../../tests/insights/link",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build aqb compiler",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "bench",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../../target/x86_64-linux/bin/aqb",
+            "args": ["-L", "../../src/lib", "sieve.bas"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../../examples/bench",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build aqb compiler",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "_brt",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../../target/x86_64-linux/bin/aqb",
+            "args": ["-d", "none", "-s", "_brt.sym", "_brt.bas"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../lib/_brt",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build aqb compiler",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "_aqb",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../../target/x86_64-linux/bin/aqb",
+            "args": ["-L", "..", "-d", "_brt", "-s", "_aqb.sym", "-v", "_aqb.bas"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../lib/_aqb",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build aqb compiler",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "GadToolsSupport",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../../target/x86_64-linux/bin/aqb",
+            "args": ["-L", "..", "-v", "-d", "_aqb", "-s", "GadToolsSupport.sym", "-v", "GadToolsSupport.bas"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../lib/GadToolsSupport",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build aqb compiler",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "IFFSupport",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../../target/x86_64-linux/bin/aqb",
+            "args": ["-L", "..", "-v", "-d", "_aqb", "-s", "IFFSupport.sym", "-v", "IFFSupport.bas"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../lib/IFFSupport",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build aqb compiler",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "mod1",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../../target/x86_64-linux/bin/aqb",
+            "args": ["-L", "../../src/lib", "-L", "/home/guenter/media/emu/amiga/FS-UAE/hdd/system/x/aqb_tests/mod1", "-a", "/tmp/mod1.asm","-p", "/tmp/mod1.o", "mod1.bas"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../../tests/mod1",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build aqb compiler",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "io5",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../../target/x86_64-linux/bin/aqb",
+            "args": ["-L", "../../src/lib", "-v", "-a", "io5.a", "io5.bas"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../../tests/io5",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build aqb compiler",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "gfx1",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../../target/x86_64-linux/bin/aqb",
+            "args": ["-L", "../../src/lib", "-v", "gfx1.bas"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../../examples/demo",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build aqb compiler",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "gfx2",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../../target/x86_64-linux/bin/aqb",
+            "args": ["-L", "../../src/lib", "-v", "gfx2.bas"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../../examples/demo",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build aqb compiler",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "3dplot",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../../target/x86_64-linux/bin/aqb",
+            "args": ["-L", "../../src/lib", "-v", "3dplot.bas"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../../examples/demo",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build aqb compiler",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "subtest11",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../../target/x86_64-linux/bin/aqb",
+            "args": ["-L", "../../src/lib", "-v", "-s", "subtest11.bas"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../../tests/subtest11",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build aqb compiler",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "tetris",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../../target/x86_64-linux/bin/aqb",
+            "args": ["-L", "../../src/lib", "-v", "-o", "tetris", "tetris.bas"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../../examples/demo/",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build aqb compiler",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "banana",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../../target/x86_64-linux/bin/aqb",
+            "args": ["-L", "../../src/lib", "-v", "-o", "tetris", "banana.bas"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../../examples/demo/",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build aqb compiler",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "ide",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../../target/x86_64-linux/bin/aqb",
+            "args": ["-L", "../../src/lib", "foo.bas"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../../",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build aqb compiler",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "link",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../../target/x86_64-linux/bin/aqb",
+            "args": ["-v", "-L", "../src/lib", "-d", "_aqb", "-a", "/tmp/foo.asm", "-p", "/tmp/foo.o", "-o", "/tmp/foo", "foo.bas"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../../tests",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build aqb compiler",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "objdump",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/home/guenter/projects/amiga/amiga-gcc/bin/m68k-amigaos-objdump",
+            "args": ["-x", "/home/guenter/media/emu/amiga/FS-UAE/hdd/system/x/foo"],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}/../../tests",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
+}
