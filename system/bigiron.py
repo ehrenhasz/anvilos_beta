@@ -5,113 +5,198 @@ import subprocess
 import os
 from collections import deque
 from datetime import datetime
-from rich.live import Live
-from rich.layout import Layout
-from rich.panel import Panel
-from rich.table import Table
-from rich.console import Console
-from rich.text import Text
-from rich import box
-from rich.align import Align
-from rich.progress import BarColumn, Progress, TextColumn
+import rich
+import rich.live
+import rich.layout
+import rich.panel
+import rich.table
+import rich.console
+import rich.text
+import rich.box
+import rich.align
 
-# BTOP FIDELITY THEME
-C_PRIMARY = "bold #bd93f9"   # Purple
-C_SECONDARY = "bold #ff79c6" # Pink
-C_ACCENT = "bold #50fa7b"    # Green
-C_WARN = "bold #f1fa8c"      # Yellow
-C_ERR = "bold #ff5555"       # Red
-C_BORDER = "#44475a"         # Muted Dracula
-C_LABEL = "#6272a4"          # Comment Grey
-C_TEXT = "#f8f8f2"           # Foreground
+# BTOP DEFAULT FIDELITY THEME (Sleek/Dense)
+C_PRIMARY = "#50fa7b"   # Green
+C_SECONDARY = "#8be9fd" # Cyan
+C_ACCENT = "#bd93f9"    # Purple
+C_WARN = "#f1fa8c"      # Yellow
+C_ERR = "#ff5555"       # Red
+C_LABEL = "#6272a4"     # Grey
+C_BORDER = "#44475a"    # Muted
+C_TEXT = "#f8f8f2"
 
-QUEUE_FILE = "runtime/card_queue.json"
+QUEUE_FILE = "/home/aimeat/github/droppod/runtime/card_queue.json"
+LOG_FILE = "/home/aimeat/github/droppod/ext/forge.log"
 SERVICE_NAME = "titanium_warden"
 
-def make_layout() -> Layout:
-    layout = Layout(name="root")
-    layout.split(
-        Layout(name="header", size=1),
-        Layout(name="cards", ratio=1),  # UPPER HALF (Card Reader)
-        Layout(name="btop", ratio=1),   # LOWER HALF (Btop Modules)
-        Layout(name="footer", size=1),
+def make_layout():
+    # Avoid shadowing 'Layout' class with 'layout' variable
+    root_layout = rich.layout.Layout(name="root")
+    
+    root_layout.split(
+        rich.layout.Layout(name="header", size=1),
+        rich.layout.Layout(name="cards", ratio=1),  # UPPER: Card Reader
+        rich.layout.Layout(name="btop", ratio=1),   # LOWER: Btop
+        rich.layout.Layout(name="footer", size=1),
     )
     
     # Btop Lower Half Layout
-    layout["btop"].split_row(
-        Layout(name="left", ratio=1),
-        Layout(name="right", ratio=2),
+    root_layout["btop"].split_row(
+        rich.layout.Layout(name="left", ratio=1),
+        rich.layout.Layout(name="right", ratio=2),
     )
-    layout["left"].split(
-        Layout(name="cpu", ratio=1),
-        Layout(name="mem", ratio=1),
-        Layout(name="net", size=8),
+    root_layout["left"].split(
+        rich.layout.Layout(name="cpu_mem", ratio=1),
+        rich.layout.Layout(name="net", size=6),
     )
-    layout["right"].split(
-        Layout(name="proc", ratio=1), 
+    root_layout["right"].split(
+        rich.layout.Layout(name="proc", ratio=1), 
     )
-    return layout
+    return root_layout
 
-# ... (Header/Footer remain same)
+def make_graph(value, color, width=15):
+    filled = int((min(max(value, 0), 100) / 100) * width)
+    return f"[{color}]" + "█" * filled + "[/]" + "[#282a36]" + "█" * (width - filled) + "[/]"
+
+class Header:
+    def __rich__(self):
+        t = rich.text.Text()
+        t.append(" btop ", style="reverse bold #8be9fd")
+        t.append(f" v1.4.6 ", style="bold white")
+        t.append(" host: ", style=C_LABEL)
+        t.append("anvilos ", style=C_PRIMARY)
+        t.append(" up: ", style=C_LABEL)
+        t.append("00:42:12 ", style=C_WARN)
+        t.append(" " * 10)
+        t.append(datetime.now().strftime("%H:%M:%S"), style="bold white")
+        return rich.align.Align.center(t)
+
+class Footer:
+    def __rich__(self):
+        t = rich.text.Text()
+        t.append(" f1 ", style="reverse")
+        t.append(" Help ", style=C_TEXT)
+        t.append(" f2 ", style="reverse")
+        t.append(" Options ", style=C_TEXT)
+        t.append(" q ", style="reverse #ff5555")
+        t.append(" Quit ", style=C_TEXT)
+        t.append(" " * 5)
+        t.append(" bigiron_session: ", style=C_LABEL)
+        t.append("SECURE_OMEGA", style=C_ACCENT)
+        return rich.align.Align.center(t)
+
+def cpu_mem_panel():
+    table = rich.table.Table.grid(expand=True)
+    table.add_row(f"[{C_LABEL}]CPU usage[/]", rich.align.Align.right(f"[{C_PRIMARY}]4%[/]"))
+    table.add_row(make_graph(4, C_PRIMARY, width=30))
+    table.add_row("")
+    table.add_row(f"[{C_LABEL}]Mem used[/]", rich.align.Align.right(f"[{C_SECONDARY}]2.4GB[/]"))
+    table.add_row(make_graph(15, C_SECONDARY, width=30))
+    return rich.panel.Panel(table, title="[bold #bd93f9]system[/]", border_style=C_BORDER, box=rich.box.SQUARE, padding=(0,1))
+
+def net_panel():
+    try:
+        res = subprocess.run(["systemctl", "is-active", SERVICE_NAME], capture_output=True, text=True)
+        status = res.stdout.strip()
+    except: status = "unknown"
+    table = rich.table.Table.grid(expand=True)
+    table.add_row(f"[{C_LABEL}]net_warden:[/]  [{C_PRIMARY if status=='active' else C_ERR}]{status.upper()}[/]")
+    table.add_row(f"[{C_LABEL}]pqc_link:  [/]  [{C_PRIMARY}]STABLE[/]")
+    return rich.panel.Panel(table, title="[bold #50fa7b]net[/]", border_style=C_BORDER, box=rich.box.SQUARE, padding=(0,1))
+
+def proc_panel(watcher):
+    # Render raw logs from the watcher buffer
+    log_text = rich.text.Text()
+    # Iterate reversed to show newest lines at the top
+    for line in reversed(watcher.buffer):
+        # Simple syntax highlighting for logs
+        style = C_TEXT
+        if "ERROR" in line or "FAILURE" in line:
+            style = C_ERR
+        elif "SUCCESS" in line or "CONFIRMED" in line:
+            style = C_PRIMARY
+        elif "PROCESSING" in line:
+            style = C_ACCENT
+        elif ">>" in line:
+            style = C_WARN
+            
+        log_text.append(line + "\n", style=style)
+            
+    return rich.panel.Panel(log_text, title="[bold #f1fa8c]proc (raw_tty)[/]", border_style=C_BORDER, box=rich.box.SQUARE, padding=(0,1))
 
 def cards_panel():
-    # Simple Dir List style
-    table = Table(expand=True, box=None, padding=(0, 1), show_header=True, header_style=C_LABEL)
-    table.add_column("ID", style=C_ACCENT, width=12)
-    table.add_column("STATUS", style=C_LABEL, width=12)
-    table.add_column("DESCRIPTION", style=C_TEXT)
-    
+    table = rich.table.Table(expand=True, box=None, padding=(0, 1), show_header=True, header_style=C_LABEL)
+    table.add_column("ID", style=C_SECONDARY, width=10)
+    table.add_column("STATUS", width=10)
+    table.add_column("TASK")
     try:
         with open(QUEUE_FILE, "r") as f:
             cards = json.load(f)
-            # Show pending/active first
-            cards.sort(key=lambda x: x.get('status') == 'complete')
-            
-            for c in cards:
-                s = c.get("status", "???")
-                desc = c.get("description", "").replace("\n", " ")
+            # Reverse to show newest first (LIFO)
+            cards.reverse()
+            # Removed sorting by status to maintain strict timeline
+            for c in cards[:15]: # Show top 15
+                s = c.get("status", "???").lower()
+                desc = c.get("description", "").split(".")[0] # Shorten
                 
-                status_style = C_LABEL
-                if s == "complete": status_style = f"dim {C_BORDER}"
-                elif s == "failed": status_style = C_ERR
-                elif s == "pending": status_style = C_SECONDARY
-                elif s in ["review", "in_progress"]: status_style = f"reverse {C_WARN}"
+                # Status Styling
+                style = C_TEXT
+                if s == "complete": 
+                    style = f"dim {C_LABEL}"
+                elif s == "paused":
+                    style = "dim #44475a"
+                elif s in ["review", "in_progress"]:
+                    style = C_WARN
                 
-                row_style = "dim" if s == "complete" else ""
-                
-                table.add_row(
-                    c.get("id", "???"), 
-                    Text(s.upper(), style=status_style), 
-                    desc,
-                    style=row_style
-                )
-    except: 
-        table.add_row("ERROR", "READING", "QUEUE")
+                table.add_row(c.get("id"), s.upper(), desc, style=style)
+    except: pass
+    return rich.panel.Panel(table, title="[bold #bd93f9]card_reader[/]", border_style=C_BORDER, box=rich.box.SQUARE, padding=(0,1))
 
-    return Panel(table, title="[bold #bd93f9]card_reader[/]", border_style=C_BORDER, box=box.ROUNDED)
+class LogWatcher:
+    def __init__(self, log_file, buffer_size=20):
+        self.log_file = log_file
+        self.buffer = deque(maxlen=buffer_size)
+        self.last_pos = 0
+        
+        # Initial load
+        try:
+            if os.path.exists(self.log_file):
+                with open(self.log_file, 'r') as f:
+                    lines = f.readlines()
+                    for line in lines[-buffer_size:]:
+                        self.buffer.append(line.strip())
+                    self.last_pos = f.tell()
+            else:
+                self.buffer.append("Log file not found: " + log_file)
+        except Exception as e:
+            self.buffer.append(f"Error loading log: {str(e)}")
 
-# ... (Standard Panels remain same, simplified update loop)
+    def scan(self):
+        try:
+            if os.path.exists(self.log_file):
+                with open(self.log_file, 'r') as f:
+                    f.seek(self.last_pos)
+                    new_lines = f.readlines()
+                    if new_lines:
+                        self.last_pos = f.tell()
+                        for line in new_lines:
+                            self.buffer.append(line.strip())
+        except Exception: pass
 
 def main():
-    layout = make_layout()
-    watcher = FileWatcher()
-    with Live(layout, refresh_per_second=4, screen=True) as live:
+    root_layout = make_layout()
+    watcher = LogWatcher(LOG_FILE)
+    with rich.live.Live(root_layout, refresh_per_second=10, screen=True) as live:
         try:
             while True:
                 watcher.scan()
-                layout["header"].update(Header())
-                layout["footer"].update(Footer())
-                
-                # Card Reader (Top)
-                layout["cards"].update(cards_panel())
-                
-                # Btop (Bottom)
-                layout["cpu"].update(cpu_panel())
-                layout["mem"].update(mem_panel())
-                layout["net"].update(net_panel())
-                layout["proc"].update(proc_panel(watcher))
-                
-                time.sleep(0.25)
+                root_layout["header"].update(Header())
+                root_layout["footer"].update(Footer())
+                root_layout["cards"].update(cards_panel())
+                root_layout["cpu_mem"].update(cpu_mem_panel())
+                root_layout["net"].update(net_panel())
+                root_layout["proc"].update(proc_panel(watcher))
+                time.sleep(0.1)
         except KeyboardInterrupt: pass
 
 if __name__ == "__main__":
