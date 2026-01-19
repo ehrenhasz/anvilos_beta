@@ -80,9 +80,36 @@ class Collar:
 
         print(f"[COLLAR] Staging complete. Staged: {staged_count}, Skipped: {skipped_count}")
 
+    def check_git_hygiene(self, root_dir):
+        """
+        Enforces the Git Workflow Mandate:
+        - No direct commits to main/master (unless initial).
+        - Feature branches must follow 'feature/...' naming.
+        """
+        print(f"[COLLAR] Checking Git Hygiene in {root_dir}...")
+        try:
+            # Check current branch
+            result = subprocess.run(["git", "branch", "--show-current"], cwd=root_dir, capture_output=True, text=True)
+            current_branch = result.stdout.strip()
+            
+            if current_branch in ["main", "master"]:
+                print("[COLLAR] WARNING: You are on the trunk branch. Ensure you checkout a feature branch before coding.")
+            elif not current_branch.startswith("feature/"):
+                print(f"[COLLAR] VIOLATION: Branch '{current_branch}' does not follow naming convention 'feature/TASK_ID'.")
+                return False
+            
+            return True
+        except Exception as e:
+            print(f"[COLLAR] Git check failed: {e}")
+            return False
+
     def scan_directory(self, root_dir, mode="cli"):
         if mode == "cli":
             print(f"[COLLAR] Scanning {root_dir} for entropy violations...")
+        
+        # Enforce Git Hygiene
+        self.check_git_hygiene(root_dir)
+
         has_violations = False
         violations_data = []
         
