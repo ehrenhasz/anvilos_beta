@@ -4,7 +4,7 @@
   "category": "01_Operating_Systems",
   "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL.",
   "sovereignty_level": "assimilated",
-  "assimilated_at": "2026-01-19T04:46:30.217465",
+  "assimilated_at": "2026-01-19T04:47:27.636689",
   "origin": {
     "url": "https://github.com/freebsd/freebsd-src.git",
     "commit": "unknown",
