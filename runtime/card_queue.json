@@ -1,5 +1,12 @@
 [
   {
+    "id": "fix_dash_001",
+    "description": "RESTORE_DASHBOARD: Recreate 'system/dashboard.py' referenced by 'launch_hud.sh'. Investigate missing file and restore functionality.",
+    "status": "pending",
+    "created_at": "2026-01-19T00:00:00.000Z",
+    "result": null
+  },
+  {
     "id": "b314e737",
     "description": "MICROPYTHON_RECODE: Target 'oss_sovereignty/ctx_06_recharts'. 1. ANALYZE: Examine the existing 'anvil.build.sh' and 'metadata.json'. 2. RECODE: Create a 'build.py' (MicroPython compatible) that implements the same logic as 'anvil.build.sh'.    - It should have a function 'build()' and 'install()'.    - Use standard Python/MicroPython libraries where possible. 3. INTEGRATE: Ensure the script is ready to be called by the Anvil Forge system.",
     "status": "review",
