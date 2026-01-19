@@ -1,0 +1,13 @@
+{
+  "id": "sys_17_32Bit_Era.Katana_SDK",
+  "name": "Katana_SDK",
+  "category": "03_Toolchains",
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL.",
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T04:31:31.822287",
+  "origin": {
+    "url": "https://github.com/KallistiOS/KallistiOS.git",
+    "commit": "unknown",
+    "policy": "monitor_only"
+  }
+}

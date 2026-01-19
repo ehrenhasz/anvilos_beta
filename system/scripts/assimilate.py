@@ -7,16 +7,24 @@ import subprocess
 import time
 from datetime import datetime
 
+LOG_FILE = "/home/aimeat/github/droppod/ext/forge.log"
+
+def log(message):
+    timestamp = datetime.now().strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3] + 'Z'
+    with open(LOG_FILE, "a") as f:
+        f.write(f"{timestamp} [assimilate] {message}\n")
+    print(message)
+
 def run_command(cmd, cwd=None):
-    print(f"EXEC: {cmd}")
+    log(f"EXEC: {cmd}")
     result = subprocess.run(cmd, shell=True, cwd=cwd, capture_output=True, text=True)
     if result.returncode != 0:
-        print(f"ERROR: {result.stderr}")
+        log(f"ERROR: {result.stderr}")
         return False, result.stderr
     return True, result.stdout
 
 def assimilate(target_path, repo_url):
-    print(f">> ASSIMILATING: {target_path} FROM {repo_url}")
+    log(f">> ASSIMILATING: {target_path} FROM {repo_url}")
     
     if not os.path.exists(target_path):
         os.makedirs(target_path)
@@ -25,9 +33,9 @@ def assimilate(target_path, repo_url):
     
     # 1. Clone
     if os.path.exists(source_dir):
-        print(f"!! Source dir exists at {source_dir}. Skipping clone (assuming manual placement or previous run).")
+        log(f"!! Source dir exists at {source_dir}. Skipping clone (assuming manual placement or previous run).")
     else:
-        print(f">> Cloning {repo_url}...")
+        log(f">> Cloning {repo_url}...")
         success, _ = run_command(f"git clone --depth 1 {repo_url} {source_dir}")
         if not success:
             return False
@@ -40,10 +48,10 @@ def assimilate(target_path, repo_url):
             commit_hash = out.strip()
             
         # 3. Kill .git
-        print(">> Severing connection (removing .git)...")
+        log(">> Severing connection (removing .git)...")
         shutil.rmtree(os.path.join(source_dir, ".git"))
     else:
-        print("!! No .git found in source. Already severed?")
+        log("!! No .git found in source. Already severed?")
 
     # 4. Mark / Create Metadata
     meta_path = os.path.join(target_path, "metadata.json")
@@ -66,7 +74,7 @@ def assimilate(target_path, repo_url):
     with open(meta_path, "w") as f:
         json.dump(metadata, f, indent=2)
         
-    print(f">> Assimilation Complete. Metadata saved to {meta_path}")
+    log(f">> Assimilation Complete. Metadata saved to {meta_path}")
     return True
 
 if __name__ == "__main__":

@@ -1,0 +1,13 @@
+{
+  "id": "sys_17_32Bit_Era.Mac_OS_Classic",
+  "name": "Mac_OS_Classic",
+  "category": "02_Computers",
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL.",
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T04:30:14.424577",
+  "origin": {
+    "url": "https://github.com/kanjitalk755/mac-os-build.git",
+    "commit": "unknown",
+    "policy": "monitor_only"
+  }
+}

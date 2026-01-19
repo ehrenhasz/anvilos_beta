@@ -1,0 +1,13 @@
+{
+  "id": "sys_17_32Bit_Era.Dreamcast",
+  "name": "Dreamcast",
+  "category": "01_Consoles",
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL.",
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T04:30:12.294611",
+  "origin": {
+    "url": "https://github.com/flyinghead/flycast.git",
+    "commit": "unknown",
+    "policy": "monitor_only"
+  }
+}

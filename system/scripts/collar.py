@@ -24,10 +24,11 @@ class Collar:
         "collar.py", "hydrogen.ts", "package-lock.json", "warden.py" # Self-reference allowed for policing
     ]
 
-    def check_active_card(self):
+    def read_active_card(self):
         card_queue_path = "runtime/card_queue.json"
         if not os.path.exists(card_queue_path):
-            return True # No queue, no active card to worry about
+            print("[COLLAR] No card queue found.")
+            sys.exit(0)
 
         try:
             with open(card_queue_path, 'r') as f:
@@ -35,22 +36,27 @@ class Collar:
             
             active_cards = [card for card in cards if card.get('status') == 'pending']
             
-            if len(active_cards) > 1:
-                print(f"[COLLAR] VIOLATION: More than one 'pending' card in {card_queue_path}. Found: {[card['id'] for card in active_cards]}.")
-                print("Proceeding with only the first pending card.")
-                # For now, allow to proceed but warn. Future: Block execution.
-                # return False 
-            elif len(active_cards) == 1:
-                print(f"[COLLAR] Active card: {active_cards[0]['id']}. Proceeding with card-based workflow.")
-            else:
-                print("[COLLAR] No active 'pending' card found. Proceeding without a specific card context.")
-            return True
+            if len(active_cards) == 0:
+                print("[COLLAR] No pending cards.")
+                sys.exit(0)
+            
+            # The actual card reader logic
+            active_card = active_cards[0]
+            print("=================================================")
+            print(f"ACTIVE CARD: {active_card.get('id')}")
+            print("-------------------------------------------------")
+            print(f"TASK: {active_card.get('description')}")
+            print("=================================================")
+            
+            # The script will now exit after reading the card.
+            sys.exit(0)
+
         except json.JSONDecodeError:
-            print(f"[COLLAR] Warning: Could not decode {card_queue_path}. Skipping active card check.")
-            return True
+            print(f"[COLLAR] Error: Could not decode {card_queue_path}.")
+            sys.exit(1)
         except Exception as e:
             print(f"[COLLAR] Error during active card check: {e}")
-            return True
+            sys.exit(1)
 
     def scan_file(self, filepath):
         violations = []
@@ -190,15 +196,15 @@ if __name__ == "__main__":
     import subprocess
     
     parser = argparse.ArgumentParser(description="Collar Entropy Scanner & Git Warden")
-    parser.add_argument("command", nargs="?", default="stage", choices=["scan", "stage"], help="Action to perform: 'stage' (default) or 'scan'")
-    parser.add_argument("root", nargs="?", default=".", help="Root directory to process")
-    parser.add_argument("--go", choices=["cli", "gui"], default="cli", help="Execution mode (for scan)")
+    parser.add_argument("command", nargs="?", default="read", choices=["read", "scan"], help="Action to perform: 'read' (default) or 'scan'")
+    parser.add_argument("root", nargs="?", default=".", help="Root directory to process for scanning")
+    parser.add_argument("--go", choices=["cli", "gui"], default="cli", help="Execution mode for scanning")
     
     args = parser.parse_args()
     
     collar = Collar()
     
-    if args.command == "scan":
+    if args.command == "read":
+        collar.read_active_card()
+    elif args.command == "scan":
         collar.scan_directory(args.root, mode=args.go)
-    elif args.command == "stage":
-        collar.stage_files(args.root)

@@ -205,7 +205,7 @@ class LogWatcher:
 def main():
     root_layout = make_layout()
     watcher = LogWatcher(LOG_FILE)
-    with rich.live.Live(root_layout, refresh_per_second=10, screen=True) as live:
+    with rich.live.Live(root_layout, refresh_per_second=30, screen=True) as live:
         try:
             while True:
                 watcher.scan()
