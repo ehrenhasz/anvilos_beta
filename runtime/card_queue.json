@@ -1947,7 +1947,7 @@
     },
     "started_at": "2026-01-19T02:51:34.590305",
     "completed_at": "2026-01-19T02:51:36.788126",
-    "result": "FAILURE: "
+    "result": "FAILURE: Repository dqv/multics is CLOSED/PRIVATE. Authentication required."
   },
   {
     "id": "sov_lost_cp_m",
@@ -1961,7 +1961,7 @@
     },
     "started_at": "2026-01-19T02:51:36.792030",
     "completed_at": "2026-01-19T02:51:39.007429",
-    "result": "FAILURE: "
+    "result": "FAILURE: Repository dwhinham/cpm-source is CLOSED/PRIVATE. Authentication required."
   },
   {
     "id": "sov_lost_agc",
