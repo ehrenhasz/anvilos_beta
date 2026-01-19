@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T03:34:55.481491",
+  "origin": {
+    "url": "https://github.com/86Box/86Box.git",
+    "commit": "d3ddb4e08039207ff82dcc4a2bf268f5b2838d1e",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

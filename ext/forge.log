@@ -1251,3 +1251,45 @@ EXEC: git rev-parse HEAD
 [2026-01-19 03:22:16] ERROR: FAILURE: 
 [2026-01-19 03:22:16] PROCESSING CARD: sov_8bit_deep_mame - 8-BIT DEEP: Assimilate MAME (Multi Arcade Machine Emulator (Core))
 [2026-01-19 03:22:18] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/MAME https://github.com/mamedev/mame.git
+[2026-01-19 03:22:40] ERROR: FAILURE: 
+[2026-01-19 03:22:40] PROCESSING CARD: sov_8bit_deep_zx_spectrum_verilog - 8-BIT DEEP: Assimilate ZX_Spectrum_Verilog (Verilog FPGA Implementation of ZX Spectrum)
+[2026-01-19 03:22:42] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/03_Hardware_HDL/ZX_Spectrum_Verilog https://github.com/AtlasFPGA/zx.git
+[2026-01-19 03:22:43] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/03_Hardware_HDL/ZX_Spectrum_Verilog FROM https://github.com/AtlasFPGA/zx.git
+>> Cloning https://github.com/AtlasFPGA/zx.git...
+EXEC: git clone --depth 1 https://github.com/AtlasFPGA/zx.git oss_sovereignty/sys_15_8Bit_Renaissance/03_Hardware_HDL/ZX_Spectrum_Verilog/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/03_Hardware_HDL/ZX_Spectrum_Verilog/metadata.json
+[2026-01-19 03:22:43] PROCESSING CARD: sov_8bit_deep_c64_vhdl - 8-BIT DEEP: Assimilate C64_VHDL (VHDL/Verilog FPGA Implementation of C64)
+[2026-01-19 03:22:45] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/03_Hardware_HDL/C64_VHDL https://github.com/ovalcode/c64fpga.git
+[2026-01-19 03:28:57] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/03_Hardware_HDL/C64_VHDL FROM https://github.com/ovalcode/c64fpga.git
+>> Cloning https://github.com/ovalcode/c64fpga.git...
+EXEC: git clone --depth 1 https://github.com/ovalcode/c64fpga.git oss_sovereignty/sys_15_8Bit_Renaissance/03_Hardware_HDL/C64_VHDL/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/03_Hardware_HDL/C64_VHDL/metadata.json
+[2026-01-19 03:28:57] PROCESSING CARD: sov_8bit_deep_wla_dx - 8-BIT DEEP: Assimilate WLA_DX (WLA DX Multi-Target Assembler)
+[2026-01-19 03:28:59] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/WLA_DX https://github.com/vhelin/wla-dx.git
+[2026-01-19 03:29:01] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/WLA_DX FROM https://github.com/vhelin/wla-dx.git
+>> Cloning https://github.com/vhelin/wla-dx.git...
+EXEC: git clone --depth 1 https://github.com/vhelin/wla-dx.git oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/WLA_DX/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/WLA_DX/metadata.json
+[2026-01-19 03:34:45] PROCESSING CARD: sov_16bit_deep_winuae - 16-BIT DEEP: Assimilate WinUAE (WinUAE (Reference Amiga Emulator))
+[2026-01-19 03:34:47] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/WinUAE https://github.com/tonioni/WinUAE.git
+[2026-01-19 03:34:50] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/WinUAE FROM https://github.com/tonioni/WinUAE.git
+>> Cloning https://github.com/tonioni/WinUAE.git...
+EXEC: git clone --depth 1 https://github.com/tonioni/WinUAE.git oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/WinUAE/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/WinUAE/metadata.json
+[2026-01-19 03:34:50] PROCESSING CARD: sov_16bit_deep_86box - 16-BIT DEEP: Assimilate 86Box (86Box (Low-level PC Emulator))
+[2026-01-19 03:34:52] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/86Box https://github.com/86Box/86Box.git
+[2026-01-19 03:34:55] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/86Box FROM https://github.com/86Box/86Box.git
+>> Cloning https://github.com/86Box/86Box.git...
+EXEC: git clone --depth 1 https://github.com/86Box/86Box.git oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/86Box/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/86Box/metadata.json
+[2026-01-19 03:34:55] PROCESSING CARD: sov_16bit_deep_freedos - 16-BIT DEEP: Assimilate FreeDOS (FreeDOS Kernel (MS-DOS Compatible))
