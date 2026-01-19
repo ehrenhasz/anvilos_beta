@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T03:29:01.039289",
+  "origin": {
+    "url": "https://github.com/vhelin/wla-dx.git",
+    "commit": "0143a1e5aad5ca794e64b8fefe1edaa495d11d7e",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}
