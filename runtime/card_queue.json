@@ -2106,178 +2106,466 @@
   {
     "id": "sov_r2_ipx_linux",
     "description": "ROUND 2: Assimilate IPX_LINUX (IPX/SPX Module for Linux)",
-    "status": "processing",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/03_Legacy_Net/IPX_LINUX https://github.com/pasis/ipx.git",
     "created_at": "2026-01-19T03:11:32.779313",
     "metadata": {
       "system": "IPX_LINUX",
       "proxy": "IPX/SPX Module for Linux"
     },
-    "started_at": "2026-01-19T03:12:17.138570"
+    "started_at": "2026-01-19T03:12:17.138570",
+    "completed_at": "2026-01-19T03:18:28.882905",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_14_Accessors/03_Legacy_Net/IPX_LINUX FROM https://github.com/pasis/ipx.git\n>> Cloning https://github.com/pasis/ipx.git...\nEXEC: git clone --depth 1 https://github.com/pasis/ipx.git oss_sovereignty/sys_14_Accessors/03_Legacy_Net/IPX_LINUX/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_14_Accessors/03_Legacy_Net/IPX_LINUX/metadata.json"
   },
   {
     "id": "sov_r2_ghostscript",
     "description": "ROUND 2: Assimilate GHOSTSCRIPT (PostScript & PDF Interpreter (The Printer))",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/01_Terminals/GHOSTSCRIPT https://github.com/ArtifexSoftware/ghostpdl.git",
     "created_at": "2026-01-19T03:11:32.779313",
     "metadata": {
       "system": "GHOSTSCRIPT",
       "proxy": "PostScript & PDF Interpreter (The Printer)"
-    }
+    },
+    "started_at": "2026-01-19T03:18:28.888111",
+    "completed_at": "2026-01-19T03:18:38.915331",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_14_Accessors/01_Terminals/GHOSTSCRIPT FROM https://github.com/ArtifexSoftware/ghostpdl.git\n>> Cloning https://github.com/ArtifexSoftware/ghostpdl.git...\nEXEC: git clone --depth 1 https://github.com/ArtifexSoftware/ghostpdl.git oss_sovereignty/sys_14_Accessors/01_Terminals/GHOSTSCRIPT/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_14_Accessors/01_Terminals/GHOSTSCRIPT/metadata.json"
   },
   {
     "id": "sov_r2_smalltalk",
     "description": "ROUND 2: Assimilate SMALLTALK (Squeak Smalltalk Environment)",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/04_Managed/SMALLTALK https://github.com/squeak-smalltalk/squeak-app.git",
     "created_at": "2026-01-19T03:11:32.779313",
     "metadata": {
       "system": "SMALLTALK",
       "proxy": "Squeak Smalltalk Environment"
-    }
+    },
+    "started_at": "2026-01-19T03:18:38.917481",
+    "completed_at": "2026-01-19T03:18:43.447619",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_12_Languages/04_Managed/SMALLTALK FROM https://github.com/squeak-smalltalk/squeak-app.git\n>> Cloning https://github.com/squeak-smalltalk/squeak-app.git...\nEXEC: git clone --depth 1 https://github.com/squeak-smalltalk/squeak-app.git oss_sovereignty/sys_12_Languages/04_Managed/SMALLTALK/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/04_Managed/SMALLTALK/metadata.json"
   },
   {
     "id": "sov_8bit_nes",
     "description": "8-BIT: Assimilate NES (FCEUX (NES Emulator))",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/NES https://github.com/TASEmulators/fceux.git",
     "created_at": "2026-01-19T03:14:15.284719",
     "metadata": {
       "system": "NES",
       "proxy": "FCEUX (NES Emulator)"
-    }
+    },
+    "started_at": "2026-01-19T03:18:43.449780",
+    "completed_at": "2026-01-19T03:18:45.487228",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/NES FROM https://github.com/TASEmulators/fceux.git\n!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/NES/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/NES/metadata.json"
   },
   {
     "id": "sov_8bit_gameboy",
     "description": "8-BIT: Assimilate GameBoy (Gambatte (Accuracy-focused GB))",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/GameBoy https://github.com/gb-archive/gambatte.git",
     "created_at": "2026-01-19T03:14:15.284719",
     "metadata": {
       "system": "GameBoy",
       "proxy": "Gambatte (Accuracy-focused GB)"
-    }
+    },
+    "started_at": "2026-01-19T03:18:45.489438",
+    "completed_at": "2026-01-19T03:18:47.531188",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/GameBoy FROM https://github.com/gb-archive/gambatte.git\n!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/GameBoy/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/GameBoy/metadata.json"
   },
   {
     "id": "sov_8bit_commodore_64",
     "description": "8-BIT: Assimilate Commodore_64 (VICE (Versatile Commodore Emulator))",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Commodore_64 https://git.code.sf.net/p/vice-emu/code",
     "created_at": "2026-01-19T03:14:15.284719",
     "metadata": {
       "system": "Commodore_64",
       "proxy": "VICE (Versatile Commodore Emulator)"
-    }
+    },
+    "started_at": "2026-01-19T03:18:47.533315",
+    "completed_at": "2026-01-19T03:18:49.572088",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Commodore_64 FROM https://git.code.sf.net/p/vice-emu/code\n!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Commodore_64/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Commodore_64/metadata.json"
   },
   {
     "id": "sov_8bit_zx_spectrum",
     "description": "8-BIT: Assimilate ZX_Spectrum (Fuse (Free Unix Spectrum Emulator))",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/ZX_Spectrum https://git.code.sf.net/p/fuse-emulator/fuse",
     "created_at": "2026-01-19T03:14:15.284719",
     "metadata": {
       "system": "ZX_Spectrum",
       "proxy": "Fuse (Free Unix Spectrum Emulator)"
-    }
+    },
+    "started_at": "2026-01-19T03:18:49.574435",
+    "completed_at": "2026-01-19T03:18:51.617343",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/ZX_Spectrum FROM https://git.code.sf.net/p/fuse-emulator/fuse\n!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/ZX_Spectrum/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/ZX_Spectrum/metadata.json"
   },
   {
     "id": "sov_8bit_apple_ii",
     "description": "8-BIT: Assimilate Apple_II (LinApple (Apple II Emulator))",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Apple_II https://github.com/linappleii/linapple.git",
     "created_at": "2026-01-19T03:14:15.284719",
     "metadata": {
       "system": "Apple_II",
       "proxy": "LinApple (Apple II Emulator)"
-    }
+    },
+    "started_at": "2026-01-19T03:18:51.619496",
+    "completed_at": "2026-01-19T03:18:53.657441",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Apple_II FROM https://github.com/linappleii/linapple.git\n!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Apple_II/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Apple_II/metadata.json"
   },
   {
     "id": "sov_8bit_atari_8bit",
     "description": "8-BIT: Assimilate Atari_8Bit (Atari800 Emulator)",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Atari_8Bit https://github.com/atari800/atari800.git",
     "created_at": "2026-01-19T03:14:15.284719",
     "metadata": {
       "system": "Atari_8Bit",
       "proxy": "Atari800 Emulator"
-    }
+    },
+    "started_at": "2026-01-19T03:18:53.660526",
+    "completed_at": "2026-01-19T03:18:55.704102",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Atari_8Bit FROM https://github.com/atari800/atari800.git\n!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Atari_8Bit/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Atari_8Bit/metadata.json"
   },
   {
     "id": "sov_8bit_msx",
     "description": "8-BIT: Assimilate MSX (openMSX)",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/MSX https://github.com/openMSX/openMSX.git",
     "created_at": "2026-01-19T03:14:15.284719",
     "metadata": {
       "system": "MSX",
       "proxy": "openMSX"
-    }
+    },
+    "started_at": "2026-01-19T03:18:55.706239",
+    "completed_at": "2026-01-19T03:18:57.745748",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/MSX FROM https://github.com/openMSX/openMSX.git\n!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/MSX/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/MSX/metadata.json"
   },
   {
     "id": "sov_8bit_bbc_micro",
     "description": "8-BIT: Assimilate BBC_Micro (BeebEm (Windows Port Source))",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/BBC_Micro https://github.com/stardot/beebem-windows.git",
     "created_at": "2026-01-19T03:14:15.284719",
     "metadata": {
       "system": "BBC_Micro",
       "proxy": "BeebEm (Windows Port Source)"
-    }
+    },
+    "started_at": "2026-01-19T03:18:57.747990",
+    "completed_at": "2026-01-19T03:18:59.788049",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/BBC_Micro FROM https://github.com/stardot/beebem-windows.git\n!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/BBC_Micro/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/BBC_Micro/metadata.json"
   },
   {
     "id": "sov_8bit_cc65",
     "description": "8-BIT: Assimilate cc65 (cc65 (6502 C Compiler/Assembler))",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/cc65 https://github.com/cc65/cc65.git",
     "created_at": "2026-01-19T03:14:15.284719",
     "metadata": {
       "system": "cc65",
       "proxy": "cc65 (6502 C Compiler/Assembler)"
-    }
+    },
+    "started_at": "2026-01-19T03:18:59.790243",
+    "completed_at": "2026-01-19T03:19:01.829469",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/cc65 FROM https://github.com/cc65/cc65.git\n!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/cc65/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/cc65/metadata.json"
   },
   {
     "id": "sov_8bit_z88dk",
     "description": "8-BIT: Assimilate z88dk (z88dk (Z80 Development Kit))",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/z88dk https://github.com/z88dk/z88dk.git",
     "created_at": "2026-01-19T03:14:15.284719",
     "metadata": {
       "system": "z88dk",
       "proxy": "z88dk (Z80 Development Kit)"
-    }
+    },
+    "started_at": "2026-01-19T03:19:01.831585",
+    "completed_at": "2026-01-19T03:19:03.861287",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/z88dk FROM https://github.com/z88dk/z88dk.git\n!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/z88dk/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/z88dk/metadata.json"
   },
   {
     "id": "sov_8bit_sdcc",
     "description": "8-BIT: Assimilate SDCC (SDCC (Small Device C Compiler))",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/SDCC https://git.code.sf.net/p/sdcc/code",
     "created_at": "2026-01-19T03:14:15.284719",
     "metadata": {
       "system": "SDCC",
       "proxy": "SDCC (Small Device C Compiler)"
-    }
+    },
+    "started_at": "2026-01-19T03:19:03.863388",
+    "completed_at": "2026-01-19T03:19:05.907681",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/SDCC FROM https://git.code.sf.net/p/sdcc/code\n!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/SDCC/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/SDCC/metadata.json"
   },
   {
     "id": "sov_8bit_rgbds",
     "description": "8-BIT: Assimilate RGBDS (RGBDS (Rednex Game Boy Development System))",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/RGBDS https://github.com/gbdev/rgbds.git",
     "created_at": "2026-01-19T03:14:15.284719",
     "metadata": {
       "system": "RGBDS",
       "proxy": "RGBDS (Rednex Game Boy Development System)"
-    }
+    },
+    "started_at": "2026-01-19T03:19:05.909880",
+    "completed_at": "2026-01-19T03:19:07.953631",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/RGBDS FROM https://github.com/gbdev/rgbds.git\n!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/RGBDS/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/RGBDS/metadata.json"
   },
   {
     "id": "sov_8bit_asm6",
     "description": "8-BIT: Assimilate ASM6 (ASM6f (Fork of ASM6 for NES))",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/ASM6 https://github.com/freem/asm6f.git",
     "created_at": "2026-01-19T03:14:15.284719",
     "metadata": {
       "system": "ASM6",
       "proxy": "ASM6f (Fork of ASM6 for NES)"
+    },
+    "started_at": "2026-01-19T03:19:07.958099",
+    "completed_at": "2026-01-19T03:19:09.999773",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/ASM6 FROM https://github.com/freem/asm6f.git\n!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/ASM6/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/ASM6/metadata.json"
+  },
+  {
+    "id": "sov_16bit_snes",
+    "description": "16-BIT: Assimilate SNES (Snes9x (Portable SNES Emulator))",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/SNES https://github.com/snes9xgit/snes9x.git",
+    "created_at": "2026-01-19T03:17:24.438412",
+    "metadata": {
+      "system": "SNES",
+      "proxy": "Snes9x (Portable SNES Emulator)"
+    },
+    "started_at": "2026-01-19T03:19:10.002830",
+    "completed_at": "2026-01-19T03:19:12.037536",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/SNES FROM https://github.com/snes9xgit/snes9x.git\n!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/SNES/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/SNES/metadata.json"
+  },
+  {
+    "id": "sov_16bit_sega_genesis",
+    "description": "16-BIT: Assimilate Sega_Genesis (Genesis Plus GX (Accurate Genesis/MegaDrive))",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/Sega_Genesis https://github.com/ekeeke/Genesis-Plus-GX.git",
+    "created_at": "2026-01-19T03:17:24.438412",
+    "metadata": {
+      "system": "Sega_Genesis",
+      "proxy": "Genesis Plus GX (Accurate Genesis/MegaDrive)"
+    },
+    "started_at": "2026-01-19T03:19:12.039731",
+    "completed_at": "2026-01-19T03:19:14.082426",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/Sega_Genesis FROM https://github.com/ekeeke/Genesis-Plus-GX.git\n!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/Sega_Genesis/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/Sega_Genesis/metadata.json"
+  },
+  {
+    "id": "sov_16bit_turbografx_16",
+    "description": "16-BIT: Assimilate TurboGrafx_16 (Mednafen (Multi-system, covers PCE/TG16))",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/TurboGrafx_16 https://github.com/libretro-mirrors/mednafen-git.git",
+    "created_at": "2026-01-19T03:17:24.438412",
+    "metadata": {
+      "system": "TurboGrafx_16",
+      "proxy": "Mednafen (Multi-system, covers PCE/TG16)"
+    },
+    "started_at": "2026-01-19T03:19:14.084891",
+    "completed_at": "2026-01-19T03:19:16.134489",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/TurboGrafx_16 FROM https://github.com/libretro-mirrors/mednafen-git.git\n!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/TurboGrafx_16/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/TurboGrafx_16/metadata.json"
+  },
+  {
+    "id": "sov_16bit_neo_geo",
+    "description": "16-BIT: Assimilate Neo_Geo (FinalBurn Neo (Arcade/NeoGeo))",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/Neo_Geo https://github.com/finalburnneo/FBNeo.git",
+    "created_at": "2026-01-19T03:17:24.438412",
+    "metadata": {
+      "system": "Neo_Geo",
+      "proxy": "FinalBurn Neo (Arcade/NeoGeo)"
+    },
+    "started_at": "2026-01-19T03:19:16.137371",
+    "completed_at": "2026-01-19T03:19:18.178322",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/Neo_Geo FROM https://github.com/finalburnneo/FBNeo.git\n!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/Neo_Geo/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/Neo_Geo/metadata.json"
+  },
+  {
+    "id": "sov_16bit_amiga_hardware",
+    "description": "16-BIT: Assimilate Amiga_Hardware (FS-UAE (Amiga Emulator))",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Amiga_Hardware https://github.com/FrodeSolheim/fs-uae.git",
+    "created_at": "2026-01-19T03:17:24.438412",
+    "metadata": {
+      "system": "Amiga_Hardware",
+      "proxy": "FS-UAE (Amiga Emulator)"
+    },
+    "started_at": "2026-01-19T03:19:18.182836",
+    "completed_at": "2026-01-19T03:19:20.226664",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Amiga_Hardware FROM https://github.com/FrodeSolheim/fs-uae.git\n!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Amiga_Hardware/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Amiga_Hardware/metadata.json"
+  },
+  {
+    "id": "sov_16bit_atari_st",
+    "description": "16-BIT: Assimilate Atari_ST (Hatari (Atari ST/STE/TT/Falcon))",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Atari_ST https://github.com/hatari/hatari.git",
+    "created_at": "2026-01-19T03:17:24.438412",
+    "metadata": {
+      "system": "Atari_ST",
+      "proxy": "Hatari (Atari ST/STE/TT/Falcon)"
+    },
+    "started_at": "2026-01-19T03:19:20.229003",
+    "completed_at": "2026-01-19T03:19:22.268177",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Atari_ST FROM https://github.com/hatari/hatari.git\n!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Atari_ST/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Atari_ST/metadata.json"
+  },
+  {
+    "id": "sov_16bit_apple_iigs",
+    "description": "16-BIT: Assimilate Apple_IIGS (GSplus (Modern Apple IIGS Emulator))",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Apple_IIGS https://github.com/digarok/gsplus.git",
+    "created_at": "2026-01-19T03:17:24.438412",
+    "metadata": {
+      "system": "Apple_IIGS",
+      "proxy": "GSplus (Modern Apple IIGS Emulator)"
+    },
+    "started_at": "2026-01-19T03:19:22.270702",
+    "completed_at": "2026-01-19T03:19:24.309374",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Apple_IIGS FROM https://github.com/digarok/gsplus.git\n!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Apple_IIGS/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Apple_IIGS/metadata.json"
+  },
+  {
+    "id": "sov_16bit_sharp_x68000",
+    "description": "16-BIT: Assimilate Sharp_X68000 (PX68k (Portable X68000 Emulator))",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Sharp_X68000 https://github.com/libretro/px68k-libretro.git",
+    "created_at": "2026-01-19T03:17:24.438412",
+    "metadata": {
+      "system": "Sharp_X68000",
+      "proxy": "PX68k (Portable X68000 Emulator)"
+    },
+    "started_at": "2026-01-19T03:19:24.311575",
+    "completed_at": "2026-01-19T03:19:26.355263",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Sharp_X68000 FROM https://github.com/libretro/px68k-libretro.git\n!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Sharp_X68000/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Sharp_X68000/metadata.json"
+  },
+  {
+    "id": "sov_16bit_pc_98",
+    "description": "16-BIT: Assimilate PC_98 (Neko Project II Kai (PC-9801 Emulator))",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/PC_98 https://github.com/AZO234/NP2kai.git",
+    "created_at": "2026-01-19T03:17:24.438412",
+    "metadata": {
+      "system": "PC_98",
+      "proxy": "Neko Project II Kai (PC-9801 Emulator)"
+    },
+    "started_at": "2026-01-19T03:19:26.357867",
+    "completed_at": "2026-01-19T03:19:28.403199",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/PC_98 FROM https://github.com/AZO234/NP2kai.git\n!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/PC_98/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/PC_98/metadata.json"
+  },
+  {
+    "id": "sov_16bit_m68k_tools",
+    "description": "16-BIT: Assimilate M68k_Tools (vasm (Portable 68k Assembler))",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/M68k_Tools https://github.com/dbuchwald/vasm.git",
+    "created_at": "2026-01-19T03:17:24.438412",
+    "metadata": {
+      "system": "M68k_Tools",
+      "proxy": "vasm (Portable 68k Assembler)"
+    },
+    "started_at": "2026-01-19T03:19:28.405852",
+    "completed_at": "2026-01-19T03:19:30.443549",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/M68k_Tools FROM https://github.com/dbuchwald/vasm.git\n!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/M68k_Tools/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/M68k_Tools/metadata.json"
+  },
+  {
+    "id": "sov_16bit_sgdk",
+    "description": "16-BIT: Assimilate SGDK (SGDK (Sega Genesis Development Kit))",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/SGDK https://github.com/stephane-d/sgdk.git",
+    "created_at": "2026-01-19T03:17:24.438412",
+    "metadata": {
+      "system": "SGDK",
+      "proxy": "SGDK (Sega Genesis Development Kit)"
+    },
+    "started_at": "2026-01-19T03:19:30.448253",
+    "completed_at": "2026-01-19T03:19:32.484433",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/SGDK FROM https://github.com/stephane-d/sgdk.git\n!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/SGDK/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/SGDK/metadata.json"
+  },
+  {
+    "id": "sov_16bit_pvsneslib",
+    "description": "16-BIT: Assimilate PVSNESLib (PVSnesLib (SNES C Development Kit))",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/PVSNESLib https://github.com/alekmaul/pvsneslib.git",
+    "created_at": "2026-01-19T03:17:24.438412",
+    "metadata": {
+      "system": "PVSNESLib",
+      "proxy": "PVSnesLib (SNES C Development Kit)"
+    },
+    "started_at": "2026-01-19T03:19:32.486614",
+    "completed_at": "2026-01-19T03:19:34.530054",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/PVSNESLib FROM https://github.com/alekmaul/pvsneslib.git\n!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/PVSNESLib/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/PVSNESLib/metadata.json"
+  },
+  {
+    "id": "sov_8bit_deep_visual6502",
+    "description": "8-BIT DEEP: Assimilate Visual6502 (Transistor-level 6502 Simulation)",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Visual6502 https://github.com/trebonian/visual6502.git",
+    "created_at": "2026-01-19T03:22:10.432624",
+    "metadata": {
+      "system": "Visual6502",
+      "proxy": "Transistor-level 6502 Simulation"
+    },
+    "started_at": "2026-01-19T03:22:10.845769",
+    "completed_at": "2026-01-19T03:22:14.255195",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Visual6502 FROM https://github.com/trebonian/visual6502.git\n>> Cloning https://github.com/trebonian/visual6502.git...\nEXEC: git clone --depth 1 https://github.com/trebonian/visual6502.git oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Visual6502/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Visual6502/metadata.json"
+  },
+  {
+    "id": "sov_8bit_deep_punes",
+    "description": "8-BIT DEEP: Assimilate puNES (Cycle-Accurate NES Emulator)",
+    "status": "failed",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/puNES https://github.com/punes-emu/punes.git",
+    "created_at": "2026-01-19T03:22:10.432624",
+    "metadata": {
+      "system": "puNES",
+      "proxy": "Cycle-Accurate NES Emulator"
+    },
+    "started_at": "2026-01-19T03:22:14.259970",
+    "completed_at": "2026-01-19T03:22:16.816558",
+    "result": "FAILURE: "
+  },
+  {
+    "id": "sov_8bit_deep_mame",
+    "description": "8-BIT DEEP: Assimilate MAME (Multi Arcade Machine Emulator (Core))",
+    "status": "processing",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/MAME https://github.com/mamedev/mame.git",
+    "created_at": "2026-01-19T03:22:10.432624",
+    "metadata": {
+      "system": "MAME",
+      "proxy": "Multi Arcade Machine Emulator (Core)"
+    },
+    "started_at": "2026-01-19T03:22:16.821640"
+  },
+  {
+    "id": "sov_8bit_deep_zx_spectrum_verilog",
+    "description": "8-BIT DEEP: Assimilate ZX_Spectrum_Verilog (Verilog FPGA Implementation of ZX Spectrum)",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/03_Hardware_HDL/ZX_Spectrum_Verilog https://github.com/AtlasFPGA/zx.git",
+    "created_at": "2026-01-19T03:22:10.432624",
+    "metadata": {
+      "system": "ZX_Spectrum_Verilog",
+      "proxy": "Verilog FPGA Implementation of ZX Spectrum"
+    }
+  },
+  {
+    "id": "sov_8bit_deep_c64_vhdl",
+    "description": "8-BIT DEEP: Assimilate C64_VHDL (VHDL/Verilog FPGA Implementation of C64)",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/03_Hardware_HDL/C64_VHDL https://github.com/ovalcode/c64fpga.git",
+    "created_at": "2026-01-19T03:22:10.432624",
+    "metadata": {
+      "system": "C64_VHDL",
+      "proxy": "VHDL/Verilog FPGA Implementation of C64"
+    }
+  },
+  {
+    "id": "sov_8bit_deep_wla_dx",
+    "description": "8-BIT DEEP: Assimilate WLA_DX (WLA DX Multi-Target Assembler)",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/WLA_DX https://github.com/vhelin/wla-dx.git",
+    "created_at": "2026-01-19T03:22:10.432624",
+    "metadata": {
+      "system": "WLA_DX",
+      "proxy": "WLA DX Multi-Target Assembler"
     }
   }
 ]

@@ -2,6 +2,13 @@
   "id": "sys_12_Languages.TCL",
   "name": "TCL",
   "category": "05_Scripting",
-  "mandate": "REWRITE IN ANVIL",
-  "status": "awaiting_source"
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL.",
+  "status": "awaiting_source",
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T02:46:05.457685",
+  "origin": {
+    "url": "https://github.com/tcltk/tcl.git",
+    "commit": "unknown",
+    "policy": "monitor_only"
+  }
 }

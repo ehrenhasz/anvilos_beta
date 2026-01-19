@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T03:12:02.487788",
+  "origin": {
+    "url": "https://github.com/Stichting-MINIX-Research-Foundation/minix.git",
+    "commit": "4db99f4012570a577414fe2a43697b2f239b699e",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

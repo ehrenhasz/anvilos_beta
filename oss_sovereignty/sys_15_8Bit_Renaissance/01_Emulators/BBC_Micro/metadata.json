@@ -2,5 +2,12 @@
   "id": "sys_15_8Bit_Renaissance.BBC_Micro",
   "name": "BBC_Micro",
   "category": "01_Emulators",
-  "mandate": "PRESERVE AND EMULATE"
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL.",
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T03:18:59.783540",
+  "origin": {
+    "url": "https://github.com/stardot/beebem-windows.git",
+    "commit": "unknown",
+    "policy": "monitor_only"
+  }
 }

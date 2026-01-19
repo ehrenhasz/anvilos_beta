@@ -1,0 +1,42 @@
+# boot - 9pxeload (not 9load) as a variant of 9pccpu.
+#	compressed text + data segments must fit in 1st 512K; currently 393K.
+dev
+	root
+	cons
+	arch
+	rtc
+
+	ether		netif
+	ip		arp chandial ip ipaux ipv6 iproute netlog nullmedium pktmedium ptclbsum386 inferno
+
+	uart
+
+link
+# order of ethernet drivers should match that in ../pc/pc so that
+# devices are detected in the same order by bootstraps and kernels
+# and thus given the same controller numbers.
+	ethervirtio	pci
+	ethervirtio10	pci
+	ethermedium
+
+misc
+	bootld
+	conf
+	dir
+	nomtrr
+	no-inflate
+	pxeload
+	rand
+	stub
+	uarti8250
+
+ip
+	udp
+# would need tcp to read via 9p
+	ipifc
+	icmp
+	icmp6
+
+port
+	int cpuserver = 1;
+	char hellomsg[] = "\nPlan 9 from Bell Labs PXE boot loader";

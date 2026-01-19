@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T02:39:27.514352",
+  "origin": {
+    "url": "https://github.com/gwsw/less.git",
+    "commit": "ac365da87548deff920cb9ecc286de161c8e8a54",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

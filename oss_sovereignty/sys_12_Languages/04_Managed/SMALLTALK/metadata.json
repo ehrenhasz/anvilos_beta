@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T03:18:43.442416",
+  "origin": {
+    "url": "https://github.com/squeak-smalltalk/squeak-app.git",
+    "commit": "bbc8b7f5cb4216e510ce954c6bf176cea88e8b19",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

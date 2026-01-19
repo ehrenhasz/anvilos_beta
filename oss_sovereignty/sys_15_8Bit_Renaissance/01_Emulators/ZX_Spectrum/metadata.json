@@ -2,5 +2,12 @@
   "id": "sys_15_8Bit_Renaissance.ZX_Spectrum",
   "name": "ZX_Spectrum",
   "category": "01_Emulators",
-  "mandate": "PRESERVE AND EMULATE"
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL.",
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T03:18:51.612852",
+  "origin": {
+    "url": "https://git.code.sf.net/p/fuse-emulator/fuse",
+    "commit": "unknown",
+    "policy": "monitor_only"
+  }
 }

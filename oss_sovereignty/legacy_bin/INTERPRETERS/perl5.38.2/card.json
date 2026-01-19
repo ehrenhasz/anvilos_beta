@@ -1,0 +1,7 @@
+{
+  "id": "legacy_perl5.38.2",
+  "original_path": "/usr/bin/perl5.38.2",
+  "category": "INTERPRETERS",
+  "status": "flagged_for_removal",
+  "replacement_strategy": "rewrite_in_anvil"
+}

@@ -2,5 +2,12 @@
   "id": "sys_15_8Bit_Renaissance.z88dk",
   "name": "z88dk",
   "category": "02_Toolchains",
-  "mandate": "PRESERVE AND EMULATE"
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL.",
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T03:19:03.857145",
+  "origin": {
+    "url": "https://github.com/z88dk/z88dk.git",
+    "commit": "unknown",
+    "policy": "monitor_only"
+  }
 }

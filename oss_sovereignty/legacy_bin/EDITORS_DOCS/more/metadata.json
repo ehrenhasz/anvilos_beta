@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T02:39:32.338038",
+  "origin": {
+    "url": "https://github.com/util-linux/util-linux.git",
+    "commit": "9808d0c9b5f3e96027df5ba709c393b1483e9ad0",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

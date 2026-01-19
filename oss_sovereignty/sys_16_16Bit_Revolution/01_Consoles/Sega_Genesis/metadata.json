@@ -1,0 +1,13 @@
+{
+  "id": "sys_16_16Bit_Revolution.Sega_Genesis",
+  "name": "Sega_Genesis",
+  "category": "01_Consoles",
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL.",
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T03:19:14.077937",
+  "origin": {
+    "url": "https://github.com/ekeeke/Genesis-Plus-GX.git",
+    "commit": "unknown",
+    "policy": "monitor_only"
+  }
+}

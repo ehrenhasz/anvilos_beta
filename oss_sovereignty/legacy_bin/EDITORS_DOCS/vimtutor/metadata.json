@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T02:42:05.691732",
+  "origin": {
+    "url": "https://github.com/vim/vim.git",
+    "commit": "0b103d6a7c2dd6a858f02a0bc93c5d93efc303c7",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

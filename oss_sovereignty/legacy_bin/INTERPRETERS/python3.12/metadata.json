@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T02:41:36.890572",
+  "origin": {
+    "url": "https://github.com/python/cpython.git",
+    "commit": "78b1370de96bab5eee82b022a9e26e633a040e0b",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

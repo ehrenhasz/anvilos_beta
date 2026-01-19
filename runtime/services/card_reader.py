@@ -68,9 +68,9 @@ def main():
         queue = load_queue()
         modified = False
         
-        # Find next PAUSED card
+        # Find next PENDING or PAUSED card
         for card in queue:
-            if card.get("status") == "paused":
+            if card.get("status") in ["pending", "paused"]:
                 # Mark as processing
                 card["status"] = "processing"
                 card["started_at"] = datetime.now().isoformat()

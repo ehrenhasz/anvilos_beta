@@ -1,0 +1,16 @@
+SmalltalkCISpec {
+  #testing : {
+    #allTestCases : true,
+    #defaultTimeout : 10,
+    #hidePassingTests : true,
+    #exclude : {
+      #classes : [
+        #AllocationTest,
+        #DebuggerTests,
+        #LangEnvBugs,
+        #SqueakSSLTest,
+        #Win32VMTest
+      ]
+    }
+  }
+}

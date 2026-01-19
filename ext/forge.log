@@ -31,3 +31,1223 @@
 + echo '>> [1/6] POPULATING DEV TOOLCHAIN...'
 >> [1/6] POPULATING DEV TOOLCHAIN...
 + mkdir -p /mnt/expanded_memory/anvil_iso_gold/rootfs/usr/bin
+[2026-01-19 01:36:59] Card Reader Service Started (PID: 11954)
+[2026-01-19 01:36:59] PROCESSING CARD: sys_09_code_build - ANVIL: Create 'oss_sovereignty/sys_09_Anvil/anvil.build.sh'. Configure the build to use the static musl toolchain, disable shared libs, disable network, and freeze 'anvil.py' into the binary.
+[2026-01-19 01:37:01] RESULT: Processed (Manual/No-Op)
+[2026-01-19 01:37:01] PROCESSING CARD: sys_09_bootstrap - ANVIL: Execute 'anvil.build.sh' to produce the final 'anvil' binary. Verify it is a static executable and prints the correct version.
+[2026-01-19 01:37:03] RESULT: Processed (Manual/No-Op)
+[2026-01-19 01:37:53] PROCESSING CARD: sys_09_bootstrap_final - ANVIL: Execute 'anvil.build.sh' to produce the final 'anvil' binary. This is the first time the compiler is built by the system.
+[2026-01-19 01:37:55] EXECUTING: chmod +x oss_sovereignty/sys_09_Anvil/anvil.build.sh && ./oss_sovereignty/sys_09_Anvil/anvil.build.sh
+[2026-01-19 01:37:57] ERROR: FAILURE: make: pkg-config: No such file or directory
+make: pkg-config: No such file or directory
+make: pkg-config: No such file or directory
+make: pkg-config: No such file or directory
+/usr/bin/ld: build/py/qstr.o: in function `qstr_init':
+qstr.c:(.text.qstr_init+0x7): undefined reference to `mp_qstr_frozen_const_pool'
+collect2: error: ld returned 1 exit status
+make[1]: *** [../py/mkrules.mk:233: build/mpy-cross] Error 1
+make: *** [../../py/mkrules.mk:179: ../../mpy-cross/build/mpy-cross] Error 2
+[2026-01-19 01:39:20] PROCESSING CARD: sys_09_bootstrap_retry_1 - ANVIL: Retry bootstrap. Step 1: Build mpy-cross (host). Step 2: Build Anvil (static musl) with frozen modules.
+[2026-01-19 01:39:22] EXECUTING: ./oss_sovereignty/sys_09_Anvil/anvil.build.sh
+[2026-01-19 01:39:25] ERROR: FAILURE: make: pkg-config: No such file or directory
+make: pkg-config: No such file or directory
+make: pkg-config: No such file or directory
+make: pkg-config: No such file or directory
+modffi.c:40:10: fatal error: ffi.h: No such file or directory
+   40 | #include <ffi.h>
+      |          ^~~~~~~
+compilation terminated.
+make: *** [../../py/mkrules.mk:122: build-standard/genhdr/qstr.i.last] Error 1
+make: *** Deleting file 'build-standard/genhdr/qstr.i.last'
+[2026-01-19 01:39:55] PROCESSING CARD: sys_09_bootstrap_retry_2 - ANVIL: Retry bootstrap (Attempt 3). Disabled FFI and JNI to prevent external dependency requirements.
+[2026-01-19 01:39:57] EXECUTING: ./oss_sovereignty/sys_09_Anvil/anvil.build.sh
+[2026-01-19 01:40:01] ERROR: FAILURE: make: pkg-config: No such file or directory
+make: pkg-config: No such file or directory
+make: *** [../../py/mkrules.mk:215: build-standard/frozen_content.c] Error 1
+make: *** Waiting for unfinished jobs....
+[2026-01-19 01:50:29] PROCESSING CARD: dev_bigiron_logview - BIGIRON: Refactor 'proc' panel to stream raw TTY output from 'ext/forge.log' (Card Reader Service logs) instead of file watcher events.
+[2026-01-19 01:50:31] EXECUTING: python3 system/actions.sh update_bigiron
+[2026-01-19 01:50:31] ERROR: FAILURE: File "/home/aimeat/github/droppod/system/actions.sh", line 7
+    if [ ! -d "${TARGET_DIR}" ]; then
+         ^
+SyntaxError: invalid syntax
+[2026-01-19 01:59:42] PROCESSING CARD: sys_09_hello_world - ANVIL: Execute 'hello.py' using the sovereign Anvil runtime (static binary).
+[2026-01-19 01:59:44] EXECUTING: ./oss_sovereignty/sys_09_Anvil/build/anvil oss_sovereignty/sys_09_Anvil/hello.py
+[2026-01-19 01:59:44] RESULT: SUCCESS: >> HELLO WORLD FROM THE ANVIL
+[2026-01-19 02:09:16] PROCESSING CARD: sys_09_global_anvil_test - ANVIL: Verify global binary installation with a new hello world.
+[2026-01-19 02:09:18] EXECUTING: anvil -c "print('ANVIL GLOBAL: HELLO WORLD')"
+[2026-01-19 02:09:18] RESULT: SUCCESS: ANVIL GLOBAL: HELLO WORLD
+[2026-01-19 02:33:59] Card Reader Service Started (PID: 153160)
+[2026-01-19 02:33:59] PROCESSING CARD: sov_batch_003_dpkg - SOVEREIGNTY BATCH 3: Assimilate dpkg, dpkg-architecture, dpkg-buildapi, dpkg-buildflags, dpkg-buildpackage
+[2026-01-19 02:34:01] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-architecture https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-buildapi https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-buildflags https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-buildpackage https://git.dpkg.org/git/dpkg/dpkg.git
+[2026-01-19 02:34:49] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-architecture FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-architecture/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-architecture/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-buildapi FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-buildapi/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-buildapi/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-buildflags FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-buildflags/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-buildflags/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-buildpackage FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-buildpackage/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-buildpackage/metadata.json
+[2026-01-19 02:34:49] PROCESSING CARD: sov_batch_001_apt - SOVEREIGNTY BATCH 1: Assimilate apt, apt-cache, apt-cdrom, apt-config, apt-extracttemplates
+[2026-01-19 02:34:51] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt https://salsa.debian.org/apt-team/apt.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-cache https://salsa.debian.org/apt-team/apt.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-cdrom https://salsa.debian.org/apt-team/apt.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-config https://salsa.debian.org/apt-team/apt.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-extracttemplates https://salsa.debian.org/apt-team/apt.git
+[2026-01-19 02:34:59] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt FROM https://salsa.debian.org/apt-team/apt.git
+>> Cloning https://salsa.debian.org/apt-team/apt.git...
+EXEC: git clone --depth 1 https://salsa.debian.org/apt-team/apt.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-cache FROM https://salsa.debian.org/apt-team/apt.git
+>> Cloning https://salsa.debian.org/apt-team/apt.git...
+EXEC: git clone --depth 1 https://salsa.debian.org/apt-team/apt.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-cache/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-cache/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-cdrom FROM https://salsa.debian.org/apt-team/apt.git
+>> Cloning https://salsa.debian.org/apt-team/apt.git...
+EXEC: git clone --depth 1 https://salsa.debian.org/apt-team/apt.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-cdrom/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-cdrom/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-config FROM https://salsa.debian.org/apt-team/apt.git
+>> Cloning https://salsa.debian.org/apt-team/apt.git...
+EXEC: git clone --depth 1 https://salsa.debian.org/apt-team/apt.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-config/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-config/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-extracttemplates FROM https://salsa.debian.org/apt-team/apt.git
+>> Cloning https://salsa.debian.org/apt-team/apt.git...
+EXEC: git clone --depth 1 https://salsa.debian.org/apt-team/apt.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-extracttemplates/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-extracttemplates/metadata.json
+[2026-01-19 02:34:59] PROCESSING CARD: sov_batch_002_apt-ftparchive - SOVEREIGNTY BATCH 2: Assimilate apt-ftparchive, apt-get, apt-key, apt-mark, apt-sortpkgs
+[2026-01-19 02:35:01] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-ftparchive https://salsa.debian.org/apt-team/apt.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-get https://salsa.debian.org/apt-team/apt.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-key https://salsa.debian.org/apt-team/apt.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-mark https://salsa.debian.org/apt-team/apt.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-sortpkgs https://salsa.debian.org/apt-team/apt.git
+[2026-01-19 02:35:09] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-ftparchive FROM https://salsa.debian.org/apt-team/apt.git
+>> Cloning https://salsa.debian.org/apt-team/apt.git...
+EXEC: git clone --depth 1 https://salsa.debian.org/apt-team/apt.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-ftparchive/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-ftparchive/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-get FROM https://salsa.debian.org/apt-team/apt.git
+>> Cloning https://salsa.debian.org/apt-team/apt.git...
+EXEC: git clone --depth 1 https://salsa.debian.org/apt-team/apt.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-get/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-get/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-key FROM https://salsa.debian.org/apt-team/apt.git
+>> Cloning https://salsa.debian.org/apt-team/apt.git...
+EXEC: git clone --depth 1 https://salsa.debian.org/apt-team/apt.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-key/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-key/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-mark FROM https://salsa.debian.org/apt-team/apt.git
+>> Cloning https://salsa.debian.org/apt-team/apt.git...
+EXEC: git clone --depth 1 https://salsa.debian.org/apt-team/apt.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-mark/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-mark/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-sortpkgs FROM https://salsa.debian.org/apt-team/apt.git
+>> Cloning https://salsa.debian.org/apt-team/apt.git...
+EXEC: git clone --depth 1 https://salsa.debian.org/apt-team/apt.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-sortpkgs/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/apt-sortpkgs/metadata.json
+[2026-01-19 02:35:09] PROCESSING CARD: sov_batch_004_dpkg-buildtree - SOVEREIGNTY BATCH 4: Assimilate dpkg-buildtree, dpkg-checkbuilddeps, dpkg-deb, dpkg-distaddfile, dpkg-divert
+[2026-01-19 02:35:11] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-buildtree https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-checkbuilddeps https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-deb https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-distaddfile https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-divert https://git.dpkg.org/git/dpkg/dpkg.git
+[2026-01-19 02:35:56] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-buildtree FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-buildtree/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-buildtree/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-checkbuilddeps FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-checkbuilddeps/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-checkbuilddeps/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-deb FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-deb/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-deb/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-distaddfile FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-distaddfile/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-distaddfile/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-divert FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-divert/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-divert/metadata.json
+[2026-01-19 02:35:56] PROCESSING CARD: sov_batch_005_dpkg-genbuildinfo - SOVEREIGNTY BATCH 5: Assimilate dpkg-genbuildinfo, dpkg-genchanges, dpkg-gencontrol, dpkg-gensymbols, dpkg-maintscript-helper
+[2026-01-19 02:35:58] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-genbuildinfo https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-genchanges https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-gencontrol https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-gensymbols https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-maintscript-helper https://git.dpkg.org/git/dpkg/dpkg.git
+[2026-01-19 02:36:37] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-genbuildinfo FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-genbuildinfo/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-genbuildinfo/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-genchanges FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-genchanges/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-genchanges/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-gencontrol FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-gencontrol/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-gencontrol/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-gensymbols FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-gensymbols/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-gensymbols/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-maintscript-helper FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-maintscript-helper/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-maintscript-helper/metadata.json
+[2026-01-19 02:36:37] PROCESSING CARD: sov_batch_006_dpkg-mergechangelogs - SOVEREIGNTY BATCH 6: Assimilate dpkg-mergechangelogs, dpkg-name, dpkg-parsechangelog, dpkg-preconfigure, dpkg-query
+[2026-01-19 02:36:39] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-mergechangelogs https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-name https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-parsechangelog https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-preconfigure https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-query https://git.dpkg.org/git/dpkg/dpkg.git
+[2026-01-19 02:37:33] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-mergechangelogs FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-mergechangelogs/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-mergechangelogs/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-name FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-name/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-name/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-parsechangelog FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-parsechangelog/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-parsechangelog/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-preconfigure FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-preconfigure/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-preconfigure/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-query FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-query/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-query/metadata.json
+[2026-01-19 02:37:33] PROCESSING CARD: sov_batch_007_dpkg-realpath - SOVEREIGNTY BATCH 7: Assimilate dpkg-realpath, dpkg-reconfigure, dpkg-scanpackages, dpkg-scansources, dpkg-shlibdeps
+[2026-01-19 02:37:35] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-realpath https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-reconfigure https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-scanpackages https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-scansources https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-shlibdeps https://git.dpkg.org/git/dpkg/dpkg.git
+[2026-01-19 02:38:35] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-realpath FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-realpath/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-realpath/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-reconfigure FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-reconfigure/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-reconfigure/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-scanpackages FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-scanpackages/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-scanpackages/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-scansources FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-scansources/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-scansources/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-shlibdeps FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-shlibdeps/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-shlibdeps/metadata.json
+[2026-01-19 02:38:35] PROCESSING CARD: sov_batch_008_dpkg-source - SOVEREIGNTY BATCH 8: Assimilate dpkg-source, dpkg-split, dpkg-statoverride, dpkg-trigger, dpkg-vendor
+[2026-01-19 02:38:37] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-source https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-split https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-statoverride https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-trigger https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-vendor https://git.dpkg.org/git/dpkg/dpkg.git
+[2026-01-19 02:39:24] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-source FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-source/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-source/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-split FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-split/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-split/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-statoverride FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-statoverride/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-statoverride/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-trigger FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-trigger/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-trigger/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-vendor FROM https://git.dpkg.org/git/dpkg/dpkg.git
+>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...
+EXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-vendor/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-vendor/metadata.json
+[2026-01-19 02:39:24] PROCESSING CARD: sov_batch_009_info - SOVEREIGNTY BATCH 9: Assimilate info, less, make, man, more
+[2026-01-19 02:39:26] EXECUTING: echo 'SKIPPING info - NO URL FOUND' && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/EDITORS_DOCS/less https://github.com/gwsw/less.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/COMPILERS_BUILD/make https://git.savannah.gnu.org/git/make.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/EDITORS_DOCS/man https://git.savannah.nongnu.org/git/man-db.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/EDITORS_DOCS/more https://github.com/util-linux/util-linux.git
+[2026-01-19 02:39:32] RESULT: SUCCESS: SKIPPING info - NO URL FOUND
+>> ASSIMILATING: oss_sovereignty/legacy_bin/EDITORS_DOCS/less FROM https://github.com/gwsw/less.git
+>> Cloning https://github.com/gwsw/less.git...
+EXEC: git clone --depth 1 https://github.com/gwsw/less.git oss_sovereignty/legacy_bin/EDITORS_DOCS/less/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/EDITORS_DOCS/less/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/COMPILERS_BUILD/make FROM https://git.savannah.gnu.org/git/make.git
+>> Cloning https://git.savannah.gnu.org/git/make.git...
+EXEC: git clone --depth 1 https://git.savannah.gnu.org/git/make.git oss_sovereignty/legacy_bin/COMPILERS_BUILD/make/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/COMPILERS_BUILD/make/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/EDITORS_DOCS/man FROM https://git.savannah.nongnu.org/git/man-db.git
+>> Cloning https://git.savannah.nongnu.org/git/man-db.git...
+EXEC: git clone --depth 1 https://git.savannah.nongnu.org/git/man-db.git oss_sovereignty/legacy_bin/EDITORS_DOCS/man/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/EDITORS_DOCS/man/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/EDITORS_DOCS/more FROM https://github.com/util-linux/util-linux.git
+>> Cloning https://github.com/util-linux/util-linux.git...
+EXEC: git clone --depth 1 https://github.com/util-linux/util-linux.git oss_sovereignty/legacy_bin/EDITORS_DOCS/more/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/EDITORS_DOCS/more/metadata.json
+[2026-01-19 02:39:32] PROCESSING CARD: sov_batch_010_nano - SOVEREIGNTY BATCH 10: Assimilate nano, node, nodegc-bpfcc, nodestat-bpfcc, perl
+[2026-01-19 02:39:34] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/EDITORS_DOCS/nano https://git.savannah.gnu.org/git/nano.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/node https://github.com/nodejs/node.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/nodegc-bpfcc https://github.com/nodejs/node.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/nodestat-bpfcc https://github.com/nodejs/node.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/perl https://github.com/Perl/perl5.git
+[2026-01-19 02:40:41] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/legacy_bin/EDITORS_DOCS/nano FROM https://git.savannah.gnu.org/git/nano.git
+>> Cloning https://git.savannah.gnu.org/git/nano.git...
+EXEC: git clone --depth 1 https://git.savannah.gnu.org/git/nano.git oss_sovereignty/legacy_bin/EDITORS_DOCS/nano/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/EDITORS_DOCS/nano/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/node FROM https://github.com/nodejs/node.git
+>> Cloning https://github.com/nodejs/node.git...
+EXEC: git clone --depth 1 https://github.com/nodejs/node.git oss_sovereignty/legacy_bin/INTERPRETERS/node/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/node/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/nodegc-bpfcc FROM https://github.com/nodejs/node.git
+>> Cloning https://github.com/nodejs/node.git...
+EXEC: git clone --depth 1 https://github.com/nodejs/node.git oss_sovereignty/legacy_bin/INTERPRETERS/nodegc-bpfcc/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/nodegc-bpfcc/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/nodestat-bpfcc FROM https://github.com/nodejs/node.git
+>> Cloning https://github.com/nodejs/node.git...
+EXEC: git clone --depth 1 https://github.com/nodejs/node.git oss_sovereignty/legacy_bin/INTERPRETERS/nodestat-bpfcc/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/nodestat-bpfcc/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/perl FROM https://github.com/Perl/perl5.git
+>> Cloning https://github.com/Perl/perl5.git...
+EXEC: git clone --depth 1 https://github.com/Perl/perl5.git oss_sovereignty/legacy_bin/INTERPRETERS/perl/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/perl/metadata.json
+[2026-01-19 02:40:41] PROCESSING CARD: sov_batch_011_perl5.38-x86_64-linux-gnu - SOVEREIGNTY BATCH 11: Assimilate perl5.38-x86_64-linux-gnu, perl5.38.2, perlbug, perlcalls-bpfcc, perldoc
+[2026-01-19 02:40:43] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/perl5.38-x86_64-linux-gnu https://github.com/Perl/perl5.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/perl5.38.2 https://github.com/Perl/perl5.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/perlbug https://github.com/Perl/perl5.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/perlcalls-bpfcc https://github.com/Perl/perl5.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/perldoc https://github.com/Perl/perl5.git
+[2026-01-19 02:41:06] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/perl5.38-x86_64-linux-gnu FROM https://github.com/Perl/perl5.git
+>> Cloning https://github.com/Perl/perl5.git...
+EXEC: git clone --depth 1 https://github.com/Perl/perl5.git oss_sovereignty/legacy_bin/INTERPRETERS/perl5.38-x86_64-linux-gnu/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/perl5.38-x86_64-linux-gnu/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/perl5.38.2 FROM https://github.com/Perl/perl5.git
+>> Cloning https://github.com/Perl/perl5.git...
+EXEC: git clone --depth 1 https://github.com/Perl/perl5.git oss_sovereignty/legacy_bin/INTERPRETERS/perl5.38.2/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/perl5.38.2/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/perlbug FROM https://github.com/Perl/perl5.git
+>> Cloning https://github.com/Perl/perl5.git...
+EXEC: git clone --depth 1 https://github.com/Perl/perl5.git oss_sovereignty/legacy_bin/INTERPRETERS/perlbug/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/perlbug/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/perlcalls-bpfcc FROM https://github.com/Perl/perl5.git
+>> Cloning https://github.com/Perl/perl5.git...
+EXEC: git clone --depth 1 https://github.com/Perl/perl5.git oss_sovereignty/legacy_bin/INTERPRETERS/perlcalls-bpfcc/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/perlcalls-bpfcc/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/perldoc FROM https://github.com/Perl/perl5.git
+>> Cloning https://github.com/Perl/perl5.git...
+EXEC: git clone --depth 1 https://github.com/Perl/perl5.git oss_sovereignty/legacy_bin/INTERPRETERS/perldoc/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/perldoc/metadata.json
+[2026-01-19 02:41:06] PROCESSING CARD: sov_batch_012_perlflow-bpfcc - SOVEREIGNTY BATCH 12: Assimilate perlflow-bpfcc, perlivp, perlstat-bpfcc, perlthanks, phpcalls-bpfcc
+[2026-01-19 02:41:09] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/perlflow-bpfcc https://github.com/Perl/perl5.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/perlivp https://github.com/Perl/perl5.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/perlstat-bpfcc https://github.com/Perl/perl5.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/perlthanks https://github.com/Perl/perl5.git && echo 'SKIPPING phpcalls-bpfcc - NO URL FOUND'
+[2026-01-19 02:41:28] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/perlflow-bpfcc FROM https://github.com/Perl/perl5.git
+>> Cloning https://github.com/Perl/perl5.git...
+EXEC: git clone --depth 1 https://github.com/Perl/perl5.git oss_sovereignty/legacy_bin/INTERPRETERS/perlflow-bpfcc/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/perlflow-bpfcc/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/perlivp FROM https://github.com/Perl/perl5.git
+>> Cloning https://github.com/Perl/perl5.git...
+EXEC: git clone --depth 1 https://github.com/Perl/perl5.git oss_sovereignty/legacy_bin/INTERPRETERS/perlivp/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/perlivp/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/perlstat-bpfcc FROM https://github.com/Perl/perl5.git
+>> Cloning https://github.com/Perl/perl5.git...
+EXEC: git clone --depth 1 https://github.com/Perl/perl5.git oss_sovereignty/legacy_bin/INTERPRETERS/perlstat-bpfcc/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/perlstat-bpfcc/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/perlthanks FROM https://github.com/Perl/perl5.git
+>> Cloning https://github.com/Perl/perl5.git...
+EXEC: git clone --depth 1 https://github.com/Perl/perl5.git oss_sovereignty/legacy_bin/INTERPRETERS/perlthanks/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/perlthanks/metadata.json
+SKIPPING phpcalls-bpfcc - NO URL FOUND
+[2026-01-19 02:41:28] PROCESSING CARD: sov_batch_013_phpflow-bpfcc - SOVEREIGNTY BATCH 13: Assimilate phpflow-bpfcc, phpstat-bpfcc, python3.12, rsync, rubycalls-bpfcc
+[2026-01-19 02:41:30] EXECUTING: echo 'SKIPPING phpflow-bpfcc - NO URL FOUND' && echo 'SKIPPING phpstat-bpfcc - NO URL FOUND' && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/python3.12 https://github.com/python/cpython.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/NETWORK_CLIENTS/rsync https://github.com/WayneD/rsync.git && echo 'SKIPPING rubycalls-bpfcc - NO URL FOUND'
+[2026-01-19 02:41:37] RESULT: SUCCESS: SKIPPING phpflow-bpfcc - NO URL FOUND
+SKIPPING phpstat-bpfcc - NO URL FOUND
+>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/python3.12 FROM https://github.com/python/cpython.git
+>> Cloning https://github.com/python/cpython.git...
+EXEC: git clone --depth 1 https://github.com/python/cpython.git oss_sovereignty/legacy_bin/INTERPRETERS/python3.12/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/python3.12/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/NETWORK_CLIENTS/rsync FROM https://github.com/WayneD/rsync.git
+>> Cloning https://github.com/WayneD/rsync.git...
+EXEC: git clone --depth 1 https://github.com/WayneD/rsync.git oss_sovereignty/legacy_bin/NETWORK_CLIENTS/rsync/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/NETWORK_CLIENTS/rsync/metadata.json
+SKIPPING rubycalls-bpfcc - NO URL FOUND
+[2026-01-19 02:41:37] PROCESSING CARD: sov_batch_014_rubyflow-bpfcc - SOVEREIGNTY BATCH 14: Assimilate rubyflow-bpfcc, rubygc-bpfcc, rubyobjnew-bpfcc, rubystat-bpfcc, scp
+[2026-01-19 02:41:39] EXECUTING: echo 'SKIPPING rubyflow-bpfcc - NO URL FOUND' && echo 'SKIPPING rubygc-bpfcc - NO URL FOUND' && echo 'SKIPPING rubyobjnew-bpfcc - NO URL FOUND' && echo 'SKIPPING rubystat-bpfcc - NO URL FOUND' && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/NETWORK_CLIENTS/scp https://github.com/openssh/openssh-portable.git
+[2026-01-19 02:41:40] RESULT: SUCCESS: SKIPPING rubyflow-bpfcc - NO URL FOUND
+SKIPPING rubygc-bpfcc - NO URL FOUND
+SKIPPING rubyobjnew-bpfcc - NO URL FOUND
+SKIPPING rubystat-bpfcc - NO URL FOUND
+>> ASSIMILATING: oss_sovereignty/legacy_bin/NETWORK_CLIENTS/scp FROM https://github.com/openssh/openssh-portable.git
+>> Cloning https://github.com/openssh/openssh-portable.git...
+EXEC: git clone --depth 1 https://github.com/openssh/openssh-portable.git oss_sovereignty/legacy_bin/NETWORK_CLIENTS/scp/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/NETWORK_CLIENTS/scp/metadata.json
+[2026-01-19 02:41:40] PROCESSING CARD: sov_batch_015_sftp - SOVEREIGNTY BATCH 15: Assimilate sftp, snap, snapfuse, ssh, vim.basic
+[2026-01-19 02:41:42] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/NETWORK_CLIENTS/sftp https://github.com/openssh/openssh-portable.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/snap https://github.com/snapcore/snapd.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/snapfuse https://github.com/snapcore/snapd.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/NETWORK_CLIENTS/ssh https://github.com/openssh/openssh-portable.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/EDITORS_DOCS/vim.basic https://github.com/vim/vim.git
+[2026-01-19 02:41:54] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/legacy_bin/NETWORK_CLIENTS/sftp FROM https://github.com/openssh/openssh-portable.git
+>> Cloning https://github.com/openssh/openssh-portable.git...
+EXEC: git clone --depth 1 https://github.com/openssh/openssh-portable.git oss_sovereignty/legacy_bin/NETWORK_CLIENTS/sftp/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/NETWORK_CLIENTS/sftp/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/snap FROM https://github.com/snapcore/snapd.git
+>> Cloning https://github.com/snapcore/snapd.git...
+EXEC: git clone --depth 1 https://github.com/snapcore/snapd.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/snap/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/snap/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/snapfuse FROM https://github.com/snapcore/snapd.git
+>> Cloning https://github.com/snapcore/snapd.git...
+EXEC: git clone --depth 1 https://github.com/snapcore/snapd.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/snapfuse/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/snapfuse/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/NETWORK_CLIENTS/ssh FROM https://github.com/openssh/openssh-portable.git
+>> Cloning https://github.com/openssh/openssh-portable.git...
+EXEC: git clone --depth 1 https://github.com/openssh/openssh-portable.git oss_sovereignty/legacy_bin/NETWORK_CLIENTS/ssh/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/NETWORK_CLIENTS/ssh/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/EDITORS_DOCS/vim.basic FROM https://github.com/vim/vim.git
+>> Cloning https://github.com/vim/vim.git...
+EXEC: git clone --depth 1 https://github.com/vim/vim.git oss_sovereignty/legacy_bin/EDITORS_DOCS/vim.basic/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/EDITORS_DOCS/vim.basic/metadata.json
+[2026-01-19 02:41:54] PROCESSING CARD: sov_batch_016_vim.tiny - SOVEREIGNTY BATCH 16: Assimilate vim.tiny, vimtutor, wget
+[2026-01-19 02:41:56] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/EDITORS_DOCS/vim.tiny https://github.com/vim/vim.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/EDITORS_DOCS/vimtutor https://github.com/vim/vim.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/NETWORK_CLIENTS/wget https://git.savannah.gnu.org/git/wget.git
+[2026-01-19 02:42:07] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/legacy_bin/EDITORS_DOCS/vim.tiny FROM https://github.com/vim/vim.git
+>> Cloning https://github.com/vim/vim.git...
+EXEC: git clone --depth 1 https://github.com/vim/vim.git oss_sovereignty/legacy_bin/EDITORS_DOCS/vim.tiny/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/EDITORS_DOCS/vim.tiny/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/EDITORS_DOCS/vimtutor FROM https://github.com/vim/vim.git
+>> Cloning https://github.com/vim/vim.git...
+EXEC: git clone --depth 1 https://github.com/vim/vim.git oss_sovereignty/legacy_bin/EDITORS_DOCS/vimtutor/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/EDITORS_DOCS/vimtutor/metadata.json
+>> ASSIMILATING: oss_sovereignty/legacy_bin/NETWORK_CLIENTS/wget FROM https://git.savannah.gnu.org/git/wget.git
+>> Cloning https://git.savannah.gnu.org/git/wget.git...
+EXEC: git clone --depth 1 https://git.savannah.gnu.org/git/wget.git oss_sovereignty/legacy_bin/NETWORK_CLIENTS/wget/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/NETWORK_CLIENTS/wget/metadata.json
+[2026-01-19 02:45:21] PROCESSING CARD: sov_world_batch_001 - WORLD ASSIMILATION BATCH 1: ADA, AIX, ALGOL, AMIGA_OS, AMQP
+[2026-01-19 02:45:23] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/01_Ancient/ADA https://github.com/gcc-mirror/gcc.git && echo 'SKIPPING AIX - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/01_Ancient/ALGOL https://github.com/maroon/algol68g.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/06_Microcomputer/AMIGA_OS https://github.com/aros-development-team/aros.git && echo 'SKIPPING AMQP - NO MAPPED REPO'
+[2026-01-19 02:45:23] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_12_Languages/01_Ancient/ADA FROM https://github.com/gcc-mirror/gcc.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/01_Ancient/ADA/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/01_Ancient/ADA/metadata.json
+SKIPPING AIX - NO MAPPED REPO
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/01_Ancient/ALGOL FROM https://github.com/maroon/algol68g.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/01_Ancient/ALGOL/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/01_Ancient/ALGOL/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_13_Platforms/06_Microcomputer/AMIGA_OS FROM https://github.com/aros-development-team/aros.git
+!! Source dir exists at oss_sovereignty/sys_13_Platforms/06_Microcomputer/AMIGA_OS/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/06_Microcomputer/AMIGA_OS/metadata.json
+SKIPPING AMQP - NO MAPPED REPO
+[2026-01-19 02:45:23] PROCESSING CARD: sov_world_batch_002 - WORLD ASSIMILATION BATCH 2: ANDROID, ANSI, APPLETALK, ARP, ASM_6502
+[2026-01-19 02:45:25] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/08_Mobile/ANDROID https://github.com/aosp-mirror/platform_manifest.git && echo 'SKIPPING ANSI - NO MAPPED REPO' && echo 'SKIPPING APPLETALK - NO MAPPED REPO' && echo 'SKIPPING ARP - NO MAPPED REPO' && echo 'SKIPPING ASM_6502 - NO MAPPED REPO'
+[2026-01-19 02:45:25] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_13_Platforms/08_Mobile/ANDROID FROM https://github.com/aosp-mirror/platform_manifest.git
+!! Source dir exists at oss_sovereignty/sys_13_Platforms/08_Mobile/ANDROID/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/08_Mobile/ANDROID/metadata.json
+SKIPPING ANSI - NO MAPPED REPO
+SKIPPING APPLETALK - NO MAPPED REPO
+SKIPPING ARP - NO MAPPED REPO
+SKIPPING ASM_6502 - NO MAPPED REPO
+[2026-01-19 02:45:25] PROCESSING CARD: sov_world_batch_003 - WORLD ASSIMILATION BATCH 3: ASM_ARM, ASM_RISCV, ASM_Z80, ASM_x86, ASM_zARCH
+[2026-01-19 02:45:27] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/02_Assembly/ASM_ARM https://github.com/ARM-software/arm-trusted-firmware.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/02_Assembly/ASM_RISCV https://github.com/riscv/riscv-isa-sim.git && echo 'SKIPPING ASM_Z80 - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/02_Assembly/ASM_x86 https://github.com/nasm/nasm.git && echo 'SKIPPING ASM_zARCH - NO MAPPED REPO'
+[2026-01-19 02:45:27] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_12_Languages/02_Assembly/ASM_ARM FROM https://github.com/ARM-software/arm-trusted-firmware.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/02_Assembly/ASM_ARM/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/02_Assembly/ASM_ARM/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/02_Assembly/ASM_RISCV FROM https://github.com/riscv/riscv-isa-sim.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/02_Assembly/ASM_RISCV/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/02_Assembly/ASM_RISCV/metadata.json
+SKIPPING ASM_Z80 - NO MAPPED REPO
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/02_Assembly/ASM_x86 FROM https://github.com/nasm/nasm.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/02_Assembly/ASM_x86/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/02_Assembly/ASM_x86/metadata.json
+SKIPPING ASM_zARCH - NO MAPPED REPO
+[2026-01-19 02:45:27] PROCESSING CARD: sov_world_batch_004 - WORLD ASSIMILATION BATCH 4: BASH, BASIC, BEFUNGE, BLACKBERRY, BRAINFUCK
+[2026-01-19 02:45:29] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/05_Scripting/BASH https://git.savannah.gnu.org/git/bash.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/01_Ancient/BASIC https://github.com/chip-basic/chip-basic.git && echo 'SKIPPING BEFUNGE - NO MAPPED REPO' && echo 'SKIPPING BLACKBERRY - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/08_Esoteric/BRAINFUCK https://github.com/brain-lang/brainfuck.git
+[2026-01-19 02:45:29] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_12_Languages/05_Scripting/BASH FROM https://git.savannah.gnu.org/git/bash.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/05_Scripting/BASH/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/05_Scripting/BASH/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/01_Ancient/BASIC FROM https://github.com/chip-basic/chip-basic.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/01_Ancient/BASIC/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/01_Ancient/BASIC/metadata.json
+SKIPPING BEFUNGE - NO MAPPED REPO
+SKIPPING BLACKBERRY - NO MAPPED REPO
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/08_Esoteric/BRAINFUCK FROM https://github.com/brain-lang/brainfuck.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/08_Esoteric/BRAINFUCK/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/08_Esoteric/BRAINFUCK/metadata.json
+[2026-01-19 02:45:29] PROCESSING CARD: sov_world_batch_005 - WORLD ASSIMILATION BATCH 5: C, CAN, CLOJURE, COBOL, CORBA
+[2026-01-19 02:45:31] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/03_System/C https://github.com/gcc-mirror/gcc.git && echo 'SKIPPING CAN - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/06_Functional/CLOJURE https://github.com/clojure/clojure.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/01_Ancient/COBOL https://github.com/gnucobol/gnucobol.git && echo 'SKIPPING CORBA - NO MAPPED REPO'
+[2026-01-19 02:45:31] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_12_Languages/03_System/C FROM https://github.com/gcc-mirror/gcc.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/03_System/C/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/03_System/C/metadata.json
+SKIPPING CAN - NO MAPPED REPO
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/06_Functional/CLOJURE FROM https://github.com/clojure/clojure.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/06_Functional/CLOJURE/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/06_Functional/CLOJURE/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/01_Ancient/COBOL FROM https://github.com/gnucobol/gnucobol.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/01_Ancient/COBOL/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/01_Ancient/COBOL/metadata.json
+SKIPPING CORBA - NO MAPPED REPO
+[2026-01-19 02:45:31] PROCESSING CARD: sov_world_batch_006 - WORLD ASSIMILATION BATCH 6: CPP, C_SHARP, D, DART, DECNET
+[2026-01-19 02:45:33] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/03_System/CPP https://github.com/gcc-mirror/gcc.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/04_Managed/C_SHARP https://github.com/dotnet/roslyn.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/03_System/D https://github.com/dlang/dmd.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/04_Managed/DART https://github.com/dart-lang/sdk.git && echo 'SKIPPING DECNET - NO MAPPED REPO'
+[2026-01-19 02:45:33] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_12_Languages/03_System/CPP FROM https://github.com/gcc-mirror/gcc.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/03_System/CPP/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/03_System/CPP/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/04_Managed/C_SHARP FROM https://github.com/dotnet/roslyn.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/04_Managed/C_SHARP/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/04_Managed/C_SHARP/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/03_System/D FROM https://github.com/dlang/dmd.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/03_System/D/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/03_System/D/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/04_Managed/DART FROM https://github.com/dart-lang/sdk.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/04_Managed/DART/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/04_Managed/DART/metadata.json
+SKIPPING DECNET - NO MAPPED REPO
+[2026-01-19 02:45:33] PROCESSING CARD: sov_world_batch_007 - WORLD ASSIMILATION BATCH 7: DHCP, DNS, DOS, DRAGONFLY, ELIXIR
+[2026-01-19 02:45:35] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/02_Network_Stack/DHCP https://github.com/isc-projects/kea.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/02_Network_Stack/DNS https://github.com/isc-projects/bind9.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/06_Microcomputer/DOS https://github.com/microsoft/MS-DOS.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/05_Unix_BSD/DRAGONFLY https://github.com/DragonFlyBSD/DragonFlyBSD.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/06_Functional/ELIXIR https://github.com/elixir-lang/elixir.git
+[2026-01-19 02:45:36] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_14_Accessors/02_Network_Stack/DHCP FROM https://github.com/isc-projects/kea.git
+!! Source dir exists at oss_sovereignty/sys_14_Accessors/02_Network_Stack/DHCP/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_14_Accessors/02_Network_Stack/DHCP/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_14_Accessors/02_Network_Stack/DNS FROM https://github.com/isc-projects/bind9.git
+!! Source dir exists at oss_sovereignty/sys_14_Accessors/02_Network_Stack/DNS/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_14_Accessors/02_Network_Stack/DNS/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_13_Platforms/06_Microcomputer/DOS FROM https://github.com/microsoft/MS-DOS.git
+!! Source dir exists at oss_sovereignty/sys_13_Platforms/06_Microcomputer/DOS/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/06_Microcomputer/DOS/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_13_Platforms/05_Unix_BSD/DRAGONFLY FROM https://github.com/DragonFlyBSD/DragonFlyBSD.git
+!! Source dir exists at oss_sovereignty/sys_13_Platforms/05_Unix_BSD/DRAGONFLY/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/05_Unix_BSD/DRAGONFLY/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/06_Functional/ELIXIR FROM https://github.com/elixir-lang/elixir.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/06_Functional/ELIXIR/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/06_Functional/ELIXIR/metadata.json
+[2026-01-19 02:45:36] PROCESSING CARD: sov_world_batch_008 - WORLD ASSIMILATION BATCH 8: ELM, ERLANG, FORTH, FORTRAN, FRAME_RELAY
+[2026-01-19 02:45:38] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/06_Functional/ELM https://github.com/elm/compiler.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/06_Functional/ERLANG https://github.com/erlang/otp.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/03_System/FORTH https://github.com/ForthHub/gforth.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/01_Ancient/FORTRAN https://github.com/gcc-mirror/gcc.git && echo 'SKIPPING FRAME_RELAY - NO MAPPED REPO'
+[2026-01-19 02:45:38] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_12_Languages/06_Functional/ELM FROM https://github.com/elm/compiler.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/06_Functional/ELM/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/06_Functional/ELM/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/06_Functional/ERLANG FROM https://github.com/erlang/otp.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/06_Functional/ERLANG/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/06_Functional/ERLANG/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/03_System/FORTH FROM https://github.com/ForthHub/gforth.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/03_System/FORTH/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/03_System/FORTH/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/01_Ancient/FORTRAN FROM https://github.com/gcc-mirror/gcc.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/01_Ancient/FORTRAN/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/01_Ancient/FORTRAN/metadata.json
+SKIPPING FRAME_RELAY - NO MAPPED REPO
+[2026-01-19 02:45:38] PROCESSING CARD: sov_world_batch_009 - WORLD ASSIMILATION BATCH 9: FREEBSD, FREERTOS, F_SHARP, GO, GPIB
+[2026-01-19 02:45:40] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/05_Unix_BSD/FREEBSD https://github.com/freebsd/freebsd-src.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/07_Embedded/FREERTOS https://github.com/FreeRTOS/FreeRTOS-Kernel.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/06_Functional/F_SHARP https://github.com/dotnet/fsharp.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/03_System/GO https://github.com/golang/go.git && echo 'SKIPPING GPIB - NO MAPPED REPO'
+[2026-01-19 02:45:40] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_13_Platforms/05_Unix_BSD/FREEBSD FROM https://github.com/freebsd/freebsd-src.git
+!! Source dir exists at oss_sovereignty/sys_13_Platforms/05_Unix_BSD/FREEBSD/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/05_Unix_BSD/FREEBSD/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_13_Platforms/07_Embedded/FREERTOS FROM https://github.com/FreeRTOS/FreeRTOS-Kernel.git
+!! Source dir exists at oss_sovereignty/sys_13_Platforms/07_Embedded/FREERTOS/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/07_Embedded/FREERTOS/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/06_Functional/F_SHARP FROM https://github.com/dotnet/fsharp.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/06_Functional/F_SHARP/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/06_Functional/F_SHARP/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/03_System/GO FROM https://github.com/golang/go.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/03_System/GO/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/03_System/GO/metadata.json
+SKIPPING GPIB - NO MAPPED REPO
+[2026-01-19 02:45:40] PROCESSING CARD: sov_world_batch_010 - WORLD ASSIMILATION BATCH 10: GRAPHQL, GROOVY, GRPC, HASKELL, HP_UX
+[2026-01-19 02:45:42] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/GRAPHQL https://github.com/graphql/graphql-js.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/04_Managed/GROOVY https://github.com/apache/groovy.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/GRPC https://github.com/grpc/grpc.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/06_Functional/HASKELL https://github.com/ghc/ghc.git && echo 'SKIPPING HP_UX - NO MAPPED REPO'
+[2026-01-19 02:45:42] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/GRAPHQL FROM https://github.com/graphql/graphql-js.git
+!! Source dir exists at oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/GRAPHQL/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/GRAPHQL/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/04_Managed/GROOVY FROM https://github.com/apache/groovy.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/04_Managed/GROOVY/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/04_Managed/GROOVY/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/GRPC FROM https://github.com/grpc/grpc.git
+!! Source dir exists at oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/GRPC/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/GRPC/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/06_Functional/HASKELL FROM https://github.com/ghc/ghc.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/06_Functional/HASKELL/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/06_Functional/HASKELL/metadata.json
+SKIPPING HP_UX - NO MAPPED REPO
+[2026-01-19 02:45:42] PROCESSING CARD: sov_world_batch_011 - WORLD ASSIMILATION BATCH 11: I2C, ICMP, IGMP, IOS, IPX_SPX
+[2026-01-19 02:45:44] EXECUTING: echo 'SKIPPING I2C - NO MAPPED REPO' && echo 'SKIPPING ICMP - NO MAPPED REPO' && echo 'SKIPPING IGMP - NO MAPPED REPO' && echo 'SKIPPING IOS - NO MAPPED REPO' && echo 'SKIPPING IPX_SPX - NO MAPPED REPO'
+[2026-01-19 02:45:44] RESULT: SUCCESS: SKIPPING I2C - NO MAPPED REPO
+SKIPPING ICMP - NO MAPPED REPO
+SKIPPING IGMP - NO MAPPED REPO
+SKIPPING IOS - NO MAPPED REPO
+SKIPPING IPX_SPX - NO MAPPED REPO
+[2026-01-19 02:45:44] PROCESSING CARD: sov_world_batch_012 - WORLD ASSIMILATION BATCH 12: IRIX, JAVA, JAVASCRIPT, JULIA, KAFKA
+[2026-01-19 02:45:46] EXECUTING: echo 'SKIPPING IRIX - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/04_Managed/JAVA https://github.com/openjdk/jdk.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/05_Scripting/JAVASCRIPT https://github.com/v8/v8.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/07_Data/JULIA https://github.com/JuliaLang/julia.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/KAFKA https://github.com/apache/kafka.git
+[2026-01-19 02:45:46] RESULT: SUCCESS: SKIPPING IRIX - NO MAPPED REPO
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/04_Managed/JAVA FROM https://github.com/openjdk/jdk.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/04_Managed/JAVA/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/04_Managed/JAVA/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/05_Scripting/JAVASCRIPT FROM https://github.com/v8/v8.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/05_Scripting/JAVASCRIPT/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/05_Scripting/JAVASCRIPT/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/07_Data/JULIA FROM https://github.com/JuliaLang/julia.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/07_Data/JULIA/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/07_Data/JULIA/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/KAFKA FROM https://github.com/apache/kafka.git
+!! Source dir exists at oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/KAFKA/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/KAFKA/metadata.json
+[2026-01-19 02:45:46] PROCESSING CARD: sov_world_batch_013 - WORLD ASSIMILATION BATCH 13: KOTLIN, LISP, LUA, MALBOLGE, MATLAB
+[2026-01-19 02:45:48] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/04_Managed/KOTLIN https://github.com/JetBrains/kotlin.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/01_Ancient/LISP https://github.com/sbcl/sbcl.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/05_Scripting/LUA https://github.com/lua/lua.git && echo 'SKIPPING MALBOLGE - NO MAPPED REPO' && echo 'SKIPPING MATLAB - NO MAPPED REPO'
+[2026-01-19 02:45:48] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_12_Languages/04_Managed/KOTLIN FROM https://github.com/JetBrains/kotlin.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/04_Managed/KOTLIN/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/04_Managed/KOTLIN/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/01_Ancient/LISP FROM https://github.com/sbcl/sbcl.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/01_Ancient/LISP/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/01_Ancient/LISP/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/05_Scripting/LUA FROM https://github.com/lua/lua.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/05_Scripting/LUA/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/05_Scripting/LUA/metadata.json
+SKIPPING MALBOLGE - NO MAPPED REPO
+SKIPPING MATLAB - NO MAPPED REPO
+[2026-01-19 02:45:48] PROCESSING CARD: sov_world_batch_014 - WORLD ASSIMILATION BATCH 14: MCP, MQTT, NETBSD, NIM, OCAML
+[2026-01-19 02:45:50] EXECUTING: echo 'SKIPPING MCP - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/MQTT https://github.com/eclipse/mosquitto.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/05_Unix_BSD/NETBSD https://github.com/NetBSD/src.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/03_System/NIM https://github.com/nim-lang/Nim.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/06_Functional/OCAML https://github.com/ocaml/ocaml.git
+[2026-01-19 02:45:50] RESULT: SUCCESS: SKIPPING MCP - NO MAPPED REPO
+>> ASSIMILATING: oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/MQTT FROM https://github.com/eclipse/mosquitto.git
+!! Source dir exists at oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/MQTT/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/MQTT/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_13_Platforms/05_Unix_BSD/NETBSD FROM https://github.com/NetBSD/src.git
+!! Source dir exists at oss_sovereignty/sys_13_Platforms/05_Unix_BSD/NETBSD/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/05_Unix_BSD/NETBSD/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/03_System/NIM FROM https://github.com/nim-lang/Nim.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/03_System/NIM/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/03_System/NIM/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/06_Functional/OCAML FROM https://github.com/ocaml/ocaml.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/06_Functional/OCAML/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/06_Functional/OCAML/metadata.json
+[2026-01-19 02:45:50] PROCESSING CARD: sov_world_batch_015 - WORLD ASSIMILATION BATCH 15: ODIN, OPENBSD, OS_2, OS_2200, OS_400
+[2026-01-19 02:45:52] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/03_System/ODIN https://github.com/odin-lang/Odin.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/05_Unix_BSD/OPENBSD https://github.com/openbsd/src.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/06_Microcomputer/OS_2 https://github.com/psmedley/os2-ports.git && echo 'SKIPPING OS_2200 - NO MAPPED REPO' && echo 'SKIPPING OS_400 - NO MAPPED REPO'
+[2026-01-19 02:45:52] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_12_Languages/03_System/ODIN FROM https://github.com/odin-lang/Odin.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/03_System/ODIN/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/03_System/ODIN/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_13_Platforms/05_Unix_BSD/OPENBSD FROM https://github.com/openbsd/src.git
+!! Source dir exists at oss_sovereignty/sys_13_Platforms/05_Unix_BSD/OPENBSD/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/05_Unix_BSD/OPENBSD/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_13_Platforms/06_Microcomputer/OS_2 FROM https://github.com/psmedley/os2-ports.git
+!! Source dir exists at oss_sovereignty/sys_13_Platforms/06_Microcomputer/OS_2/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/06_Microcomputer/OS_2/metadata.json
+SKIPPING OS_2200 - NO MAPPED REPO
+SKIPPING OS_400 - NO MAPPED REPO
+[2026-01-19 02:45:52] PROCESSING CARD: sov_world_batch_016 - WORLD ASSIMILATION BATCH 16: PALM_OS, PASCAL, PCIE, PERL, PHP
+[2026-01-19 02:45:54] EXECUTING: echo 'SKIPPING PALM_OS - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/01_Ancient/PASCAL https://github.com/fpc/FPCSource.git && echo 'SKIPPING PCIE - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/05_Scripting/PERL https://github.com/Perl/perl5.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/05_Scripting/PHP https://github.com/php/php-src.git
+[2026-01-19 02:45:55] RESULT: SUCCESS: SKIPPING PALM_OS - NO MAPPED REPO
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/01_Ancient/PASCAL FROM https://github.com/fpc/FPCSource.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/01_Ancient/PASCAL/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/01_Ancient/PASCAL/metadata.json
+SKIPPING PCIE - NO MAPPED REPO
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/05_Scripting/PERL FROM https://github.com/Perl/perl5.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/05_Scripting/PERL/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/05_Scripting/PERL/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/05_Scripting/PHP FROM https://github.com/php/php-src.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/05_Scripting/PHP/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/05_Scripting/PHP/metadata.json
+[2026-01-19 02:45:55] PROCESSING CARD: sov_world_batch_017 - WORLD ASSIMILATION BATCH 17: PL_I, POWERSHELL, PYTHON, QNX, R
+[2026-01-19 02:45:57] EXECUTING: echo 'SKIPPING PL_I - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/05_Scripting/POWERSHELL https://github.com/PowerShell/PowerShell.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/05_Scripting/PYTHON https://github.com/python/cpython.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/07_Embedded/QNX https://github.com/qnx/qnx-reference.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/07_Data/R https://github.com/wch/r-source.git
+[2026-01-19 02:45:57] RESULT: SUCCESS: SKIPPING PL_I - NO MAPPED REPO
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/05_Scripting/POWERSHELL FROM https://github.com/PowerShell/PowerShell.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/05_Scripting/POWERSHELL/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/05_Scripting/POWERSHELL/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/05_Scripting/PYTHON FROM https://github.com/python/cpython.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/05_Scripting/PYTHON/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/05_Scripting/PYTHON/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_13_Platforms/07_Embedded/QNX FROM https://github.com/qnx/qnx-reference.git
+!! Source dir exists at oss_sovereignty/sys_13_Platforms/07_Embedded/QNX/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/07_Embedded/QNX/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/07_Data/R FROM https://github.com/wch/r-source.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/07_Data/R/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/07_Data/R/metadata.json
+[2026-01-19 02:45:57] PROCESSING CARD: sov_world_batch_018 - WORLD ASSIMILATION BATCH 18: RACKET, REST, RS232, RUBY, RUST
+[2026-01-19 02:45:59] EXECUTING: echo 'SKIPPING RACKET - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/REST https://github.com/OAI/OpenAPI-Specification.git && echo 'SKIPPING RS232 - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/05_Scripting/RUBY https://github.com/ruby/ruby.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/03_System/RUST https://github.com/rust-lang/rust.git
+[2026-01-19 02:45:59] RESULT: SUCCESS: SKIPPING RACKET - NO MAPPED REPO
+>> ASSIMILATING: oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/REST FROM https://github.com/OAI/OpenAPI-Specification.git
+!! Source dir exists at oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/REST/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/REST/metadata.json
+SKIPPING RS232 - NO MAPPED REPO
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/05_Scripting/RUBY FROM https://github.com/ruby/ruby.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/05_Scripting/RUBY/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/05_Scripting/RUBY/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/03_System/RUST FROM https://github.com/rust-lang/rust.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/03_System/RUST/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/03_System/RUST/metadata.json
+[2026-01-19 02:45:59] PROCESSING CARD: sov_world_batch_019 - WORLD ASSIMILATION BATCH 19: SAS, SCALA, SCHEME, SCO_OPENSERVER, SCTP
+[2026-01-19 02:46:01] EXECUTING: echo 'SKIPPING SAS - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/04_Managed/SCALA https://github.com/scala/scala.git && echo 'SKIPPING SCHEME - NO MAPPED REPO' && echo 'SKIPPING SCO_OPENSERVER - NO MAPPED REPO' && echo 'SKIPPING SCTP - NO MAPPED REPO'
+[2026-01-19 02:46:01] RESULT: SUCCESS: SKIPPING SAS - NO MAPPED REPO
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/04_Managed/SCALA FROM https://github.com/scala/scala.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/04_Managed/SCALA/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/04_Managed/SCALA/metadata.json
+SKIPPING SCHEME - NO MAPPED REPO
+SKIPPING SCO_OPENSERVER - NO MAPPED REPO
+SKIPPING SCTP - NO MAPPED REPO
+[2026-01-19 02:46:01] PROCESSING CARD: sov_world_batch_020 - WORLD ASSIMILATION BATCH 20: SIMULA, SNA, SOAP, SOLARIS, SPI
+[2026-01-19 02:46:03] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/01_Ancient/SIMULA https://github.com/portablesimula/github.io.git && echo 'SKIPPING SNA - NO MAPPED REPO' && echo 'SKIPPING SOAP - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/04_Unix_Commercial/SOLARIS https://github.com/illumos/illumos-gate.git && echo 'SKIPPING SPI - NO MAPPED REPO'
+[2026-01-19 02:46:03] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_12_Languages/01_Ancient/SIMULA FROM https://github.com/portablesimula/github.io.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/01_Ancient/SIMULA/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/01_Ancient/SIMULA/metadata.json
+SKIPPING SNA - NO MAPPED REPO
+SKIPPING SOAP - NO MAPPED REPO
+>> ASSIMILATING: oss_sovereignty/sys_13_Platforms/04_Unix_Commercial/SOLARIS FROM https://github.com/illumos/illumos-gate.git
+!! Source dir exists at oss_sovereignty/sys_13_Platforms/04_Unix_Commercial/SOLARIS/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/04_Unix_Commercial/SOLARIS/metadata.json
+SKIPPING SPI - NO MAPPED REPO
+[2026-01-19 02:46:03] PROCESSING CARD: sov_world_batch_021 - WORLD ASSIMILATION BATCH 21: SQL, SWIFT, SYMBIAN, TCL, TCP_IP
+[2026-01-19 02:46:05] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/07_Data/SQL https://github.com/postgres/postgres.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/04_Managed/SWIFT https://github.com/swiftlang/swift.git && echo 'SKIPPING SYMBIAN - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/05_Scripting/TCL https://github.com/tcltk/tcl.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/02_Network_Stack/TCP_IP https://github.com/lwip-tcpip/lwip.git
+[2026-01-19 02:46:05] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_12_Languages/07_Data/SQL FROM https://github.com/postgres/postgres.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/07_Data/SQL/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/07_Data/SQL/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/04_Managed/SWIFT FROM https://github.com/swiftlang/swift.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/04_Managed/SWIFT/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/04_Managed/SWIFT/metadata.json
+SKIPPING SYMBIAN - NO MAPPED REPO
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/05_Scripting/TCL FROM https://github.com/tcltk/tcl.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/05_Scripting/TCL/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/05_Scripting/TCL/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_14_Accessors/02_Network_Stack/TCP_IP FROM https://github.com/lwip-tcpip/lwip.git
+!! Source dir exists at oss_sovereignty/sys_14_Accessors/02_Network_Stack/TCP_IP/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_14_Accessors/02_Network_Stack/TCP_IP/metadata.json
+[2026-01-19 02:46:05] PROCESSING CARD: sov_world_batch_022 - WORLD ASSIMILATION BATCH 22: THRIFT, TN3270, TN5250, TOPS_10, TOPS_20
+[2026-01-19 02:46:07] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/THRIFT https://github.com/apache/thrift.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/01_Terminals/TN3270 https://github.com/rbbrittain/x3270.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/01_Terminals/TN5250 https://github.com/tn5250/tn5250.git && echo 'SKIPPING TOPS_10 - NO MAPPED REPO' && echo 'SKIPPING TOPS_20 - NO MAPPED REPO'
+[2026-01-19 02:46:07] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/THRIFT FROM https://github.com/apache/thrift.git
+!! Source dir exists at oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/THRIFT/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/THRIFT/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_14_Accessors/01_Terminals/TN3270 FROM https://github.com/rbbrittain/x3270.git
+!! Source dir exists at oss_sovereignty/sys_14_Accessors/01_Terminals/TN3270/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_14_Accessors/01_Terminals/TN3270/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_14_Accessors/01_Terminals/TN5250 FROM https://github.com/tn5250/tn5250.git
+!! Source dir exists at oss_sovereignty/sys_14_Accessors/01_Terminals/TN5250/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_14_Accessors/01_Terminals/TN5250/metadata.json
+SKIPPING TOPS_10 - NO MAPPED REPO
+SKIPPING TOPS_20 - NO MAPPED REPO
+[2026-01-19 02:46:07] PROCESSING CARD: sov_world_batch_023 - WORLD ASSIMILATION BATCH 23: TPF, TRU64, TYPESCRIPT, UART, UDP
+[2026-01-19 02:46:09] EXECUTING: echo 'SKIPPING TPF - NO MAPPED REPO' && echo 'SKIPPING TRU64 - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/05_Scripting/TYPESCRIPT https://github.com/microsoft/TypeScript.git && echo 'SKIPPING UART - NO MAPPED REPO' && echo 'SKIPPING UDP - NO MAPPED REPO'
+[2026-01-19 02:46:09] RESULT: SUCCESS: SKIPPING TPF - NO MAPPED REPO
+SKIPPING TRU64 - NO MAPPED REPO
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/05_Scripting/TYPESCRIPT FROM https://github.com/microsoft/TypeScript.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/05_Scripting/TYPESCRIPT/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/05_Scripting/TYPESCRIPT/metadata.json
+SKIPPING UART - NO MAPPED REPO
+SKIPPING UDP - NO MAPPED REPO
+[2026-01-19 02:46:09] PROCESSING CARD: sov_world_batch_024 - WORLD ASSIMILATION BATCH 24: ULTRIX, USB, VMS, VT100, VT220
+[2026-01-19 02:46:11] EXECUTING: echo 'SKIPPING ULTRIX - NO MAPPED REPO' && echo 'SKIPPING USB - NO MAPPED REPO' && echo 'SKIPPING VMS - NO MAPPED REPO' && echo 'SKIPPING VT100 - NO MAPPED REPO' && echo 'SKIPPING VT220 - NO MAPPED REPO'
+[2026-01-19 02:46:11] RESULT: SUCCESS: SKIPPING ULTRIX - NO MAPPED REPO
+SKIPPING USB - NO MAPPED REPO
+SKIPPING VMS - NO MAPPED REPO
+SKIPPING VT100 - NO MAPPED REPO
+SKIPPING VT220 - NO MAPPED REPO
+[2026-01-19 02:46:11] PROCESSING CARD: sov_world_batch_025 - WORLD ASSIMILATION BATCH 25: VXWORKS, WAYLAND, WHITESPACE, WINDOWS_3X, WINDOWS_9X
+[2026-01-19 02:46:13] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/07_Embedded/VXWORKS https://github.com/Wind-River/vxworks7-layer-for-qemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/01_Terminals/WAYLAND https://github.com/wayland-project/wayland.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/08_Esoteric/WHITESPACE https://github.com/hostilefork/whitespacers.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/06_Microcomputer/WINDOWS_3X https://github.com/microsoft/winfile.git && echo 'SKIPPING WINDOWS_9X - NO MAPPED REPO'
+[2026-01-19 02:46:13] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_13_Platforms/07_Embedded/VXWORKS FROM https://github.com/Wind-River/vxworks7-layer-for-qemu.git
+!! Source dir exists at oss_sovereignty/sys_13_Platforms/07_Embedded/VXWORKS/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/07_Embedded/VXWORKS/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_14_Accessors/01_Terminals/WAYLAND FROM https://github.com/wayland-project/wayland.git
+!! Source dir exists at oss_sovereignty/sys_14_Accessors/01_Terminals/WAYLAND/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_14_Accessors/01_Terminals/WAYLAND/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_12_Languages/08_Esoteric/WHITESPACE FROM https://github.com/hostilefork/whitespacers.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/08_Esoteric/WHITESPACE/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/08_Esoteric/WHITESPACE/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_13_Platforms/06_Microcomputer/WINDOWS_3X FROM https://github.com/microsoft/winfile.git
+!! Source dir exists at oss_sovereignty/sys_13_Platforms/06_Microcomputer/WINDOWS_3X/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/06_Microcomputer/WINDOWS_3X/metadata.json
+SKIPPING WINDOWS_9X - NO MAPPED REPO
+[2026-01-19 02:46:13] PROCESSING CARD: sov_world_batch_026 - WORLD ASSIMILATION BATCH 26: WINDOWS_NT, WOLFRAM, X11, X_25, ZEPHYR
+[2026-01-19 02:46:15] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/06_Microcomputer/WINDOWS_NT https://github.com/reactos/reactos.git && echo 'SKIPPING WOLFRAM - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/01_Terminals/X11 https://github.com/freedesktop/xorg-server.git && echo 'SKIPPING X_25 - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/07_Embedded/ZEPHYR https://github.com/zephyrproject-rtos/zephyr.git
+[2026-01-19 02:46:15] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_13_Platforms/06_Microcomputer/WINDOWS_NT FROM https://github.com/reactos/reactos.git
+!! Source dir exists at oss_sovereignty/sys_13_Platforms/06_Microcomputer/WINDOWS_NT/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/06_Microcomputer/WINDOWS_NT/metadata.json
+SKIPPING WOLFRAM - NO MAPPED REPO
+>> ASSIMILATING: oss_sovereignty/sys_14_Accessors/01_Terminals/X11 FROM https://github.com/freedesktop/xorg-server.git
+!! Source dir exists at oss_sovereignty/sys_14_Accessors/01_Terminals/X11/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_14_Accessors/01_Terminals/X11/metadata.json
+SKIPPING X_25 - NO MAPPED REPO
+>> ASSIMILATING: oss_sovereignty/sys_13_Platforms/07_Embedded/ZEPHYR FROM https://github.com/zephyrproject-rtos/zephyr.git
+!! Source dir exists at oss_sovereignty/sys_13_Platforms/07_Embedded/ZEPHYR/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/07_Embedded/ZEPHYR/metadata.json
+[2026-01-19 02:46:15] PROCESSING CARD: sov_world_batch_027 - WORLD ASSIMILATION BATCH 27: ZIG, z_OS, z_VM, z_VSE
+[2026-01-19 02:46:17] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/03_System/ZIG https://github.com/ziglang/zig.git && echo 'SKIPPING z_OS - NO MAPPED REPO' && echo 'SKIPPING z_VM - NO MAPPED REPO' && echo 'SKIPPING z_VSE - NO MAPPED REPO'
+[2026-01-19 02:46:17] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_12_Languages/03_System/ZIG FROM https://github.com/ziglang/zig.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/03_System/ZIG/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/03_System/ZIG/metadata.json
+SKIPPING z_OS - NO MAPPED REPO
+SKIPPING z_VM - NO MAPPED REPO
+SKIPPING z_VSE - NO MAPPED REPO
+[2026-01-19 02:51:26] PROCESSING CARD: sov_lost_z_os - LOST WORLD: Assimilate z_OS (Proxy: MVS 3.8j (Last Public Domain Release))
+[2026-01-19 02:51:28] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/01_IBM_Mainframe/z_OS https://github.com/moshix/MVS38j.SYS1.MACLIB.git
+[2026-01-19 02:51:28] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_13_Platforms/01_IBM_Mainframe/z_OS FROM https://github.com/moshix/MVS38j.SYS1.MACLIB.git
+!! Source dir exists at oss_sovereignty/sys_13_Platforms/01_IBM_Mainframe/z_OS/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/01_IBM_Mainframe/z_OS/metadata.json
+[2026-01-19 02:51:28] PROCESSING CARD: sov_lost_z_vm - LOST WORLD: Assimilate z_VM (Proxy: VM/370 Release 6)
+[2026-01-19 02:51:30] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/01_IBM_Mainframe/z_VM https://github.com/s390guy/vm370.git
+[2026-01-19 02:51:30] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_13_Platforms/01_IBM_Mainframe/z_VM FROM https://github.com/s390guy/vm370.git
+!! Source dir exists at oss_sovereignty/sys_13_Platforms/01_IBM_Mainframe/z_VM/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/01_IBM_Mainframe/z_VM/metadata.json
+[2026-01-19 02:51:30] PROCESSING CARD: sov_lost_tops_10 - LOST WORLD: Assimilate TOPS_10 (DEC TOPS-10)
+[2026-01-19 02:51:32] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/03_DEC/TOPS_10 https://github.com/PDP-10/tops10.git
+[2026-01-19 02:51:32] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_13_Platforms/03_DEC/TOPS_10 FROM https://github.com/PDP-10/tops10.git
+!! Source dir exists at oss_sovereignty/sys_13_Platforms/03_DEC/TOPS_10/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/03_DEC/TOPS_10/metadata.json
+[2026-01-19 02:51:32] PROCESSING CARD: sov_lost_vms - LOST WORLD: Assimilate VMS (Partial Proxy: OpenVMS CRTL / Simh Scripts)
+[2026-01-19 02:51:34] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/03_DEC/VMS https://github.com/vms-ports/crtl.git
+[2026-01-19 02:51:34] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_13_Platforms/03_DEC/VMS FROM https://github.com/vms-ports/crtl.git
+!! Source dir exists at oss_sovereignty/sys_13_Platforms/03_DEC/VMS/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/03_DEC/VMS/metadata.json
+[2026-01-19 02:51:34] PROCESSING CARD: sov_lost_multics - LOST WORLD: Assimilate MULTICS (Multics MR 12.7)
+[2026-01-19 02:51:36] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/99_Recovered/MULTICS https://github.com/dqv/multics.git
+[2026-01-19 02:51:36] ERROR: FAILURE: 
+[2026-01-19 02:51:36] PROCESSING CARD: sov_lost_cp_m - LOST WORLD: Assimilate CP_M (CP/M 2.2)
+[2026-01-19 02:51:38] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/06_Microcomputer/CP_M https://github.com/dwhinham/cpm-source.git
+[2026-01-19 02:51:39] ERROR: FAILURE: 
+[2026-01-19 02:51:39] PROCESSING CARD: sov_lost_agc - LOST WORLD: Assimilate AGC (Apollo Guidance Computer (Comanche055))
+[2026-01-19 02:51:41] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/07_Embedded/AGC https://github.com/chrislgarry/Apollo-11.git
+[2026-01-19 02:51:41] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_13_Platforms/07_Embedded/AGC FROM https://github.com/chrislgarry/Apollo-11.git
+>> Cloning https://github.com/chrislgarry/Apollo-11.git...
+EXEC: git clone --depth 1 https://github.com/chrislgarry/Apollo-11.git oss_sovereignty/sys_13_Platforms/07_Embedded/AGC/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/07_Embedded/AGC/metadata.json
+[2026-01-19 02:51:41] PROCESSING CARD: sov_lost_pl_i - LOST WORLD: Assimilate PL_I (Iron Spring PL/I Compiler)
+[2026-01-19 02:51:43] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/01_Ancient/PL_I https://github.com/iron-spring/pli-2000.git
+[2026-01-19 02:51:43] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_12_Languages/01_Ancient/PL_I FROM https://github.com/iron-spring/pli-2000.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/01_Ancient/PL_I/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/01_Ancient/PL_I/metadata.json
+[2026-01-19 02:51:43] PROCESSING CARD: sov_lost_scheme - LOST WORLD: Assimilate SCHEME (Chez Scheme)
+[2026-01-19 02:51:45] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/06_Functional/SCHEME https://github.com/cisco/ChezScheme.git
+[2026-01-19 02:51:45] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_12_Languages/06_Functional/SCHEME FROM https://github.com/cisco/ChezScheme.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/06_Functional/SCHEME/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/06_Functional/SCHEME/metadata.json
+[2026-01-19 02:51:45] PROCESSING CARD: sov_lost_racket - LOST WORLD: Assimilate RACKET (Racket)
+[2026-01-19 02:51:47] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/06_Functional/RACKET https://github.com/racket/racket.git
+[2026-01-19 02:51:47] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_12_Languages/06_Functional/RACKET FROM https://github.com/racket/racket.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/06_Functional/RACKET/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/06_Functional/RACKET/metadata.json
+[2026-01-19 02:51:47] PROCESSING CARD: sov_lost_matlab - LOST WORLD: Assimilate MATLAB (Proxy: GNU Octave)
+[2026-01-19 02:51:49] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/07_Data/MATLAB https://github.com/gnu-octave/octave.git
+[2026-01-19 02:51:49] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_12_Languages/07_Data/MATLAB FROM https://github.com/gnu-octave/octave.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/07_Data/MATLAB/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/07_Data/MATLAB/metadata.json
+[2026-01-19 02:51:49] PROCESSING CARD: sov_lost_sas - LOST WORLD: Assimilate SAS (Proxy: Pandas (Conceptual) - NO DIRECT SOURCE)
+[2026-01-19 02:51:51] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/07_Data/SAS https://github.com/wesm/pandas.git
+[2026-01-19 02:51:51] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_12_Languages/07_Data/SAS FROM https://github.com/wesm/pandas.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/07_Data/SAS/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/07_Data/SAS/metadata.json
+[2026-01-19 02:51:51] PROCESSING CARD: sov_lost_befunge - LOST WORLD: Assimilate BEFUNGE (Befunge-93 Reference)
+[2026-01-19 02:51:53] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/08_Esoteric/BEFUNGE https://github.com/catseye/Befunge-93.git
+[2026-01-19 02:51:54] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_12_Languages/08_Esoteric/BEFUNGE FROM https://github.com/catseye/Befunge-93.git
+!! Source dir exists at oss_sovereignty/sys_12_Languages/08_Esoteric/BEFUNGE/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/08_Esoteric/BEFUNGE/metadata.json
+[2026-01-19 02:51:54] PROCESSING CARD: sov_lost_sna - LOST WORLD: Assimilate SNA (SNA Macros within MVS 3.8j)
+[2026-01-19 02:51:56] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/03_Legacy_Net/SNA https://github.com/moshix/MVS38j.SYS1.MACLIB.git
+[2026-01-19 02:51:56] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_14_Accessors/03_Legacy_Net/SNA FROM https://github.com/moshix/MVS38j.SYS1.MACLIB.git
+!! Source dir exists at oss_sovereignty/sys_14_Accessors/03_Legacy_Net/SNA/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_14_Accessors/03_Legacy_Net/SNA/metadata.json
+[2026-01-19 03:11:33] PROCESSING CARD: sov_r2_plan_9 - ROUND 2: Assimilate PLAN_9 (Plan 9 from Bell Labs (Legacy Bootable))
+[2026-01-19 03:11:35] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/04_Unix_Commercial/PLAN_9 https://github.com/rsc/plan9.git
+[2026-01-19 03:11:50] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_13_Platforms/04_Unix_Commercial/PLAN_9 FROM https://github.com/rsc/plan9.git
+>> Cloning https://github.com/rsc/plan9.git...
+EXEC: git clone --depth 1 https://github.com/rsc/plan9.git oss_sovereignty/sys_13_Platforms/04_Unix_Commercial/PLAN_9/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/04_Unix_Commercial/PLAN_9/metadata.json
+[2026-01-19 03:11:50] PROCESSING CARD: sov_r2_minix_3 - ROUND 2: Assimilate MINIX_3 (Minix 3 Microkernel OS)
+[2026-01-19 03:11:52] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/04_Unix_Commercial/MINIX_3 https://github.com/Stichting-MINIX-Research-Foundation/minix.git
+[2026-01-19 03:12:02] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_13_Platforms/04_Unix_Commercial/MINIX_3 FROM https://github.com/Stichting-MINIX-Research-Foundation/minix.git
+>> Cloning https://github.com/Stichting-MINIX-Research-Foundation/minix.git...
+EXEC: git clone --depth 1 https://github.com/Stichting-MINIX-Research-Foundation/minix.git oss_sovereignty/sys_13_Platforms/04_Unix_Commercial/MINIX_3/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/04_Unix_Commercial/MINIX_3/metadata.json
+[2026-01-19 03:12:02] PROCESSING CARD: sov_r2_haiku - ROUND 2: Assimilate HAIKU (Haiku (BeOS Re-implementation))
+[2026-01-19 03:12:04] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/06_Microcomputer/HAIKU https://github.com/haiku/haiku.git
+[2026-01-19 03:12:14] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_13_Platforms/06_Microcomputer/HAIKU FROM https://github.com/haiku/haiku.git
+>> Cloning https://github.com/haiku/haiku.git...
+EXEC: git clone --depth 1 https://github.com/haiku/haiku.git oss_sovereignty/sys_13_Platforms/06_Microcomputer/HAIKU/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/06_Microcomputer/HAIKU/metadata.json
+[2026-01-19 03:12:14] PROCESSING CARD: sov_r2_decnet_linux - ROUND 2: Assimilate DECNET_LINUX (DECnet Module for Linux)
+[2026-01-19 03:12:16] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/03_Legacy_Net/DECNET_LINUX https://github.com/JohnForecast/LinuxDECnet.git
+[2026-01-19 03:12:17] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_14_Accessors/03_Legacy_Net/DECNET_LINUX FROM https://github.com/JohnForecast/LinuxDECnet.git
+>> Cloning https://github.com/JohnForecast/LinuxDECnet.git...
+EXEC: git clone --depth 1 https://github.com/JohnForecast/LinuxDECnet.git oss_sovereignty/sys_14_Accessors/03_Legacy_Net/DECNET_LINUX/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_14_Accessors/03_Legacy_Net/DECNET_LINUX/metadata.json
+[2026-01-19 03:12:17] PROCESSING CARD: sov_r2_ipx_linux - ROUND 2: Assimilate IPX_LINUX (IPX/SPX Module for Linux)
+[2026-01-19 03:12:19] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/03_Legacy_Net/IPX_LINUX https://github.com/pasis/ipx.git
+[2026-01-19 03:18:28] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_14_Accessors/03_Legacy_Net/IPX_LINUX FROM https://github.com/pasis/ipx.git
+>> Cloning https://github.com/pasis/ipx.git...
+EXEC: git clone --depth 1 https://github.com/pasis/ipx.git oss_sovereignty/sys_14_Accessors/03_Legacy_Net/IPX_LINUX/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_14_Accessors/03_Legacy_Net/IPX_LINUX/metadata.json
+[2026-01-19 03:18:28] PROCESSING CARD: sov_r2_ghostscript - ROUND 2: Assimilate GHOSTSCRIPT (PostScript & PDF Interpreter (The Printer))
+[2026-01-19 03:18:30] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/01_Terminals/GHOSTSCRIPT https://github.com/ArtifexSoftware/ghostpdl.git
+[2026-01-19 03:18:38] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_14_Accessors/01_Terminals/GHOSTSCRIPT FROM https://github.com/ArtifexSoftware/ghostpdl.git
+>> Cloning https://github.com/ArtifexSoftware/ghostpdl.git...
+EXEC: git clone --depth 1 https://github.com/ArtifexSoftware/ghostpdl.git oss_sovereignty/sys_14_Accessors/01_Terminals/GHOSTSCRIPT/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_14_Accessors/01_Terminals/GHOSTSCRIPT/metadata.json
+[2026-01-19 03:18:38] PROCESSING CARD: sov_r2_smalltalk - ROUND 2: Assimilate SMALLTALK (Squeak Smalltalk Environment)
+[2026-01-19 03:18:40] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/04_Managed/SMALLTALK https://github.com/squeak-smalltalk/squeak-app.git
+[2026-01-19 03:18:43] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_12_Languages/04_Managed/SMALLTALK FROM https://github.com/squeak-smalltalk/squeak-app.git
+>> Cloning https://github.com/squeak-smalltalk/squeak-app.git...
+EXEC: git clone --depth 1 https://github.com/squeak-smalltalk/squeak-app.git oss_sovereignty/sys_12_Languages/04_Managed/SMALLTALK/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/04_Managed/SMALLTALK/metadata.json
+[2026-01-19 03:18:43] PROCESSING CARD: sov_8bit_nes - 8-BIT: Assimilate NES (FCEUX (NES Emulator))
+[2026-01-19 03:18:45] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/NES https://github.com/TASEmulators/fceux.git
+[2026-01-19 03:18:45] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/NES FROM https://github.com/TASEmulators/fceux.git
+!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/NES/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/NES/metadata.json
+[2026-01-19 03:18:45] PROCESSING CARD: sov_8bit_gameboy - 8-BIT: Assimilate GameBoy (Gambatte (Accuracy-focused GB))
+[2026-01-19 03:18:47] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/GameBoy https://github.com/gb-archive/gambatte.git
+[2026-01-19 03:18:47] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/GameBoy FROM https://github.com/gb-archive/gambatte.git
+!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/GameBoy/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/GameBoy/metadata.json
+[2026-01-19 03:18:47] PROCESSING CARD: sov_8bit_commodore_64 - 8-BIT: Assimilate Commodore_64 (VICE (Versatile Commodore Emulator))
+[2026-01-19 03:18:49] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Commodore_64 https://git.code.sf.net/p/vice-emu/code
+[2026-01-19 03:18:49] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Commodore_64 FROM https://git.code.sf.net/p/vice-emu/code
+!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Commodore_64/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Commodore_64/metadata.json
+[2026-01-19 03:18:49] PROCESSING CARD: sov_8bit_zx_spectrum - 8-BIT: Assimilate ZX_Spectrum (Fuse (Free Unix Spectrum Emulator))
+[2026-01-19 03:18:51] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/ZX_Spectrum https://git.code.sf.net/p/fuse-emulator/fuse
+[2026-01-19 03:18:51] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/ZX_Spectrum FROM https://git.code.sf.net/p/fuse-emulator/fuse
+!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/ZX_Spectrum/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/ZX_Spectrum/metadata.json
+[2026-01-19 03:18:51] PROCESSING CARD: sov_8bit_apple_ii - 8-BIT: Assimilate Apple_II (LinApple (Apple II Emulator))
+[2026-01-19 03:18:53] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Apple_II https://github.com/linappleii/linapple.git
+[2026-01-19 03:18:53] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Apple_II FROM https://github.com/linappleii/linapple.git
+!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Apple_II/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Apple_II/metadata.json
+[2026-01-19 03:18:53] PROCESSING CARD: sov_8bit_atari_8bit - 8-BIT: Assimilate Atari_8Bit (Atari800 Emulator)
+[2026-01-19 03:18:55] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Atari_8Bit https://github.com/atari800/atari800.git
+[2026-01-19 03:18:55] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Atari_8Bit FROM https://github.com/atari800/atari800.git
+!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Atari_8Bit/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Atari_8Bit/metadata.json
+[2026-01-19 03:18:55] PROCESSING CARD: sov_8bit_msx - 8-BIT: Assimilate MSX (openMSX)
+[2026-01-19 03:18:57] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/MSX https://github.com/openMSX/openMSX.git
+[2026-01-19 03:18:57] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/MSX FROM https://github.com/openMSX/openMSX.git
+!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/MSX/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/MSX/metadata.json
+[2026-01-19 03:18:57] PROCESSING CARD: sov_8bit_bbc_micro - 8-BIT: Assimilate BBC_Micro (BeebEm (Windows Port Source))
+[2026-01-19 03:18:59] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/BBC_Micro https://github.com/stardot/beebem-windows.git
+[2026-01-19 03:18:59] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/BBC_Micro FROM https://github.com/stardot/beebem-windows.git
+!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/BBC_Micro/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/BBC_Micro/metadata.json
+[2026-01-19 03:18:59] PROCESSING CARD: sov_8bit_cc65 - 8-BIT: Assimilate cc65 (cc65 (6502 C Compiler/Assembler))
+[2026-01-19 03:19:01] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/cc65 https://github.com/cc65/cc65.git
+[2026-01-19 03:19:01] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/cc65 FROM https://github.com/cc65/cc65.git
+!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/cc65/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/cc65/metadata.json
+[2026-01-19 03:19:01] PROCESSING CARD: sov_8bit_z88dk - 8-BIT: Assimilate z88dk (z88dk (Z80 Development Kit))
+[2026-01-19 03:19:03] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/z88dk https://github.com/z88dk/z88dk.git
+[2026-01-19 03:19:03] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/z88dk FROM https://github.com/z88dk/z88dk.git
+!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/z88dk/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/z88dk/metadata.json
+[2026-01-19 03:19:03] PROCESSING CARD: sov_8bit_sdcc - 8-BIT: Assimilate SDCC (SDCC (Small Device C Compiler))
+[2026-01-19 03:19:05] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/SDCC https://git.code.sf.net/p/sdcc/code
+[2026-01-19 03:19:05] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/SDCC FROM https://git.code.sf.net/p/sdcc/code
+!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/SDCC/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/SDCC/metadata.json
+[2026-01-19 03:19:05] PROCESSING CARD: sov_8bit_rgbds - 8-BIT: Assimilate RGBDS (RGBDS (Rednex Game Boy Development System))
+[2026-01-19 03:19:07] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/RGBDS https://github.com/gbdev/rgbds.git
+[2026-01-19 03:19:07] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/RGBDS FROM https://github.com/gbdev/rgbds.git
+!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/RGBDS/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/RGBDS/metadata.json
+[2026-01-19 03:19:07] PROCESSING CARD: sov_8bit_asm6 - 8-BIT: Assimilate ASM6 (ASM6f (Fork of ASM6 for NES))
+[2026-01-19 03:19:09] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/ASM6 https://github.com/freem/asm6f.git
+[2026-01-19 03:19:09] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/ASM6 FROM https://github.com/freem/asm6f.git
+!! Source dir exists at oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/ASM6/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/02_Toolchains/ASM6/metadata.json
+[2026-01-19 03:19:10] PROCESSING CARD: sov_16bit_snes - 16-BIT: Assimilate SNES (Snes9x (Portable SNES Emulator))
+[2026-01-19 03:19:12] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/SNES https://github.com/snes9xgit/snes9x.git
+[2026-01-19 03:19:12] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/SNES FROM https://github.com/snes9xgit/snes9x.git
+!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/SNES/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/SNES/metadata.json
+[2026-01-19 03:19:12] PROCESSING CARD: sov_16bit_sega_genesis - 16-BIT: Assimilate Sega_Genesis (Genesis Plus GX (Accurate Genesis/MegaDrive))
+[2026-01-19 03:19:14] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/Sega_Genesis https://github.com/ekeeke/Genesis-Plus-GX.git
+[2026-01-19 03:19:14] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/Sega_Genesis FROM https://github.com/ekeeke/Genesis-Plus-GX.git
+!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/Sega_Genesis/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/Sega_Genesis/metadata.json
+[2026-01-19 03:19:14] PROCESSING CARD: sov_16bit_turbografx_16 - 16-BIT: Assimilate TurboGrafx_16 (Mednafen (Multi-system, covers PCE/TG16))
+[2026-01-19 03:19:16] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/TurboGrafx_16 https://github.com/libretro-mirrors/mednafen-git.git
+[2026-01-19 03:19:16] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/TurboGrafx_16 FROM https://github.com/libretro-mirrors/mednafen-git.git
+!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/TurboGrafx_16/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/TurboGrafx_16/metadata.json
+[2026-01-19 03:19:16] PROCESSING CARD: sov_16bit_neo_geo - 16-BIT: Assimilate Neo_Geo (FinalBurn Neo (Arcade/NeoGeo))
+[2026-01-19 03:19:18] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/Neo_Geo https://github.com/finalburnneo/FBNeo.git
+[2026-01-19 03:19:18] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/Neo_Geo FROM https://github.com/finalburnneo/FBNeo.git
+!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/Neo_Geo/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/01_Consoles/Neo_Geo/metadata.json
+[2026-01-19 03:19:18] PROCESSING CARD: sov_16bit_amiga_hardware - 16-BIT: Assimilate Amiga_Hardware (FS-UAE (Amiga Emulator))
+[2026-01-19 03:19:20] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Amiga_Hardware https://github.com/FrodeSolheim/fs-uae.git
+[2026-01-19 03:19:20] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Amiga_Hardware FROM https://github.com/FrodeSolheim/fs-uae.git
+!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Amiga_Hardware/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Amiga_Hardware/metadata.json
+[2026-01-19 03:19:20] PROCESSING CARD: sov_16bit_atari_st - 16-BIT: Assimilate Atari_ST (Hatari (Atari ST/STE/TT/Falcon))
+[2026-01-19 03:19:22] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Atari_ST https://github.com/hatari/hatari.git
+[2026-01-19 03:19:22] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Atari_ST FROM https://github.com/hatari/hatari.git
+!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Atari_ST/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Atari_ST/metadata.json
+[2026-01-19 03:19:22] PROCESSING CARD: sov_16bit_apple_iigs - 16-BIT: Assimilate Apple_IIGS (GSplus (Modern Apple IIGS Emulator))
+[2026-01-19 03:19:24] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Apple_IIGS https://github.com/digarok/gsplus.git
+[2026-01-19 03:19:24] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Apple_IIGS FROM https://github.com/digarok/gsplus.git
+!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Apple_IIGS/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Apple_IIGS/metadata.json
+[2026-01-19 03:19:24] PROCESSING CARD: sov_16bit_sharp_x68000 - 16-BIT: Assimilate Sharp_X68000 (PX68k (Portable X68000 Emulator))
+[2026-01-19 03:19:26] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Sharp_X68000 https://github.com/libretro/px68k-libretro.git
+[2026-01-19 03:19:26] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Sharp_X68000 FROM https://github.com/libretro/px68k-libretro.git
+!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Sharp_X68000/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/Sharp_X68000/metadata.json
+[2026-01-19 03:19:26] PROCESSING CARD: sov_16bit_pc_98 - 16-BIT: Assimilate PC_98 (Neko Project II Kai (PC-9801 Emulator))
+[2026-01-19 03:19:28] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/PC_98 https://github.com/AZO234/NP2kai.git
+[2026-01-19 03:19:28] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/PC_98 FROM https://github.com/AZO234/NP2kai.git
+!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/PC_98/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/PC_98/metadata.json
+[2026-01-19 03:19:28] PROCESSING CARD: sov_16bit_m68k_tools - 16-BIT: Assimilate M68k_Tools (vasm (Portable 68k Assembler))
+[2026-01-19 03:19:30] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/M68k_Tools https://github.com/dbuchwald/vasm.git
+[2026-01-19 03:19:30] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/M68k_Tools FROM https://github.com/dbuchwald/vasm.git
+!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/M68k_Tools/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/M68k_Tools/metadata.json
+[2026-01-19 03:19:30] PROCESSING CARD: sov_16bit_sgdk - 16-BIT: Assimilate SGDK (SGDK (Sega Genesis Development Kit))
+[2026-01-19 03:19:32] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/SGDK https://github.com/stephane-d/sgdk.git
+[2026-01-19 03:19:32] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/SGDK FROM https://github.com/stephane-d/sgdk.git
+!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/SGDK/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/SGDK/metadata.json
+[2026-01-19 03:19:32] PROCESSING CARD: sov_16bit_pvsneslib - 16-BIT: Assimilate PVSNESLib (PVSnesLib (SNES C Development Kit))
+[2026-01-19 03:19:34] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/PVSNESLib https://github.com/alekmaul/pvsneslib.git
+[2026-01-19 03:19:34] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/PVSNESLib FROM https://github.com/alekmaul/pvsneslib.git
+!! Source dir exists at oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/PVSNESLib/source. Skipping clone (assuming manual placement or previous run).
+!! No .git found in source. Already severed?
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/PVSNESLib/metadata.json
+[2026-01-19 03:22:10] PROCESSING CARD: sov_8bit_deep_visual6502 - 8-BIT DEEP: Assimilate Visual6502 (Transistor-level 6502 Simulation)
+[2026-01-19 03:22:12] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Visual6502 https://github.com/trebonian/visual6502.git
+[2026-01-19 03:22:14] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Visual6502 FROM https://github.com/trebonian/visual6502.git
+>> Cloning https://github.com/trebonian/visual6502.git...
+EXEC: git clone --depth 1 https://github.com/trebonian/visual6502.git oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Visual6502/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/Visual6502/metadata.json
+[2026-01-19 03:22:14] PROCESSING CARD: sov_8bit_deep_punes - 8-BIT DEEP: Assimilate puNES (Cycle-Accurate NES Emulator)
+[2026-01-19 03:22:16] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/puNES https://github.com/punes-emu/punes.git
+[2026-01-19 03:22:16] ERROR: FAILURE: 
+[2026-01-19 03:22:16] PROCESSING CARD: sov_8bit_deep_mame - 8-BIT DEEP: Assimilate MAME (Multi Arcade Machine Emulator (Core))
+[2026-01-19 03:22:18] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/MAME https://github.com/mamedev/mame.git

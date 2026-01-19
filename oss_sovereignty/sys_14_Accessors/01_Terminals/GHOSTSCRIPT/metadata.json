@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T03:18:38.909785",
+  "origin": {
+    "url": "https://github.com/ArtifexSoftware/ghostpdl.git",
+    "commit": "05e099533ef69a0bc3a1e88bc5778d2eb98d537b",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

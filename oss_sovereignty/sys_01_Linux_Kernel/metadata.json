@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T02:29:23.628972",
+  "origin": {
+    "url": "https://github.com/torvalds/linux.git",
+    "commit": "24d479d26b25bce5faea3ddd9fa8f3a6c3129ea7",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

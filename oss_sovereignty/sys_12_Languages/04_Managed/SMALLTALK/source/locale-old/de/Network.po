@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: eToys\n"
+"POT-Creation-Date: 2016-09-22 15:38-0000\n"
+"PO-Revision-Date: 2016-09-22 15:38-0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Etoys-Domain: Network\n"
+
+
+#: Kernel-Objects,Object>>yourself
+#: Network-MailSending,MailComposition>>menuGet:shifted:
+msgid "accept (s)"
+msgstr "OK (s)"
+
+#: Network-MailSending,MailComposition>>menuGet:shifted:
+msgid "find selection again (g)"
+msgstr "finden die Auswahl erneut ab (g)"
+
+#: Network-MailSending,MailComposition>>menuGet:shifted:
+msgid "find...(f)"
+msgstr "Suchen...(f)"
+
+#: Network-MailSending,MailComposition>>menuGet:shifted:
+msgid "send message"
+msgstr "Nachricht senden"
+
+#: Network-Protocols,HTTPSocket_class>>httpShowPage:
+msgid "Document could not be fetched"
+msgstr "Dokument konnte nicht geholt werden"
+
+#: Network-RemoteDirectory,PRServerDirectory>>createDirectory:,PRServerDirectory>>deleteFileNamed:,PRServerDirectory>>rename:toBe:
+msgid "operation not supported"
+msgstr "Operation nicht unterstützt"
+
+#: Network-RemoteDirectory,PRServerDirectory>>queryProjectsAndShow:,PRServerDirectory>>writeProject:inFileNamed:fromDirectory:
+msgid "Server responded: {1}"
+msgstr "Server antwortet: {1}"
+
+#: Network-RemoteDirectory,ServerDirectory>>upLoadProject:members:retry:
+msgid "(uploading {1}...)"
+msgstr "(hochladen von {1}...)"
+
+#: Network-RemoteDirectory,ServerDirectory>>upLoadProject:members:retry:
+msgid "Upload for {1} did not succeed ({2})."
+msgstr "Hochladen für {1} fehlgeschlagen ({2})."
+
+#: Network-RemoteDirectory,SuperSwikiServer>>upLoadProject:members:retry:
+msgid "(uploading "
+msgstr "(hochladen "
+
+#: Network-RemoteDirectory,SuperSwikiServer>>upLoadProject:members:retry:
+msgid "...)"
+msgstr "...)"
+
+#: Network-RemoteDirectory,SuperSwikiServer>>upLoadProject:members:retry:
+msgid "Server responded "
+msgstr "Server antwortet "
+

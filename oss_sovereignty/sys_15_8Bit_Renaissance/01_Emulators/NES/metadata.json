@@ -2,5 +2,12 @@
   "id": "sys_15_8Bit_Renaissance.NES",
   "name": "NES",
   "category": "01_Emulators",
-  "mandate": "PRESERVE AND EMULATE"
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL.",
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T03:18:45.482868",
+  "origin": {
+    "url": "https://github.com/TASEmulators/fceux.git",
+    "commit": "unknown",
+    "policy": "monitor_only"
+  }
 }

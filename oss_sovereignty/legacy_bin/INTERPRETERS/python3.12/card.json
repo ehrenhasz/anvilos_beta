@@ -1,0 +1,7 @@
+{
+  "id": "legacy_python3.12",
+  "original_path": "/usr/bin/python3.12",
+  "category": "INTERPRETERS",
+  "status": "flagged_for_removal",
+  "replacement_strategy": "rewrite_in_anvil"
+}

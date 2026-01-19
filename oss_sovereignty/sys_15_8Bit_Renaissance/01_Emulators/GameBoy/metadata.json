@@ -2,5 +2,12 @@
   "id": "sys_15_8Bit_Renaissance.GameBoy",
   "name": "GameBoy",
   "category": "01_Emulators",
-  "mandate": "PRESERVE AND EMULATE"
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL.",
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T03:18:47.526798",
+  "origin": {
+    "url": "https://github.com/gb-archive/gambatte.git",
+    "commit": "unknown",
+    "policy": "monitor_only"
+  }
 }

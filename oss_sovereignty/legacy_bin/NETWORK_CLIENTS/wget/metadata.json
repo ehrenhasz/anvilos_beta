@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T02:42:07.188302",
+  "origin": {
+    "url": "https://git.savannah.gnu.org/git/wget.git",
+    "commit": "3388a22b10dbda015005ddfb8fe7fc1c04f6e069",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

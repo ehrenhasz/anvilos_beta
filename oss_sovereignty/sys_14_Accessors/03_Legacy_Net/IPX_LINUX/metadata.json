@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T03:18:28.873082",
+  "origin": {
+    "url": "https://github.com/pasis/ipx.git",
+    "commit": "2aa8748f9806e4440e678c85a4fa85a9429f94de",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

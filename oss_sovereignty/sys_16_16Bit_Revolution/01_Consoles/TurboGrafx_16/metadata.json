@@ -1,0 +1,13 @@
+{
+  "id": "sys_16_16Bit_Revolution.TurboGrafx_16",
+  "name": "TurboGrafx_16",
+  "category": "01_Consoles",
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL.",
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T03:19:16.129667",
+  "origin": {
+    "url": "https://github.com/libretro-mirrors/mednafen-git.git",
+    "commit": "unknown",
+    "policy": "monitor_only"
+  }
+}

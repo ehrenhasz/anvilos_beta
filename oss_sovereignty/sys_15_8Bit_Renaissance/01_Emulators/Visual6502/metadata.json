@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T03:22:14.246849",
+  "origin": {
+    "url": "https://github.com/trebonian/visual6502.git",
+    "commit": "d8ecc129b34e0eaf320e0400fcf33329475bdb1e",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

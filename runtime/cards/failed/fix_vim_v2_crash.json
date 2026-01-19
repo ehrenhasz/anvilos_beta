@@ -1,3 +1,0 @@
-{
-  "description": "Fix the Vim build (Take 2). In 'source/oss_sovereignty/sys_09_Vim/src': 1. Run 'make clean'. 2. Run './configure --with-features=normal --disable-gui --without-x'. 3. Run 'make -j$(nproc)'. 4. Run 'strip vim'. 5. Run './vim --version' to verify."
-}

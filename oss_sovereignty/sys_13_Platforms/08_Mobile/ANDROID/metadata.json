@@ -2,6 +2,13 @@
   "id": "sys_13_Platforms.ANDROID",
   "name": "ANDROID",
   "category": "08_Mobile",
-  "mandate": "REWRITE IN ANVIL",
-  "status": "awaiting_source"
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL.",
+  "status": "awaiting_source",
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T02:45:25.533483",
+  "origin": {
+    "url": "https://github.com/aosp-mirror/platform_manifest.git",
+    "commit": "unknown",
+    "policy": "monitor_only"
+  }
 }

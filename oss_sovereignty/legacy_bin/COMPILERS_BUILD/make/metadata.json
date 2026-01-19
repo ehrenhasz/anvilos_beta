@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T02:39:28.411806",
+  "origin": {
+    "url": "https://git.savannah.gnu.org/git/make.git",
+    "commit": "c072587a609db822697f05b81316bdb862678282",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T02:29:24.974672",
+  "origin": {
+    "url": "https://github.com/SELinuxProject/selinux.git",
+    "commit": "7061124f69fdae51327d038abe6dcc6879112839",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

@@ -2,6 +2,13 @@
   "id": "sys_12_Languages.BASIC",
   "name": "BASIC",
   "category": "01_Ancient",
-  "mandate": "REWRITE IN ANVIL",
-  "status": "awaiting_source"
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL.",
+  "status": "awaiting_source",
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T02:45:29.699797",
+  "origin": {
+    "url": "https://github.com/chip-basic/chip-basic.git",
+    "commit": "unknown",
+    "policy": "monitor_only"
+  }
 }

@@ -1,0 +1,7 @@
+{
+  "id": "legacy_wget",
+  "original_path": "/usr/bin/wget",
+  "category": "NETWORK_CLIENTS",
+  "status": "flagged_for_removal",
+  "replacement_strategy": "rewrite_in_anvil"
+}

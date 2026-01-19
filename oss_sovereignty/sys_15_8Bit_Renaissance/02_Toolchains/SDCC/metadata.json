@@ -2,5 +2,12 @@
   "id": "sys_15_8Bit_Renaissance.SDCC",
   "name": "SDCC",
   "category": "02_Toolchains",
-  "mandate": "PRESERVE AND EMULATE"
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL.",
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T03:19:05.902452",
+  "origin": {
+    "url": "https://git.code.sf.net/p/sdcc/code",
+    "commit": "unknown",
+    "policy": "monitor_only"
+  }
 }

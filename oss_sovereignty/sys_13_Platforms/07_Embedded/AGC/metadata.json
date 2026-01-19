@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T02:51:41.738230",
+  "origin": {
+    "url": "https://github.com/chrislgarry/Apollo-11.git",
+    "commit": "0e40f9d4a8ca64b7d49955615acec0e120bf02dd",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

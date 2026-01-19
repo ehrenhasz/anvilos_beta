@@ -1,0 +1,7 @@
+{
+  "id": "legacy_perlcalls-bpfcc",
+  "original_path": "/usr/sbin/perlcalls-bpfcc",
+  "category": "INTERPRETERS",
+  "status": "flagged_for_removal",
+  "replacement_strategy": "rewrite_in_anvil"
+}
