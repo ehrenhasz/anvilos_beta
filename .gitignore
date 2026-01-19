@@ -12,3 +12,6 @@ Thumbs.db
 core
 ext/forge.log
 runtime/hydrogen.db
+ext/aimeat.log
+runtime/hydrogen.db-*
+*.bak
