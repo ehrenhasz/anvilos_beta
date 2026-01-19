@@ -2823,3 +2823,14 @@ EXEC: git rev-parse HEAD
 {"@ID": 2, "data": "JOB_START: 995d918b-29e1-4e8e-ac5d-a51b4bdc7287 (99)", "ts": "2026-01-19T18:52:46.103186"}
 {"@ID": 5, "data": "OPS_STEP: Creating Isolation Branch", "ts": "2026-01-19T18:52:46.103318"}
 {"@ID": 5, "data": "OPS_STEP: Staging Artifacts", "ts": "2026-01-19T18:52:46.108122"}
+{"@ID": 5, "data": "OPS_STEP: Checking Status", "ts": "2026-01-19T18:52:47.269064"}
+{"@ID": 5, "data": "OPS_STEP: Committing: Fix: Reconcile Big Iron v3.0 Deployment and Cleanup", "ts": "2026-01-19T18:52:48.184676"}
+{"@ID": 5, "data": "OPS_STEP: Pushing to Remote", "ts": "2026-01-19T18:52:48.649571"}
+{"@ID": 5, "data": "OPS_STEP: Opening Pull Request", "ts": "2026-01-19T18:52:50.525897"}
+{"@ID": 1, "data": "BIG IRON v3.0 ONLINE. Watching /home/aimeat/github/anvilos_beta/runtime/hydrogen.db", "ts": "2026-01-19T18:52:51.522591"}
+{"@ID": 2, "data": "JOB_START: 6ec05bc2-929a-4772-8d39-1d093fb440ec (99)", "ts": "2026-01-19T18:52:51.525689"}
+{"@ID": 5, "data": "OPS_STEP: Creating Isolation Branch", "ts": "2026-01-19T18:52:51.525738"}
+{"@ID": 5, "data": "OPS_STEP: Staging Artifacts", "ts": "2026-01-19T18:52:51.528573"}
+{"@ID": 3, "data": "OPS FAILURE: Command failed: gh pr create --title OPS: Fix: Reconcile Big Iron v3.0 Deployment and Cleanup --body Automated Action by Big Iron.\nJob ID: 995d918b-29e1-4e8e-ac5d-a51b4bdc7287 --base main --head ops/job-995d918b\nError: pull request create failed: GraphQL: Resource not accessible by personal access token (createPullRequest)\n", "ts": "2026-01-19T18:52:51.909412"}
+{"@ID": 3, "data": "JOB_FAILED: 995d918b-29e1-4e8e-ac5d-a51b4bdc7287", "ts": "2026-01-19T18:52:51.915773"}
+{"@ID": 2, "data": "JOB_START: 82b53c35-b44f-46da-9c30-a8cdf3fbb5b3 (80)", "ts": "2026-01-19T18:52:51.917497"}
