@@ -1,0 +1,7 @@
+{
+  "id": "sys_07_Btop",
+  "name": "btop++",
+  "role": "system_monitor",
+  "type": "binary",
+  "sovereign": false
+}
