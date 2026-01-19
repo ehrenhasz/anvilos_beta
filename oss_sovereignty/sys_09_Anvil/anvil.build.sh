@@ -45,13 +45,14 @@ make -j$(nproc) \
     MICROPY_PY_SSL=0 \
     MICROPY_PY_FFI=0 \
     MICROPY_PY_JNI=0 \
+    MPY_LIB_DIR=../.. \
     MICROPY_USE_READLINE=1 \
     CFLAGS_EXTRA="-static" \
     LDFLAGS_EXTRA="-static" \
     FROZEN_MANIFEST="$SOURCE_DIR/manifest.py"
 
 echo ">> [BUILD] Build Complete."
-cp micropython "$OUTPUT_DIR/anvil"
+cp build-standard/micropython "$OUTPUT_DIR/anvil"
 echo ">> [BUILD] Artifact: $OUTPUT_DIR/anvil"
 
 # Strip the binary
