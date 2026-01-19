@@ -56,7 +56,7 @@
   {
     "id": "sov_64bit_batch_cfd90ef6",
     "description": "64BIT ASSIMILATION: PS2, XBOX, GAMECUBE",
-    "status": "processing",
+    "status": "failed",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PS2 https://github.com/PCSX2/pcsx2.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/XBOX https://github.com/xemu-project/xemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/GAMECUBE https://github.com/dolphin-emu/dolphin.git",
     "created_at": "2026-01-19T04:15:15Z",
     "batch_details": [
@@ -76,12 +76,14 @@
         "url": "https://github.com/dolphin-emu/dolphin.git"
       }
     ],
-    "started_at": "2026-01-19T04:15:21.561636"
+    "started_at": "2026-01-19T04:15:21.561636",
+    "completed_at": "2026-01-19T04:21:37.448336",
+    "result": "FAILURE: "
   },
   {
     "id": "sov_64bit_batch_8add7cb4",
     "description": "64BIT ASSIMILATION: DREAMCAST, N64, PS1",
-    "status": "pending",
+    "status": "failed",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/DREAMCAST https://github.com/flyinghead/flycast.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/N64 https://github.com/mupen64plus/mupen64plus-core.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PS1 https://github.com/duckstation/duckstation.git",
     "created_at": "2026-01-19T04:15:15Z",
     "batch_details": [
@@ -100,12 +102,15 @@
         "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PS1",
         "url": "https://github.com/duckstation/duckstation.git"
       }
-    ]
+    ],
+    "started_at": "2026-01-19T04:21:37.451331",
+    "completed_at": "2026-01-19T04:23:52.586939",
+    "result": "FAILURE: "
   },
   {
     "id": "sov_64bit_batch_3e73413b",
     "description": "64BIT ASSIMILATION: SATURN",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/SATURN https://github.com/yabause/yabause.git",
     "created_at": "2026-01-19T04:15:15Z",
     "batch_details": [
@@ -114,7 +119,10 @@
         "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/SATURN",
         "url": "https://github.com/yabause/yabause.git"
       }
-    ]
+    ],
+    "started_at": "2026-01-19T04:23:52.591976",
+    "completed_at": "2026-01-19T04:25:46.974524Z",
+    "result": "SUCCESS: Assimilated SATURN."
   },
   {
     "id": "repo_clean_8bit_16bit_exclusion",
