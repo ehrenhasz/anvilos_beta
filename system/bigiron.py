@@ -25,8 +25,12 @@ C_LABEL = "#6272a4"     # Grey
 C_BORDER = "#44475a"    # Muted
 C_TEXT = "#f8f8f2"
 
-QUEUE_FILE = "/home/aimeat/github/droppod/runtime/card_queue.json"
-LOG_FILE = "/home/aimeat/github/droppod/ext/forge.log"
+# Get the absolute path to the project root
+# The script is in system/, so we go up one level
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+
+QUEUE_FILE = os.path.join(PROJECT_ROOT, "runtime", "card_queue.json")
+LOG_FILE = os.path.join(PROJECT_ROOT, "ext", "forge.log")
 SERVICE_NAME = "titanium_warden"
 
 def make_layout():

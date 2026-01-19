@@ -7,7 +7,11 @@ import subprocess
 import time
 from datetime import datetime
 
-LOG_FILE = "/home/aimeat/github/droppod/ext/forge.log"
+# Get the absolute path to the project root
+# The script is in system/scripts/, so we go up two levels
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+
+LOG_FILE = os.path.join(PROJECT_ROOT, "ext", "forge.log")
 
 def log(message):
     timestamp = datetime.now().strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3] + 'Z'

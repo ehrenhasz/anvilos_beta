@@ -1,5 +1,12 @@
 [
   {
+    "id": "sys_runtime_fix_001",
+    "description": "RUNTIME: Fix Gemini API 400 errors (snake_case params).",
+    "status": "pending",
+    "command": "echo 'Manual fix applied.'",
+    "created_at": "2026-01-19T15:24:13.343959Z"
+  },
+  {
     "id": "sov_64bit_batch_4042132f",
     "description": "64BIT ASSIMILATION: QEMU_KVM, VirtualBox, Go_Modern",
     "status": "complete",

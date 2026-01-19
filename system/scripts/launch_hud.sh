@@ -2,7 +2,8 @@
 # scripts/launch_hud.sh
 # Sets up the "Meat-Space" HUD: Cortex (Left), BigIron (TopRight), Btop (BotRight)
 
-REPO_DIR="/home/aimeat/github/droppod"
+# Get the directory of the script itself, then go up one level to the project root
+REPO_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 
 # 1. Launch Left Window: Cortex (Gemini)
 i3-msg "workspace 1"

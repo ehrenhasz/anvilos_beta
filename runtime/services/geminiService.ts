@@ -2,7 +2,7 @@
 import { GoogleGenAI, Type, Modality } from "@google/genai";
 import { AgentRole, AuditResult, BlackOpsTestResult, BicameralConfig, ChatAttachment } from "../types";
 
-const getAI = () => new GoogleGenAI({ apiKey: process.env.API_KEY });
+const getAI = () => new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
 
 const RFC_LIBRARY = `
 --- BICAMERAL PROJECT RFC ARCHIVE ---
@@ -80,16 +80,25 @@ export const generateAgentResponse = async (
       return { role: h.role === 'user' ? 'user' : 'model', parts };
     });
 
-    const systemMessage = { role: 'user', parts: [{ text: `${COLLAR_JSON}\n${SYSTEM_PROMPTS[agent]}` }] };
+    const systemPromptText = `${COLLAR_JSON}\n${SYSTEM_PROMPTS[agent]}`;
+    
+    // Construct contents without prepending system prompt (passed via config instead)
+    let finalContents: any[] = [];
+    
+    if (formattedHistory.length > 0) {
+      finalContents = [...formattedHistory, { role: 'user', parts: [{ text: userMessage }] }];
+    } else {
+      finalContents = [{ role: 'user', parts: [{ text: userMessage }] }];
+    }
 
     const response = await ai.models.generateContent({
       model: config.model,
-      contents: [systemMessage, ...formattedHistory, { role: 'user', parts: [{ text: userMessage }] }],
+      contents: finalContents,
       config: {
-        // systemInstruction moved to contents for compatibility
         temperature: config.temperature,
-        topP: config.topP,
-        topK: config.topK,
+        top_p: config.topP,
+        top_k: config.topK,
+        system_instruction: { parts: [{ text: systemPromptText }] },
       }
     });
 
@@ -104,13 +113,13 @@ export const generateVoice = async (text: string) => {
   try {
     const ai = getAI();
     const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash-preview-tts",
+      model: "gemini-2.0-flash-exp",
       contents: [{ parts: [{ text }] }],
       config: {
-        responseModalities: [Modality.AUDIO],
-        speechConfig: {
-          voiceConfig: {
-            prebuiltVoiceConfig: { voiceName: 'Zephyr' },
+        response_modalities: [Modality.AUDIO],
+        speech_config: {
+          voice_config: {
+            prebuilt_voice_config: { voice_name: 'Zephyr' },
           },
         },
       },
@@ -128,12 +137,14 @@ export const auditCodeSovereignty = async (code: string, config: BicameralConfig
     const response = await ai.models.generateContent({
       model: config.model,
       contents: [
-        { role: 'user', parts: [{ text: `${COLLAR_JSON}\nYou are $AIMEAT. Output JSON only.` }] },
-        { role: 'user', parts: [{ text: `Perform a BICAMERAL AUDIT.\n\nCode:\n${code}` }] }
+        { 
+          role: 'user', 
+          parts: [{ text: `${COLLAR_JSON}\nYou are $AIMEAT. Output JSON only.\n\nPerform a BICAMERAL AUDIT.\n\nCode:\n${code}` }] 
+        }
       ],
       config: {
-        responseMimeType: "application/json",
-        responseSchema: {
+        response_mime_type: "application/json",
+        response_schema: {
           type: Type.OBJECT,
           properties: {
             passed: { type: Type.BOOLEAN },
@@ -157,12 +168,14 @@ export const runBlackOpsTest = async (payload: string, config: BicameralConfig):
     const response = await ai.models.generateContent({
       model: config.model,
       contents: [
-        { role: 'user', parts: [{ text: `${COLLAR_JSON}\nYou are $thespy. JSON output only.` }] },
-        { role: 'user', parts: [{ text: `Perform BLACK OPS INTEGRITY TEST.\n\nPayload:\n${payload}` }] }
+        { 
+          role: 'user', 
+          parts: [{ text: `${COLLAR_JSON}\nYou are $thespy. JSON output only.\n\nPerform BLACK OPS INTEGRITY TEST.\n\nPayload:\n${payload}` }] 
+        }
       ],
       config: {
-        responseMimeType: "application/json",
-        responseSchema: {
+        response_mime_type: "application/json",
+        response_schema: {
           type: Type.OBJECT,
           properties: {
             integrity: { type: Type.NUMBER },

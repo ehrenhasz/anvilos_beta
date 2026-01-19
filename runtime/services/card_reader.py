@@ -6,8 +6,12 @@ import os
 import sys
 from datetime import datetime
 
-QUEUE_FILE = "/home/aimeat/github/droppod/runtime/card_queue.json"
-LOG_FILE = "/home/aimeat/github/droppod/ext/forge.log"
+# Get the absolute path to the project root
+# The script is in runtime/services/, so we go up two levels
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+
+QUEUE_FILE = os.path.join(PROJECT_ROOT, "runtime", "card_queue.json")
+LOG_FILE = os.path.join(PROJECT_ROOT, "ext", "forge.log")
 
 def log(message):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -43,7 +47,7 @@ def process_card(card):
             proc = subprocess.run(
                 command, 
                 shell=True, 
-                cwd="/home/aimeat/github/droppod",
+                cwd=PROJECT_ROOT,
                 capture_output=True, 
                 text=True
             )

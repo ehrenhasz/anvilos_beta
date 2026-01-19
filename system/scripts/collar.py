@@ -13,22 +13,23 @@ class Collar:
         (r"import\s+random", "Standard 'random' library is BANNED. Use Hydrogen."),
         (r"from\s+random\s+import", "Standard 'random' library is BANNED. Use Hydrogen."),
         (r"/dev/urandom", "Direct access to /dev/urandom is BANNED. Use Hydrogen."),
-        (r"~/\.gemini", "Usage of ~/.gemini is BANNED. Use /mnt/anvil_temp.")
+        (r"~/\.gemini", "Usage of ~/.gemini is BANNED. Use /mnt/anvil_temp."),
+        (r"console\.log", "Standard console.log is BANNED. Use strict JSON logging (MicroJSON).")
     ]
 
     IGNORE_DIRS = [
-        ".git", "node_modules", "dist", "build", "__pycache__"
+        ".git", "node_modules", "dist", "build", "__pycache__", "oss_sovereignty"
     ]
     
     IGNORE_FILES = [
-        "collar.py", "hydrogen.ts", "package-lock.json", "warden.py" # Self-reference allowed for policing
+        "collar.py", "hydrogen.ts", "package-lock.json", "warden.py", "mainframe.js", "repl.js" # Self-reference allowed for policing
     ]
 
-    def read_active_card(self):
+    def check_active_card(self):
         card_queue_path = "runtime/card_queue.json"
         if not os.path.exists(card_queue_path):
             print("[COLLAR] No card queue found.")
-            sys.exit(0)
+            return False
 
         try:
             with open(card_queue_path, 'r') as f:
@@ -38,7 +39,7 @@ class Collar:
             
             if len(active_cards) == 0:
                 print("[COLLAR] No pending cards.")
-                sys.exit(0)
+                return False
             
             # The actual card reader logic
             active_card = active_cards[0]
@@ -48,8 +49,7 @@ class Collar:
             print(f"TASK: {active_card.get('description')}")
             print("=================================================")
             
-            # The script will now exit after reading the card.
-            sys.exit(0)
+            return True
 
         except json.JSONDecodeError:
             print(f"[COLLAR] Error: Could not decode {card_queue_path}.")
@@ -83,6 +83,8 @@ class Collar:
         # Large file threshold (10 MB)
         LARGE_FILE_LIMIT = 10 * 1024 * 1024 
 
+        files_to_stage = []
+
         for root, dirs, files in os.walk(root_dir):
             # Filter directories in place
             dirs[:] = [d for d in dirs if d not in self.IGNORE_DIRS and d not in ['tmp', 'temp', 'logs', 'artifacts', 'build', 'dist']]
@@ -107,13 +109,18 @@ class Collar:
                 except OSError:
                     continue
 
-                # Stage file
-                try:
-                    subprocess.run(["git", "add", filepath], check=True, capture_output=True)
-                    # print(f"Staged: {filepath}")
-                    staged_count += 1
-                except subprocess.CalledProcessError as e:
-                    print(f"[ERROR] Failed to stage {filepath}: {e}")
+                files_to_stage.append(filepath)
+
+        # Batch process git add
+        BATCH_SIZE = 50
+        for i in range(0, len(files_to_stage), BATCH_SIZE):
+            batch = files_to_stage[i:i + BATCH_SIZE]
+            try:
+                subprocess.run(["git", "add"] + batch, check=True, capture_output=True)
+                staged_count += len(batch)
+                print(f"[COLLAR] Batch staged {len(batch)} files...")
+            except subprocess.CalledProcessError as e:
+                print(f"[ERROR] Failed to stage batch: {e}")
 
         print(f"[COLLAR] Staging complete. Staged: {staged_count}, Skipped: {skipped_count}")
 
@@ -196,7 +203,7 @@ if __name__ == "__main__":
     import subprocess
     
     parser = argparse.ArgumentParser(description="Collar Entropy Scanner & Git Warden")
-    parser.add_argument("command", nargs="?", default="read", choices=["read", "scan"], help="Action to perform: 'read' (default) or 'scan'")
+    parser.add_argument("command", nargs="?", default="read", choices=["read", "scan", "stage"], help="Action to perform: 'read' (default), 'scan', or 'stage'")
     parser.add_argument("root", nargs="?", default=".", help="Root directory to process for scanning")
     parser.add_argument("--go", choices=["cli", "gui"], default="cli", help="Execution mode for scanning")
     
@@ -205,6 +212,8 @@ if __name__ == "__main__":
     collar = Collar()
     
     if args.command == "read":
-        collar.read_active_card()
+        collar.check_active_card()
     elif args.command == "scan":
         collar.scan_directory(args.root, mode=args.go)
+    elif args.command == "stage":
+        collar.stage_files(args.root)
