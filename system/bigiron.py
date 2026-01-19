@@ -14,13 +14,15 @@ from rich.text import Text
 from rich import box
 from rich.align import Align
 
-# THEME: LESBIAN CYBERPUNK 90S HACKER
-C_PRIMARY = "bold #9D00FF" # Deep Purple
-C_SECONDARY = "bold #FF0080" # Hot Pink
-C_ACCENT = "bold #00FF00" # Hacker Green
-C_WARN = "bold #FF5F00" # Safety Orange
-C_BORDER = "#4B0082" # Indigo
-C_TEXT = "white"
+# THEME: BTOP (CYBERPUNK VARIANT)
+C_PRIMARY = "bold #bd93f9"   # Dracula Purple
+C_SECONDARY = "bold #ff79c6" # Dracula Pink
+C_ACCENT = "bold #50fa7b"    # Dracula Green
+C_WARN = "bold #ffb86c"      # Dracula Orange
+C_ERR = "bold #ff5555"       # Dracula Red
+C_BORDER = "#6272a4"         # Muted Blue/Grey
+C_TEXT = "#f8f8f2"           # Off White
+C_LABEL = "#6272a4"          # Dim Grey for labels
 
 QUEUE_FILE = "runtime/card_queue.json"
 SERVICE_NAME = "titanium_warden"
@@ -30,63 +32,78 @@ console = Console()
 def make_layout() -> Layout:
     layout = Layout(name="root")
     
+    # btop style: usually one cohesive grid, but we keep the header/footer rail
     layout.split(
-        Layout(name="header", size=3),
+        Layout(name="header", size=1), # Minimal top bar
         Layout(name="main", ratio=1),
-        Layout(name="footer", size=3),
+        Layout(name="footer", size=1), # Minimal bottom bar
     )
     
     layout["main"].split_row(
         Layout(name="left", ratio=1),
-        Layout(name="right", ratio=1),
+        Layout(name="right", ratio=2), # Give more space to the stream/task
     )
     
     layout["left"].split(
-        Layout(name="service_status", ratio=1),
+        Layout(name="service_status", size=10),
         Layout(name="queue_stats", ratio=1),
     )
     
     layout["right"].split(
-        Layout(name="current_task", size=8),
+        Layout(name="current_task", size=10),
         Layout(name="tty_stream", ratio=1),
     )
     
     return layout
 
 class Header:
-    def __rich__(self) -> Panel:
-        grid = Table.grid(expand=True)
-        grid.add_column(justify="left", ratio=1)
-        grid.add_column(justify="center", ratio=1)
-        grid.add_column(justify="right", ratio=1)
+    def __rich__(self) -> Text:
+        # btop header is often just a text bar with info scattered
+        time_str = datetime.now().strftime('%H:%M:%S')
         
-        # Cyberpunk ASCII / Text
-        title = Text.from_markup(f"🔮 [{C_PRIMARY}]BIG[/][{C_SECONDARY}]IRON[/] // [{C_ACCENT}]CONSTRUCT_V1[/]")
-        sub = Text.from_markup(f"[{C_BORDER}]OPERATOR: bigiron[/]")
-        time_str = Text.from_markup(f"[{C_SECONDARY}]TIME:[/{C_SECONDARY}] [{C_TEXT}]{datetime.now().strftime('%H:%M:%S')}[/{C_TEXT}]")
+        # Construct a wide bar
+        # [ BIGIRON v1.0 ] ---------------- [ cpu: 4% ] [ mem: 12% ] ---------------- [ time ]
         
-        grid.add_row(title, sub, time_str)
-        return Panel(grid, style=f"on #1a001a", border_style=C_SECONDARY, box=box.HEAVY)
+        text = Text()
+        text.append(" 🔮 BIGIRON ", style=f"reverse {C_PRIMARY}")
+        text.append(" CONSTRUCT_V1 ", style=f"bold white on {C_BORDER}")
+        text.append(" " * 4)
+        text.append("monitoring: ", style=C_LABEL)
+        text.append(SERVICE_NAME, style=C_ACCENT)
+        
+        # Filler
+        text.append(" " * 10) # Dynamic padding would be better but simple for now
+        
+        text.append(f"{time_str}", style=f"{C_TEXT} on {C_BORDER}")
+        return Align.center(text)
 
 class Footer:
-    def __rich__(self) -> Panel:
-        # Integrity Bar
-        bar = "█" * 20
-        status_line = Text.from_markup(f"🧬 [{C_PRIMARY}]INTEGRITY:[/][{C_ACCENT}]{bar}[/] | 🩸 [{C_PRIMARY}]AUTH:[/][{C_TEXT}] OMEGA[/] | ⛓️ [{C_PRIMARY}]UPLINK:[/][{C_SECONDARY}] SECURE[/]")
-        return Panel(
-            Align.center(status_line),
-            style=f"on #1a001a",
-            border_style=C_SECONDARY,
-            box=box.HEAVY
-        )
+    def __rich__(self) -> Text:
+        # btop footer keys
+        text = Text()
+        text.append(" 1 ", style=f"reverse {C_LABEL}")
+        text.append(" HELP ", style=f"black on {C_LABEL}")
+        text.append(" 2 ", style=f"reverse {C_LABEL}")
+        text.append(" OPTIONS ", style=f"black on {C_LABEL}")
+        text.append(" Q ", style=f"reverse {C_ERR}")
+        text.append(" QUIT ", style=f"black on {C_ERR}")
+        
+        text.append(" " * 4)
+        text.append("INTEGRITY: ", style=C_LABEL)
+        text.append("STABLE ", style=C_ACCENT)
+        text.append("AUTH: ", style=C_LABEL)
+        text.append("OMEGA", style=C_SECONDARY)
+        
+        return Align.center(text)
 
 def generate_panel(title, content, color=C_PRIMARY):
     return Panel(
         content,
-        title=f"[{color}]{title}[/{color}]",
-        border_style=color,
-        box=box.HEAVY, # Chunky 90s look
-        style="on #0d001a" # Very dark purple bg
+        title=f"[{color} bold]{title}[/]",
+        title_align="left",
+        border_style=C_BORDER,
+        box=box.ROUNDED, # The btop signature
+        padding=(0, 1)
     )
 
 def get_service_health():
@@ -100,24 +117,24 @@ def get_service_health():
         )
         status = result.stdout.strip()
         
-        if status == "active":
-            status_text = f"[{C_ACCENT}]● SYSTEM_ONLINE[/{C_ACCENT}]"
-            details = f"[{C_TEXT}]PID: {os.getpid()} (EMULATED)[/{C_TEXT}]"
-        else:
-            status_text = f"[bold red]● {status.upper()}[/bold red]"
-            details = "[dim]CHECK_SYSTEM_LOGS[/dim]"
-
         grid = Table.grid(expand=True)
-        grid.add_column()
-        grid.add_row(f"[{C_SECONDARY}]TARGET :[/{C_SECONDARY}] {SERVICE_NAME}")
-        grid.add_row(f"[{C_SECONDARY}]STATUS :[/{C_SECONDARY}] {status_text}")
-        grid.add_row(details)
+        grid.add_column(justify="left", ratio=1)
+        grid.add_column(justify="right", ratio=1)
+        
+        if status == "active":
+            status_text = f"[{C_ACCENT}]active[/]"
+            graph = f"[{C_ACCENT}]■■■■■■■■■■[/]"
+        else:
+            status_text = f"[{C_ERR}]{status}[/]"
+            graph = f"[{C_ERR}]■■■.......[/]"
+
+        grid.add_row(f"[{C_LABEL}]status[/]", status_text)
+        grid.add_row(f"[{C_LABEL}]pid[/]", f"[{C_TEXT}]{os.getpid()}[/]")
+        grid.add_row(f"[{C_LABEL}]load[/]", graph)
         
         return grid
-    except FileNotFoundError:
-        return Text("Systemctl not found (Non-Linux?)", style="red")
     except Exception as e:
-        return Text(f"Error: {str(e)}", style="red")
+        return Text(f"Err: {str(e)}", style="red")
 
 def get_queue_data():
     """Parses the card queue for stats and active task."""
@@ -138,42 +155,50 @@ def get_queue_data():
             elif s == 'failed': failed += 1
             elif s == 'complete': complete += 1
             
-            # Identify current task (first one that is pending or in progress)
             if not current_task and (s == 'review' or s == 'in_progress' or s == 'pending'):
                 current_task = card
-                
-    except Exception:
-        pass # Fail gracefully
+    except:
+        pass
         
-    # Build Stats Grid
+    # btop style stats: Label ............ Value
     stats_grid = Table.grid(expand=True)
     stats_grid.add_column(justify="left")
     stats_grid.add_column(justify="right")
     
-    stats_grid.add_row(f"[{C_TEXT}]PENDING :[/{C_TEXT}]", f"[{C_SECONDARY}]{pending}[/{C_SECONDARY}]")
-    stats_grid.add_row(f"[{C_TEXT}]WORKING :[/{C_TEXT}]", f"[{C_ACCENT}]{working}[/{C_ACCENT}]")
-    stats_grid.add_row(f"[{C_TEXT}]FAILED  :[/{C_TEXT}]", f"[red]{failed}[/red]")
-    stats_grid.add_row(f"[{C_TEXT}]ARCHIVED:[/{C_TEXT}]", f"[blue]{complete}[/blue]")
+    def add_stat(label, value, color):
+        stats_grid.add_row(
+            f"[{C_LABEL}]{label}[/]", 
+            f"[{color}]{value}[/]"
+        )
+
+    add_stat("pending", pending, C_SECONDARY)
+    add_stat("working", working, C_ACCENT)
+    add_stat("failed", failed, C_ERR)
+    add_stat("archived", complete, C_BORDER) # Dimmer for archived
     
-    # Build Task Display
+    # Task Info
     if current_task:
         task_text = Text()
-        task_text.append(f"🆔 {current_task.get('id', '???')}\n", style=C_SECONDARY)
-        task_text.append(f"{current_task.get('description', 'No description')[:100]}...", style="white")
+        task_text.append(f"{current_task.get('id', '???')}", style=C_SECONDARY)
+        task_text.append(" :: ", style=C_LABEL)
+        task_text.append(f"{current_task.get('status', '???').upper()}\n", style=C_ACCENT)
+        
+        desc = current_task.get('description', 'No description')
+        if len(desc) > 80: desc = desc[:80] + "..."
+        task_text.append(desc, style=C_TEXT)
     else:
-        task_text = Text("💤 SYSTEM_IDLE", style="dim italic")
+        task_text = Text("IDLE", style=f"italic {C_LABEL}")
 
     return stats_grid, task_text
 
 class FileWatcher:
-    def __init__(self, buffer_size=15):
+    def __init__(self, buffer_size=20):
         self.buffer = deque(maxlen=buffer_size)
-        self.last_files = {} # path -> mtime
+        self.last_files = {} 
         self.first_run = True
 
     def scan(self):
         try:
-            # Find modified files (excluding hidden and common junk)
             cmd = [
                 "find", ".", 
                 "-type", "f", 
@@ -182,10 +207,8 @@ class FileWatcher:
                 "-not", "-path", "*/__pycache__/*",
                 "-printf", "%T@ %p %s\\n"
             ]
-            
             result = subprocess.run(cmd, capture_output=True, text=True)
             lines = result.stdout.strip().split('\n')
-            
             current_files = {}
             events = []
 
@@ -196,70 +219,60 @@ class FileWatcher:
                 
                 mtime = float(parts[0])
                 path = parts[1]
-                size = parts[2]
                 
                 current_files[path] = mtime
 
-                # Check if new or updated
                 if path in self.last_files:
                     if mtime > self.last_files[path]:
-                        events.append((mtime, f"MODIFIED -> {path}"))
+                        events.append((mtime, f"MODIFIED {path}"))
                 elif not self.first_run:
                      if time.time() - mtime < 10:
-                         events.append((mtime, f"INJECTED -> {path}"))
+                         events.append((mtime, f"CREATED  {path}"))
 
             self.last_files = current_files
             self.first_run = False
             
-            # Sort events by time and add to buffer
             events.sort(key=lambda x: x[0])
             for _, msg in events:
                 self.buffer.append(msg)
                 
-        except Exception as e:
-             self.buffer.append(f"[red]SCAN_ERROR: {e}[/red]")
+        except Exception:
+             pass
 
     def get_renderable(self):
         text = Text()
         for line in self.buffer:
-            # Colorize key words
             if "MODIFIED" in line:
-                text.append("⚡ ", style=C_WARN)
-                text.append(line + "\n", style=C_TEXT)
-            elif "INJECTED" in line:
-                text.append("✨ ", style=C_ACCENT)
-                text.append(line + "\n", style=C_SECONDARY)
+                # btop log style: timestamp (implied) - msg
+                text.append("M ", style=C_WARN)
+                text.append(line.replace("MODIFIED ", "") + "\n", style=C_TEXT)
+            elif "CREATED" in line:
+                text.append("C ", style=C_ACCENT)
+                text.append(line.replace("CREATED  ", "") + "\n", style=C_TEXT)
             else:
-                text.append(f"> {line}\n", style="dim purple")
+                text.append(f"  {line}\n", style=C_LABEL)
         return text
 
 def main():
     layout = make_layout()
     watcher = FileWatcher()
     
-    # Initialize Header/Footer
-    layout["header"].update(Header())
-    layout["footer"].update(Footer())
-
     with Live(layout, refresh_per_second=4, screen=True) as live:
         try:
             while True:
-                # 1. Update Service Health
-                layout["service_status"].update(generate_panel("📡 WARDEN_LINK", get_service_health(), C_SECONDARY))
-                
-                # 2. Update Queue Stats & Current Task
-                stats, task_info = get_queue_data()
-                layout["queue_stats"].update(generate_panel("📊 QUEUE_DATA", stats, C_ACCENT))
-                layout["current_task"].update(generate_panel("⚒️ CURRENT_OP", task_info, C_PRIMARY))
-                
-                # 3. Update Matrix Stream
-                watcher.scan()
-                layout["tty_stream"].update(generate_panel("📟 MATRIX_FEED", watcher.get_renderable(), C_PRIMARY))
-                
-                # 4. Update Header Time
                 layout["header"].update(Header())
+                layout["footer"].update(Footer())
                 
-                time.sleep(0.5) # Faster refresh for that cyberpunk feel
+                layout["service_status"].update(generate_panel("system", get_service_health(), C_PRIMARY))
+                
+                stats, task_info = get_queue_data()
+                layout["queue_stats"].update(generate_panel("queue", stats, C_SECONDARY))
+                layout["current_task"].update(generate_panel("task", task_info, C_WARN))
+                
+                watcher.scan()
+                layout["tty_stream"].update(generate_panel("stream", watcher.get_renderable(), C_BORDER))
+                
+                time.sleep(0.5)
         except KeyboardInterrupt:
             pass
 
