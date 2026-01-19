@@ -1,7 +1,0 @@
-#!/bin/bash
-TYPE=snapshots
-cd aros/scripts
-pushd $PWD
-source update-frs
-popd
-source update

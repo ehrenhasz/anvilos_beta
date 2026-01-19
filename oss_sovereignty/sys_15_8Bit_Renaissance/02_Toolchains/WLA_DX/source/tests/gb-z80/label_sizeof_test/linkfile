@@ -1,6 +1,0 @@
-[objects]
-main.o
-next.o
-
-[definitions]
-VALUE_2 2

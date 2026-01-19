@@ -1,6 +1,0 @@
-*.fossil
-*.log
-/.DS_Store
-*~
-/tools/blkpack
-/tools/blkunpack

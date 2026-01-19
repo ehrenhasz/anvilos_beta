@@ -1,6 +1,0 @@
-
-[objects]
-main.o
-
-[sections]
-bank 0 slot 0 window $100 $200 priority 100 free "WindowTest1"

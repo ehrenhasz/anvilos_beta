@@ -1,7 +1,3 @@
-node_modules/
-*.tar.gz
-*.iso
-*.qcow2
-mailbox/archive/
-mailbox/outbox/
-system.log
+# Ignore 8bit and 16bit sovereignty folders locally
+oss_sovereignty/sys_15_8Bit_Renaissance/
+oss_sovereignty/sys_16_16Bit_Revolution/

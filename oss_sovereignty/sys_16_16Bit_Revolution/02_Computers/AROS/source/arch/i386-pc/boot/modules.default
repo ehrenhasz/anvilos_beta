@@ -1,5 +1,0 @@
-/boot/pc/kernel.@pkg.fmt@
-/boot/pc/aros-bsp.pkg.@pkg.fmt@
-/boot/aros-base.pkg.@pkg.fmt@
-/boot/aros-fs.pkg.@pkg.fmt@
-/boot/poseidon.pkg.@pkg.fmt@
