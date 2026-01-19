@@ -2,5 +2,12 @@
   "id": "sys_18_64Bit_Cloud.macOS_Modern",
   "name": "macOS_Modern",
   "category": "01_Operating_Systems",
-  "mandate": "PRESERVE AND REIMPLEMENT"
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL.",
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T04:43:19.960412",
+  "origin": {
+    "url": "https://github.com/opensource-apple/opensource-developer-preview.git",
+    "commit": "unknown",
+    "policy": "monitor_only"
+  }
 }

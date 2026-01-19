@@ -1,5 +1,302 @@
 [
   {
+    "id": "sov_64bit_batch_3dc33208",
+    "description": "64BIT ASSIMILATION: QEMU_KVM, VirtualBox, Go_Modern",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM https://github.com/qemu/qemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox https://github.com/virtualbox/virtualbox.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern https://github.com/golang/go.git",
+    "created_at": "2026-01-19T04:43:13.298407Z",
+    "batch_details": [
+      {
+        "name": "QEMU_KVM",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM",
+        "url": "https://github.com/qemu/qemu.git"
+      },
+      {
+        "name": "VirtualBox",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox",
+        "url": "https://github.com/virtualbox/virtualbox.git"
+      },
+      {
+        "name": "Go_Modern",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern",
+        "url": "https://github.com/golang/go.git"
+      }
+    ],
+    "started_at": "2026-01-19T04:43:13.634606",
+    "completed_at": "2026-01-19T04:43:15.751387",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM FROM https://github.com/qemu/qemu.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox FROM https://github.com/virtualbox/virtualbox.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern FROM https://github.com/golang/go.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/metadata.json"
+  },
+  {
+    "id": "sov_64bit_batch_a7699f32",
+    "description": "64BIT ASSIMILATION: AARCH64, Rust_Modern, Hyper_V",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 https://github.com/ARM-software/arm-trusted-firmware.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern https://github.com/rust-lang/rust.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V https://github.com/microsoft/hvc.git",
+    "created_at": "2026-01-19T04:43:13.298430Z",
+    "batch_details": [
+      {
+        "name": "AARCH64",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64",
+        "url": "https://github.com/ARM-software/arm-trusted-firmware.git"
+      },
+      {
+        "name": "Rust_Modern",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern",
+        "url": "https://github.com/rust-lang/rust.git"
+      },
+      {
+        "name": "Hyper_V",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V",
+        "url": "https://github.com/microsoft/hvc.git"
+      }
+    ],
+    "started_at": "2026-01-19T04:43:15.757462",
+    "completed_at": "2026-01-19T04:43:17.867999",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 FROM https://github.com/ARM-software/arm-trusted-firmware.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern FROM https://github.com/rust-lang/rust.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V FROM https://github.com/microsoft/hvc.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/metadata.json"
+  },
+  {
+    "id": "sov_64bit_batch_bc030729",
+    "description": "64BIT ASSIMILATION: FreeBSD_Modern, Linux_Modern, macOS_Modern",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern https://github.com/freebsd/freebsd-src.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern https://github.com/torvalds/linux.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern https://github.com/opensource-apple/opensource-developer-preview.git",
+    "created_at": "2026-01-19T04:43:13.298437Z",
+    "batch_details": [
+      {
+        "name": "FreeBSD_Modern",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern",
+        "url": "https://github.com/freebsd/freebsd-src.git"
+      },
+      {
+        "name": "Linux_Modern",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern",
+        "url": "https://github.com/torvalds/linux.git"
+      },
+      {
+        "name": "macOS_Modern",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern",
+        "url": "https://github.com/opensource-apple/opensource-developer-preview.git"
+      }
+    ],
+    "started_at": "2026-01-19T04:43:17.871917",
+    "completed_at": "2026-01-19T04:43:19.965564",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern FROM https://github.com/freebsd/freebsd-src.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern FROM https://github.com/torvalds/linux.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern FROM https://github.com/opensource-apple/opensource-developer-preview.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/metadata.json"
+  },
+  {
+    "id": "sov_64bit_batch_985d8ae9",
+    "description": "64BIT ASSIMILATION: QEMU_KVM, VirtualBox, Go_Modern",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM https://github.com/qemu/qemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox https://github.com/virtualbox/virtualbox.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern https://github.com/golang/go.git",
+    "created_at": "2026-01-19T04:42:54.245629Z",
+    "batch_details": [
+      {
+        "name": "QEMU_KVM",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM",
+        "url": "https://github.com/qemu/qemu.git"
+      },
+      {
+        "name": "VirtualBox",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox",
+        "url": "https://github.com/virtualbox/virtualbox.git"
+      },
+      {
+        "name": "Go_Modern",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern",
+        "url": "https://github.com/golang/go.git"
+      }
+    ],
+    "started_at": "2026-01-19T04:42:54.253882",
+    "completed_at": "2026-01-19T04:42:56.378263",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM FROM https://github.com/qemu/qemu.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox FROM https://github.com/virtualbox/virtualbox.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern FROM https://github.com/golang/go.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/metadata.json"
+  },
+  {
+    "id": "sov_64bit_batch_af93a4bb",
+    "description": "64BIT ASSIMILATION: AARCH64, Rust_Modern, Hyper_V",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 https://github.com/ARM-software/arm-trusted-firmware.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern https://github.com/rust-lang/rust.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V https://github.com/microsoft/hvc.git",
+    "created_at": "2026-01-19T04:42:54.245675Z",
+    "batch_details": [
+      {
+        "name": "AARCH64",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64",
+        "url": "https://github.com/ARM-software/arm-trusted-firmware.git"
+      },
+      {
+        "name": "Rust_Modern",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern",
+        "url": "https://github.com/rust-lang/rust.git"
+      },
+      {
+        "name": "Hyper_V",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V",
+        "url": "https://github.com/microsoft/hvc.git"
+      }
+    ],
+    "started_at": "2026-01-19T04:42:56.384709",
+    "completed_at": "2026-01-19T04:42:58.503809",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 FROM https://github.com/ARM-software/arm-trusted-firmware.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern FROM https://github.com/rust-lang/rust.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V FROM https://github.com/microsoft/hvc.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/metadata.json"
+  },
+  {
+    "id": "sov_64bit_batch_6cbfbb4f",
+    "description": "64BIT ASSIMILATION: FreeBSD_Modern, Linux_Modern, macOS_Modern",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern https://github.com/freebsd/freebsd-src.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern https://github.com/torvalds/linux.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern https://github.com/opensource-apple/opensource-developer-preview.git",
+    "created_at": "2026-01-19T04:42:54.245683Z",
+    "batch_details": [
+      {
+        "name": "FreeBSD_Modern",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern",
+        "url": "https://github.com/freebsd/freebsd-src.git"
+      },
+      {
+        "name": "Linux_Modern",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern",
+        "url": "https://github.com/torvalds/linux.git"
+      },
+      {
+        "name": "macOS_Modern",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern",
+        "url": "https://github.com/opensource-apple/opensource-developer-preview.git"
+      }
+    ],
+    "started_at": "2026-01-19T04:42:58.510224",
+    "completed_at": "2026-01-19T04:43:00.598489",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern FROM https://github.com/freebsd/freebsd-src.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern FROM https://github.com/torvalds/linux.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern FROM https://github.com/opensource-apple/opensource-developer-preview.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/metadata.json"
+  },
+  {
+    "id": "sov_64bit_batch_4eab0288",
+    "description": "64BIT ASSIMILATION: QEMU_KVM, VirtualBox, Go_Modern",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM https://github.com/qemu/qemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox https://github.com/virtualbox/virtualbox.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern https://github.com/golang/go.git",
+    "created_at": "2026-01-19T04:42:23.215542Z",
+    "batch_details": [
+      {
+        "name": "QEMU_KVM",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM",
+        "url": "https://github.com/qemu/qemu.git"
+      },
+      {
+        "name": "VirtualBox",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox",
+        "url": "https://github.com/virtualbox/virtualbox.git"
+      },
+      {
+        "name": "Go_Modern",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern",
+        "url": "https://github.com/golang/go.git"
+      }
+    ],
+    "started_at": "2026-01-19T04:42:23.920507",
+    "completed_at": "2026-01-19T04:42:26.009424",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM FROM https://github.com/qemu/qemu.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox FROM https://github.com/virtualbox/virtualbox.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern FROM https://github.com/golang/go.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/metadata.json"
+  },
+  {
+    "id": "sov_64bit_batch_735ca520",
+    "description": "64BIT ASSIMILATION: AARCH64, Rust_Modern, Hyper_V",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 https://github.com/ARM-software/arm-trusted-firmware.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern https://github.com/rust-lang/rust.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V https://github.com/microsoft/hvc.git",
+    "created_at": "2026-01-19T04:42:23.215568Z",
+    "batch_details": [
+      {
+        "name": "AARCH64",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64",
+        "url": "https://github.com/ARM-software/arm-trusted-firmware.git"
+      },
+      {
+        "name": "Rust_Modern",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern",
+        "url": "https://github.com/rust-lang/rust.git"
+      },
+      {
+        "name": "Hyper_V",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V",
+        "url": "https://github.com/microsoft/hvc.git"
+      }
+    ],
+    "started_at": "2026-01-19T04:42:26.015029",
+    "completed_at": "2026-01-19T04:42:28.104502",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 FROM https://github.com/ARM-software/arm-trusted-firmware.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern FROM https://github.com/rust-lang/rust.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V FROM https://github.com/microsoft/hvc.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/metadata.json"
+  },
+  {
+    "id": "sov_64bit_batch_0d2e2f7d",
+    "description": "64BIT ASSIMILATION: FreeBSD_Modern, Linux_Modern, macOS_Modern",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern https://github.com/freebsd/freebsd-src.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern https://github.com/torvalds/linux.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern https://github.com/opensource-apple/opensource-developer-preview.git",
+    "created_at": "2026-01-19T04:42:23.215576Z",
+    "batch_details": [
+      {
+        "name": "FreeBSD_Modern",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern",
+        "url": "https://github.com/freebsd/freebsd-src.git"
+      },
+      {
+        "name": "Linux_Modern",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern",
+        "url": "https://github.com/torvalds/linux.git"
+      },
+      {
+        "name": "macOS_Modern",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern",
+        "url": "https://github.com/opensource-apple/opensource-developer-preview.git"
+      }
+    ],
+    "started_at": "2026-01-19T04:42:28.107587",
+    "completed_at": "2026-01-19T04:42:30.188884",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern FROM https://github.com/freebsd/freebsd-src.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern FROM https://github.com/torvalds/linux.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern FROM https://github.com/opensource-apple/opensource-developer-preview.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/metadata.json"
+  },
+  {
+    "id": "sov_64bit_batch_01bda311",
+    "description": "64BIT ASSIMILATION: QEMU_KVM, VirtualBox, Go_Modern",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM https://github.com/qemu/qemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox https://github.com/virtualbox/virtualbox.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern https://github.com/golang/go.git",
+    "created_at": "2026-01-19T04:41:19.472376Z",
+    "batch_details": [
+      {
+        "name": "QEMU_KVM",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM",
+        "url": "https://github.com/qemu/qemu.git"
+      },
+      {
+        "name": "VirtualBox",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox",
+        "url": "https://github.com/virtualbox/virtualbox.git"
+      },
+      {
+        "name": "Go_Modern",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern",
+        "url": "https://github.com/golang/go.git"
+      }
+    ],
+    "started_at": "2026-01-19T04:41:19.636123",
+    "completed_at": "2026-01-19T04:41:21.723182",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM FROM https://github.com/qemu/qemu.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox FROM https://github.com/virtualbox/virtualbox.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern FROM https://github.com/golang/go.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/metadata.json"
+  },
+  {
+    "id": "sov_64bit_batch_7a24b7c9",
+    "description": "64BIT ASSIMILATION: AARCH64, Rust_Modern, Hyper_V",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 https://github.com/ARM-software/arm-trusted-firmware.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern https://github.com/rust-lang/rust.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V https://github.com/microsoft/hvc.git",
+    "created_at": "2026-01-19T04:41:19.472400Z",
+    "batch_details": [
+      {
+        "name": "AARCH64",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64",
+        "url": "https://github.com/ARM-software/arm-trusted-firmware.git"
+      },
+      {
+        "name": "Rust_Modern",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern",
+        "url": "https://github.com/rust-lang/rust.git"
+      },
+      {
+        "name": "Hyper_V",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V",
+        "url": "https://github.com/microsoft/hvc.git"
+      }
+    ],
+    "started_at": "2026-01-19T04:41:21.726041",
+    "completed_at": "2026-01-19T04:41:23.806700",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 FROM https://github.com/ARM-software/arm-trusted-firmware.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern FROM https://github.com/rust-lang/rust.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V FROM https://github.com/microsoft/hvc.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/metadata.json"
+  },
+  {
     "id": "sov_64bit_batch_349d7de0",
     "description": "64BIT ASSIMILATION: QEMU_KVM, VirtualBox, Go_Modern",
     "status": "complete",
