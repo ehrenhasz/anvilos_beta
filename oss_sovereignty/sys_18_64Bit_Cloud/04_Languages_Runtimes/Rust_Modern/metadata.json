@@ -4,7 +4,7 @@
   "category": "04_Languages_Runtimes",
   "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL.",
   "sovereignty_level": "assimilated",
-  "assimilated_at": "2026-01-19T04:45:10.662741",
+  "assimilated_at": "2026-01-19T04:47:01.518390",
   "origin": {
     "url": "https://github.com/rust-lang/rust.git",
     "commit": "unknown",
