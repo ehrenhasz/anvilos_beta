@@ -1293,3 +1293,45 @@ EXEC: git rev-parse HEAD
 >> Severing connection (removing .git)...
 >> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/86Box/metadata.json
 [2026-01-19 03:34:55] PROCESSING CARD: sov_16bit_deep_freedos - 16-BIT DEEP: Assimilate FreeDOS (FreeDOS Kernel (MS-DOS Compatible))
+[2026-01-19 03:34:57] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/FreeDOS https://github.com/FDOS/kernel.git
+[2026-01-19 03:34:58] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/FreeDOS FROM https://github.com/FDOS/kernel.git
+>> Cloning https://github.com/FDOS/kernel.git...
+EXEC: git clone --depth 1 https://github.com/FDOS/kernel.git oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/FreeDOS/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/FreeDOS/metadata.json
+[2026-01-19 03:34:58] PROCESSING CARD: sov_16bit_deep_aros - 16-BIT DEEP: Assimilate AROS (AROS (AmigaOS 3.1 Re-implementation))
+[2026-01-19 03:35:00] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/AROS https://github.com/aros-development-team/AROS.git
+[2026-01-19 03:35:05] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/AROS FROM https://github.com/aros-development-team/AROS.git
+>> Cloning https://github.com/aros-development-team/AROS.git...
+EXEC: git clone --depth 1 https://github.com/aros-development-team/AROS.git oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/AROS/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/AROS/metadata.json
+[2026-01-19 03:35:05] PROCESSING CARD: sov_16bit_deep_emutos - 16-BIT DEEP: Assimilate EmuTOS (EmuTOS (Atari TOS Replacement))
+[2026-01-19 03:35:07] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/EmuTOS https://github.com/emutos/emutos.git
+[2026-01-19 03:37:23] ERROR: FAILURE: 
+[2026-01-19 03:37:23] PROCESSING CARD: sov_16bit_deep_open_watcom_v2 - 16-BIT DEEP: Assimilate Open_Watcom_v2 (Open Watcom v2 (x86 C/C++ Compiler))
+[2026-01-19 03:37:25] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/Open_Watcom_v2 https://github.com/open-watcom/open-watcom-v2.git
+[2026-01-19 03:37:33] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/Open_Watcom_v2 FROM https://github.com/open-watcom/open-watcom-v2.git
+>> Cloning https://github.com/open-watcom/open-watcom-v2.git...
+EXEC: git clone --depth 1 https://github.com/open-watcom/open-watcom-v2.git oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/Open_Watcom_v2/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/Open_Watcom_v2/metadata.json
+[2026-01-19 03:37:33] PROCESSING CARD: sov_16bit_deep_aqb - 16-BIT DEEP: Assimilate AQB (Amiga BASIC Compiler)
+[2026-01-19 03:37:35] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/AQB https://github.com/gooofy/aqb.git
+[2026-01-19 03:37:36] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/AQB FROM https://github.com/gooofy/aqb.git
+>> Cloning https://github.com/gooofy/aqb.git...
+EXEC: git clone --depth 1 https://github.com/gooofy/aqb.git oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/AQB/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/AQB/metadata.json
+[2026-01-19 03:37:36] PROCESSING CARD: sov_16bit_deep_volksforth - 16-BIT DEEP: Assimilate VolksForth (Forth-83 for 16-bit Systems)
+[2026-01-19 03:37:38] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/VolksForth https://github.com/forth-ev/VolksForth.git
+[2026-01-19 03:38:37] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/VolksForth FROM https://github.com/forth-ev/VolksForth.git
+>> Cloning https://github.com/forth-ev/VolksForth.git...
+EXEC: git clone --depth 1 https://github.com/forth-ev/VolksForth.git oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/VolksForth/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/VolksForth/metadata.json
