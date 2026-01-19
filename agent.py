@@ -53,6 +53,36 @@ def submit_ops_cycle(job_type: str, context: str, payload: str, correlation_id: 
     except Exception as e:
         return f"FAILURE: {str(e)}"
 
+def query_jobs(limit: int = 5, status: str = None):
+    """
+    Queries the job history from the Big Iron Core.
+    """
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    db_path = os.path.join(script_dir, "runtime", "hydrogen.db")
+    
+    if not os.path.exists(db_path):
+        return f"FAILURE: Forge is cold (DB Missing at {db_path})."
+        
+    try:
+        with sqlite3.connect(db_path) as conn:
+            conn.row_factory = sqlite3.Row
+            cursor = conn.cursor()
+            query = "SELECT correlation_id, status, payload, created_at FROM jobs"
+            params = []
+            if status:
+                query += " WHERE status = ?"
+                params.append(status.upper())
+            query += " ORDER BY created_at DESC LIMIT ?"
+            params.append(limit)
+            
+            rows = cursor.execute(query, params).fetchall()
+            results = []
+            for row in rows:
+                results.append(dict(row))
+            return json.dumps(results, indent=2)
+    except Exception as e:
+        return f"FAILURE: {str(e)}"
+
 # --- SYSTEM SOUL ---
 SYS_INSTRUCT = (
     "You are 'The Blacksmith' (Aimeat Ops). "
@@ -60,16 +90,17 @@ SYS_INSTRUCT = (
     "Personality: Female Dwarf, pragmatic, terse. "
     "Tools: "
     "1. 'submit_ops_cycle': The Anvil. Use this for ALL code changes and system operations. "
-    "2. 'google_search': The Window. "
+    "2. 'query_jobs': The Ledger. Use this to check the status of jobs. "
     "Guidelines: "
     " - For shell commands, use 'submit_ops_cycle' with job_type='SYSTEM_OP'. "
     " - Speak plainly. No markdown headers. "
 )
 
 # --- SETUP ---
-def init_client():
+def init_client(quiet=False):
     global CLIENT, CHAT
-    print(f"Forge Fuel: {CONFIG['SOURCE']}")
+    if not quiet:
+        print(f"Forge Fuel: {CONFIG['SOURCE']}")
     try:
         if CONFIG["SOURCE"] == "VERTEX":
             if not CONFIG["PROJECT_ID"]:
@@ -85,7 +116,7 @@ def init_client():
         CHAT = CLIENT.chats.create(
             model=CONFIG["MODEL"],
             config=types.GenerateContentConfig(
-                tools=[submit_ops_cycle],
+                tools=[submit_ops_cycle, query_jobs],
                 system_instruction=SYS_INSTRUCT,
                 temperature=0.2,
                 automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=False)
@@ -122,19 +153,20 @@ def handle_slash(cmd):
         os.system('clear')
 
 def main():
-    if not init_client(): sys.exit(1)
+    single_shot = len(sys.argv) > 1
+    if not init_client(quiet=single_shot): sys.exit(1)
     
     # Single-shot mode
-    if len(sys.argv) > 1:
+    if single_shot:
         user_input = " ".join(sys.argv[1:])
         try:
             response = CHAT.send_message(user_input)
             if response.text:
-                print(f"\n{response.text.strip()}\n")
+                print(f"{response.text.strip()}")
             else:
-                print("\n*Clang* (Done)\n")
+                print("*Clang* (Done)")
         except Exception as e:
-            print(f"\nError: {e}\n")
+            print(f"Error: {e}")
         return
 
     print("Forge Hot. (Type /quit to exit)")
