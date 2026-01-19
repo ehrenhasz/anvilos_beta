@@ -1,5 +1,33 @@
 [
   {
+    "id": "vis_01_monitor_core",
+    "description": "BIG_IRON_VIS: Scaffold 'system/bigiron.py' using Python 'rich' library. Setup the TUI layout (Header, Grid, Footer). Goal: A beautiful, responsive half-height terminal interface.",
+    "status": "pending",
+    "created_at": "2026-01-19T00:05:00.000Z",
+    "result": null
+  },
+  {
+    "id": "vis_02_stats_engine",
+    "description": "BIG_IRON_VIS: Implement data gathering logic. 1. Parse 'runtime/card_queue.json' for counts (Pending, Working, Failed). 2. Query 'systemctl status titanium_warden' for Int30 service health.",
+    "status": "pending",
+    "created_at": "2026-01-19T00:05:00.000Z",
+    "result": null
+  },
+  {
+    "id": "vis_03_matrix_stream",
+    "description": "BIG_IRON_VIS: Implement the 'TTY Stream'. Watch the file system or 'forge.log' for write events. Display them as a scrolling matrix-style feed of 'Her Code' being written to disk.",
+    "status": "pending",
+    "created_at": "2026-01-19T00:05:00.000Z",
+    "result": null
+  },
+  {
+    "id": "vis_04_theme_polish",
+    "description": "BIG_IRON_VIS: Apply the 'Lesbian Cyberpunk 90s Hacker' aesthetic. Primary color: Purple (#9D00FF). Secondary: Neon Pink/Green. Font: Bold. Icons: 🔮 ⛓️ 🧬 🩸. Ensure it looks like a Gibson hacking deck.",
+    "status": "pending",
+    "created_at": "2026-01-19T00:05:00.000Z",
+    "result": null
+  },
+  {
     "id": "fix_dash_001",
     "description": "RESTORE_DASHBOARD: Recreate 'system/dashboard.py' referenced by 'launch_hud.sh'. Investigate missing file and restore functionality.",
     "status": "complete",
