@@ -1,5 +1,12 @@
 [
   {
+    "id": "mod_btop_src_01",
+    "description": "BTOP_MOD: Modify 'oss_sovereignty/sys_07_Btop/source' (C++). Inject a 'Card Reader' panel that reads 'runtime/card_queue.json'. Maintain exact btop visual fidelity.",
+    "status": "pending",
+    "created_at": "2026-01-19T00:20:00.000Z",
+    "result": null
+  },
+  {
     "id": "vis_01_monitor_core",
     "description": "BIG_IRON_VIS: Scaffold 'system/bigiron.py' using Python 'rich' library. Setup the TUI layout (Header, Grid, Footer). Goal: A beautiful, responsive half-height terminal interface.",
     "status": "complete",
