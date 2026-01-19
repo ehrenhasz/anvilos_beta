@@ -1,0 +1,7 @@
+{
+  "id": "legacy_dpkg-realpath",
+  "original_path": "/usr/bin/dpkg-realpath",
+  "category": "PACKAGE_MGMT",
+  "status": "flagged_for_removal",
+  "replacement_strategy": "rewrite_in_anvil"
+}

@@ -1,5 +1,411 @@
 [
   {
+    "id": "sys_alias_bigiron",
+    "description": "ALIAS: Map 'bigiron' to 'python3 system/dashboard.py' for rapid access.",
+    "status": "complete",
+    "command": "echo \"alias bigiron='python3 /home/aimeat/github/anvilos_beta/system/dashboard.py'\" >> ~/.bashrc",
+    "created_at": "2026-01-19T16:37:35.321811Z",
+    "started_at": "2026-01-19T16:37:35.502732",
+    "completed_at": "2026-01-19T16:37:37.515777",
+    "result": "SUCCESS: "
+  },
+  {
+    "id": "sov_batch_run_20260119_001",
+    "description": "SOV BATCH 1: ctx_06_recharts, ctx_07_vite, sys_01_Linux_Kernel, sys_02_SELinux, sys_07_Btop",
+    "status": "complete",
+    "command": "bash system/run_sovereignty_task.sh oss_sovereignty/ctx_06_recharts && bash system/run_sovereignty_task.sh oss_sovereignty/ctx_07_vite && bash system/run_sovereignty_task.sh oss_sovereignty/sys_01_Linux_Kernel && bash system/run_sovereignty_task.sh oss_sovereignty/sys_02_SELinux && bash system/run_sovereignty_task.sh oss_sovereignty/sys_07_Btop",
+    "created_at": "2026-01-19T16:34:14.021060Z",
+    "metadata": {
+      "type": "sovereignty_batch",
+      "batch_index": 0,
+      "targets": [
+        "ctx_06_recharts",
+        "ctx_07_vite",
+        "sys_01_Linux_Kernel",
+        "sys_02_SELinux",
+        "sys_07_Btop"
+      ]
+    },
+    "started_at": "2026-01-19T16:35:04.824941",
+    "completed_at": "2026-01-19T16:35:06.863040",
+    "result": "SUCCESS: >> TARGET_DIR: oss_sovereignty/ctx_06_recharts\n>> BUILD_SCRIPT: oss_sovereignty/ctx_06_recharts/anvil.build.sh\nNo .git directory found in 'oss_sovereignty/ctx_06_recharts' or 'oss_sovereignty/ctx_06_recharts/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/ctx_07_vite\n>> BUILD_SCRIPT: oss_sovereignty/ctx_07_vite/anvil.build.sh\nNo .git directory found in 'oss_sovereignty/ctx_07_vite' or 'oss_sovereignty/ctx_07_vite/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_01_Linux_Kernel\n>> BUILD_SCRIPT: oss_sovereignty/sys_01_Linux_Kernel/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_01_Linux_Kernel/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_01_Linux_Kernel' or 'oss_sovereignty/sys_01_Linux_Kernel/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_02_SELinux\n>> BUILD_SCRIPT: oss_sovereignty/sys_02_SELinux/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_02_SELinux/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_02_SELinux' or 'oss_sovereignty/sys_02_SELinux/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_07_Btop\n>> BUILD_SCRIPT: oss_sovereignty/sys_07_Btop/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_07_Btop/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_07_Btop' or 'oss_sovereignty/sys_07_Btop/source'.\nSUCCESS: No git repository to report on."
+  },
+  {
+    "id": "sov_batch_run_20260119_002",
+    "description": "SOV BATCH 2: sys_08_Aerc, sys_09_Anvil, sys_10_HyperVision, sys_11_AlloyDB, make",
+    "status": "complete",
+    "command": "bash system/run_sovereignty_task.sh oss_sovereignty/sys_08_Aerc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_09_Anvil && bash system/run_sovereignty_task.sh oss_sovereignty/sys_10_HyperVision && bash system/run_sovereignty_task.sh oss_sovereignty/sys_11_AlloyDB && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/COMPILERS_BUILD/make",
+    "created_at": "2026-01-19T16:34:14.021092Z",
+    "metadata": {
+      "type": "sovereignty_batch",
+      "batch_index": 1,
+      "targets": [
+        "sys_08_Aerc",
+        "sys_09_Anvil",
+        "sys_10_HyperVision",
+        "sys_11_AlloyDB",
+        "sys_99_Legacy_Bin/COMPILERS_BUILD/make"
+      ]
+    },
+    "started_at": "2026-01-19T16:35:06.870765",
+    "completed_at": "2026-01-19T16:35:08.903303",
+    "result": "SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_08_Aerc\n>> BUILD_SCRIPT: oss_sovereignty/sys_08_Aerc/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_08_Aerc/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_08_Aerc' or 'oss_sovereignty/sys_08_Aerc/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_09_Anvil\n>> BUILD_SCRIPT: oss_sovereignty/sys_09_Anvil/anvil.build.sh\nNo .git directory found in 'oss_sovereignty/sys_09_Anvil' or 'oss_sovereignty/sys_09_Anvil/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_10_HyperVision\n>> BUILD_SCRIPT: oss_sovereignty/sys_10_HyperVision/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_10_HyperVision/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_10_HyperVision' or 'oss_sovereignty/sys_10_HyperVision/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_11_AlloyDB\n>> BUILD_SCRIPT: oss_sovereignty/sys_11_AlloyDB/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_11_AlloyDB/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_11_AlloyDB' or 'oss_sovereignty/sys_11_AlloyDB/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/COMPILERS_BUILD/make\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/COMPILERS_BUILD/make/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/COMPILERS_BUILD/make/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/COMPILERS_BUILD/make' or 'oss_sovereignty/sys_99_Legacy_Bin/COMPILERS_BUILD/make/source'.\nSUCCESS: No git repository to report on."
+  },
+  {
+    "id": "sov_batch_run_20260119_003",
+    "description": "SOV BATCH 3: info, less, man, more, nano",
+    "status": "complete",
+    "command": "bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/info && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/less && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/man && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/more && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/nano",
+    "created_at": "2026-01-19T16:34:14.021108Z",
+    "metadata": {
+      "type": "sovereignty_batch",
+      "batch_index": 2,
+      "targets": [
+        "sys_99_Legacy_Bin/EDITORS_DOCS/info",
+        "sys_99_Legacy_Bin/EDITORS_DOCS/less",
+        "sys_99_Legacy_Bin/EDITORS_DOCS/man",
+        "sys_99_Legacy_Bin/EDITORS_DOCS/more",
+        "sys_99_Legacy_Bin/EDITORS_DOCS/nano"
+      ]
+    },
+    "started_at": "2026-01-19T16:35:08.907022",
+    "completed_at": "2026-01-19T16:35:10.933023",
+    "result": "SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/info\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/info/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/info/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/info' or 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/info/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/less\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/less/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/less/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/less' or 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/less/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/man\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/man/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/man/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/man' or 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/man/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/more\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/more/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/more/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/more' or 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/more/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/nano\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/nano/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/nano/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/nano' or 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/nano/source'.\nSUCCESS: No git repository to report on."
+  },
+  {
+    "id": "sov_batch_run_20260119_004",
+    "description": "SOV BATCH 4: vim.basic, vim.tiny, vimtutor, node, nodegc-bpfcc",
+    "status": "complete",
+    "command": "bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.basic && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.tiny && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vimtutor && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/node && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodegc-bpfcc",
+    "created_at": "2026-01-19T16:34:14.021120Z",
+    "metadata": {
+      "type": "sovereignty_batch",
+      "batch_index": 3,
+      "targets": [
+        "sys_99_Legacy_Bin/EDITORS_DOCS/vim.basic",
+        "sys_99_Legacy_Bin/EDITORS_DOCS/vim.tiny",
+        "sys_99_Legacy_Bin/EDITORS_DOCS/vimtutor",
+        "sys_99_Legacy_Bin/INTERPRETERS/node",
+        "sys_99_Legacy_Bin/INTERPRETERS/nodegc-bpfcc"
+      ]
+    },
+    "started_at": "2026-01-19T16:35:10.942448",
+    "completed_at": "2026-01-19T16:35:12.970640",
+    "result": "SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.basic\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.basic/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.basic/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.basic' or 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.basic/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.tiny\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.tiny/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.tiny/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.tiny' or 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.tiny/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vimtutor\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vimtutor/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vimtutor/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vimtutor' or 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vimtutor/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/node\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/node/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/node/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/node' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/node/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodegc-bpfcc\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodegc-bpfcc/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodegc-bpfcc/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodegc-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodegc-bpfcc/source'.\nSUCCESS: No git repository to report on."
+  },
+  {
+    "id": "sov_batch_run_20260119_005",
+    "description": "SOV BATCH 5: nodestat-bpfcc, perl, perl5.38-x86_64-linux-gnu, perl5.38.2, perlbug",
+    "status": "complete",
+    "command": "bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodestat-bpfcc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38-x86_64-linux-gnu && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38.2 && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlbug",
+    "created_at": "2026-01-19T16:34:14.021131Z",
+    "metadata": {
+      "type": "sovereignty_batch",
+      "batch_index": 4,
+      "targets": [
+        "sys_99_Legacy_Bin/INTERPRETERS/nodestat-bpfcc",
+        "sys_99_Legacy_Bin/INTERPRETERS/perl",
+        "sys_99_Legacy_Bin/INTERPRETERS/perl5.38-x86_64-linux-gnu",
+        "sys_99_Legacy_Bin/INTERPRETERS/perl5.38.2",
+        "sys_99_Legacy_Bin/INTERPRETERS/perlbug"
+      ]
+    },
+    "started_at": "2026-01-19T16:35:12.977886",
+    "completed_at": "2026-01-19T16:35:15.008986",
+    "result": "SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodestat-bpfcc\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodestat-bpfcc/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodestat-bpfcc/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodestat-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodestat-bpfcc/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38-x86_64-linux-gnu\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38-x86_64-linux-gnu/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38-x86_64-linux-gnu/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38-x86_64-linux-gnu' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38-x86_64-linux-gnu/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38.2\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38.2/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38.2/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38.2' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38.2/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlbug\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlbug/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlbug/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlbug' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlbug/source'.\nSUCCESS: No git repository to report on."
+  },
+  {
+    "id": "sov_batch_run_20260119_006",
+    "description": "SOV BATCH 6: perlcalls-bpfcc, perldoc, perlflow-bpfcc, perlivp, perlstat-bpfcc",
+    "status": "complete",
+    "command": "bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlcalls-bpfcc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perldoc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlflow-bpfcc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlivp && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlstat-bpfcc",
+    "created_at": "2026-01-19T16:34:14.021148Z",
+    "metadata": {
+      "type": "sovereignty_batch",
+      "batch_index": 5,
+      "targets": [
+        "sys_99_Legacy_Bin/INTERPRETERS/perlcalls-bpfcc",
+        "sys_99_Legacy_Bin/INTERPRETERS/perldoc",
+        "sys_99_Legacy_Bin/INTERPRETERS/perlflow-bpfcc",
+        "sys_99_Legacy_Bin/INTERPRETERS/perlivp",
+        "sys_99_Legacy_Bin/INTERPRETERS/perlstat-bpfcc"
+      ]
+    },
+    "started_at": "2026-01-19T16:35:15.016578",
+    "completed_at": "2026-01-19T16:35:17.046695",
+    "result": "SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlcalls-bpfcc\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlcalls-bpfcc/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlcalls-bpfcc/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlcalls-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlcalls-bpfcc/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perldoc\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perldoc/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perldoc/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perldoc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perldoc/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlflow-bpfcc\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlflow-bpfcc/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlflow-bpfcc/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlflow-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlflow-bpfcc/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlivp\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlivp/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlivp/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlivp' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlivp/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlstat-bpfcc\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlstat-bpfcc/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlstat-bpfcc/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlstat-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlstat-bpfcc/source'.\nSUCCESS: No git repository to report on."
+  },
+  {
+    "id": "sov_batch_run_20260119_007",
+    "description": "SOV BATCH 7: perlthanks, phpcalls-bpfcc, phpflow-bpfcc, phpstat-bpfcc, python3.12",
+    "status": "complete",
+    "command": "bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlthanks && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpcalls-bpfcc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpflow-bpfcc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpstat-bpfcc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/python3.12",
+    "created_at": "2026-01-19T16:34:14.021164Z",
+    "metadata": {
+      "type": "sovereignty_batch",
+      "batch_index": 6,
+      "targets": [
+        "sys_99_Legacy_Bin/INTERPRETERS/perlthanks",
+        "sys_99_Legacy_Bin/INTERPRETERS/phpcalls-bpfcc",
+        "sys_99_Legacy_Bin/INTERPRETERS/phpflow-bpfcc",
+        "sys_99_Legacy_Bin/INTERPRETERS/phpstat-bpfcc",
+        "sys_99_Legacy_Bin/INTERPRETERS/python3.12"
+      ]
+    },
+    "started_at": "2026-01-19T16:35:17.053754",
+    "completed_at": "2026-01-19T16:35:19.080009",
+    "result": "SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlthanks\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlthanks/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlthanks/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlthanks' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlthanks/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpcalls-bpfcc\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpcalls-bpfcc/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpcalls-bpfcc/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpcalls-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpcalls-bpfcc/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpflow-bpfcc\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpflow-bpfcc/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpflow-bpfcc/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpflow-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpflow-bpfcc/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpstat-bpfcc\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpstat-bpfcc/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpstat-bpfcc/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpstat-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpstat-bpfcc/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/python3.12\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/python3.12/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/python3.12/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/python3.12' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/python3.12/source'.\nSUCCESS: No git repository to report on."
+  },
+  {
+    "id": "sov_batch_run_20260119_008",
+    "description": "SOV BATCH 8: rubycalls-bpfcc, rubyflow-bpfcc, rubygc-bpfcc, rubyobjnew-bpfcc, rubystat-bpfcc",
+    "status": "complete",
+    "command": "bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubycalls-bpfcc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyflow-bpfcc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubygc-bpfcc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyobjnew-bpfcc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubystat-bpfcc",
+    "created_at": "2026-01-19T16:34:14.021179Z",
+    "metadata": {
+      "type": "sovereignty_batch",
+      "batch_index": 7,
+      "targets": [
+        "sys_99_Legacy_Bin/INTERPRETERS/rubycalls-bpfcc",
+        "sys_99_Legacy_Bin/INTERPRETERS/rubyflow-bpfcc",
+        "sys_99_Legacy_Bin/INTERPRETERS/rubygc-bpfcc",
+        "sys_99_Legacy_Bin/INTERPRETERS/rubyobjnew-bpfcc",
+        "sys_99_Legacy_Bin/INTERPRETERS/rubystat-bpfcc"
+      ]
+    },
+    "started_at": "2026-01-19T16:35:19.087515",
+    "completed_at": "2026-01-19T16:35:21.113566",
+    "result": "SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubycalls-bpfcc\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubycalls-bpfcc/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubycalls-bpfcc/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubycalls-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubycalls-bpfcc/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyflow-bpfcc\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyflow-bpfcc/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyflow-bpfcc/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyflow-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyflow-bpfcc/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubygc-bpfcc\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubygc-bpfcc/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubygc-bpfcc/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubygc-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubygc-bpfcc/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyobjnew-bpfcc\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyobjnew-bpfcc/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyobjnew-bpfcc/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyobjnew-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyobjnew-bpfcc/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubystat-bpfcc\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubystat-bpfcc/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubystat-bpfcc/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubystat-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubystat-bpfcc/source'.\nSUCCESS: No git repository to report on."
+  },
+  {
+    "id": "sov_batch_run_20260119_009",
+    "description": "SOV BATCH 9: curl, rsync, scp, sftp, ssh",
+    "status": "complete",
+    "command": "bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/curl && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/rsync && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/scp && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/sftp && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/ssh",
+    "created_at": "2026-01-19T16:34:14.021195Z",
+    "metadata": {
+      "type": "sovereignty_batch",
+      "batch_index": 8,
+      "targets": [
+        "sys_99_Legacy_Bin/NETWORK_CLIENTS/curl",
+        "sys_99_Legacy_Bin/NETWORK_CLIENTS/rsync",
+        "sys_99_Legacy_Bin/NETWORK_CLIENTS/scp",
+        "sys_99_Legacy_Bin/NETWORK_CLIENTS/sftp",
+        "sys_99_Legacy_Bin/NETWORK_CLIENTS/ssh"
+      ]
+    },
+    "started_at": "2026-01-19T16:35:21.121438",
+    "completed_at": "2026-01-19T16:35:23.148098",
+    "result": "SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/curl\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/curl/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/curl/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/curl' or 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/curl/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/rsync\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/rsync/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/rsync/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/rsync' or 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/rsync/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/scp\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/scp/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/scp/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/scp' or 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/scp/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/sftp\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/sftp/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/sftp/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/sftp' or 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/sftp/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/ssh\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/ssh/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/ssh/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/ssh' or 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/ssh/source'.\nSUCCESS: No git repository to report on."
+  },
+  {
+    "id": "sov_batch_run_20260119_010",
+    "description": "SOV BATCH 10: wget, apt, apt-cache, apt-cdrom, apt-config",
+    "status": "complete",
+    "command": "bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/wget && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cache && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cdrom && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-config",
+    "created_at": "2026-01-19T16:34:14.021209Z",
+    "metadata": {
+      "type": "sovereignty_batch",
+      "batch_index": 9,
+      "targets": [
+        "sys_99_Legacy_Bin/NETWORK_CLIENTS/wget",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/apt",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cache",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cdrom",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/apt-config"
+      ]
+    },
+    "started_at": "2026-01-19T16:35:23.156511",
+    "completed_at": "2026-01-19T16:35:25.188981",
+    "result": "SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/wget\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/wget/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/wget/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/wget' or 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/wget/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cache\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cache/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cache/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cache' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cache/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cdrom\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cdrom/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cdrom/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cdrom' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cdrom/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-config\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-config/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-config/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-config' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-config/source'.\nSUCCESS: No git repository to report on."
+  },
+  {
+    "id": "sov_batch_run_20260119_011",
+    "description": "SOV BATCH 11: apt-extracttemplates, apt-ftparchive, apt-get, apt-key, apt-mark",
+    "status": "complete",
+    "command": "bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-extracttemplates && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-ftparchive && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-get && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-key && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-mark",
+    "created_at": "2026-01-19T16:34:14.021225Z",
+    "metadata": {
+      "type": "sovereignty_batch",
+      "batch_index": 10,
+      "targets": [
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/apt-extracttemplates",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/apt-ftparchive",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/apt-get",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/apt-key",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/apt-mark"
+      ]
+    },
+    "started_at": "2026-01-19T16:35:25.196457",
+    "completed_at": "2026-01-19T16:35:27.227448",
+    "result": "SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-extracttemplates\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-extracttemplates/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-extracttemplates/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-extracttemplates' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-extracttemplates/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-ftparchive\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-ftparchive/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-ftparchive/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-ftparchive' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-ftparchive/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-get\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-get/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-get/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-get' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-get/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-key\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-key/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-key/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-key' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-key/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-mark\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-mark/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-mark/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-mark' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-mark/source'.\nSUCCESS: No git repository to report on."
+  },
+  {
+    "id": "sov_batch_run_20260119_012",
+    "description": "SOV BATCH 12: apt-sortpkgs, dpkg, dpkg-architecture, dpkg-buildapi, dpkg-buildflags",
+    "status": "complete",
+    "command": "bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-sortpkgs && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-architecture && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildapi && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildflags",
+    "created_at": "2026-01-19T16:34:14.021239Z",
+    "metadata": {
+      "type": "sovereignty_batch",
+      "batch_index": 11,
+      "targets": [
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/apt-sortpkgs",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-architecture",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildapi",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildflags"
+      ]
+    },
+    "started_at": "2026-01-19T16:35:27.236338",
+    "completed_at": "2026-01-19T16:35:29.262149",
+    "result": "SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-sortpkgs\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-sortpkgs/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-sortpkgs/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-sortpkgs' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-sortpkgs/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-architecture\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-architecture/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-architecture/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-architecture' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-architecture/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildapi\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildapi/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildapi/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildapi' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildapi/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildflags\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildflags/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildflags/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildflags' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildflags/source'.\nSUCCESS: No git repository to report on."
+  },
+  {
+    "id": "sov_batch_run_20260119_013",
+    "description": "SOV BATCH 13: dpkg-buildpackage, dpkg-buildtree, dpkg-checkbuilddeps, dpkg-deb, dpkg-distaddfile",
+    "status": "complete",
+    "command": "bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildpackage && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildtree && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-checkbuilddeps && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-deb && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-distaddfile",
+    "created_at": "2026-01-19T16:34:14.021255Z",
+    "metadata": {
+      "type": "sovereignty_batch",
+      "batch_index": 12,
+      "targets": [
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildpackage",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildtree",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-checkbuilddeps",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-deb",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-distaddfile"
+      ]
+    },
+    "started_at": "2026-01-19T16:35:29.271546",
+    "completed_at": "2026-01-19T16:35:31.301643",
+    "result": "SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildpackage\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildpackage/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildpackage/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildpackage' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildpackage/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildtree\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildtree/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildtree/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildtree' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildtree/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-checkbuilddeps\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-checkbuilddeps/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-checkbuilddeps/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-checkbuilddeps' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-checkbuilddeps/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-deb\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-deb/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-deb/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-deb' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-deb/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-distaddfile\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-distaddfile/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-distaddfile/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-distaddfile' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-distaddfile/source'.\nSUCCESS: No git repository to report on."
+  },
+  {
+    "id": "sov_batch_run_20260119_014",
+    "description": "SOV BATCH 14: dpkg-divert, dpkg-genbuildinfo, dpkg-genchanges, dpkg-gencontrol, dpkg-gensymbols",
+    "status": "complete",
+    "command": "bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-divert && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genbuildinfo && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genchanges && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gencontrol && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gensymbols",
+    "created_at": "2026-01-19T16:34:14.021271Z",
+    "metadata": {
+      "type": "sovereignty_batch",
+      "batch_index": 13,
+      "targets": [
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-divert",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genbuildinfo",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genchanges",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gencontrol",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gensymbols"
+      ]
+    },
+    "started_at": "2026-01-19T16:35:31.308784",
+    "completed_at": "2026-01-19T16:35:33.335725",
+    "result": "SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-divert\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-divert/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-divert/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-divert' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-divert/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genbuildinfo\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genbuildinfo/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genbuildinfo/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genbuildinfo' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genbuildinfo/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genchanges\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genchanges/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genchanges/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genchanges' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genchanges/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gencontrol\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gencontrol/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gencontrol/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gencontrol' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gencontrol/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gensymbols\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gensymbols/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gensymbols/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gensymbols' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gensymbols/source'.\nSUCCESS: No git repository to report on."
+  },
+  {
+    "id": "sov_batch_run_20260119_015",
+    "description": "SOV BATCH 15: dpkg-maintscript-helper, dpkg-mergechangelogs, dpkg-name, dpkg-parsechangelog, dpkg-preconfigure",
+    "status": "complete",
+    "command": "bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-maintscript-helper && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-mergechangelogs && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-name && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-parsechangelog && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-preconfigure",
+    "created_at": "2026-01-19T16:34:14.021284Z",
+    "metadata": {
+      "type": "sovereignty_batch",
+      "batch_index": 14,
+      "targets": [
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-maintscript-helper",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-mergechangelogs",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-name",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-parsechangelog",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-preconfigure"
+      ]
+    },
+    "started_at": "2026-01-19T16:35:33.343717",
+    "completed_at": "2026-01-19T16:35:35.371386",
+    "result": "SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-maintscript-helper\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-maintscript-helper/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-maintscript-helper/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-maintscript-helper' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-maintscript-helper/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-mergechangelogs\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-mergechangelogs/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-mergechangelogs/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-mergechangelogs' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-mergechangelogs/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-name\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-name/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-name/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-name' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-name/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-parsechangelog\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-parsechangelog/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-parsechangelog/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-parsechangelog' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-parsechangelog/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-preconfigure\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-preconfigure/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-preconfigure/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-preconfigure' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-preconfigure/source'.\nSUCCESS: No git repository to report on."
+  },
+  {
+    "id": "sov_batch_run_20260119_016",
+    "description": "SOV BATCH 16: dpkg-query, dpkg-realpath, dpkg-reconfigure, dpkg-scanpackages, dpkg-scansources",
+    "status": "complete",
+    "command": "bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-query && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-realpath && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-reconfigure && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scanpackages && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scansources",
+    "created_at": "2026-01-19T16:34:14.021301Z",
+    "metadata": {
+      "type": "sovereignty_batch",
+      "batch_index": 15,
+      "targets": [
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-query",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-realpath",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-reconfigure",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scanpackages",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scansources"
+      ]
+    },
+    "started_at": "2026-01-19T16:35:35.379175",
+    "completed_at": "2026-01-19T16:35:37.412811",
+    "result": "SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-query\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-query/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-query/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-query' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-query/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-realpath\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-realpath/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-realpath/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-realpath' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-realpath/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-reconfigure\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-reconfigure/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-reconfigure/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-reconfigure' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-reconfigure/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scanpackages\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scanpackages/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scanpackages/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scanpackages' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scanpackages/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scansources\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scansources/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scansources/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scansources' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scansources/source'.\nSUCCESS: No git repository to report on."
+  },
+  {
+    "id": "sov_batch_run_20260119_017",
+    "description": "SOV BATCH 17: dpkg-shlibdeps, dpkg-source, dpkg-split, dpkg-statoverride, dpkg-trigger",
+    "status": "complete",
+    "command": "bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-shlibdeps && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-source && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-split && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-statoverride && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-trigger",
+    "created_at": "2026-01-19T16:34:14.021316Z",
+    "metadata": {
+      "type": "sovereignty_batch",
+      "batch_index": 16,
+      "targets": [
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-shlibdeps",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-source",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-split",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-statoverride",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-trigger"
+      ]
+    },
+    "started_at": "2026-01-19T16:35:37.420623",
+    "completed_at": "2026-01-19T16:35:39.451411",
+    "result": "SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-shlibdeps\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-shlibdeps/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-shlibdeps/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-shlibdeps' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-shlibdeps/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-source\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-source/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-source/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-source' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-source/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-split\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-split/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-split/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-split' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-split/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-statoverride\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-statoverride/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-statoverride/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-statoverride' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-statoverride/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-trigger\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-trigger/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-trigger/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-trigger' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-trigger/source'.\nSUCCESS: No git repository to report on."
+  },
+  {
+    "id": "sov_batch_run_20260119_018",
+    "description": "SOV BATCH 18: dpkg-vendor, snap, snapfuse",
+    "status": "complete",
+    "command": "bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-vendor && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snap && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snapfuse",
+    "created_at": "2026-01-19T16:34:14.021328Z",
+    "metadata": {
+      "type": "sovereignty_batch",
+      "batch_index": 17,
+      "targets": [
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-vendor",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/snap",
+        "sys_99_Legacy_Bin/PACKAGE_MGMT/snapfuse"
+      ]
+    },
+    "started_at": "2026-01-19T16:35:39.457024",
+    "completed_at": "2026-01-19T16:35:41.477923",
+    "result": "SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-vendor\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-vendor/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-vendor/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-vendor' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-vendor/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snap\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snap/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snap/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snap' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snap/source'.\nSUCCESS: No git repository to report on.\n>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snapfuse\n>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snapfuse/anvil.build.sh\nWarning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snapfuse/anvil.build.sh' not found. Skipping URL analysis.\nNo .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snapfuse' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snapfuse/source'.\nSUCCESS: No git repository to report on."
+  },
+  {
+    "id": "sys_dash_opt_001",
+    "description": "DASHBOARD: Optimize refresh rate. Implement mtime checks for card_queue.json and intelligent log watching to fix lag/freezing.",
+    "status": "complete",
+    "command": "python3 system/dashboard_optimizer.py",
+    "created_at": "2026-01-19T16:23:44.409382Z",
+    "started_at": "2026-01-19T16:24:48.000Z",
+    "completed_at": "2026-01-19T16:24:50.000Z",
+    "result": "SUCCESS: Dashboard optimized with mtime caching and smart log watching."
+  },
+  {
+    "id": "sov_test_recharts_001",
+    "description": "SOVEREIGNTY TEST: Run run_sovereignty_task.sh on oss_sovereignty/ctx_06_recharts",
+    "status": "complete",
+    "command": "bash system/run_sovereignty_task.sh oss_sovereignty/ctx_06_recharts",
+    "created_at": "2026-01-19T16:20:52.411939Z",
+    "started_at": "2026-01-19T16:20:52.426296",
+    "completed_at": "2026-01-19T16:20:52.426328",
+    "result": ">> TARGET_DIR: oss_sovereignty/ctx_06_recharts\n>> BUILD_SCRIPT: oss_sovereignty/ctx_06_recharts/anvil.build.sh\nNo .git directory found in 'oss_sovereignty/ctx_06_recharts' or 'oss_sovereignty/ctx_06_recharts/source'.\nSUCCESS: No git repository to report on.\n"
+  },
+  {
     "id": "sys_runtime_fix_001",
     "description": "RUNTIME: Fix Gemini API 400 errors (snake_case params).",
     "status": "complete",
@@ -8,1168 +414,6 @@
     "started_at": "2026-01-19T15:47:32.607707",
     "completed_at": "2026-01-19T15:47:34.615338",
     "result": "SUCCESS: Manual fix applied."
-  },
-  {
-    "id": "sov_64bit_batch_4042132f",
-    "description": "64BIT ASSIMILATION: QEMU_KVM, VirtualBox, Go_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM https://github.com/qemu/qemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox https://github.com/virtualbox/virtualbox.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern https://github.com/golang/go.git",
-    "created_at": "2026-01-19T04:48:06.366457Z",
-    "completed_at": "2026-01-19T04:48:06.366483Z",
-    "result": "SUCCESS: Assimilated FreeBSD_Modern, Linux_Modern, macOS_Modern.",
-    "batch_details": [
-      {
-        "name": "QEMU_KVM",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM",
-        "url": "https://github.com/qemu/qemu.git"
-      },
-      {
-        "name": "VirtualBox",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox",
-        "url": "https://github.com/virtualbox/virtualbox.git"
-      },
-      {
-        "name": "Go_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern",
-        "url": "https://github.com/golang/go.git"
-      }
-    ]
-  },
-  {
-    "id": "sov_64bit_batch_42720825",
-    "description": "64BIT ASSIMILATION: AARCH64, Rust_Modern, Hyper_V",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 https://github.com/ARM-software/arm-trusted-firmware.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern https://github.com/rust-lang/rust.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V https://github.com/microsoft/hvc.git",
-    "created_at": "2026-01-19T04:48:06.366499Z",
-    "completed_at": "2026-01-19T04:48:06.366501Z",
-    "result": "SUCCESS: Assimilated FreeBSD_Modern, Linux_Modern, macOS_Modern.",
-    "batch_details": [
-      {
-        "name": "AARCH64",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64",
-        "url": "https://github.com/ARM-software/arm-trusted-firmware.git"
-      },
-      {
-        "name": "Rust_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern",
-        "url": "https://github.com/rust-lang/rust.git"
-      },
-      {
-        "name": "Hyper_V",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V",
-        "url": "https://github.com/microsoft/hvc.git"
-      }
-    ]
-  },
-  {
-    "id": "sov_64bit_batch_e2b68dc6",
-    "description": "64BIT ASSIMILATION: FreeBSD_Modern, Linux_Modern, macOS_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern https://github.com/freebsd/freebsd-src.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern https://github.com/torvalds/linux.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern https://github.com/opensource-apple/opensource-developer-preview.git",
-    "created_at": "2026-01-19T04:48:06.366510Z",
-    "completed_at": "2026-01-19T04:48:06.366512Z",
-    "result": "SUCCESS: Assimilated FreeBSD_Modern, Linux_Modern, macOS_Modern.",
-    "batch_details": [
-      {
-        "name": "FreeBSD_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern",
-        "url": "https://github.com/freebsd/freebsd-src.git"
-      },
-      {
-        "name": "Linux_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern",
-        "url": "https://github.com/torvalds/linux.git"
-      },
-      {
-        "name": "macOS_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern",
-        "url": "https://github.com/opensource-apple/opensource-developer-preview.git"
-      }
-    ]
-  },
-  {
-    "id": "sov_64bit_batch_640320f8",
-    "description": "64BIT ASSIMILATION: QEMU_KVM, VirtualBox, Go_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM https://github.com/qemu/qemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox https://github.com/virtualbox/virtualbox.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern https://github.com/golang/go.git",
-    "created_at": "2026-01-19T04:47:20.915504Z",
-    "batch_details": [
-      {
-        "name": "QEMU_KVM",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM",
-        "url": "https://github.com/qemu/qemu.git"
-      },
-      {
-        "name": "VirtualBox",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox",
-        "url": "https://github.com/virtualbox/virtualbox.git"
-      },
-      {
-        "name": "Go_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern",
-        "url": "https://github.com/golang/go.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:47:21.404041",
-    "completed_at": "2026-01-19T04:47:23.499024",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM FROM https://github.com/qemu/qemu.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox FROM https://github.com/virtualbox/virtualbox.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern FROM https://github.com/golang/go.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_2b97c6a0",
-    "description": "64BIT ASSIMILATION: AARCH64, Rust_Modern, Hyper_V",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 https://github.com/ARM-software/arm-trusted-firmware.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern https://github.com/rust-lang/rust.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V https://github.com/microsoft/hvc.git",
-    "created_at": "2026-01-19T04:47:20.915527Z",
-    "batch_details": [
-      {
-        "name": "AARCH64",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64",
-        "url": "https://github.com/ARM-software/arm-trusted-firmware.git"
-      },
-      {
-        "name": "Rust_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern",
-        "url": "https://github.com/rust-lang/rust.git"
-      },
-      {
-        "name": "Hyper_V",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V",
-        "url": "https://github.com/microsoft/hvc.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:47:23.503039",
-    "completed_at": "2026-01-19T04:47:25.590911",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 FROM https://github.com/ARM-software/arm-trusted-firmware.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern FROM https://github.com/rust-lang/rust.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V FROM https://github.com/microsoft/hvc.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_61710168",
-    "description": "64BIT ASSIMILATION: FreeBSD_Modern, Linux_Modern, macOS_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern https://github.com/freebsd/freebsd-src.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern https://github.com/torvalds/linux.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern https://github.com/opensource-apple/opensource-developer-preview.git",
-    "created_at": "2026-01-19T04:47:20.915534Z",
-    "batch_details": [
-      {
-        "name": "FreeBSD_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern",
-        "url": "https://github.com/freebsd/freebsd-src.git"
-      },
-      {
-        "name": "Linux_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern",
-        "url": "https://github.com/torvalds/linux.git"
-      },
-      {
-        "name": "macOS_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern",
-        "url": "https://github.com/opensource-apple/opensource-developer-preview.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:47:25.594376",
-    "completed_at": "2026-01-19T04:47:27.697876",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern FROM https://github.com/freebsd/freebsd-src.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern FROM https://github.com/torvalds/linux.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern FROM https://github.com/opensource-apple/opensource-developer-preview.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_40d4a75c",
-    "description": "64BIT ASSIMILATION: QEMU_KVM, VirtualBox, Go_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM https://github.com/qemu/qemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox https://github.com/virtualbox/virtualbox.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern https://github.com/golang/go.git",
-    "created_at": "2026-01-19T04:47:07.655027Z",
-    "completed_at": "2026-01-19T04:47:07.655050Z",
-    "result": "SUCCESS: Assimilated AARCH64, Rust_Modern, Hyper_V.",
-    "batch_details": [
-      {
-        "name": "QEMU_KVM",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM",
-        "url": "https://github.com/qemu/qemu.git"
-      },
-      {
-        "name": "VirtualBox",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox",
-        "url": "https://github.com/virtualbox/virtualbox.git"
-      },
-      {
-        "name": "Go_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern",
-        "url": "https://github.com/golang/go.git"
-      }
-    ]
-  },
-  {
-    "id": "sov_64bit_batch_4436745e",
-    "description": "64BIT ASSIMILATION: AARCH64, Rust_Modern, Hyper_V",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 https://github.com/ARM-software/arm-trusted-firmware.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern https://github.com/rust-lang/rust.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V https://github.com/microsoft/hvc.git",
-    "created_at": "2026-01-19T04:47:07.655066Z",
-    "completed_at": "2026-01-19T04:47:07.655068Z",
-    "result": "SUCCESS: Assimilated AARCH64, Rust_Modern, Hyper_V.",
-    "batch_details": [
-      {
-        "name": "AARCH64",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64",
-        "url": "https://github.com/ARM-software/arm-trusted-firmware.git"
-      },
-      {
-        "name": "Rust_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern",
-        "url": "https://github.com/rust-lang/rust.git"
-      },
-      {
-        "name": "Hyper_V",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V",
-        "url": "https://github.com/microsoft/hvc.git"
-      }
-    ]
-  },
-  {
-    "id": "sov_64bit_batch_273b20ef",
-    "description": "64BIT ASSIMILATION: FreeBSD_Modern, Linux_Modern, macOS_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern https://github.com/freebsd/freebsd-src.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern https://github.com/torvalds/linux.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern https://github.com/opensource-apple/opensource-developer-preview.git",
-    "created_at": "2026-01-19T04:47:07.655074Z",
-    "completed_at": "2026-01-19T04:47:07.655076Z",
-    "result": "SUCCESS: Assimilated AARCH64, Rust_Modern, Hyper_V.",
-    "batch_details": [
-      {
-        "name": "FreeBSD_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern",
-        "url": "https://github.com/freebsd/freebsd-src.git"
-      },
-      {
-        "name": "Linux_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern",
-        "url": "https://github.com/torvalds/linux.git"
-      },
-      {
-        "name": "macOS_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern",
-        "url": "https://github.com/opensource-apple/opensource-developer-preview.git"
-      }
-    ]
-  },
-  {
-    "id": "sov_64bit_batch_db35275b",
-    "description": "64BIT ASSIMILATION: QEMU_KVM, VirtualBox, Go_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM https://github.com/qemu/qemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox https://github.com/virtualbox/virtualbox.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern https://github.com/golang/go.git",
-    "created_at": "2026-01-19T04:46:23.152052Z",
-    "batch_details": [
-      {
-        "name": "QEMU_KVM",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM",
-        "url": "https://github.com/qemu/qemu.git"
-      },
-      {
-        "name": "VirtualBox",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox",
-        "url": "https://github.com/virtualbox/virtualbox.git"
-      },
-      {
-        "name": "Go_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern",
-        "url": "https://github.com/golang/go.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:46:23.973364",
-    "completed_at": "2026-01-19T04:46:26.067823",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM FROM https://github.com/qemu/qemu.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox FROM https://github.com/virtualbox/virtualbox.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern FROM https://github.com/golang/go.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_01f68999",
-    "description": "64BIT ASSIMILATION: AARCH64, Rust_Modern, Hyper_V",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 https://github.com/ARM-software/arm-trusted-firmware.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern https://github.com/rust-lang/rust.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V https://github.com/microsoft/hvc.git",
-    "created_at": "2026-01-19T04:46:23.152076Z",
-    "batch_details": [
-      {
-        "name": "AARCH64",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64",
-        "url": "https://github.com/ARM-software/arm-trusted-firmware.git"
-      },
-      {
-        "name": "Rust_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern",
-        "url": "https://github.com/rust-lang/rust.git"
-      },
-      {
-        "name": "Hyper_V",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V",
-        "url": "https://github.com/microsoft/hvc.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:46:26.075041",
-    "completed_at": "2026-01-19T04:46:28.173742",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 FROM https://github.com/ARM-software/arm-trusted-firmware.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern FROM https://github.com/rust-lang/rust.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V FROM https://github.com/microsoft/hvc.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_677de40d",
-    "description": "64BIT ASSIMILATION: FreeBSD_Modern, Linux_Modern, macOS_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern https://github.com/freebsd/freebsd-src.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern https://github.com/torvalds/linux.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern https://github.com/opensource-apple/opensource-developer-preview.git",
-    "created_at": "2026-01-19T04:46:23.152084Z",
-    "batch_details": [
-      {
-        "name": "FreeBSD_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern",
-        "url": "https://github.com/freebsd/freebsd-src.git"
-      },
-      {
-        "name": "Linux_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern",
-        "url": "https://github.com/torvalds/linux.git"
-      },
-      {
-        "name": "macOS_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern",
-        "url": "https://github.com/opensource-apple/opensource-developer-preview.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:46:28.180237",
-    "completed_at": "2026-01-19T04:46:30.267427",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern FROM https://github.com/freebsd/freebsd-src.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern FROM https://github.com/torvalds/linux.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern FROM https://github.com/opensource-apple/opensource-developer-preview.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_0b1f661a",
-    "description": "64BIT ASSIMILATION: QEMU_KVM, VirtualBox, Go_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM https://github.com/qemu/qemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox https://github.com/virtualbox/virtualbox.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern https://github.com/golang/go.git",
-    "created_at": "2026-01-19T04:45:06.342804Z",
-    "batch_details": [
-      {
-        "name": "QEMU_KVM",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM",
-        "url": "https://github.com/qemu/qemu.git"
-      },
-      {
-        "name": "VirtualBox",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox",
-        "url": "https://github.com/virtualbox/virtualbox.git"
-      },
-      {
-        "name": "Go_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern",
-        "url": "https://github.com/golang/go.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:45:06.510957",
-    "completed_at": "2026-01-19T04:45:08.605343",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM FROM https://github.com/qemu/qemu.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox FROM https://github.com/virtualbox/virtualbox.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern FROM https://github.com/golang/go.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_357ba106",
-    "description": "64BIT ASSIMILATION: AARCH64, Rust_Modern, Hyper_V",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 https://github.com/ARM-software/arm-trusted-firmware.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern https://github.com/rust-lang/rust.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V https://github.com/microsoft/hvc.git",
-    "created_at": "2026-01-19T04:45:06.342826Z",
-    "batch_details": [
-      {
-        "name": "AARCH64",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64",
-        "url": "https://github.com/ARM-software/arm-trusted-firmware.git"
-      },
-      {
-        "name": "Rust_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern",
-        "url": "https://github.com/rust-lang/rust.git"
-      },
-      {
-        "name": "Hyper_V",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V",
-        "url": "https://github.com/microsoft/hvc.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:45:08.608392",
-    "completed_at": "2026-01-19T04:45:10.699076",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 FROM https://github.com/ARM-software/arm-trusted-firmware.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern FROM https://github.com/rust-lang/rust.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V FROM https://github.com/microsoft/hvc.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_0e3daa1d",
-    "description": "64BIT ASSIMILATION: FreeBSD_Modern, Linux_Modern, macOS_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern https://github.com/freebsd/freebsd-src.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern https://github.com/torvalds/linux.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern https://github.com/opensource-apple/opensource-developer-preview.git",
-    "created_at": "2026-01-19T04:45:06.342833Z",
-    "batch_details": [
-      {
-        "name": "FreeBSD_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern",
-        "url": "https://github.com/freebsd/freebsd-src.git"
-      },
-      {
-        "name": "Linux_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern",
-        "url": "https://github.com/torvalds/linux.git"
-      },
-      {
-        "name": "macOS_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern",
-        "url": "https://github.com/opensource-apple/opensource-developer-preview.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:45:10.702271",
-    "completed_at": "2026-01-19T04:45:12.805848",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern FROM https://github.com/freebsd/freebsd-src.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern FROM https://github.com/torvalds/linux.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern FROM https://github.com/opensource-apple/opensource-developer-preview.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_c14ac5c8",
-    "description": "64BIT ASSIMILATION: QEMU_KVM, VirtualBox, Go_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM https://github.com/qemu/qemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox https://github.com/virtualbox/virtualbox.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern https://github.com/golang/go.git",
-    "created_at": "2026-01-19T04:44:49.084167Z",
-    "batch_details": [
-      {
-        "name": "QEMU_KVM",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM",
-        "url": "https://github.com/qemu/qemu.git"
-      },
-      {
-        "name": "VirtualBox",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox",
-        "url": "https://github.com/virtualbox/virtualbox.git"
-      },
-      {
-        "name": "Go_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern",
-        "url": "https://github.com/golang/go.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:44:49.173817",
-    "completed_at": "2026-01-19T04:44:51.279150",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM FROM https://github.com/qemu/qemu.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox FROM https://github.com/virtualbox/virtualbox.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern FROM https://github.com/golang/go.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_1ab87b89",
-    "description": "64BIT ASSIMILATION: AARCH64, Rust_Modern, Hyper_V",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 https://github.com/ARM-software/arm-trusted-firmware.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern https://github.com/rust-lang/rust.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V https://github.com/microsoft/hvc.git",
-    "created_at": "2026-01-19T04:44:49.084189Z",
-    "batch_details": [
-      {
-        "name": "AARCH64",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64",
-        "url": "https://github.com/ARM-software/arm-trusted-firmware.git"
-      },
-      {
-        "name": "Rust_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern",
-        "url": "https://github.com/rust-lang/rust.git"
-      },
-      {
-        "name": "Hyper_V",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V",
-        "url": "https://github.com/microsoft/hvc.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:44:51.281975",
-    "completed_at": "2026-01-19T04:44:53.376104",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 FROM https://github.com/ARM-software/arm-trusted-firmware.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern FROM https://github.com/rust-lang/rust.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V FROM https://github.com/microsoft/hvc.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_13fc4c9e",
-    "description": "64BIT ASSIMILATION: FreeBSD_Modern, Linux_Modern, macOS_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern https://github.com/freebsd/freebsd-src.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern https://github.com/torvalds/linux.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern https://github.com/opensource-apple/opensource-developer-preview.git",
-    "created_at": "2026-01-19T04:44:49.084196Z",
-    "batch_details": [
-      {
-        "name": "FreeBSD_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern",
-        "url": "https://github.com/freebsd/freebsd-src.git"
-      },
-      {
-        "name": "Linux_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern",
-        "url": "https://github.com/torvalds/linux.git"
-      },
-      {
-        "name": "macOS_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern",
-        "url": "https://github.com/opensource-apple/opensource-developer-preview.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:44:53.378981",
-    "completed_at": "2026-01-19T04:44:55.487685",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern FROM https://github.com/freebsd/freebsd-src.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern FROM https://github.com/torvalds/linux.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern FROM https://github.com/opensource-apple/opensource-developer-preview.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_3dc33208",
-    "description": "64BIT ASSIMILATION: QEMU_KVM, VirtualBox, Go_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM https://github.com/qemu/qemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox https://github.com/virtualbox/virtualbox.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern https://github.com/golang/go.git",
-    "created_at": "2026-01-19T04:43:13.298407Z",
-    "batch_details": [
-      {
-        "name": "QEMU_KVM",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM",
-        "url": "https://github.com/qemu/qemu.git"
-      },
-      {
-        "name": "VirtualBox",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox",
-        "url": "https://github.com/virtualbox/virtualbox.git"
-      },
-      {
-        "name": "Go_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern",
-        "url": "https://github.com/golang/go.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:43:13.634606",
-    "completed_at": "2026-01-19T04:43:15.751387",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM FROM https://github.com/qemu/qemu.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox FROM https://github.com/virtualbox/virtualbox.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern FROM https://github.com/golang/go.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_a7699f32",
-    "description": "64BIT ASSIMILATION: AARCH64, Rust_Modern, Hyper_V",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 https://github.com/ARM-software/arm-trusted-firmware.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern https://github.com/rust-lang/rust.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V https://github.com/microsoft/hvc.git",
-    "created_at": "2026-01-19T04:43:13.298430Z",
-    "batch_details": [
-      {
-        "name": "AARCH64",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64",
-        "url": "https://github.com/ARM-software/arm-trusted-firmware.git"
-      },
-      {
-        "name": "Rust_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern",
-        "url": "https://github.com/rust-lang/rust.git"
-      },
-      {
-        "name": "Hyper_V",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V",
-        "url": "https://github.com/microsoft/hvc.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:43:15.757462",
-    "completed_at": "2026-01-19T04:43:17.867999",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 FROM https://github.com/ARM-software/arm-trusted-firmware.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern FROM https://github.com/rust-lang/rust.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V FROM https://github.com/microsoft/hvc.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_bc030729",
-    "description": "64BIT ASSIMILATION: FreeBSD_Modern, Linux_Modern, macOS_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern https://github.com/freebsd/freebsd-src.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern https://github.com/torvalds/linux.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern https://github.com/opensource-apple/opensource-developer-preview.git",
-    "created_at": "2026-01-19T04:43:13.298437Z",
-    "batch_details": [
-      {
-        "name": "FreeBSD_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern",
-        "url": "https://github.com/freebsd/freebsd-src.git"
-      },
-      {
-        "name": "Linux_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern",
-        "url": "https://github.com/torvalds/linux.git"
-      },
-      {
-        "name": "macOS_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern",
-        "url": "https://github.com/opensource-apple/opensource-developer-preview.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:43:17.871917",
-    "completed_at": "2026-01-19T04:43:19.965564",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern FROM https://github.com/freebsd/freebsd-src.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern FROM https://github.com/torvalds/linux.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern FROM https://github.com/opensource-apple/opensource-developer-preview.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_985d8ae9",
-    "description": "64BIT ASSIMILATION: QEMU_KVM, VirtualBox, Go_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM https://github.com/qemu/qemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox https://github.com/virtualbox/virtualbox.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern https://github.com/golang/go.git",
-    "created_at": "2026-01-19T04:42:54.245629Z",
-    "batch_details": [
-      {
-        "name": "QEMU_KVM",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM",
-        "url": "https://github.com/qemu/qemu.git"
-      },
-      {
-        "name": "VirtualBox",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox",
-        "url": "https://github.com/virtualbox/virtualbox.git"
-      },
-      {
-        "name": "Go_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern",
-        "url": "https://github.com/golang/go.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:42:54.253882",
-    "completed_at": "2026-01-19T04:42:56.378263",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM FROM https://github.com/qemu/qemu.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox FROM https://github.com/virtualbox/virtualbox.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern FROM https://github.com/golang/go.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_af93a4bb",
-    "description": "64BIT ASSIMILATION: AARCH64, Rust_Modern, Hyper_V",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 https://github.com/ARM-software/arm-trusted-firmware.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern https://github.com/rust-lang/rust.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V https://github.com/microsoft/hvc.git",
-    "created_at": "2026-01-19T04:42:54.245675Z",
-    "batch_details": [
-      {
-        "name": "AARCH64",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64",
-        "url": "https://github.com/ARM-software/arm-trusted-firmware.git"
-      },
-      {
-        "name": "Rust_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern",
-        "url": "https://github.com/rust-lang/rust.git"
-      },
-      {
-        "name": "Hyper_V",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V",
-        "url": "https://github.com/microsoft/hvc.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:42:56.384709",
-    "completed_at": "2026-01-19T04:42:58.503809",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 FROM https://github.com/ARM-software/arm-trusted-firmware.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern FROM https://github.com/rust-lang/rust.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V FROM https://github.com/microsoft/hvc.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_6cbfbb4f",
-    "description": "64BIT ASSIMILATION: FreeBSD_Modern, Linux_Modern, macOS_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern https://github.com/freebsd/freebsd-src.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern https://github.com/torvalds/linux.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern https://github.com/opensource-apple/opensource-developer-preview.git",
-    "created_at": "2026-01-19T04:42:54.245683Z",
-    "batch_details": [
-      {
-        "name": "FreeBSD_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern",
-        "url": "https://github.com/freebsd/freebsd-src.git"
-      },
-      {
-        "name": "Linux_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern",
-        "url": "https://github.com/torvalds/linux.git"
-      },
-      {
-        "name": "macOS_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern",
-        "url": "https://github.com/opensource-apple/opensource-developer-preview.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:42:58.510224",
-    "completed_at": "2026-01-19T04:43:00.598489",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern FROM https://github.com/freebsd/freebsd-src.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern FROM https://github.com/torvalds/linux.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern FROM https://github.com/opensource-apple/opensource-developer-preview.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_4eab0288",
-    "description": "64BIT ASSIMILATION: QEMU_KVM, VirtualBox, Go_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM https://github.com/qemu/qemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox https://github.com/virtualbox/virtualbox.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern https://github.com/golang/go.git",
-    "created_at": "2026-01-19T04:42:23.215542Z",
-    "batch_details": [
-      {
-        "name": "QEMU_KVM",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM",
-        "url": "https://github.com/qemu/qemu.git"
-      },
-      {
-        "name": "VirtualBox",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox",
-        "url": "https://github.com/virtualbox/virtualbox.git"
-      },
-      {
-        "name": "Go_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern",
-        "url": "https://github.com/golang/go.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:42:23.920507",
-    "completed_at": "2026-01-19T04:42:26.009424",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM FROM https://github.com/qemu/qemu.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox FROM https://github.com/virtualbox/virtualbox.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern FROM https://github.com/golang/go.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_735ca520",
-    "description": "64BIT ASSIMILATION: AARCH64, Rust_Modern, Hyper_V",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 https://github.com/ARM-software/arm-trusted-firmware.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern https://github.com/rust-lang/rust.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V https://github.com/microsoft/hvc.git",
-    "created_at": "2026-01-19T04:42:23.215568Z",
-    "batch_details": [
-      {
-        "name": "AARCH64",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64",
-        "url": "https://github.com/ARM-software/arm-trusted-firmware.git"
-      },
-      {
-        "name": "Rust_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern",
-        "url": "https://github.com/rust-lang/rust.git"
-      },
-      {
-        "name": "Hyper_V",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V",
-        "url": "https://github.com/microsoft/hvc.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:42:26.015029",
-    "completed_at": "2026-01-19T04:42:28.104502",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 FROM https://github.com/ARM-software/arm-trusted-firmware.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern FROM https://github.com/rust-lang/rust.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V FROM https://github.com/microsoft/hvc.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_0d2e2f7d",
-    "description": "64BIT ASSIMILATION: FreeBSD_Modern, Linux_Modern, macOS_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern https://github.com/freebsd/freebsd-src.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern https://github.com/torvalds/linux.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern https://github.com/opensource-apple/opensource-developer-preview.git",
-    "created_at": "2026-01-19T04:42:23.215576Z",
-    "batch_details": [
-      {
-        "name": "FreeBSD_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern",
-        "url": "https://github.com/freebsd/freebsd-src.git"
-      },
-      {
-        "name": "Linux_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern",
-        "url": "https://github.com/torvalds/linux.git"
-      },
-      {
-        "name": "macOS_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern",
-        "url": "https://github.com/opensource-apple/opensource-developer-preview.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:42:28.107587",
-    "completed_at": "2026-01-19T04:42:30.188884",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern FROM https://github.com/freebsd/freebsd-src.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/FreeBSD_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern FROM https://github.com/torvalds/linux.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/Linux_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern FROM https://github.com/opensource-apple/opensource-developer-preview.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_01bda311",
-    "description": "64BIT ASSIMILATION: QEMU_KVM, VirtualBox, Go_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM https://github.com/qemu/qemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox https://github.com/virtualbox/virtualbox.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern https://github.com/golang/go.git",
-    "created_at": "2026-01-19T04:41:19.472376Z",
-    "batch_details": [
-      {
-        "name": "QEMU_KVM",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM",
-        "url": "https://github.com/qemu/qemu.git"
-      },
-      {
-        "name": "VirtualBox",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox",
-        "url": "https://github.com/virtualbox/virtualbox.git"
-      },
-      {
-        "name": "Go_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern",
-        "url": "https://github.com/golang/go.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:41:19.636123",
-    "completed_at": "2026-01-19T04:41:21.723182",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM FROM https://github.com/qemu/qemu.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox FROM https://github.com/virtualbox/virtualbox.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern FROM https://github.com/golang/go.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_7a24b7c9",
-    "description": "64BIT ASSIMILATION: AARCH64, Rust_Modern, Hyper_V",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 https://github.com/ARM-software/arm-trusted-firmware.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern https://github.com/rust-lang/rust.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V https://github.com/microsoft/hvc.git",
-    "created_at": "2026-01-19T04:41:19.472400Z",
-    "batch_details": [
-      {
-        "name": "AARCH64",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64",
-        "url": "https://github.com/ARM-software/arm-trusted-firmware.git"
-      },
-      {
-        "name": "Rust_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern",
-        "url": "https://github.com/rust-lang/rust.git"
-      },
-      {
-        "name": "Hyper_V",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V",
-        "url": "https://github.com/microsoft/hvc.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:41:21.726041",
-    "completed_at": "2026-01-19T04:41:23.806700",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 FROM https://github.com/ARM-software/arm-trusted-firmware.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern FROM https://github.com/rust-lang/rust.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V FROM https://github.com/microsoft/hvc.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_349d7de0",
-    "description": "64BIT ASSIMILATION: QEMU_KVM, VirtualBox, Go_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM https://github.com/qemu/qemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox https://github.com/virtualbox/virtualbox.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern https://github.com/golang/go.git",
-    "created_at": "2026-01-19T04:39:59.149843Z",
-    "batch_details": [
-      {
-        "name": "QEMU_KVM",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM",
-        "url": "https://github.com/qemu/qemu.git"
-      },
-      {
-        "name": "VirtualBox",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox",
-        "url": "https://github.com/virtualbox/virtualbox.git"
-      },
-      {
-        "name": "Go_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern",
-        "url": "https://github.com/golang/go.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:39:59.279663",
-    "completed_at": "2026-01-19T04:40:01.382851",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM FROM https://github.com/qemu/qemu.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox FROM https://github.com/virtualbox/virtualbox.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern FROM https://github.com/golang/go.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_9217d726",
-    "description": "64BIT ASSIMILATION: AARCH64, Rust_Modern, Hyper_V",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 https://github.com/ARM-software/arm-trusted-firmware.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern https://github.com/rust-lang/rust.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V https://github.com/microsoft/hvc.git",
-    "created_at": "2026-01-19T04:39:59.149869Z",
-    "batch_details": [
-      {
-        "name": "AARCH64",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64",
-        "url": "https://github.com/ARM-software/arm-trusted-firmware.git"
-      },
-      {
-        "name": "Rust_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern",
-        "url": "https://github.com/rust-lang/rust.git"
-      },
-      {
-        "name": "Hyper_V",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V",
-        "url": "https://github.com/microsoft/hvc.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:40:01.385679",
-    "completed_at": "2026-01-19T04:41:07.611083Z",
-    "result": "SUCCESS: Assimilated AARCH64, Rust_Modern, Hyper_V."
-  },
-  {
-    "id": "sov_64bit_batch_9f6ad455",
-    "description": "64BIT ASSIMILATION: QEMU_KVM, VirtualBox, Go_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM https://github.com/qemu/qemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox https://github.com/virtualbox/virtualbox.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern https://github.com/golang/go.git",
-    "created_at": "2026-01-19T04:39:48.675325Z",
-    "batch_details": [
-      {
-        "name": "QEMU_KVM",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM",
-        "url": "https://github.com/qemu/qemu.git"
-      },
-      {
-        "name": "VirtualBox",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox",
-        "url": "https://github.com/virtualbox/virtualbox.git"
-      },
-      {
-        "name": "Go_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern",
-        "url": "https://github.com/golang/go.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:39:49.055808",
-    "completed_at": "2026-01-19T04:39:51.166834",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM FROM https://github.com/qemu/qemu.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox FROM https://github.com/virtualbox/virtualbox.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern FROM https://github.com/golang/go.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_8ff4d656",
-    "description": "64BIT ASSIMILATION: AARCH64, Rust_Modern, Hyper_V",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 https://github.com/ARM-software/arm-trusted-firmware.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern https://github.com/rust-lang/rust.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V https://github.com/microsoft/hvc.git",
-    "created_at": "2026-01-19T04:39:48.675351Z",
-    "batch_details": [
-      {
-        "name": "AARCH64",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64",
-        "url": "https://github.com/ARM-software/arm-trusted-firmware.git"
-      },
-      {
-        "name": "Rust_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern",
-        "url": "https://github.com/rust-lang/rust.git"
-      },
-      {
-        "name": "Hyper_V",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V",
-        "url": "https://github.com/microsoft/hvc.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:39:51.169558",
-    "completed_at": "2026-01-19T04:39:53.264251",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 FROM https://github.com/ARM-software/arm-trusted-firmware.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern FROM https://github.com/rust-lang/rust.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Rust_Modern/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V FROM https://github.com/microsoft/hvc.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/Hyper_V/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_57784c48",
-    "description": "64BIT ASSIMILATION: QEMU_KVM, VirtualBox, Go_Modern",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM https://github.com/qemu/qemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox https://github.com/virtualbox/virtualbox.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern https://github.com/golang/go.git",
-    "created_at": "2026-01-19T04:39:40.991453Z",
-    "batch_details": [
-      {
-        "name": "QEMU_KVM",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM",
-        "url": "https://github.com/qemu/qemu.git"
-      },
-      {
-        "name": "VirtualBox",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox",
-        "url": "https://github.com/virtualbox/virtualbox.git"
-      },
-      {
-        "name": "Go_Modern",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern",
-        "url": "https://github.com/golang/go.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:39:41.954837",
-    "completed_at": "2026-01-19T04:39:44.042545",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM FROM https://github.com/qemu/qemu.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/QEMU_KVM/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox FROM https://github.com/virtualbox/virtualbox.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization/VirtualBox/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern FROM https://github.com/golang/go.git\n!! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/Go_Modern/metadata.json"
-  },
-  {
-    "id": "sov_32bit_batch_4161b2aa",
-    "description": "32BIT ASSIMILATION: Dreamcast, Nintendo_64, PlayStation_1",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/Dreamcast https://github.com/flyinghead/flycast.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/Nintendo_64 https://github.com/mupen64plus/mupen64plus-core.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PlayStation_1 https://github.com/duckstation/duckstation.git",
-    "created_at": "2026-01-19T04:30:09.354862Z",
-    "batch_details": [
-      {
-        "name": "Dreamcast",
-        "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/Dreamcast",
-        "url": "https://github.com/flyinghead/flycast.git"
-      },
-      {
-        "name": "Nintendo_64",
-        "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/Nintendo_64",
-        "url": "https://github.com/mupen64plus/mupen64plus-core.git"
-      },
-      {
-        "name": "PlayStation_1",
-        "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PlayStation_1",
-        "url": "https://github.com/duckstation/duckstation.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:30:10.262499",
-    "completed_at": "2026-01-19T04:30:12.344941",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/01_Consoles/Dreamcast FROM https://github.com/flyinghead/flycast.git\n!! Source dir exists at oss_sovereignty/sys_17_32Bit_Era/01_Consoles/Dreamcast/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/01_Consoles/Dreamcast/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/01_Consoles/Nintendo_64 FROM https://github.com/mupen64plus/mupen64plus-core.git\n!! Source dir exists at oss_sovereignty/sys_17_32Bit_Era/01_Consoles/Nintendo_64/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/01_Consoles/Nintendo_64/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PlayStation_1 FROM https://github.com/duckstation/duckstation.git\n!! Source dir exists at oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PlayStation_1/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PlayStation_1/metadata.json"
-  },
-  {
-    "id": "sov_32bit_batch_0a587fa2",
-    "description": "32BIT ASSIMILATION: BeOS, Linux_Early, Mac_OS_Classic",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/02_Computers/BeOS https://github.com/haiku/haiku.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/02_Computers/Linux_Early https://github.com/torvalds/linux.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/02_Computers/Mac_OS_Classic https://github.com/kanjitalk755/mac-os-build.git",
-    "created_at": "2026-01-19T04:30:09.354886Z",
-    "batch_details": [
-      {
-        "name": "BeOS",
-        "path": "oss_sovereignty/sys_17_32Bit_Era/02_Computers/BeOS",
-        "url": "https://github.com/haiku/haiku.git"
-      },
-      {
-        "name": "Linux_Early",
-        "path": "oss_sovereignty/sys_17_32Bit_Era/02_Computers/Linux_Early",
-        "url": "https://github.com/torvalds/linux.git"
-      },
-      {
-        "name": "Mac_OS_Classic",
-        "path": "oss_sovereignty/sys_17_32Bit_Era/02_Computers/Mac_OS_Classic",
-        "url": "https://github.com/kanjitalk755/mac-os-build.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:30:12.347649",
-    "completed_at": "2026-01-19T04:30:14.428773",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/02_Computers/BeOS FROM https://github.com/haiku/haiku.git\n!! Source dir exists at oss_sovereignty/sys_17_32Bit_Era/02_Computers/BeOS/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/02_Computers/BeOS/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/02_Computers/Linux_Early FROM https://github.com/torvalds/linux.git\n!! Source dir exists at oss_sovereignty/sys_17_32Bit_Era/02_Computers/Linux_Early/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/02_Computers/Linux_Early/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/02_Computers/Mac_OS_Classic FROM https://github.com/kanjitalk755/mac-os-build.git\n!! Source dir exists at oss_sovereignty/sys_17_32Bit_Era/02_Computers/Mac_OS_Classic/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/02_Computers/Mac_OS_Classic/metadata.json"
-  },
-  {
-    "id": "sov_32bit_batch_297ce5ca",
-    "description": "32BIT ASSIMILATION: OS_9, Windows_95_98_ME, Windows_NT_2000_XP",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/02_Computers/OS_9 https://github.com/jefftranter/6809/tree/master/nitros9 && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/02_Computers/Windows_95_98_ME https://github.com/microsoft/MS-DOS.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/02_Computers/Windows_NT_2000_XP https://github.com/reactos/reactos.git",
-    "created_at": "2026-01-19T04:30:09.354896Z",
-    "batch_details": [
-      {
-        "name": "OS_9",
-        "path": "oss_sovereignty/sys_17_32Bit_Era/02_Computers/OS_9",
-        "url": "https://github.com/jefftranter/6809/tree/master/nitros9"
-      },
-      {
-        "name": "Windows_95_98_ME",
-        "path": "oss_sovereignty/sys_17_32Bit_Era/02_Computers/Windows_95_98_ME",
-        "url": "https://github.com/microsoft/MS-DOS.git"
-      },
-      {
-        "name": "Windows_NT_2000_XP",
-        "path": "oss_sovereignty/sys_17_32Bit_Era/02_Computers/Windows_NT_2000_XP",
-        "url": "https://github.com/reactos/reactos.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:30:14.431214",
-    "completed_at": "2026-01-19T04:30:16.527384",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/02_Computers/OS_9 FROM https://github.com/jefftranter/6809/tree/master/nitros9\n!! Source dir exists at oss_sovereignty/sys_17_32Bit_Era/02_Computers/OS_9/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/02_Computers/OS_9/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/02_Computers/Windows_95_98_ME FROM https://github.com/microsoft/MS-DOS.git\n!! Source dir exists at oss_sovereignty/sys_17_32Bit_Era/02_Computers/Windows_95_98_ME/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/02_Computers/Windows_95_98_ME/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/02_Computers/Windows_NT_2000_XP FROM https://github.com/reactos/reactos.git\n!! Source dir exists at oss_sovereignty/sys_17_32Bit_Era/02_Computers/Windows_NT_2000_XP/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/02_Computers/Windows_NT_2000_XP/metadata.json"
-  },
-  {
-    "id": "sov_32bit_batch_764786d8",
-    "description": "32BIT ASSIMILATION: GCC_x86, Katana_SDK, PsyQ",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/GCC_x86 https://github.com/gcc-mirror/gcc.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/Katana_SDK https://github.com/KallistiOS/KallistiOS.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/PsyQ https://github.com/m-h-/psx-sdk-build.git",
-    "created_at": "2026-01-19T04:30:09.354902Z",
-    "batch_details": [
-      {
-        "name": "GCC_x86",
-        "path": "oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/GCC_x86",
-        "url": "https://github.com/gcc-mirror/gcc.git"
-      },
-      {
-        "name": "Katana_SDK",
-        "path": "oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/Katana_SDK",
-        "url": "https://github.com/KallistiOS/KallistiOS.git"
-      },
-      {
-        "name": "PsyQ",
-        "path": "oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/PsyQ",
-        "url": "https://github.com/m-h-/psx-sdk-build.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:30:16.529830",
-    "completed_at": "2026-01-19T04:31:52.569224Z",
-    "result": "SUCCESS: Assimilated GCC_x86, Katana_SDK, PsyQ."
-  },
-  {
-    "id": "sov_32bit_batch_fd3392f5",
-    "description": "32BIT ASSIMILATION: Visual_C_Plus_Plus",
-    "status": "complete",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/Visual_C_Plus_Plus https://github.com/open-watcom/open-watcom-v2.git",
-    "created_at": "2026-01-19T04:30:09.354907Z",
-    "batch_details": [
-      {
-        "name": "Visual_C_Plus_Plus",
-        "path": "oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/Visual_C_Plus_Plus",
-        "url": "https://github.com/open-watcom/open-watcom-v2.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:30:18.623870",
-    "completed_at": "2026-01-19T04:30:20.663613",
-    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/Visual_C_Plus_Plus FROM https://github.com/open-watcom/open-watcom-v2.git\n!! Source dir exists at oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/Visual_C_Plus_Plus/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/Visual_C_Plus_Plus/metadata.json"
-  },
-  {
-    "id": "sov_64bit_batch_dc88f64d",
-    "description": "64BIT ASSIMILATION: MIPS64, AARCH64, RISCV64",
-    "status": "failed",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/MIPS64 https://github.com/EduMIPS64/edumips64.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 https://github.com/ARM-software/arm-trusted-firmware.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/RISCV64 https://github.com/riscv/riscv-isa-sim.git",
-    "created_at": "2026-01-19T04:15:15Z",
-    "batch_details": [
-      {
-        "name": "MIPS64",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/MIPS64",
-        "url": "https://github.com/EduMIPS64/edumips64.git"
-      },
-      {
-        "name": "AARCH64",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64",
-        "url": "https://github.com/ARM-software/arm-trusted-firmware.git"
-      },
-      {
-        "name": "RISCV64",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/RISCV64",
-        "url": "https://github.com/riscv/riscv-isa-sim.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:15:16.439628",
-    "completed_at": "2026-01-19T04:15:18.999263",
-    "result": "FAILURE: "
-  },
-  {
-    "id": "sov_64bit_batch_0b596939",
-    "description": "64BIT ASSIMILATION: SPARC64, POWER_PC_64, x86_64",
-    "status": "failed",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/SPARC64 https://github.com/sparc/leon.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/POWER_PC_64 https://github.com/open-power/op-build.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/x86_64 https://github.com/nasm/nasm.git",
-    "created_at": "2026-01-19T04:15:15Z",
-    "batch_details": [
-      {
-        "name": "SPARC64",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/SPARC64",
-        "url": "https://github.com/sparc/leon.git"
-      },
-      {
-        "name": "POWER_PC_64",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/POWER_PC_64",
-        "url": "https://github.com/open-power/op-build.git"
-      },
-      {
-        "name": "x86_64",
-        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/x86_64",
-        "url": "https://github.com/nasm/nasm.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:15:19.004044",
-    "completed_at": "2026-01-19T04:15:21.556817",
-    "result": "FAILURE: "
-  },
-  {
-    "id": "sov_64bit_batch_cfd90ef6",
-    "description": "64BIT ASSIMILATION: PS2, XBOX, GAMECUBE",
-    "status": "failed",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PS2 https://github.com/PCSX2/pcsx2.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/XBOX https://github.com/xemu-project/xemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/GAMECUBE https://github.com/dolphin-emu/dolphin.git",
-    "created_at": "2026-01-19T04:15:15Z",
-    "batch_details": [
-      {
-        "name": "PS2",
-        "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PS2",
-        "url": "https://github.com/PCSX2/pcsx2.git"
-      },
-      {
-        "name": "XBOX",
-        "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/XBOX",
-        "url": "https://github.com/xemu-project/xemu.git"
-      },
-      {
-        "name": "GAMECUBE",
-        "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/GAMECUBE",
-        "url": "https://github.com/dolphin-emu/dolphin.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:15:21.561636",
-    "completed_at": "2026-01-19T04:21:37.448336",
-    "result": "FAILURE: "
-  },
-  {
-    "id": "sov_64bit_batch_8add7cb4",
-    "description": "64BIT ASSIMILATION: DREAMCAST, N64, PS1",
-    "status": "failed",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/DREAMCAST https://github.com/flyinghead/flycast.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/N64 https://github.com/mupen64plus/mupen64plus-core.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PS1 https://github.com/duckstation/duckstation.git",
-    "created_at": "2026-01-19T04:15:15Z",
-    "batch_details": [
-      {
-        "name": "DREAMCAST",
-        "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/DREAMCAST",
-        "url": "https://github.com/flyinghead/flycast.git"
-      },
-      {
-        "name": "N64",
-        "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/N64",
-        "url": "https://github.com/mupen64plus/mupen64plus-core.git"
-      },
-      {
-        "name": "PS1",
-        "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PS1",
-        "url": "https://github.com/duckstation/duckstation.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:21:37.451331",
-    "completed_at": "2026-01-19T04:23:52.586939",
-    "result": "FAILURE: "
-  },
-  {
-    "id": "sov_64bit_batch_3e73413b",
-    "description": "64BIT ASSIMILATION: SATURN",
-    "status": "failed",
-    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/SATURN https://github.com/yabause/yabause.git",
-    "created_at": "2026-01-19T04:15:15Z",
-    "batch_details": [
-      {
-        "name": "SATURN",
-        "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/SATURN",
-        "url": "https://github.com/yabause/yabause.git"
-      }
-    ],
-    "started_at": "2026-01-19T04:23:52.591976",
-    "completed_at": "2026-01-19T04:26:07.751791",
-    "result": "FAILURE: "
   },
   {
     "id": "repo_clean_8bit_16bit_exclusion",
@@ -3904,8 +3148,11 @@
   {
     "id": "sov_audit_remediate_001",
     "description": "SOVEREIGNTY: Audit all folders. Clone missing source. Sever ties.",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/audit_and_remediate.py",
-    "created_at": "2026-01-19T16:25:00.000Z"
+    "created_at": "2026-01-19T16:25:00.000Z",
+    "started_at": "2026-01-19T16:35:41.482744",
+    "completed_at": "2026-01-19T16:35:44.103563",
+    "result": "SUCCESS: [16:35:43] Starting audit of /home/aimeat/github/anvilos_beta/oss_sovereignty...\n[16:35:44] MISSING SOURCE: /home/aimeat/github/anvilos_beta/oss_sovereignty/ctx_06_recharts\n[16:35:44] SKIPPED: No URL in metadata for /home/aimeat/github/anvilos_beta/oss_sovereignty/ctx_06_recharts\n[16:35:44] Audit Complete. Remediated: 0, Skipped: 1"
   }
 ]

@@ -1,7 +1,0 @@
-{
-  "id": "legacy_dpkg-buildtree",
-  "original_path": "/usr/bin/dpkg-buildtree",
-  "category": "PACKAGE_MGMT",
-  "status": "flagged_for_removal",
-  "replacement_strategy": "rewrite_in_anvil"
-}

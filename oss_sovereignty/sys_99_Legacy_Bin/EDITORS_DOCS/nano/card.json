@@ -1,0 +1,7 @@
+{
+  "id": "legacy_nano",
+  "original_path": "/usr/bin/nano",
+  "category": "EDITORS_DOCS",
+  "status": "flagged_for_removal",
+  "replacement_strategy": "rewrite_in_anvil"
+}

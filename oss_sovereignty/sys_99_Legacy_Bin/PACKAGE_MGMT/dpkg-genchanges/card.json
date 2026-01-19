@@ -1,0 +1,7 @@
+{
+  "id": "legacy_dpkg-genchanges",
+  "original_path": "/usr/bin/dpkg-genchanges",
+  "category": "PACKAGE_MGMT",
+  "status": "flagged_for_removal",
+  "replacement_strategy": "rewrite_in_anvil"
+}

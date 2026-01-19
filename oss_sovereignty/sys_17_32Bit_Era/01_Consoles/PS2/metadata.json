@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T16:48:31.523616",
+  "origin": {
+    "url": "https://github.com/PCSX2/pcsx2.git",
+    "commit": "a1ac6662d3be2d211187bedbe743ce2a49ee6db9",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

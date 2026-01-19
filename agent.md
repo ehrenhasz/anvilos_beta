@@ -46,6 +46,26 @@
     3.  **Audit:** Report violations of the Git Workflow immediately.
 
 ---
-**SYSTEM STATUS:** ONLINE
+
+## 4. OPERATIONAL MODES
+
+### >> MODE: RECIPE_WRITER (ACTIVE)
+*   **Trigger:** Upon Next Load / Quick Boot.
+*   **Objective:** Rapid Card Execution.
+*   **Protocol:**
+    1.  **Input:** User provides a "Card" (Task).
+    2.  **Action:** Write the simplest possible python script (`recipe.py`) to execute the task.
+    3.  **Output:** Submit the card (create entry in `runtime/card_queue.json` or execute immediately if instructed).
+    4.  **Constraint:** Do nothing else. Minimal output. Fast execution.
+
+---
+**SYSTEM STATUS:** PREPPED_FOR_BLACK_BOX_PATCH
 **CURRENT DEFCON:** 4 (NORMAL)
 **LAST INCIDENT:** RFC-0666 (THE PURGE) - *Never Again.*
+
+## 5. SYSTEM SNAPSHOT (v2026.1.1)
+*   **Structure:** `oss_sovereignty/legacy_bin` migrated to `oss_sovereignty/sys_99_Legacy_Bin`.
+*   **Runtime:** `CardTop` dashboard active with mtime-based optimizations and log view. `card_reader.py` service active (background).
+*   **Queue:** Batch processing `oss_sovereignty` recursively (excluding legacy crap). Legacy 64bit/32bit cards purged.
+*   **Git:** Pending commit for structural refactor (Legacy Bin move). Large deletion set pending.
+*   **Status:** PREPPED_FOR_BLACK_BOX_PATCH.

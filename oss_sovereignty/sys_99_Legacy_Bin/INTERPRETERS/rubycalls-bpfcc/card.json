@@ -1,0 +1,7 @@
+{
+  "id": "legacy_rubycalls-bpfcc",
+  "original_path": "/usr/sbin/rubycalls-bpfcc",
+  "category": "INTERPRETERS",
+  "status": "flagged_for_removal",
+  "replacement_strategy": "rewrite_in_anvil"
+}

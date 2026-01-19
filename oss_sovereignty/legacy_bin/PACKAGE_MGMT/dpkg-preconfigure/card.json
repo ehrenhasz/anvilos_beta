@@ -1,7 +1,0 @@
-{
-  "id": "legacy_dpkg-preconfigure",
-  "original_path": "/usr/sbin/dpkg-preconfigure",
-  "category": "PACKAGE_MGMT",
-  "status": "flagged_for_removal",
-  "replacement_strategy": "rewrite_in_anvil"
-}

@@ -15,8 +15,11 @@ LOG_FILE = os.path.join(PROJECT_ROOT, "ext", "forge.log")
 
 def log(message):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    with open(LOG_FILE, "a") as f:
-        f.write(f"[{timestamp}] {message}\n")
+    try:
+        with open(LOG_FILE, "a") as f:
+            f.write(f"[{timestamp}] {message}\n")
+    except:
+        pass # Fail silently
     print(f"[{timestamp}] {message}")
 
 def load_queue():
@@ -34,11 +37,12 @@ def process_card(card):
     log(f"PROCESSING CARD: {card.get('id')} - {card.get('description')}")
     
     # Simulate processing delay
-    time.sleep(2)
+    time.sleep(1)
     
     # Execute command if present
     command = card.get("command")
     result = "Processed (Manual/No-Op)"
+    success = True
     
     if command:
         log(f"EXECUTING: {command}")
@@ -52,18 +56,18 @@ def process_card(card):
                 text=True
             )
             if proc.returncode == 0:
-                result = f"SUCCESS: {proc.stdout.strip()}"
+                result = f"SUCCESS: {proc.stdout.strip()[:200]}..." # Truncate for log
             else:
                 result = f"FAILURE: {proc.stderr.strip()}"
                 log(f"ERROR: {result}")
-                return False, result
+                success = False
         except Exception as e:
             result = f"EXCEPTION: {str(e)}"
             log(f"CRITICAL: {result}")
-            return False, result
+            success = False
             
     log(f"RESULT: {result}")
-    return True, result
+    return success, result
 
 def main():
     log(f"Card Reader Service Started (PID: {os.getpid()})")
@@ -71,33 +75,43 @@ def main():
     while True:
         queue = load_queue()
         modified = False
+        target = None
         
-        # Find next PENDING or PAUSED card
-        for card in queue:
-            if card.get("status") in ["pending", "paused"]:
-                # Mark as processing
-                card["status"] = "processing"
-                card["started_at"] = datetime.now().isoformat()
-                save_queue(queue) # Save immediately to lock it
-                
-                # Execute
-                success, result = process_card(card)
-                
-                # Update status
-                # Reload queue to avoid overwriting new concurrent changes
-                queue = load_queue()
-                # Find the card again by ID (in case order shifted, though unlikely)
-                for c in queue:
-                    if c["id"] == card["id"]:
-                        c["status"] = "complete" if success else "failed"
-                        c["completed_at"] = datetime.now().isoformat()
-                        c["result"] = result
-                        break
-                
-                save_queue(queue)
-                modified = True
-                break # Process one at a time
+        # Find next PENDING card
+        # Filter for 'pending' or 'paused'
+        # Sort by priority desc (if available) just in case
+        pending_cards = [c for c in queue if c.get("status") in ["pending", "paused"]]
+        if pending_cards:
+            # Sort local list by priority
+            pending_cards.sort(key=lambda x: x.get("priority", 50), reverse=True)
+            target_id = pending_cards[0]["id"]
+            
+            # Find the actual index in the main queue to update
+            for card in queue:
+                if card["id"] == target_id:
+                    target = card
+                    break
         
+        if target:
+            # Mark processing
+            target["status"] = "processing"
+            target["started_at"] = datetime.now().isoformat()
+            save_queue(queue)
+            
+            # Execute
+            success, result = process_card(target)
+            
+            # Refresh queue to minimize race conditions
+            queue = load_queue()
+            for c in queue:
+                if c["id"] == target["id"]:
+                    c["status"] = "complete" if success else "failed"
+                    c["completed_at"] = datetime.now().isoformat()
+                    c["result"] = result
+                    break
+            save_queue(queue)
+            modified = True
+            
         if not modified:
             time.sleep(1)
 

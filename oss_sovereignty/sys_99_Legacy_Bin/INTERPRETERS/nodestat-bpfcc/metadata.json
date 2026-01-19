@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T02:40:37.115000",
+  "origin": {
+    "url": "https://github.com/nodejs/node.git",
+    "commit": "5f982e28793ed001f5adb8fabea1d2a1f3247c71",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

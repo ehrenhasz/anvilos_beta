@@ -1,7 +1,0 @@
-{
-  "id": "legacy_phpflow-bpfcc",
-  "original_path": "/usr/sbin/phpflow-bpfcc",
-  "category": "INTERPRETERS",
-  "status": "flagged_for_removal",
-  "replacement_strategy": "rewrite_in_anvil"
-}

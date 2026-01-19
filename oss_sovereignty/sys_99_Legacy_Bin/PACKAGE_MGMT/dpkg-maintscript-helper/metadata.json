@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T02:36:37.400091",
+  "origin": {
+    "url": "https://git.dpkg.org/git/dpkg/dpkg.git",
+    "commit": "27f0316c311fda2181c4812773d4b7286637905b",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

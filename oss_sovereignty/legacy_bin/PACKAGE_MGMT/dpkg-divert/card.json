@@ -1,7 +1,0 @@
-{
-  "id": "legacy_dpkg-divert",
-  "original_path": "/usr/bin/dpkg-divert",
-  "category": "PACKAGE_MGMT",
-  "status": "flagged_for_removal",
-  "replacement_strategy": "rewrite_in_anvil"
-}

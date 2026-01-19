@@ -1,7 +1,0 @@
-{
-  "id": "legacy_man",
-  "original_path": "/usr/bin/man",
-  "category": "EDITORS_DOCS",
-  "status": "flagged_for_removal",
-  "replacement_strategy": "rewrite_in_anvil"
-}

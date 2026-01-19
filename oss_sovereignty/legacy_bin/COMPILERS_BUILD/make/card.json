@@ -1,7 +1,0 @@
-{
-  "id": "legacy_make",
-  "original_path": "/usr/bin/make",
-  "category": "COMPILERS_BUILD",
-  "status": "flagged_for_removal",
-  "replacement_strategy": "rewrite_in_anvil"
-}

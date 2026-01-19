@@ -1,0 +1,18 @@
+import json
+import os
+
+files = {
+    "card_reader.py": "runtime/services/card_reader.py",
+    "dashboard.py": "system/dashboard.py"
+}
+
+output = {}
+
+for name, path in files.items():
+    if os.path.exists(path):
+        with open(path, "r") as f:
+            output[name] = f.read()
+    else:
+        output[name] = "FILE_NOT_FOUND"
+
+print(json.dumps(output, indent=2))

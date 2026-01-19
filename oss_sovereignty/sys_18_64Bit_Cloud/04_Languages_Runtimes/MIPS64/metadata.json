@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T16:42:12.593766",
+  "origin": {
+    "url": "https://github.com/EduMIPS64/edumips64.git",
+    "commit": "e9afe04289945b2a3b06ee3b8c5b9b14ea498f2f",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

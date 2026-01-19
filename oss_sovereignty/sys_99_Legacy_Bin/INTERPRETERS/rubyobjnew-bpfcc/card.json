@@ -1,0 +1,7 @@
+{
+  "id": "legacy_rubyobjnew-bpfcc",
+  "original_path": "/usr/sbin/rubyobjnew-bpfcc",
+  "category": "INTERPRETERS",
+  "status": "flagged_for_removal",
+  "replacement_strategy": "rewrite_in_anvil"
+}

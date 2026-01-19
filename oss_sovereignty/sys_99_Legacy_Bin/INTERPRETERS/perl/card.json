@@ -1,0 +1,7 @@
+{
+  "id": "legacy_perl",
+  "original_path": "/usr/bin/perl",
+  "category": "INTERPRETERS",
+  "status": "flagged_for_removal",
+  "replacement_strategy": "rewrite_in_anvil"
+}

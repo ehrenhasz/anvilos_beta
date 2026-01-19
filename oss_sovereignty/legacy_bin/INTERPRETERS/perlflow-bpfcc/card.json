@@ -1,7 +1,0 @@
-{
-  "id": "legacy_perlflow-bpfcc",
-  "original_path": "/usr/sbin/perlflow-bpfcc",
-  "category": "INTERPRETERS",
-  "status": "flagged_for_removal",
-  "replacement_strategy": "rewrite_in_anvil"
-}

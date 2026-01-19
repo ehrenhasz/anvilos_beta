@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T02:35:04.548456",
+  "origin": {
+    "url": "https://salsa.debian.org/apt-team/apt.git",
+    "commit": "7fcbb7f89aa22af8761b878927330468193c5806",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

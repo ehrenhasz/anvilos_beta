@@ -1,7 +1,0 @@
-{
-  "id": "legacy_rsync",
-  "original_path": "/usr/bin/rsync",
-  "category": "NETWORK_CLIENTS",
-  "status": "flagged_for_removal",
-  "replacement_strategy": "rewrite_in_anvil"
-}

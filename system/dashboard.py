@@ -1,121 +1,235 @@
 #!/usr/bin/env python3
-import curses
 import time
+import json
+import subprocess
 import os
 import sys
-import subprocess
+import threading
 from datetime import datetime
+from rich.live import Live
+from rich.layout import Layout
+from rich.panel import Panel
+from rich.table import Table
+from rich.text import Text
+from rich.console import Console
+from rich import box
+from rich.align import Align
 
-# CONFIGURATION
-REFRESH_RATE = 0.5  # Seconds
-TITLE = "BIG IRON // ANVIL OS MONITOR"
-USER = os.environ.get("USER", "UNKNOWN")
+# --- CONFIGURATION ---
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+QUEUE_FILE = os.path.join(PROJECT_ROOT, "runtime", "card_queue.json")
+LOG_FILE = os.path.join(PROJECT_ROOT, "ext", "forge.log")
+SERVICE_NAME = "titanium_warden"
 
-def get_cpu_usage():
-    try:
-        # Simple load average
-        load = os.getloadavg()
-        return f"LOAD: {load[0]:.2f} {load[1]:.2f} {load[2]:.2f}"
-    except:
-        return "CPU: N/A"
+# BTOP DEFAULT FIDELITY THEME
+C_PRIMARY = "#50fa7b"   # Green
+C_SECONDARY = "#8be9fd" # Cyan
+C_ACCENT = "#bd93f9"    # Purple
+C_WARN = "#f1fa8c"      # Yellow
+C_ERR = "#ff5555"       # Red
+C_LABEL = "#6272a4"     # Grey
+C_BORDER = "#44475a"    # Muted
+C_TEXT = "#f8f8f2"
 
-def get_mem_usage():
-    try:
-        with open('/proc/meminfo', 'r') as f:
-            lines = f.readlines()
-        mem_total = int(lines[0].split()[1])
-        mem_free = int(lines[1].split()[1])
-        used_percent = ((mem_total - mem_free) / mem_total) * 100
-        return f"MEM: {used_percent:.1f}%"
-    except:
-        return "MEM: N/A"
+# --- SYSTEM MONITOR (No dependencies) ---
+class SystemMonitor:
+    def __init__(self):
+        self.last_cpu_time = 0
+        self.last_cpu_idle = 0
+        self.cpu_usage = 0.0
 
-def get_disk_usage():
-    try:
-        st = os.statvfs('/')
-        free = (st.f_bavail * st.f_frsize) / (1024 * 1024 * 1024)
-        total = (st.f_blocks * st.f_frsize) / (1024 * 1024 * 1024)
-        return f"DISK: {total-free:.1f}/{total:.1f} GB"
-    except:
-        return "DISK: N/A"
+    def get_cpu_stats(self):
+        try:
+            with open('/proc/stat', 'r') as f:
+                line = f.readline()
+                parts = line.split()
+                times = [float(x) for x in parts[1:]]
+                idle = times[3] + times[4] # idle + iowait
+                total = sum(times)
+                return total, idle
+        except:
+            return 0, 0
 
-def get_git_status():
-    try:
-        branch = subprocess.check_output(["git", "branch", "--show-current"], stderr=subprocess.DEVNULL).decode().strip()
-        return f"GIT: {branch}"
-    except:
-        return "GIT: DETACHED"
-
-def draw_menu(stdscr):
-    # Clear and refresh the screen for a blank canvas
-    stdscr.clear()
-    stdscr.refresh()
-
-    # Start colors in curses
-    curses.start_color()
-    curses.init_pair(1, curses.COLOR_GREEN, curses.COLOR_BLACK)
-    curses.init_pair(2, curses.COLOR_CYAN, curses.COLOR_BLACK)
-    curses.init_pair(3, curses.COLOR_RED, curses.COLOR_BLACK)
-    curses.init_pair(4, curses.COLOR_BLACK, curses.COLOR_GREEN) # Header
-
-    while True:
-        # Initialization
-        stdscr.clear()
-        height, width = stdscr.getmaxyx()
-
-        # Header
-        header_text = f" {TITLE} | USER: {USER} | {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} "
-        stdscr.attron(curses.color_pair(4))
-        stdscr.addstr(0, 0, header_text)
-        stdscr.addstr(0, len(header_text), " " * (width - len(header_text) - 1))
-        stdscr.attroff(curses.color_pair(4))
-
-        # System Stats
-        stdscr.attron(curses.color_pair(2))
-        stdscr.addstr(2, 2, "SYSTEM METRICS")
-        stdscr.addstr(3, 2, "-" * 20)
-        stdscr.attroff(curses.color_pair(2))
+    def poll_cpu(self):
+        total, idle = self.get_cpu_stats()
+        diff_total = total - self.last_cpu_time
+        diff_idle = idle - self.last_cpu_idle
         
-        stdscr.addstr(4, 2, get_cpu_usage())
-        stdscr.addstr(5, 2, get_mem_usage())
-        stdscr.addstr(6, 2, get_disk_usage())
-
-        # Project Stats
-        stdscr.attron(curses.color_pair(2))
-        stdscr.addstr(8, 2, "PROJECT STATUS")
-        stdscr.addstr(9, 2, "-" * 20)
-        stdscr.attroff(curses.color_pair(2))
+        if diff_total > 0:
+            self.cpu_usage = 100.0 * (1.0 - (diff_idle / diff_total))
         
-        stdscr.addstr(10, 2, get_git_status())
-        stdscr.addstr(11, 2, f"CWD: {os.getcwd()}")
+        self.last_cpu_time = total
+        self.last_cpu_idle = idle
+        return self.cpu_usage
 
-        # Triumvirate Status (Mock)
-        stdscr.attron(curses.color_pair(3))
-        stdscr.addstr(2, 40, "TRIUMVIRATE")
-        stdscr.addstr(3, 40, "-" * 20)
-        stdscr.attroff(curses.color_pair(3))
+    def get_mem_usage(self):
+        try:
+            mem_info = {}
+            with open('/proc/meminfo', 'r') as f:
+                for line in f:
+                    parts = line.split(':')
+                    if len(parts) == 2:
+                        key = parts[0].strip()
+                        val = int(parts[1].split()[0]) # kB
+                        mem_info[key] = val
+            
+            total = mem_info.get('MemTotal', 1)
+            avail = mem_info.get('MemAvailable', 0)
+            used = total - avail
+            percent = (used / total) * 100.0
+            return used / 1024 / 1024, total / 1024 / 1024, percent # GB, GB, %
+        except:
+            return 0, 0, 0
 
-        stdscr.addstr(4, 40, "$MEAT   : ONLINE")
-        stdscr.addstr(5, 40, "$AIMEAT : ACTIVE")
-        stdscr.addstr(6, 40, "$THESPY : MONITORING")
+# --- CARDREADER (View Only) ---
+class CardReaderView:
+    def __init__(self, file_path):
+        self.file_path = file_path
+        self.cards = []
+        self.stats = {"proc": 0, "queue": 0, "done": 0, "fail": 0}
+        self.scan()
 
-        # Refresh
-        stdscr.refresh()
+    def scan(self):
+        try:
+            if not os.path.exists(self.file_path):
+                return
+            with open(self.file_path, "r") as f:
+                self.cards = json.load(f)
+            
+            self.stats = {"proc": 0, "queue": 0, "done": 0, "fail": 0}
+            for c in self.cards:
+                s = c.get("status", "???").lower()
+                if s == "processing": self.stats["proc"] += 1
+                elif s == "pending": self.stats["queue"] += 1
+                elif s == "complete": self.stats["done"] += 1
+                elif s == "failed": self.stats["fail"] += 1
+        except Exception:
+            pass
+
+# --- DASHBOARD TUI ---
+monitor = SystemMonitor()
+reader = CardReaderView(QUEUE_FILE)
+
+def make_graph(value, color, width=15):
+    filled = int((min(max(value, 0), 100) / 100) * width)
+    return f"[{color}]" + "█" * filled + "[/]" + f"[{C_BORDER}]" + "█" * (width - filled) + "[/]"
+
+def generate_header():
+    t = Text()
+    t.append(" ANVIL OS ", style="reverse bold #8be9fd")
+    t.append(" Mainframe ", style="bold white")
+    t.append(" host: ", style=C_LABEL)
+    t.append("anvilos ", style=C_PRIMARY)
+    t.append(" " * 5)
+    t.append(datetime.now().strftime("%H:%M:%S"), style="bold white")
+    return Align.center(t)
+
+def generate_stats():
+    cpu = monitor.poll_cpu()
+    used_mem, total_mem, mem_pct = monitor.get_mem_usage()
+    
+    table = Table.grid(expand=True)
+    table.add_row(f"[{C_LABEL}]CPU usage[/]", Align.right(f"[{C_PRIMARY}]{cpu:.1f}%[/]"))
+    table.add_row(make_graph(cpu, C_PRIMARY, width=25))
+    table.add_row("")
+    
+    mem_style = C_SECONDARY if mem_pct < 60 else C_WARN if mem_pct < 85 else C_ERR
+    table.add_row(f"[{C_LABEL}]Mem used[/]", Align.right(f"[{mem_style}]{used_mem:.1f}G[/]"))
+    table.add_row(make_graph(mem_pct, mem_style, width=25))
+    
+    return Panel(table, title="[bold #bd93f9]system[/]", border_style=C_BORDER, box=box.SQUARE)
+
+def generate_net_panel():
+    try:
+        # Check if service is active
+        res = subprocess.run(["systemctl", "is-active", SERVICE_NAME], capture_output=True, text=True)
+        status = res.stdout.strip()
+    except:
+        status = "unknown"
         
-        # Wait for next update
-        time.sleep(REFRESH_RATE)
+    style = C_PRIMARY if status == "active" else C_ERR
+    
+    table = Table.grid(expand=True)
+    table.add_row(f"[{C_LABEL}]warden:[/]  [{style}]{status.upper()}[/]")
+    
+    return Panel(table, title="[bold #50fa7b]service[/]", border_style=C_BORDER, box=box.SQUARE)
 
-        # Check for user input (q to quit)
-        stdscr.nodelay(True)
-        k = stdscr.getch()
-        if k == ord('q'):
-            break
+def generate_queue_table():
+    reader.scan()
+    
+    # Text Log View (Dense)
+    card_text = Text()
+    
+    # Sort: Priority (desc), then ID
+    sorted_cards = sorted(
+        reader.cards, 
+        key=lambda c: c.get("priority", 50), 
+        reverse=True
+    )
+
+    for card in sorted_cards[:15]:
+        prio = card.get("priority", 50)
+        prio_icon = "🔴" if prio > 80 else "🟢" if prio < 30 else "⚪"
+        
+        status = card.get("status", "unknown")
+        status_style = {
+            "pending": f"dim {C_WARN}",
+            "processing": "bold #8be9fd", # Cyan
+            "complete": C_PRIMARY,
+            "failed": f"bold {C_ERR}",
+            "paused": "magenta"
+        }.get(status, "white")
+        
+        cost = card.get("cost_center", "gen")[:3].upper()
+        desc = card.get("description", "")[:50]
+        cid = card.get("id", "?")
+        
+        # [PRIO] [ID] STATUS (COST) DESC
+        card_text.append(f"{prio_icon} ", style="white")
+        card_text.append(f"[{cid}] ", style=C_LABEL)
+        card_text.append(f"{status.upper():<10} ", style=status_style)
+        card_text.append(f"({cost}) ", style=f"dim {C_SECONDARY}")
+        card_text.append(f"{desc}\n", style=C_TEXT)
+        
+    sub = f"[{C_ACCENT}]proc {reader.stats['proc']}[/] | [{C_WARN}]pend {reader.stats['queue']}[/] | [{C_PRIMARY}]done {reader.stats['done']}[/] | [{C_ERR}]fail {reader.stats['fail']}[/]"
+        
+    return Panel(card_text, title="[bold #bd93f9]card_queue[/]", subtitle=sub, border_style=C_BORDER, box=box.SQUARE)
+
+def make_layout():
+    layout = Layout()
+    layout.split_column(
+        Layout(name="header", size=3),
+        Layout(name="body"),
+        Layout(name="footer", size=3)
+    )
+    layout["body"].split_row(
+        Layout(name="left", ratio=1),
+        Layout(name="right", ratio=3)
+    )
+    layout["left"].split_column(
+        Layout(name="stats", ratio=1),
+        Layout(name="net", size=5)
+    )
+    
+    layout["header"].update(generate_header())
+    layout["footer"].update(Align.center(Text("Ctrl+C to Quit | Dashboard Mode (ReadOnly)", style="dim")))
+    layout["right"].update(generate_queue_table())
+    layout["stats"].update(generate_stats())
+    layout["net"].update(generate_net_panel())
+    
+    return layout
 
 def main():
-    curses.wrapper(draw_menu)
+    console = Console()
+    console.clear()
+    
+    with Live(make_layout(), refresh_per_second=4, screen=True) as live:
+        try:
+            while True:
+                live.update(make_layout())
+                time.sleep(0.25)
+        except KeyboardInterrupt:
+            pass
 
 if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-        print("Dashboard Terminated.")
+    main()

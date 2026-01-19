@@ -1,7 +1,0 @@
-{
-  "id": "legacy_perlbug",
-  "original_path": "/usr/bin/perlbug",
-  "category": "INTERPRETERS",
-  "status": "flagged_for_removal",
-  "replacement_strategy": "rewrite_in_anvil"
-}

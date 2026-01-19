@@ -1,7 +1,0 @@
-{
-  "id": "legacy_rubygc-bpfcc",
-  "original_path": "/usr/sbin/rubygc-bpfcc",
-  "category": "INTERPRETERS",
-  "status": "flagged_for_removal",
-  "replacement_strategy": "rewrite_in_anvil"
-}

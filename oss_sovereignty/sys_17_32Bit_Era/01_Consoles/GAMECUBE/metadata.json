@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T16:48:42.616110",
+  "origin": {
+    "url": "https://github.com/dolphin-emu/dolphin.git",
+    "commit": "710905138c481f2332c3cd7df07c06611985410b",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

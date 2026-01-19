@@ -2237,3 +2237,579 @@ EXEC: git rev-parse HEAD
 [2026-01-19 15:47:34] PROCESSING CARD: sov_dir_inventory_001 - SOVEREIGNTY: Generate a log of all directories in oss_sovereignty.
 [2026-01-19 15:47:36] EXECUTING: find oss_sovereignty -type d > oss_sovereignty_dirs.log
 [2026-01-19 15:47:37] RESULT: SUCCESS: 
+[2026-01-19 16:35:04] Card Reader Service Started (PID: 131431)
+[2026-01-19 16:35:04] PROCESSING CARD: sov_batch_run_20260119_001 - SOV BATCH 1: ctx_06_recharts, ctx_07_vite, sys_01_Linux_Kernel, sys_02_SELinux, sys_07_Btop
+[2026-01-19 16:35:06] EXECUTING: bash system/run_sovereignty_task.sh oss_sovereignty/ctx_06_recharts && bash system/run_sovereignty_task.sh oss_sovereignty/ctx_07_vite && bash system/run_sovereignty_task.sh oss_sovereignty/sys_01_Linux_Kernel && bash system/run_sovereignty_task.sh oss_sovereignty/sys_02_SELinux && bash system/run_sovereignty_task.sh oss_sovereignty/sys_07_Btop
+[2026-01-19 16:35:06] RESULT: SUCCESS: >> TARGET_DIR: oss_sovereignty/ctx_06_recharts
+>> BUILD_SCRIPT: oss_sovereignty/ctx_06_recharts/anvil.build.sh
+No .git directory found in 'oss_sovereignty/ctx_06_recharts' or 'oss_sovereignty/ctx_06_recharts/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/ctx_07_vite
+>> BUILD_SCRIPT: oss_sovereignty/ctx_07_vite/anvil.build.sh
+No .git directory found in 'oss_sovereignty/ctx_07_vite' or 'oss_sovereignty/ctx_07_vite/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_01_Linux_Kernel
+>> BUILD_SCRIPT: oss_sovereignty/sys_01_Linux_Kernel/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_01_Linux_Kernel/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_01_Linux_Kernel' or 'oss_sovereignty/sys_01_Linux_Kernel/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_02_SELinux
+>> BUILD_SCRIPT: oss_sovereignty/sys_02_SELinux/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_02_SELinux/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_02_SELinux' or 'oss_sovereignty/sys_02_SELinux/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_07_Btop
+>> BUILD_SCRIPT: oss_sovereignty/sys_07_Btop/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_07_Btop/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_07_Btop' or 'oss_sovereignty/sys_07_Btop/source'.
+SUCCESS: No git repository to report on.
+[2026-01-19 16:35:06] PROCESSING CARD: sov_batch_run_20260119_002 - SOV BATCH 2: sys_08_Aerc, sys_09_Anvil, sys_10_HyperVision, sys_11_AlloyDB, make
+[2026-01-19 16:35:08] EXECUTING: bash system/run_sovereignty_task.sh oss_sovereignty/sys_08_Aerc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_09_Anvil && bash system/run_sovereignty_task.sh oss_sovereignty/sys_10_HyperVision && bash system/run_sovereignty_task.sh oss_sovereignty/sys_11_AlloyDB && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/COMPILERS_BUILD/make
+[2026-01-19 16:35:08] RESULT: SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_08_Aerc
+>> BUILD_SCRIPT: oss_sovereignty/sys_08_Aerc/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_08_Aerc/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_08_Aerc' or 'oss_sovereignty/sys_08_Aerc/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_09_Anvil
+>> BUILD_SCRIPT: oss_sovereignty/sys_09_Anvil/anvil.build.sh
+No .git directory found in 'oss_sovereignty/sys_09_Anvil' or 'oss_sovereignty/sys_09_Anvil/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_10_HyperVision
+>> BUILD_SCRIPT: oss_sovereignty/sys_10_HyperVision/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_10_HyperVision/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_10_HyperVision' or 'oss_sovereignty/sys_10_HyperVision/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_11_AlloyDB
+>> BUILD_SCRIPT: oss_sovereignty/sys_11_AlloyDB/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_11_AlloyDB/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_11_AlloyDB' or 'oss_sovereignty/sys_11_AlloyDB/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/COMPILERS_BUILD/make
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/COMPILERS_BUILD/make/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/COMPILERS_BUILD/make/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/COMPILERS_BUILD/make' or 'oss_sovereignty/sys_99_Legacy_Bin/COMPILERS_BUILD/make/source'.
+SUCCESS: No git repository to report on.
+[2026-01-19 16:35:08] PROCESSING CARD: sov_batch_run_20260119_003 - SOV BATCH 3: info, less, man, more, nano
+[2026-01-19 16:35:10] EXECUTING: bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/info && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/less && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/man && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/more && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/nano
+[2026-01-19 16:35:10] RESULT: SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/info
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/info/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/info/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/info' or 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/info/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/less
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/less/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/less/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/less' or 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/less/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/man
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/man/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/man/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/man' or 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/man/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/more
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/more/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/more/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/more' or 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/more/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/nano
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/nano/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/nano/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/nano' or 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/nano/source'.
+SUCCESS: No git repository to report on.
+[2026-01-19 16:35:10] PROCESSING CARD: sov_batch_run_20260119_004 - SOV BATCH 4: vim.basic, vim.tiny, vimtutor, node, nodegc-bpfcc
+[2026-01-19 16:35:12] EXECUTING: bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.basic && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.tiny && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vimtutor && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/node && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodegc-bpfcc
+[2026-01-19 16:35:12] RESULT: SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.basic
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.basic/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.basic/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.basic' or 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.basic/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.tiny
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.tiny/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.tiny/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.tiny' or 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vim.tiny/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vimtutor
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vimtutor/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vimtutor/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vimtutor' or 'oss_sovereignty/sys_99_Legacy_Bin/EDITORS_DOCS/vimtutor/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/node
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/node/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/node/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/node' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/node/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodegc-bpfcc
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodegc-bpfcc/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodegc-bpfcc/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodegc-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodegc-bpfcc/source'.
+SUCCESS: No git repository to report on.
+[2026-01-19 16:35:12] PROCESSING CARD: sov_batch_run_20260119_005 - SOV BATCH 5: nodestat-bpfcc, perl, perl5.38-x86_64-linux-gnu, perl5.38.2, perlbug
+[2026-01-19 16:35:14] EXECUTING: bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodestat-bpfcc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38-x86_64-linux-gnu && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38.2 && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlbug
+[2026-01-19 16:35:15] RESULT: SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodestat-bpfcc
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodestat-bpfcc/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodestat-bpfcc/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodestat-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/nodestat-bpfcc/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38-x86_64-linux-gnu
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38-x86_64-linux-gnu/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38-x86_64-linux-gnu/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38-x86_64-linux-gnu' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38-x86_64-linux-gnu/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38.2
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38.2/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38.2/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38.2' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perl5.38.2/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlbug
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlbug/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlbug/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlbug' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlbug/source'.
+SUCCESS: No git repository to report on.
+[2026-01-19 16:35:15] PROCESSING CARD: sov_batch_run_20260119_006 - SOV BATCH 6: perlcalls-bpfcc, perldoc, perlflow-bpfcc, perlivp, perlstat-bpfcc
+[2026-01-19 16:35:17] EXECUTING: bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlcalls-bpfcc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perldoc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlflow-bpfcc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlivp && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlstat-bpfcc
+[2026-01-19 16:35:17] RESULT: SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlcalls-bpfcc
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlcalls-bpfcc/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlcalls-bpfcc/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlcalls-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlcalls-bpfcc/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perldoc
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perldoc/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perldoc/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perldoc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perldoc/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlflow-bpfcc
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlflow-bpfcc/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlflow-bpfcc/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlflow-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlflow-bpfcc/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlivp
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlivp/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlivp/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlivp' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlivp/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlstat-bpfcc
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlstat-bpfcc/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlstat-bpfcc/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlstat-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlstat-bpfcc/source'.
+SUCCESS: No git repository to report on.
+[2026-01-19 16:35:17] PROCESSING CARD: sov_batch_run_20260119_007 - SOV BATCH 7: perlthanks, phpcalls-bpfcc, phpflow-bpfcc, phpstat-bpfcc, python3.12
+[2026-01-19 16:35:19] EXECUTING: bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlthanks && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpcalls-bpfcc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpflow-bpfcc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpstat-bpfcc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/python3.12
+[2026-01-19 16:35:19] RESULT: SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlthanks
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlthanks/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlthanks/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlthanks' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/perlthanks/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpcalls-bpfcc
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpcalls-bpfcc/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpcalls-bpfcc/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpcalls-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpcalls-bpfcc/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpflow-bpfcc
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpflow-bpfcc/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpflow-bpfcc/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpflow-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpflow-bpfcc/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpstat-bpfcc
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpstat-bpfcc/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpstat-bpfcc/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpstat-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/phpstat-bpfcc/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/python3.12
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/python3.12/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/python3.12/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/python3.12' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/python3.12/source'.
+SUCCESS: No git repository to report on.
+[2026-01-19 16:35:19] PROCESSING CARD: sov_batch_run_20260119_008 - SOV BATCH 8: rubycalls-bpfcc, rubyflow-bpfcc, rubygc-bpfcc, rubyobjnew-bpfcc, rubystat-bpfcc
+[2026-01-19 16:35:21] EXECUTING: bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubycalls-bpfcc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyflow-bpfcc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubygc-bpfcc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyobjnew-bpfcc && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubystat-bpfcc
+[2026-01-19 16:35:21] RESULT: SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubycalls-bpfcc
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubycalls-bpfcc/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubycalls-bpfcc/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubycalls-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubycalls-bpfcc/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyflow-bpfcc
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyflow-bpfcc/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyflow-bpfcc/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyflow-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyflow-bpfcc/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubygc-bpfcc
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubygc-bpfcc/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubygc-bpfcc/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubygc-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubygc-bpfcc/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyobjnew-bpfcc
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyobjnew-bpfcc/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyobjnew-bpfcc/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyobjnew-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubyobjnew-bpfcc/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubystat-bpfcc
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubystat-bpfcc/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubystat-bpfcc/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubystat-bpfcc' or 'oss_sovereignty/sys_99_Legacy_Bin/INTERPRETERS/rubystat-bpfcc/source'.
+SUCCESS: No git repository to report on.
+[2026-01-19 16:35:21] PROCESSING CARD: sov_batch_run_20260119_009 - SOV BATCH 9: curl, rsync, scp, sftp, ssh
+[2026-01-19 16:35:23] EXECUTING: bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/curl && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/rsync && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/scp && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/sftp && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/ssh
+[2026-01-19 16:35:23] RESULT: SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/curl
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/curl/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/curl/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/curl' or 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/curl/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/rsync
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/rsync/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/rsync/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/rsync' or 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/rsync/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/scp
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/scp/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/scp/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/scp' or 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/scp/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/sftp
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/sftp/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/sftp/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/sftp' or 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/sftp/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/ssh
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/ssh/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/ssh/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/ssh' or 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/ssh/source'.
+SUCCESS: No git repository to report on.
+[2026-01-19 16:35:23] PROCESSING CARD: sov_batch_run_20260119_010 - SOV BATCH 10: wget, apt, apt-cache, apt-cdrom, apt-config
+[2026-01-19 16:35:25] EXECUTING: bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/wget && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cache && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cdrom && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-config
+[2026-01-19 16:35:25] RESULT: SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/wget
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/wget/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/wget/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/wget' or 'oss_sovereignty/sys_99_Legacy_Bin/NETWORK_CLIENTS/wget/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cache
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cache/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cache/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cache' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cache/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cdrom
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cdrom/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cdrom/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cdrom' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-cdrom/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-config
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-config/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-config/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-config' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-config/source'.
+SUCCESS: No git repository to report on.
+[2026-01-19 16:35:25] PROCESSING CARD: sov_batch_run_20260119_011 - SOV BATCH 11: apt-extracttemplates, apt-ftparchive, apt-get, apt-key, apt-mark
+[2026-01-19 16:35:27] EXECUTING: bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-extracttemplates && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-ftparchive && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-get && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-key && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-mark
+[2026-01-19 16:35:27] RESULT: SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-extracttemplates
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-extracttemplates/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-extracttemplates/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-extracttemplates' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-extracttemplates/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-ftparchive
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-ftparchive/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-ftparchive/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-ftparchive' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-ftparchive/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-get
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-get/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-get/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-get' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-get/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-key
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-key/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-key/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-key' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-key/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-mark
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-mark/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-mark/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-mark' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-mark/source'.
+SUCCESS: No git repository to report on.
+[2026-01-19 16:35:27] PROCESSING CARD: sov_batch_run_20260119_012 - SOV BATCH 12: apt-sortpkgs, dpkg, dpkg-architecture, dpkg-buildapi, dpkg-buildflags
+[2026-01-19 16:35:29] EXECUTING: bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-sortpkgs && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-architecture && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildapi && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildflags
+[2026-01-19 16:35:29] RESULT: SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-sortpkgs
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-sortpkgs/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-sortpkgs/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-sortpkgs' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/apt-sortpkgs/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-architecture
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-architecture/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-architecture/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-architecture' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-architecture/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildapi
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildapi/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildapi/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildapi' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildapi/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildflags
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildflags/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildflags/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildflags' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildflags/source'.
+SUCCESS: No git repository to report on.
+[2026-01-19 16:35:29] PROCESSING CARD: sov_batch_run_20260119_013 - SOV BATCH 13: dpkg-buildpackage, dpkg-buildtree, dpkg-checkbuilddeps, dpkg-deb, dpkg-distaddfile
+[2026-01-19 16:35:31] EXECUTING: bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildpackage && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildtree && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-checkbuilddeps && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-deb && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-distaddfile
+[2026-01-19 16:35:31] RESULT: SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildpackage
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildpackage/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildpackage/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildpackage' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildpackage/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildtree
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildtree/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildtree/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildtree' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-buildtree/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-checkbuilddeps
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-checkbuilddeps/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-checkbuilddeps/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-checkbuilddeps' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-checkbuilddeps/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-deb
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-deb/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-deb/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-deb' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-deb/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-distaddfile
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-distaddfile/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-distaddfile/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-distaddfile' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-distaddfile/source'.
+SUCCESS: No git repository to report on.
+[2026-01-19 16:35:31] PROCESSING CARD: sov_batch_run_20260119_014 - SOV BATCH 14: dpkg-divert, dpkg-genbuildinfo, dpkg-genchanges, dpkg-gencontrol, dpkg-gensymbols
+[2026-01-19 16:35:33] EXECUTING: bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-divert && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genbuildinfo && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genchanges && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gencontrol && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gensymbols
+[2026-01-19 16:35:33] RESULT: SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-divert
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-divert/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-divert/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-divert' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-divert/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genbuildinfo
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genbuildinfo/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genbuildinfo/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genbuildinfo' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genbuildinfo/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genchanges
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genchanges/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genchanges/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genchanges' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-genchanges/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gencontrol
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gencontrol/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gencontrol/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gencontrol' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gencontrol/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gensymbols
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gensymbols/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gensymbols/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gensymbols' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-gensymbols/source'.
+SUCCESS: No git repository to report on.
+[2026-01-19 16:35:33] PROCESSING CARD: sov_batch_run_20260119_015 - SOV BATCH 15: dpkg-maintscript-helper, dpkg-mergechangelogs, dpkg-name, dpkg-parsechangelog, dpkg-preconfigure
+[2026-01-19 16:35:35] EXECUTING: bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-maintscript-helper && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-mergechangelogs && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-name && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-parsechangelog && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-preconfigure
+[2026-01-19 16:35:35] RESULT: SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-maintscript-helper
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-maintscript-helper/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-maintscript-helper/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-maintscript-helper' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-maintscript-helper/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-mergechangelogs
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-mergechangelogs/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-mergechangelogs/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-mergechangelogs' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-mergechangelogs/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-name
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-name/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-name/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-name' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-name/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-parsechangelog
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-parsechangelog/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-parsechangelog/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-parsechangelog' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-parsechangelog/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-preconfigure
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-preconfigure/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-preconfigure/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-preconfigure' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-preconfigure/source'.
+SUCCESS: No git repository to report on.
+[2026-01-19 16:35:35] PROCESSING CARD: sov_batch_run_20260119_016 - SOV BATCH 16: dpkg-query, dpkg-realpath, dpkg-reconfigure, dpkg-scanpackages, dpkg-scansources
+[2026-01-19 16:35:37] EXECUTING: bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-query && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-realpath && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-reconfigure && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scanpackages && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scansources
+[2026-01-19 16:35:37] RESULT: SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-query
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-query/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-query/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-query' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-query/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-realpath
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-realpath/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-realpath/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-realpath' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-realpath/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-reconfigure
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-reconfigure/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-reconfigure/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-reconfigure' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-reconfigure/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scanpackages
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scanpackages/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scanpackages/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scanpackages' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scanpackages/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scansources
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scansources/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scansources/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scansources' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-scansources/source'.
+SUCCESS: No git repository to report on.
+[2026-01-19 16:35:37] PROCESSING CARD: sov_batch_run_20260119_017 - SOV BATCH 17: dpkg-shlibdeps, dpkg-source, dpkg-split, dpkg-statoverride, dpkg-trigger
+[2026-01-19 16:35:39] EXECUTING: bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-shlibdeps && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-source && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-split && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-statoverride && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-trigger
+[2026-01-19 16:35:39] RESULT: SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-shlibdeps
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-shlibdeps/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-shlibdeps/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-shlibdeps' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-shlibdeps/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-source
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-source/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-source/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-source' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-source/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-split
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-split/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-split/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-split' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-split/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-statoverride
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-statoverride/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-statoverride/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-statoverride' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-statoverride/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-trigger
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-trigger/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-trigger/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-trigger' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-trigger/source'.
+SUCCESS: No git repository to report on.
+[2026-01-19 16:35:39] PROCESSING CARD: sov_batch_run_20260119_018 - SOV BATCH 18: dpkg-vendor, snap, snapfuse
+[2026-01-19 16:35:41] EXECUTING: bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-vendor && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snap && bash system/run_sovereignty_task.sh oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snapfuse
+[2026-01-19 16:35:41] RESULT: SUCCESS: >> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-vendor
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-vendor/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-vendor/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-vendor' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/dpkg-vendor/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snap
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snap/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snap/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snap' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snap/source'.
+SUCCESS: No git repository to report on.
+>> TARGET_DIR: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snapfuse
+>> BUILD_SCRIPT: oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snapfuse/anvil.build.sh
+Warning: Build script 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snapfuse/anvil.build.sh' not found. Skipping URL analysis.
+No .git directory found in 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snapfuse' or 'oss_sovereignty/sys_99_Legacy_Bin/PACKAGE_MGMT/snapfuse/source'.
+SUCCESS: No git repository to report on.
+[2026-01-19 16:35:41] PROCESSING CARD: sov_audit_remediate_001 - SOVEREIGNTY: Audit all folders. Clone missing source. Sever ties.
+[2026-01-19 16:35:43] EXECUTING: python3 system/scripts/audit_and_remediate.py
+[2026-01-19 16:35:44] RESULT: SUCCESS: [16:35:43] Starting audit of /home/aimeat/github/anvilos_beta/oss_sovereignty...
+[16:35:44] MISSING SOURCE: /home/aimeat/github/anvilos_beta/oss_sovereignty/ctx_06_recharts
+[16:35:44] SKIPPED: No URL in metadata for /home/aimeat/github/anvilos_beta/oss_sovereignty/ctx_06_recharts
+[16:35:44] Audit Complete. Remediated: 0, Skipped: 1
+[2026-01-19 16:37:35] PROCESSING CARD: sys_alias_bigiron - ALIAS: Map 'bigiron' to 'python3 system/dashboard.py' for rapid access.
+[2026-01-19 16:37:37] EXECUTING: echo "alias bigiron='python3 /home/aimeat/github/anvilos_beta/system/dashboard.py'" >> ~/.bashrc
+[2026-01-19 16:37:37] RESULT: SUCCESS: 
+[2026-01-19 16:42:05] PROCESSING CARD: sys_fix_failed_sov_paths - FIX: Create missing parent directories for failed sovereignty cards and retry assimilation.
+[2026-01-19 16:42:07] EXECUTING: mkdir -p oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes oss_sovereignty/sys_18_64Bit_Cloud/03_Virtualization oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems oss_sovereignty/sys_17_32Bit_Era/01_Consoles oss_sovereignty/sys_17_32Bit_Era/02_Computers oss_sovereignty/sys_17_32Bit_Era/03_Toolchains
+[2026-01-19 16:42:07] RESULT: SUCCESS: 
+[2026-01-19 16:42:07] PROCESSING CARD: sov_64bit_batch_dc88f64d - 64BIT ASSIMILATION: MIPS64, AARCH64, RISCV64
+[2026-01-19 16:42:09] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/MIPS64 https://github.com/EduMIPS64/edumips64.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 https://github.com/ARM-software/arm-trusted-firmware.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/RISCV64 https://github.com/riscv/riscv-isa-sim.git
+2026-01-19T16:42:09.474Z [assimilate] >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/MIPS64 FROM https://github.com/EduMIPS64/edumips64.git
+2026-01-19T16:42:09.474Z [assimilate] >> Cloning https://github.com/EduMIPS64/edumips64.git...
+2026-01-19T16:42:09.474Z [assimilate] EXEC: git clone --depth 1 https://github.com/EduMIPS64/edumips64.git oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/MIPS64/source
+2026-01-19T16:42:12.582Z [assimilate] EXEC: git rev-parse HEAD
+2026-01-19T16:42:12.585Z [assimilate] >> Severing connection (removing .git)...
+2026-01-19T16:42:12.594Z [assimilate] >> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/MIPS64/metadata.json
+2026-01-19T16:42:12.624Z [assimilate] >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 FROM https://github.com/ARM-software/arm-trusted-firmware.git
+2026-01-19T16:42:12.624Z [assimilate] >> Cloning https://github.com/ARM-software/arm-trusted-firmware.git...
+2026-01-19T16:42:12.624Z [assimilate] EXEC: git clone --depth 1 https://github.com/ARM-software/arm-trusted-firmware.git oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/source
+2026-01-19T16:42:15.254Z [assimilate] EXEC: git rev-parse HEAD
+2026-01-19T16:42:15.257Z [assimilate] >> Severing connection (removing .git)...
+2026-01-19T16:42:15.259Z [assimilate] >> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/metadata.json
+2026-01-19T16:42:15.284Z [assimilate] >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/RISCV64 FROM https://github.com/riscv/riscv-isa-sim.git
+2026-01-19T16:42:15.284Z [assimilate] >> Cloning https://github.com/riscv/riscv-isa-sim.git...
+2026-01-19T16:42:15.284Z [assimilate] EXEC: git clone --depth 1 https://github.com/riscv/riscv-isa-sim.git oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/RISCV64/source
+2026-01-19T16:42:16.236Z [assimilate] EXEC: git rev-parse HEAD
+2026-01-19T16:42:16.239Z [assimilate] >> Severing connection (removing .git)...
+2026-01-19T16:42:16.241Z [assimilate] >> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/RISCV64/metadata.json
+[2026-01-19 16:42:16] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/MIPS64 FROM https://github.com/EduMIPS64/edumips64.git
+>> Cloning https://github.com/EduMIPS64/edumips64.git...
+EXEC: git clone --depth 1 https://github.com/EduMIPS64/edumips64.git oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/MIPS64/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/MIPS64/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 FROM https://github.com/ARM-software/arm-trusted-firmware.git
+>> Cloning https://github.com/ARM-software/arm-trusted-firmware.git...
+EXEC: git clone --depth 1 https://github.com/ARM-software/arm-trusted-firmware.git oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/RISCV64 FROM https://github.com/riscv/riscv-isa-sim.git
+>> Cloning https://github.com/riscv/riscv-isa-sim.git...
+EXEC: git clone --depth 1 https://github.com/riscv/riscv-isa-sim.git oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/RISCV64/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/RISCV64/metadata.json
+[2026-01-19 16:42:16] PROCESSING CARD: sov_64bit_batch_0b596939 - 64BIT ASSIMILATION: SPARC64, POWER_PC_64, x86_64
+[2026-01-19 16:42:18] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/SPARC64 https://github.com/sparc/leon.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/POWER_PC_64 https://github.com/open-power/op-build.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/x86_64 https://github.com/nasm/nasm.git
+2026-01-19T16:42:18.293Z [assimilate] >> ASSIMILATING: oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/SPARC64 FROM https://github.com/sparc/leon.git
+2026-01-19T16:42:18.293Z [assimilate] >> Cloning https://github.com/sparc/leon.git...
+2026-01-19T16:42:18.293Z [assimilate] EXEC: git clone --depth 1 https://github.com/sparc/leon.git oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/SPARC64/source
+2026-01-19T16:42:18.792Z [assimilate] ERROR: Cloning into 'oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/SPARC64/source'...
+ERROR: Repository not found.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+[2026-01-19 16:42:18] ERROR: FAILURE: 
+[2026-01-19 16:42:18] PROCESSING CARD: sov_64bit_batch_cfd90ef6 - 64BIT ASSIMILATION: PS2, XBOX, GAMECUBE
+[2026-01-19 16:42:20] EXECUTING: python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PS2 https://github.com/PCSX2/pcsx2.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/XBOX https://github.com/xemu-project/xemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/GAMECUBE https://github.com/dolphin-emu/dolphin.git
+2026-01-19T16:42:20.852Z [assimilate] >> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PS2 FROM https://github.com/PCSX2/pcsx2.git
+2026-01-19T16:42:20.852Z [assimilate] >> Cloning https://github.com/PCSX2/pcsx2.git...
+2026-01-19T16:42:20.852Z [assimilate] EXEC: git clone --depth 1 https://github.com/PCSX2/pcsx2.git oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PS2/source
+2026-01-19T16:48:31.515Z [assimilate] EXEC: git rev-parse HEAD
+2026-01-19T16:48:31.517Z [assimilate] >> Severing connection (removing .git)...
+2026-01-19T16:48:31.523Z [assimilate] >> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PS2/metadata.json
+2026-01-19T16:48:31.555Z [assimilate] >> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/01_Consoles/XBOX FROM https://github.com/xemu-project/xemu.git
+2026-01-19T16:48:31.556Z [assimilate] >> Cloning https://github.com/xemu-project/xemu.git...
+2026-01-19T16:48:31.556Z [assimilate] EXEC: git clone --depth 1 https://github.com/xemu-project/xemu.git oss_sovereignty/sys_17_32Bit_Era/01_Consoles/XBOX/source
+2026-01-19T16:48:39.190Z [assimilate] EXEC: git rev-parse HEAD
+2026-01-19T16:48:39.193Z [assimilate] >> Severing connection (removing .git)...
+2026-01-19T16:48:39.199Z [assimilate] >> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/01_Consoles/XBOX/metadata.json
+2026-01-19T16:48:39.226Z [assimilate] >> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/01_Consoles/GAMECUBE FROM https://github.com/dolphin-emu/dolphin.git
+2026-01-19T16:48:39.226Z [assimilate] >> Cloning https://github.com/dolphin-emu/dolphin.git...
+2026-01-19T16:48:39.226Z [assimilate] EXEC: git clone --depth 1 https://github.com/dolphin-emu/dolphin.git oss_sovereignty/sys_17_32Bit_Era/01_Consoles/GAMECUBE/source
+2026-01-19T16:48:42.608Z [assimilate] EXEC: git rev-parse HEAD
+2026-01-19T16:48:42.611Z [assimilate] >> Severing connection (removing .git)...
+2026-01-19T16:48:42.616Z [assimilate] >> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/01_Consoles/GAMECUBE/metadata.json
+[2026-01-19 16:48:42] RESULT: SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PS2 FROM https://github.com/PCSX2/pcsx2.git
+>> Cloning https://github.com/PCSX2/pcsx2.git...
+EXEC: git clone --depth 1 https://github.com/PCSX2/pcsx2.git oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PS2/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PS2/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/01_Consoles/XBOX FROM https://github.com/xemu-project/xemu.git
+>> Cloning https://github.com/xemu-project/xemu.git...
+EXEC: git clone --depth 1 https://github.com/xemu-project/xemu.git oss_sovereignty/sys_17_32Bit_Era/01_Consoles/XBOX/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/01_Consoles/XBOX/metadata.json
+>> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/01_Consoles/GAMECUBE FROM https://github.com/dolphin-emu/dolphin.git
+>> Cloning https://github.com/dolphin-emu/dolphin.git...
+EXEC: git clone --depth 1 https://github.com/dolphin-emu/dolphin.git oss_sovereignty/sys_17_32Bit_Era/01_Consoles/GAMECUBE/source
+EXEC: git rev-parse HEAD
+>> Severing connection (removing .git)...
+>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/01_Consoles/GAMECUBE/metadata.json
+[2026-01-19 16:59:44] Card Reader Service Started (PID: 151655)

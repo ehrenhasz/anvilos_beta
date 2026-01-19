@@ -1,7 +1,0 @@
-{
-  "id": "legacy_phpstat-bpfcc",
-  "original_path": "/usr/sbin/phpstat-bpfcc",
-  "category": "INTERPRETERS",
-  "status": "flagged_for_removal",
-  "replacement_strategy": "rewrite_in_anvil"
-}

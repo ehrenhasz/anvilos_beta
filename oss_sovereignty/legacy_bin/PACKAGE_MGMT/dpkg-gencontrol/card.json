@@ -1,7 +1,0 @@
-{
-  "id": "legacy_dpkg-gencontrol",
-  "original_path": "/usr/bin/dpkg-gencontrol",
-  "category": "PACKAGE_MGMT",
-  "status": "flagged_for_removal",
-  "replacement_strategy": "rewrite_in_anvil"
-}

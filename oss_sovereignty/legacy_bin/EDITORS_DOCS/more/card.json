@@ -1,7 +1,0 @@
-{
-  "id": "legacy_more",
-  "original_path": "/usr/bin/more",
-  "category": "EDITORS_DOCS",
-  "status": "flagged_for_removal",
-  "replacement_strategy": "rewrite_in_anvil"
-}

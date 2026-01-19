@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T02:40:52.168767",
+  "origin": {
+    "url": "https://github.com/Perl/perl5.git",
+    "commit": "06c43a51065a7d4d3f3ed53aebe5439dc28f839c",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

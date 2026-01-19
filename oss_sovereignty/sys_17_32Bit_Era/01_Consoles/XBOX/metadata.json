@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T16:48:39.198938",
+  "origin": {
+    "url": "https://github.com/xemu-project/xemu.git",
+    "commit": "8c7de72b7a0c5b66767273bbe81377d61dfce4a7",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}
