@@ -3,6 +3,7 @@ import time
 import json
 import subprocess
 import os
+from collections import deque
 from datetime import datetime
 from rich.live import Live
 from rich.layout import Layout
@@ -153,13 +154,90 @@ def get_queue_data():
 
     return stats_grid, task_text
 
+class FileWatcher:
+    def __init__(self, buffer_size=15):
+        self.buffer = deque(maxlen=buffer_size)
+        self.last_files = {} # path -> mtime
+        self.first_run = True
+
+    def scan(self):
+        try:
+            # Find modified files (excluding hidden and common junk)
+            # %T@ = modification time (seconds since epoch)
+            # %p = path
+            # %s = size
+            cmd = [
+                "find", ".", 
+                "-type", "f", 
+                "-not", "-path", "*/.*", 
+                "-not", "-path", "*/node_modules/*", 
+                "-not", "-path", "*/__pycache__/*",
+                "-printf", "%T@ %p %s\\n"
+            ]
+            
+            result = subprocess.run(cmd, capture_output=True, text=True)
+            lines = result.stdout.strip().split('\n')
+            
+            current_files = {}
+            events = []
+
+            for line in lines:
+                if not line: continue
+                parts = line.split(' ', 2) # Limit split to ensure path handles spaces? 
+                                           # Wait, printf output is space separated. Path might have spaces.
+                                           # Better: %T@|%s|%p
+                # Re-do command for robustness? Keep simple for now. Assumes no spaces in timestamps/sizes.
+                if len(parts) < 3: continue
+                
+                mtime = float(parts[0])
+                path = parts[1]
+                size = parts[2]
+                
+                current_files[path] = mtime
+
+                # Check if new or updated
+                if path in self.last_files:
+                    if mtime > self.last_files[path]:
+                        events.append((mtime, f"MODIFIED -> {path} ({size}b)"))
+                elif not self.first_run:
+                     # Only show new files after first run (avoid dumping 1000 files on startup)
+                     # But maybe we want to show *recent* files on startup?
+                     # Let's show files modified in last 10 seconds on startup
+                     if time.time() - mtime < 10:
+                         events.append((mtime, f"CREATED -> {path} ({size}b)"))
+
+            self.last_files = current_files
+            self.first_run = False
+            
+            # Sort events by time and add to buffer
+            events.sort(key=lambda x: x[0])
+            for _, msg in events:
+                self.buffer.append(msg)
+                
+        except Exception as e:
+             self.buffer.append(f"[red]Error scanning files: {e}[/red]")
+
+    def get_renderable(self):
+        text = Text()
+        for line in self.buffer:
+            # Colorize key words
+            if "MODIFIED" in line:
+                text.append("⚡ ", style=C_SECONDARY)
+                text.append(line + "\n", style=C_TEXT)
+            elif "CREATED" in line:
+                text.append("✨ ", style=C_ACCENT)
+                text.append(line + "\n", style=C_TEXT)
+            else:
+                text.append(f"> {line}\n", style="dim white")
+        return text
+
 def main():
     layout = make_layout()
+    watcher = FileWatcher()
     
     # Initialize Header/Footer
     layout["header"].update(Header())
     layout["footer"].update(Footer())
-    layout["tty_stream"].update(generate_panel("📟 TTY_STREAM", "[dim]Initializing matrix feed...[/dim]", C_PRIMARY))
 
     with Live(layout, refresh_per_second=2, screen=True) as live:
         try:
@@ -172,7 +250,11 @@ def main():
                 layout["queue_stats"].update(generate_panel("📊 QUEUE_METRICS", stats, C_ACCENT))
                 layout["current_task"].update(generate_panel("⚒️ ACTIVE_CARD", task_info, C_PRIMARY))
                 
-                # 3. Update Header Time
+                # 3. Update Matrix Stream
+                watcher.scan()
+                layout["tty_stream"].update(generate_panel("📟 TTY_STREAM", watcher.get_renderable(), C_PRIMARY))
+                
+                # 4. Update Header Time
                 layout["header"].update(Header())
                 
                 time.sleep(1)
