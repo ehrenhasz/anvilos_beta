@@ -21,6 +21,13 @@
     "result": "Implemented FileWatcher class using 'find' command to scroll recent file modifications in real-time."
   },
   {
+    "id": "vis_05_btop_style",
+    "description": "BIG_IRON_VIS: Restyle monitor to mimic 'btop'. Use rounded corners, status rail headers/footers, and high-contrast color palette (Dracula/Cyberpunk).",
+    "status": "complete",
+    "created_at": "2026-01-19T00:10:00.000Z",
+    "result": "Applied box.ROUNDED, rail layout, and btop-inspired colors."
+  },
+  {
     "id": "vis_04_theme_polish",
     "description": "BIG_IRON_VIS: Apply the 'Lesbian Cyberpunk 90s Hacker' aesthetic. Primary color: Purple (#9D00FF). Secondary: Neon Pink/Green. Font: Bold. Icons: 🔮 ⛓️ 🧬 🩸. Ensure it looks like a Gibson hacking deck.",
     "status": "complete",
