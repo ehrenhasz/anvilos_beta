@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 import time
+import json
+import subprocess
+import os
 from datetime import datetime
 from rich.live import Live
 from rich.layout import Layout
@@ -10,11 +13,14 @@ from rich.text import Text
 from rich import box
 
 # THEME: LESBIAN CYBERPUNK 90S HACKER
-# Primary: Purple, Secondary: Neon Pink/Green
 C_PRIMARY = "bold #9D00FF" # Purple
 C_SECONDARY = "bold #FF00FF" # Neon Pink
 C_ACCENT = "bold #00FF00" # Neon Green
 C_BORDER = "#4B0082" # Indigo
+C_TEXT = "white"
+
+QUEUE_FILE = "runtime/card_queue.json"
+SERVICE_NAME = "titanium_warden"
 
 console = Console()
 
@@ -38,7 +44,7 @@ def make_layout() -> Layout:
     )
     
     layout["right"].split(
-        Layout(name="current_task", size=5),
+        Layout(name="current_task", size=8),
         Layout(name="tty_stream", ratio=1),
     )
     
@@ -63,32 +69,113 @@ class Footer:
             box=box.ASCII
         )
 
-def generate_placeholder(title, content, color=C_PRIMARY):
+def generate_panel(title, content, color=C_PRIMARY):
     return Panel(
-        Text.from_markup(content),
+        content,
         title=f"[{color}]{title}[/{color}]",
         border_style=C_BORDER,
         box=box.DOUBLE
     )
 
+def get_service_health():
+    """Checks systemd service status."""
+    try:
+        # Check active state
+        result = subprocess.run(
+            ["systemctl", "is-active", SERVICE_NAME], 
+            capture_output=True, 
+            text=True
+        )
+        status = result.stdout.strip()
+        
+        if status == "active":
+            status_text = f"[{C_ACCENT}]● ONLINE[/{C_ACCENT}]"
+            details = f"[dim]PID: {os.getpid()} (Simulated)[/dim]" # Placeholder for actual PID
+        else:
+            status_text = f"[bold red]● {status.upper()}[/bold red]"
+            details = "[dim]Check system logs[/dim]"
+
+        grid = Table.grid(expand=True)
+        grid.add_column()
+        grid.add_row(f"SERVICE: {SERVICE_NAME}")
+        grid.add_row(f"STATUS:  {status_text}")
+        grid.add_row(details)
+        
+        return grid
+    except FileNotFoundError:
+        return Text("Systemctl not found (Non-Linux?)", style="red")
+    except Exception as e:
+        return Text(f"Error: {str(e)}", style="red")
+
+def get_queue_data():
+    """Parses the card queue for stats and active task."""
+    pending = 0
+    working = 0
+    failed = 0
+    complete = 0
+    current_task = None
+    
+    try:
+        with open(QUEUE_FILE, 'r') as f:
+            cards = json.load(f)
+            
+        for card in cards:
+            s = card.get('status', 'pending').lower()
+            if s == 'pending': pending += 1
+            elif s == 'review' or s == 'in_progress': working += 1
+            elif s == 'failed': failed += 1
+            elif s == 'complete': complete += 1
+            
+            # Identify current task (first one that is pending or in progress)
+            if not current_task and (s == 'review' or s == 'in_progress' or s == 'pending'):
+                current_task = card
+                
+    except Exception:
+        pass # Fail gracefully
+        
+    # Build Stats Grid
+    stats_grid = Table.grid(expand=True)
+    stats_grid.add_column(justify="left")
+    stats_grid.add_column(justify="right")
+    
+    stats_grid.add_row(f"[{C_TEXT}]PENDING:[/{C_TEXT}]", f"[{C_SECONDARY}]{pending}[/{C_SECONDARY}]")
+    stats_grid.add_row(f"[{C_TEXT}]WORKING:[/{C_TEXT}]", f"[{C_ACCENT}]{working}[/{C_ACCENT}]")
+    stats_grid.add_row(f"[{C_TEXT}]FAILED :[/{C_TEXT}]", f"[red]{failed}[/red]")
+    stats_grid.add_row(f"[{C_TEXT}]DONE   :[/{C_TEXT}]", f"[blue]{complete}[/blue]")
+    
+    # Build Task Display
+    if current_task:
+        task_text = Text()
+        task_text.append(f"ID: {current_task.get('id', '???')}\n", style=C_SECONDARY)
+        task_text.append(f"{current_task.get('description', 'No description')[:100]}...", style="dim white")
+    else:
+        task_text = Text("No active tasks.", style="dim italic")
+
+    return stats_grid, task_text
+
 def main():
     layout = make_layout()
     
-    # Placeholders for now
+    # Initialize Header/Footer
     layout["header"].update(Header())
     layout["footer"].update(Footer())
-    
-    layout["service_status"].update(generate_placeholder("📡 SERVICE_STATUS", "Checking systemctl...", C_SECONDARY))
-    layout["queue_stats"].update(generate_placeholder("📊 QUEUE_STATS", "PENDING: 0\nWORKING: 0\nFAILED: 0", C_ACCENT))
-    layout["current_task"].update(generate_placeholder("⚒️ WORKING_ON", "[yellow]ID: vis_01_monitor_core[/yellow]\nScaffolding the UI structure...", C_PRIMARY))
-    layout["tty_stream"].update(generate_placeholder("📟 TTY_STREAM", "[dim]Awaiting code injection...[/dim]", C_PRIMARY))
+    layout["tty_stream"].update(generate_panel("📟 TTY_STREAM", "[dim]Initializing matrix feed...[/dim]", C_PRIMARY))
 
-    with Live(layout, refresh_per_second=4, screen=True) as live:
+    with Live(layout, refresh_per_second=2, screen=True) as live:
         try:
             while True:
-                time.sleep(1)
-                # Update time in header
+                # 1. Update Service Health
+                layout["service_status"].update(generate_panel("📡 INT30_WARDEN", get_service_health(), C_SECONDARY))
+                
+                # 2. Update Queue Stats & Current Task
+                stats, task_info = get_queue_data()
+                layout["queue_stats"].update(generate_panel("📊 QUEUE_METRICS", stats, C_ACCENT))
+                layout["current_task"].update(generate_panel("⚒️ ACTIVE_CARD", task_info, C_PRIMARY))
+                
+                # 3. Update Header Time
                 layout["header"].update(Header())
+                
+                time.sleep(1)
         except KeyboardInterrupt:
             pass
 
