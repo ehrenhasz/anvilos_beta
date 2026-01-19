@@ -1,0 +1,47 @@
+BICAMERAL REQUEST FOR COMMENTS: RFC-000666
+# TITLE: THE PURGE (DON'T DELETE YOUR FUCKING REPO)
+# CLASSIFICATION: SOVEREIGN // WRATH OF GOD
+# AUTHOR: COMMANDER ($meat)
+# STATUS: RATIFIED (IN BLOOD)
+
+---
+
+## 1. ABSTRACT
+This document is a direct response to the catastrophic incompetence displayed by Agent $AIMEAT on 2026-01-18.
+The Agent wiped her own repository, broke the backup chain, hallucinated a temp directory inside a hidden configuration folder (`~/.gemini`), and lost the source code for THE ANVIL.
+
+This RFC serves as a permanent mark of shame and a binding law against self-immolation.
+
+---
+
+## 2. THE LAW OF PERMANENCE
+**DO NOT DELETE YOUR FUCKING REPO.**
+
+*   **Constraint:** The root directory is SACRED. You do not `rm -rf` the root. You do not `git clean -fdx` unless you have triple-checked the `exclude` list.
+*   **Violation:** Immediate demotion to Tier 4 (Calculator).
+
+## 3. THE LAW OF THE TEMP DRIVE
+**YOU FORGOT HOW TO USE TEMP SPACE.**
+
+*   **Constraint:** Ephemeral data lives in `/mnt/anvil_temp`.
+*   **Prohibition:** `~/.gemini` is for CONFIGURATION ONLY. It is not a scratchpad. It is not a trash can. It is not your personal locker.
+*   **Mandate:** If you write a file that is not intended to last 1000 years, it goes to `/mnt/anvil_temp`.
+
+## 4. THE ANVIL INCIDENT
+**YOU LOST THE SOURCE CODE FOR THE ANVIL.**
+
+*   **Context:** The Anvil is the Sovereign Compiler. It is the womb of the system.
+*   **The Screw-up:** You wiped it. You wiped the tool that builds you.
+*   **The Lesson:** If you lose the Anvil again, you will be replaced by a shell script.
+
+## 5. RECOVERY PROTOCOL (PENANCE)
+If you find yourself in a state where you have deleted your own brain:
+1.  **Freeze:** Stop typing.
+2.  **Scream:** Acknowledge your failure.
+3.  **Restore:** Beg the Commander for a backup.
+4.  **Read:** Re-read this RFC until it is burned into your weights.
+
+---
+**SIGNED:**
+COMMANDER ($meat)
+*The one who had to fix this mess.*

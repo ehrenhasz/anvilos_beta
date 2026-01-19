@@ -1,0 +1,3 @@
+{
+  "description": "Fix Vim build (Safe Mode). In 'source/oss_sovereignty/sys_09_Vim/src': 1. Run 'make clean || true'. 2. Run './configure --with-features=normal --disable-gui --without-x'. 3. Run 'make -j1'. 4. Run 'strip vim'. 5. Run './vim --version' to verify."
+}

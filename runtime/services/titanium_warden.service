@@ -1,0 +1,10 @@
+[Unit]
+Description=Titanium Warden - Constraint Enforcement Service
+After=network.target
+
+[Service]
+ExecStart=/ANVIL_OS/services/titanium_warden.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

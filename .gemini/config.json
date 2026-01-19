@@ -1,0 +1,10 @@
+{
+  "model": "gemini-1.5-pro",
+  "temperature": 0.7,
+  "topP": 0.9,
+  "topK": 40,
+  "apiTier": "FREE",
+  "voiceEnabled": false,
+  "zoomLevel": 1.0,
+  "highVisibility": false
+}

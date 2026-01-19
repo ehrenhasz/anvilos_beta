@@ -1,0 +1,3 @@
+{
+  "description": "Fix the Vim build which is currently segfaulting. Perform the following strictly in 'source/oss_sovereignty/sys_09_Vim/src': 1. Run 'make distclean' to clean previous build artifacts. 2. Run './configure --with-features=normal --disable-gui --without-x' to properly configure the build. 3. Run 'make -j$(nproc)' to compile. 4. Run 'strip vim' to reduce binary size. 5. Run './vim --version' to verify the binary is functional and does not segfault."
+}

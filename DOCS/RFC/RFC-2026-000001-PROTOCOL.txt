@@ -1,0 +1,11 @@
+﻿Network Working Group                                          A. Architect
+Request for Comments: 0001                                BICAMERAL PROJECT
+Category: Standards Track                                  Status: RATIFIED
+
+            THE BICAMERAL "SPLIT-BRAIN" RUNTIME PROTOCOL
+
+Abstract
+  This document specifies the Bicameral Protocol, an architectural 
+  standard for the secure containment of Agentic Artificial Intelligence. 
+  It enforces safety through a "Split-Brain" runtime environment 
+  and a "Sovereign Supply Chain."

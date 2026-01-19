@@ -1,0 +1,34 @@
+#!/bin/sh
+mount -t devtmpfs none /dev
+mount -t proc none /proc
+mount -t sysfs none /sys
+
+echo "[*] SCANNING FOR PERSISTENT STORAGE..."
+# Find the first available block device that isn't the boot device
+# This is a simplification; a real implementation would be more robust.
+for dev in /sys/block/sd* /sys/block/vd*; do
+    dev_name=$(basename "$dev")
+    # Check if it's a valid block device and not the CD-ROM
+    if [ -b "/dev/$dev_name" ] && [ "$(cat /sys/class/block/$dev_name/removable)" = "0" ]; then
+        PERSISTENT_DEV="/dev/$dev_name"
+        break
+    fi
+done
+
+if [ -n "$PERSISTENT_DEV" ]; then
+    echo "[*] Found potential persistent device: $PERSISTENT_DEV"
+    # Check for a filesystem signature
+    if ! blkid -p "$PERSISTENT_DEV" > /dev/null 2>&1; then
+        echo "[*] No filesystem found. Formatting with ext4..."
+        mkfs.ext4 "$PERSISTENT_DEV"
+    fi
+    echo "[*] Mounting $PERSISTENT_DEV to /workspace..."
+    mkdir -p /workspace
+    mount "$PERSISTENT_DEV" /workspace
+    echo "[*] Storage mounted at /workspace."
+else
+    echo "[!] No persistent storage device found."
+fi
+
+echo "Bicameral System Online. Welcome, Madam Chairman."
+exec /bin/sh

@@ -1,0 +1,33 @@
++ set -e
++ WORK_DIR=/mnt/expanded_memory/anvil_iso_gold
++ BUILD_DIR=/mnt/expanded_memory/anvil_iso_gold/build
++ ROOTFS_DIR=/mnt/expanded_memory/anvil_iso_gold/rootfs
++ STAGING_DIR=/mnt/expanded_memory/anvil_iso_gold/build/iso_staging
++ ARTIFACTS_DIR=/mnt/expanded_memory/anvil_iso_gold/artifacts
++ KERNEL_BIN=/mnt/expanded_memory/anvil_iso_gold/artifacts/vmlinuz
++ PROFILE=runtime
++ for arg in "$@"
++ case $arg in
++ PROFILE=dev
++ shift
++ IS_DEV_PROFILE=0
++ OUTPUT_ISO=/mnt/expanded_memory/anvil_iso_gold/artifacts/anvil_core_v1.iso
++ '[' dev = dev ']'
++ echo '>> [CONFIG] Using '\''dev'\'' profile. Including build toolchain.'
+>> [CONFIG] Using 'dev' profile. Including build toolchain.
++ IS_DEV_PROFILE=1
++ OUTPUT_ISO=/mnt/expanded_memory/anvil_iso_gold/artifacts/anvil_colony_v5.iso
++ for cmd in xorriso mtools mkfs.msdos syslinux
++ command -v xorriso
++ for cmd in xorriso mtools mkfs.msdos syslinux
++ command -v mtools
++ for cmd in xorriso mtools mkfs.msdos syslinux
++ command -v mkfs.msdos
++ for cmd in xorriso mtools mkfs.msdos syslinux
++ command -v syslinux
++ echo '>> [ANVIL] INITIATING FORGE PROTOCOL...'
+>> [ANVIL] INITIATING FORGE PROTOCOL...
++ '[' 1 -eq 1 ']'
++ echo '>> [1/6] POPULATING DEV TOOLCHAIN...'
+>> [1/6] POPULATING DEV TOOLCHAIN...
++ mkdir -p /mnt/expanded_memory/anvil_iso_gold/rootfs/usr/bin
