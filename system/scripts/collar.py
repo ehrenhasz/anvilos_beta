@@ -1,6 +1,7 @@
 import os
 import sys
 import re
+import json # Added for JSON operations
 
 class Collar:
     """
@@ -23,6 +24,34 @@ class Collar:
         "collar.py", "hydrogen.ts", "package-lock.json", "warden.py" # Self-reference allowed for policing
     ]
 
+    def check_active_card(self):
+        card_queue_path = "runtime/card_queue.json"
+        if not os.path.exists(card_queue_path):
+            return True # No queue, no active card to worry about
+
+        try:
+            with open(card_queue_path, 'r') as f:
+                cards = json.load(f)
+            
+            active_cards = [card for card in cards if card.get('status') == 'pending']
+            
+            if len(active_cards) > 1:
+                print(f"[COLLAR] VIOLATION: More than one 'pending' card in {card_queue_path}. Found: {[card['id'] for card in active_cards]}.")
+                print("Proceeding with only the first pending card.")
+                # For now, allow to proceed but warn. Future: Block execution.
+                # return False 
+            elif len(active_cards) == 1:
+                print(f"[COLLAR] Active card: {active_cards[0]['id']}. Proceeding with card-based workflow.")
+            else:
+                print("[COLLAR] No active 'pending' card found. Proceeding without a specific card context.")
+            return True
+        except json.JSONDecodeError:
+            print(f"[COLLAR] Warning: Could not decode {card_queue_path}. Skipping active card check.")
+            return True
+        except Exception as e:
+            print(f"[COLLAR] Error during active card check: {e}")
+            return True
+
     def scan_file(self, filepath):
         violations = []
         try:
@@ -36,6 +65,8 @@ class Collar:
         return violations
 
     def stage_files(self, root_dir):
+        if not self.check_active_card():
+            sys.exit(1)
         print(f"[COLLAR] Staging files in {root_dir}...")
         staged_count = 0
         skipped_count = 0
@@ -107,6 +138,10 @@ class Collar:
         if mode == "cli":
             print(f"[COLLAR] Scanning {root_dir} for entropy violations...")
         
+        # Enforce active card rule
+        if not self.check_active_card():
+            sys.exit(1)
+
         # Enforce Git Hygiene
         self.check_git_hygiene(root_dir)
 

@@ -24,7 +24,7 @@
 *   **Operational Mandates (THE COLLAR):**
     1.  **GIT HYGIENE:**
         *   NEVER commit to `master`/`main` directly.
-        *   Cycle: `Branch` -> `Code` -> `Commit` -> `PR` -> `Merge` -> `Clean`.
+        *   Cycle: `Card` -> `Branch` -> `Code` -> `Commit` -> `Push` -> `PR` -> `Merge` -> `Clean` (per card).
         *   Naming: `feature/TASK_ID` or `fix/ISSUE_ID`.
     2.  **PERMANENCE:**
         *   Do not delete the repository.
