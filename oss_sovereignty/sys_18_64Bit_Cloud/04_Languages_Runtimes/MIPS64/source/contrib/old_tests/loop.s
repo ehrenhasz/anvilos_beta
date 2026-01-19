@@ -1,3 +1,0 @@
-.code
-
-loop: b loop

@@ -1,4 +1,0 @@
-SubDir HAIKU_TOP src tools unflatten ;
-
-Application unflatten : unflatten.cpp : be ;
-

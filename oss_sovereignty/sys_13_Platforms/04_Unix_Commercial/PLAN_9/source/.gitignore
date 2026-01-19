@@ -1,7 +1,0 @@
-*.[68]
-[68].*
-*.a[68]
-*.o
-usr/glenda/tmp
-sys/log
-sys/src/cmd/unix/u9fs/u9fs
