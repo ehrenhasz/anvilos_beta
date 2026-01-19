@@ -129,9 +129,24 @@ def cards_panel():
     table.add_column("ID", style=C_SECONDARY, width=10)
     table.add_column("STATUS", width=10)
     table.add_column("TASK")
+    
+    count_proc = 0
+    count_queue = 0 # pending
+    count_done = 0
+    count_fail = 0
+    
     try:
         with open(QUEUE_FILE, "r") as f:
             cards = json.load(f)
+            
+            # Count statistics (before slicing)
+            for c in cards:
+                s = c.get("status", "???").lower()
+                if s == "processing": count_proc += 1
+                elif s == "pending": count_queue += 1
+                elif s == "complete": count_done += 1
+                elif s == "failed": count_fail += 1
+                
             # Reverse to show newest first (LIFO)
             cards.reverse()
             # Removed sorting by status to maintain strict timeline
@@ -150,7 +165,11 @@ def cards_panel():
                 
                 table.add_row(c.get("id"), s.upper(), desc, style=style)
     except: pass
-    return rich.panel.Panel(table, title="[bold #bd93f9]card_reader[/]", border_style=C_BORDER, box=rich.box.SQUARE, padding=(0,1))
+    
+    # Format Subtitle
+    sub = f"[{C_ACCENT}]processing {count_proc}[/] | [{C_WARN}]Queue {count_queue}[/] | [{C_PRIMARY}]Complete {count_done}[/] | [{C_ERR}]failed {count_fail}[/]"
+    
+    return rich.panel.Panel(table, title="[bold #bd93f9]card_reader[/]", subtitle=sub, border_style=C_BORDER, box=rich.box.SQUARE, padding=(0,1))
 
 class LogWatcher:
     def __init__(self, log_file, buffer_size=20):
