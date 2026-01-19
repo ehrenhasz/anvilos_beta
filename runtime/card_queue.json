@@ -304,7 +304,7 @@
   {
     "id": "sov_batch_006_dpkg-mergechangelogs",
     "description": "SOVEREIGNTY BATCH 6: Assimilate dpkg-mergechangelogs, dpkg-name, dpkg-parsechangelog, dpkg-preconfigure, dpkg-query",
-    "status": "processing",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-mergechangelogs https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-name https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-parsechangelog https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-preconfigure https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-query https://git.dpkg.org/git/dpkg/dpkg.git",
     "created_at": "2026-01-19T12:00:00.000Z",
     "batch_details": [
@@ -339,12 +339,14 @@
         "url": "https://git.dpkg.org/git/dpkg/dpkg.git"
       }
     ],
-    "started_at": "2026-01-19T02:36:37.408849"
+    "started_at": "2026-01-19T02:36:37.408849",
+    "completed_at": "2026-01-19T02:37:33.507212",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-mergechangelogs FROM https://git.dpkg.org/git/dpkg/dpkg.git\n>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...\nEXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-mergechangelogs/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-mergechangelogs/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-name FROM https://git.dpkg.org/git/dpkg/dpkg.git\n>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...\nEXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-name/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-name/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-parsechangelog FROM https://git.dpkg.org/git/dpkg/dpkg.git\n>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...\nEXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-parsechangelog/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-parsechangelog/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-preconfigure FROM https://git.dpkg.org/git/dpkg/dpkg.git\n>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...\nEXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-preconfigure/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-preconfigure/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-query FROM https://git.dpkg.org/git/dpkg/dpkg.git\n>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...\nEXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-query/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-query/metadata.json"
   },
   {
     "id": "sov_batch_007_dpkg-realpath",
     "description": "SOVEREIGNTY BATCH 7: Assimilate dpkg-realpath, dpkg-reconfigure, dpkg-scanpackages, dpkg-scansources, dpkg-shlibdeps",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-realpath https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-reconfigure https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-scanpackages https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-scansources https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-shlibdeps https://git.dpkg.org/git/dpkg/dpkg.git",
     "created_at": "2026-01-19T12:00:00.000Z",
     "batch_details": [
@@ -378,12 +380,15 @@
         "path": "oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-shlibdeps",
         "url": "https://git.dpkg.org/git/dpkg/dpkg.git"
       }
-    ]
+    ],
+    "started_at": "2026-01-19T02:37:33.508639",
+    "completed_at": "2026-01-19T02:38:35.960773",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-realpath FROM https://git.dpkg.org/git/dpkg/dpkg.git\n>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...\nEXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-realpath/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-realpath/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-reconfigure FROM https://git.dpkg.org/git/dpkg/dpkg.git\n>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...\nEXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-reconfigure/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-reconfigure/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-scanpackages FROM https://git.dpkg.org/git/dpkg/dpkg.git\n>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...\nEXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-scanpackages/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-scanpackages/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-scansources FROM https://git.dpkg.org/git/dpkg/dpkg.git\n>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...\nEXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-scansources/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-scansources/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-shlibdeps FROM https://git.dpkg.org/git/dpkg/dpkg.git\n>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...\nEXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-shlibdeps/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-shlibdeps/metadata.json"
   },
   {
     "id": "sov_batch_008_dpkg-source",
     "description": "SOVEREIGNTY BATCH 8: Assimilate dpkg-source, dpkg-split, dpkg-statoverride, dpkg-trigger, dpkg-vendor",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-source https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-split https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-statoverride https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-trigger https://git.dpkg.org/git/dpkg/dpkg.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-vendor https://git.dpkg.org/git/dpkg/dpkg.git",
     "created_at": "2026-01-19T12:00:00.000Z",
     "batch_details": [
@@ -417,12 +422,15 @@
         "path": "oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-vendor",
         "url": "https://git.dpkg.org/git/dpkg/dpkg.git"
       }
-    ]
+    ],
+    "started_at": "2026-01-19T02:38:35.962289",
+    "completed_at": "2026-01-19T02:39:24.490768",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-source FROM https://git.dpkg.org/git/dpkg/dpkg.git\n>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...\nEXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-source/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-source/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-split FROM https://git.dpkg.org/git/dpkg/dpkg.git\n>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...\nEXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-split/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-split/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-statoverride FROM https://git.dpkg.org/git/dpkg/dpkg.git\n>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...\nEXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-statoverride/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-statoverride/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-trigger FROM https://git.dpkg.org/git/dpkg/dpkg.git\n>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...\nEXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-trigger/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-trigger/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-vendor FROM https://git.dpkg.org/git/dpkg/dpkg.git\n>> Cloning https://git.dpkg.org/git/dpkg/dpkg.git...\nEXEC: git clone --depth 1 https://git.dpkg.org/git/dpkg/dpkg.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-vendor/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/dpkg-vendor/metadata.json"
   },
   {
     "id": "sov_batch_009_info",
     "description": "SOVEREIGNTY BATCH 9: Assimilate info, less, make, man, more",
-    "status": "pending",
+    "status": "complete",
     "command": "echo 'SKIPPING info - NO URL FOUND' && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/EDITORS_DOCS/less https://github.com/gwsw/less.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/COMPILERS_BUILD/make https://git.savannah.gnu.org/git/make.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/EDITORS_DOCS/man https://git.savannah.nongnu.org/git/man-db.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/EDITORS_DOCS/more https://github.com/util-linux/util-linux.git",
     "created_at": "2026-01-19T12:00:00.000Z",
     "batch_details": [
@@ -456,12 +464,15 @@
         "path": "oss_sovereignty/legacy_bin/EDITORS_DOCS/more",
         "url": "https://github.com/util-linux/util-linux.git"
       }
-    ]
+    ],
+    "started_at": "2026-01-19T02:39:24.491495",
+    "completed_at": "2026-01-19T02:39:32.344526",
+    "result": "SUCCESS: SKIPPING info - NO URL FOUND\n>> ASSIMILATING: oss_sovereignty/legacy_bin/EDITORS_DOCS/less FROM https://github.com/gwsw/less.git\n>> Cloning https://github.com/gwsw/less.git...\nEXEC: git clone --depth 1 https://github.com/gwsw/less.git oss_sovereignty/legacy_bin/EDITORS_DOCS/less/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/EDITORS_DOCS/less/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/COMPILERS_BUILD/make FROM https://git.savannah.gnu.org/git/make.git\n>> Cloning https://git.savannah.gnu.org/git/make.git...\nEXEC: git clone --depth 1 https://git.savannah.gnu.org/git/make.git oss_sovereignty/legacy_bin/COMPILERS_BUILD/make/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/COMPILERS_BUILD/make/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/EDITORS_DOCS/man FROM https://git.savannah.nongnu.org/git/man-db.git\n>> Cloning https://git.savannah.nongnu.org/git/man-db.git...\nEXEC: git clone --depth 1 https://git.savannah.nongnu.org/git/man-db.git oss_sovereignty/legacy_bin/EDITORS_DOCS/man/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/EDITORS_DOCS/man/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/EDITORS_DOCS/more FROM https://github.com/util-linux/util-linux.git\n>> Cloning https://github.com/util-linux/util-linux.git...\nEXEC: git clone --depth 1 https://github.com/util-linux/util-linux.git oss_sovereignty/legacy_bin/EDITORS_DOCS/more/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/EDITORS_DOCS/more/metadata.json"
   },
   {
     "id": "sov_batch_010_nano",
     "description": "SOVEREIGNTY BATCH 10: Assimilate nano, node, nodegc-bpfcc, nodestat-bpfcc, perl",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/EDITORS_DOCS/nano https://git.savannah.gnu.org/git/nano.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/node https://github.com/nodejs/node.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/nodegc-bpfcc https://github.com/nodejs/node.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/nodestat-bpfcc https://github.com/nodejs/node.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/perl https://github.com/Perl/perl5.git",
     "created_at": "2026-01-19T12:00:00.000Z",
     "batch_details": [
@@ -495,12 +506,15 @@
         "path": "oss_sovereignty/legacy_bin/INTERPRETERS/perl",
         "url": "https://github.com/Perl/perl5.git"
       }
-    ]
+    ],
+    "started_at": "2026-01-19T02:39:32.346153",
+    "completed_at": "2026-01-19T02:40:41.434873",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/legacy_bin/EDITORS_DOCS/nano FROM https://git.savannah.gnu.org/git/nano.git\n>> Cloning https://git.savannah.gnu.org/git/nano.git...\nEXEC: git clone --depth 1 https://git.savannah.gnu.org/git/nano.git oss_sovereignty/legacy_bin/EDITORS_DOCS/nano/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/EDITORS_DOCS/nano/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/node FROM https://github.com/nodejs/node.git\n>> Cloning https://github.com/nodejs/node.git...\nEXEC: git clone --depth 1 https://github.com/nodejs/node.git oss_sovereignty/legacy_bin/INTERPRETERS/node/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/node/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/nodegc-bpfcc FROM https://github.com/nodejs/node.git\n>> Cloning https://github.com/nodejs/node.git...\nEXEC: git clone --depth 1 https://github.com/nodejs/node.git oss_sovereignty/legacy_bin/INTERPRETERS/nodegc-bpfcc/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/nodegc-bpfcc/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/nodestat-bpfcc FROM https://github.com/nodejs/node.git\n>> Cloning https://github.com/nodejs/node.git...\nEXEC: git clone --depth 1 https://github.com/nodejs/node.git oss_sovereignty/legacy_bin/INTERPRETERS/nodestat-bpfcc/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/nodestat-bpfcc/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/perl FROM https://github.com/Perl/perl5.git\n>> Cloning https://github.com/Perl/perl5.git...\nEXEC: git clone --depth 1 https://github.com/Perl/perl5.git oss_sovereignty/legacy_bin/INTERPRETERS/perl/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/perl/metadata.json"
   },
   {
     "id": "sov_batch_011_perl5.38-x86_64-linux-gnu",
     "description": "SOVEREIGNTY BATCH 11: Assimilate perl5.38-x86_64-linux-gnu, perl5.38.2, perlbug, perlcalls-bpfcc, perldoc",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/perl5.38-x86_64-linux-gnu https://github.com/Perl/perl5.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/perl5.38.2 https://github.com/Perl/perl5.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/perlbug https://github.com/Perl/perl5.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/perlcalls-bpfcc https://github.com/Perl/perl5.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/perldoc https://github.com/Perl/perl5.git",
     "created_at": "2026-01-19T12:00:00.000Z",
     "batch_details": [
@@ -534,12 +548,15 @@
         "path": "oss_sovereignty/legacy_bin/INTERPRETERS/perldoc",
         "url": "https://github.com/Perl/perl5.git"
       }
-    ]
+    ],
+    "started_at": "2026-01-19T02:40:41.436386",
+    "completed_at": "2026-01-19T02:41:06.995476",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/perl5.38-x86_64-linux-gnu FROM https://github.com/Perl/perl5.git\n>> Cloning https://github.com/Perl/perl5.git...\nEXEC: git clone --depth 1 https://github.com/Perl/perl5.git oss_sovereignty/legacy_bin/INTERPRETERS/perl5.38-x86_64-linux-gnu/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/perl5.38-x86_64-linux-gnu/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/perl5.38.2 FROM https://github.com/Perl/perl5.git\n>> Cloning https://github.com/Perl/perl5.git...\nEXEC: git clone --depth 1 https://github.com/Perl/perl5.git oss_sovereignty/legacy_bin/INTERPRETERS/perl5.38.2/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/perl5.38.2/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/perlbug FROM https://github.com/Perl/perl5.git\n>> Cloning https://github.com/Perl/perl5.git...\nEXEC: git clone --depth 1 https://github.com/Perl/perl5.git oss_sovereignty/legacy_bin/INTERPRETERS/perlbug/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/perlbug/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/perlcalls-bpfcc FROM https://github.com/Perl/perl5.git\n>> Cloning https://github.com/Perl/perl5.git...\nEXEC: git clone --depth 1 https://github.com/Perl/perl5.git oss_sovereignty/legacy_bin/INTERPRETERS/perlcalls-bpfcc/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/perlcalls-bpfcc/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/perldoc FROM https://github.com/Perl/perl5.git\n>> Cloning https://github.com/Perl/perl5.git...\nEXEC: git clone --depth 1 https://github.com/Perl/perl5.git oss_sovereignty/legacy_bin/INTERPRETERS/perldoc/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/perldoc/metadata.json"
   },
   {
     "id": "sov_batch_012_perlflow-bpfcc",
     "description": "SOVEREIGNTY BATCH 12: Assimilate perlflow-bpfcc, perlivp, perlstat-bpfcc, perlthanks, phpcalls-bpfcc",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/perlflow-bpfcc https://github.com/Perl/perl5.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/perlivp https://github.com/Perl/perl5.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/perlstat-bpfcc https://github.com/Perl/perl5.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/perlthanks https://github.com/Perl/perl5.git && echo 'SKIPPING phpcalls-bpfcc - NO URL FOUND'",
     "created_at": "2026-01-19T12:00:00.000Z",
     "batch_details": [
@@ -573,12 +590,15 @@
         "path": "oss_sovereignty/legacy_bin/INTERPRETERS/phpcalls-bpfcc",
         "url": null
       }
-    ]
+    ],
+    "started_at": "2026-01-19T02:41:06.996978",
+    "completed_at": "2026-01-19T02:41:28.296576",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/perlflow-bpfcc FROM https://github.com/Perl/perl5.git\n>> Cloning https://github.com/Perl/perl5.git...\nEXEC: git clone --depth 1 https://github.com/Perl/perl5.git oss_sovereignty/legacy_bin/INTERPRETERS/perlflow-bpfcc/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/perlflow-bpfcc/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/perlivp FROM https://github.com/Perl/perl5.git\n>> Cloning https://github.com/Perl/perl5.git...\nEXEC: git clone --depth 1 https://github.com/Perl/perl5.git oss_sovereignty/legacy_bin/INTERPRETERS/perlivp/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/perlivp/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/perlstat-bpfcc FROM https://github.com/Perl/perl5.git\n>> Cloning https://github.com/Perl/perl5.git...\nEXEC: git clone --depth 1 https://github.com/Perl/perl5.git oss_sovereignty/legacy_bin/INTERPRETERS/perlstat-bpfcc/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/perlstat-bpfcc/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/perlthanks FROM https://github.com/Perl/perl5.git\n>> Cloning https://github.com/Perl/perl5.git...\nEXEC: git clone --depth 1 https://github.com/Perl/perl5.git oss_sovereignty/legacy_bin/INTERPRETERS/perlthanks/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/perlthanks/metadata.json\nSKIPPING phpcalls-bpfcc - NO URL FOUND"
   },
   {
     "id": "sov_batch_013_phpflow-bpfcc",
     "description": "SOVEREIGNTY BATCH 13: Assimilate phpflow-bpfcc, phpstat-bpfcc, python3.12, rsync, rubycalls-bpfcc",
-    "status": "pending",
+    "status": "complete",
     "command": "echo 'SKIPPING phpflow-bpfcc - NO URL FOUND' && echo 'SKIPPING phpstat-bpfcc - NO URL FOUND' && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/INTERPRETERS/python3.12 https://github.com/python/cpython.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/NETWORK_CLIENTS/rsync https://github.com/WayneD/rsync.git && echo 'SKIPPING rubycalls-bpfcc - NO URL FOUND'",
     "created_at": "2026-01-19T12:00:00.000Z",
     "batch_details": [
@@ -612,12 +632,15 @@
         "path": "oss_sovereignty/legacy_bin/INTERPRETERS/rubycalls-bpfcc",
         "url": null
       }
-    ]
+    ],
+    "started_at": "2026-01-19T02:41:28.298044",
+    "completed_at": "2026-01-19T02:41:37.531337",
+    "result": "SUCCESS: SKIPPING phpflow-bpfcc - NO URL FOUND\nSKIPPING phpstat-bpfcc - NO URL FOUND\n>> ASSIMILATING: oss_sovereignty/legacy_bin/INTERPRETERS/python3.12 FROM https://github.com/python/cpython.git\n>> Cloning https://github.com/python/cpython.git...\nEXEC: git clone --depth 1 https://github.com/python/cpython.git oss_sovereignty/legacy_bin/INTERPRETERS/python3.12/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/INTERPRETERS/python3.12/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/NETWORK_CLIENTS/rsync FROM https://github.com/WayneD/rsync.git\n>> Cloning https://github.com/WayneD/rsync.git...\nEXEC: git clone --depth 1 https://github.com/WayneD/rsync.git oss_sovereignty/legacy_bin/NETWORK_CLIENTS/rsync/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/NETWORK_CLIENTS/rsync/metadata.json\nSKIPPING rubycalls-bpfcc - NO URL FOUND"
   },
   {
     "id": "sov_batch_014_rubyflow-bpfcc",
     "description": "SOVEREIGNTY BATCH 14: Assimilate rubyflow-bpfcc, rubygc-bpfcc, rubyobjnew-bpfcc, rubystat-bpfcc, scp",
-    "status": "pending",
+    "status": "complete",
     "command": "echo 'SKIPPING rubyflow-bpfcc - NO URL FOUND' && echo 'SKIPPING rubygc-bpfcc - NO URL FOUND' && echo 'SKIPPING rubyobjnew-bpfcc - NO URL FOUND' && echo 'SKIPPING rubystat-bpfcc - NO URL FOUND' && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/NETWORK_CLIENTS/scp https://github.com/openssh/openssh-portable.git",
     "created_at": "2026-01-19T12:00:00.000Z",
     "batch_details": [
@@ -651,12 +674,15 @@
         "path": "oss_sovereignty/legacy_bin/NETWORK_CLIENTS/scp",
         "url": "https://github.com/openssh/openssh-portable.git"
       }
-    ]
+    ],
+    "started_at": "2026-01-19T02:41:37.533161",
+    "completed_at": "2026-01-19T02:41:40.362058",
+    "result": "SUCCESS: SKIPPING rubyflow-bpfcc - NO URL FOUND\nSKIPPING rubygc-bpfcc - NO URL FOUND\nSKIPPING rubyobjnew-bpfcc - NO URL FOUND\nSKIPPING rubystat-bpfcc - NO URL FOUND\n>> ASSIMILATING: oss_sovereignty/legacy_bin/NETWORK_CLIENTS/scp FROM https://github.com/openssh/openssh-portable.git\n>> Cloning https://github.com/openssh/openssh-portable.git...\nEXEC: git clone --depth 1 https://github.com/openssh/openssh-portable.git oss_sovereignty/legacy_bin/NETWORK_CLIENTS/scp/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/NETWORK_CLIENTS/scp/metadata.json"
   },
   {
     "id": "sov_batch_015_sftp",
     "description": "SOVEREIGNTY BATCH 15: Assimilate sftp, snap, snapfuse, ssh, vim.basic",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/NETWORK_CLIENTS/sftp https://github.com/openssh/openssh-portable.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/snap https://github.com/snapcore/snapd.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/PACKAGE_MGMT/snapfuse https://github.com/snapcore/snapd.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/NETWORK_CLIENTS/ssh https://github.com/openssh/openssh-portable.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/EDITORS_DOCS/vim.basic https://github.com/vim/vim.git",
     "created_at": "2026-01-19T12:00:00.000Z",
     "batch_details": [
@@ -690,12 +716,15 @@
         "path": "oss_sovereignty/legacy_bin/EDITORS_DOCS/vim.basic",
         "url": "https://github.com/vim/vim.git"
       }
-    ]
+    ],
+    "started_at": "2026-01-19T02:41:40.363606",
+    "completed_at": "2026-01-19T02:41:54.776702",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/legacy_bin/NETWORK_CLIENTS/sftp FROM https://github.com/openssh/openssh-portable.git\n>> Cloning https://github.com/openssh/openssh-portable.git...\nEXEC: git clone --depth 1 https://github.com/openssh/openssh-portable.git oss_sovereignty/legacy_bin/NETWORK_CLIENTS/sftp/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/NETWORK_CLIENTS/sftp/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/snap FROM https://github.com/snapcore/snapd.git\n>> Cloning https://github.com/snapcore/snapd.git...\nEXEC: git clone --depth 1 https://github.com/snapcore/snapd.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/snap/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/snap/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/PACKAGE_MGMT/snapfuse FROM https://github.com/snapcore/snapd.git\n>> Cloning https://github.com/snapcore/snapd.git...\nEXEC: git clone --depth 1 https://github.com/snapcore/snapd.git oss_sovereignty/legacy_bin/PACKAGE_MGMT/snapfuse/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/PACKAGE_MGMT/snapfuse/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/NETWORK_CLIENTS/ssh FROM https://github.com/openssh/openssh-portable.git\n>> Cloning https://github.com/openssh/openssh-portable.git...\nEXEC: git clone --depth 1 https://github.com/openssh/openssh-portable.git oss_sovereignty/legacy_bin/NETWORK_CLIENTS/ssh/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/NETWORK_CLIENTS/ssh/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/EDITORS_DOCS/vim.basic FROM https://github.com/vim/vim.git\n>> Cloning https://github.com/vim/vim.git...\nEXEC: git clone --depth 1 https://github.com/vim/vim.git oss_sovereignty/legacy_bin/EDITORS_DOCS/vim.basic/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/EDITORS_DOCS/vim.basic/metadata.json"
   },
   {
     "id": "sov_batch_016_vim.tiny",
     "description": "SOVEREIGNTY BATCH 16: Assimilate vim.tiny, vimtutor, wget",
-    "status": "pending",
+    "status": "complete",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/EDITORS_DOCS/vim.tiny https://github.com/vim/vim.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/EDITORS_DOCS/vimtutor https://github.com/vim/vim.git && python3 system/scripts/assimilate.py oss_sovereignty/legacy_bin/NETWORK_CLIENTS/wget https://git.savannah.gnu.org/git/wget.git",
     "created_at": "2026-01-19T12:00:00.000Z",
     "batch_details": [
@@ -716,6 +745,1066 @@
         "category": "NETWORK_CLIENTS",
         "path": "oss_sovereignty/legacy_bin/NETWORK_CLIENTS/wget",
         "url": "https://git.savannah.gnu.org/git/wget.git"
+      }
+    ],
+    "started_at": "2026-01-19T02:41:54.778241",
+    "completed_at": "2026-01-19T02:42:07.196306",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/legacy_bin/EDITORS_DOCS/vim.tiny FROM https://github.com/vim/vim.git\n>> Cloning https://github.com/vim/vim.git...\nEXEC: git clone --depth 1 https://github.com/vim/vim.git oss_sovereignty/legacy_bin/EDITORS_DOCS/vim.tiny/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/EDITORS_DOCS/vim.tiny/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/EDITORS_DOCS/vimtutor FROM https://github.com/vim/vim.git\n>> Cloning https://github.com/vim/vim.git...\nEXEC: git clone --depth 1 https://github.com/vim/vim.git oss_sovereignty/legacy_bin/EDITORS_DOCS/vimtutor/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/EDITORS_DOCS/vimtutor/metadata.json\n>> ASSIMILATING: oss_sovereignty/legacy_bin/NETWORK_CLIENTS/wget FROM https://git.savannah.gnu.org/git/wget.git\n>> Cloning https://git.savannah.gnu.org/git/wget.git...\nEXEC: git clone --depth 1 https://git.savannah.gnu.org/git/wget.git oss_sovereignty/legacy_bin/NETWORK_CLIENTS/wget/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/legacy_bin/NETWORK_CLIENTS/wget/metadata.json"
+  },
+  {
+    "id": "sov_world_batch_001",
+    "description": "WORLD ASSIMILATION BATCH 1: ADA, AIX, ALGOL, AMIGA_OS, AMQP",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/01_Ancient/ADA https://github.com/gcc-mirror/gcc.git && echo 'SKIPPING AIX - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/01_Ancient/ALGOL https://github.com/maroon/algol68g.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/06_Microcomputer/AMIGA_OS https://github.com/aros-development-team/aros.git && echo 'SKIPPING AMQP - NO MAPPED REPO'",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "ADA",
+        "path": "oss_sovereignty/sys_12_Languages/01_Ancient/ADA",
+        "url": "https://github.com/gcc-mirror/gcc.git",
+        "category": "01_Ancient"
+      },
+      {
+        "name": "AIX",
+        "path": "oss_sovereignty/sys_13_Platforms/01_IBM_Mainframe/AIX",
+        "url": null,
+        "category": "01_IBM_Mainframe"
+      },
+      {
+        "name": "ALGOL",
+        "path": "oss_sovereignty/sys_12_Languages/01_Ancient/ALGOL",
+        "url": "https://github.com/maroon/algol68g.git",
+        "category": "01_Ancient"
+      },
+      {
+        "name": "AMIGA_OS",
+        "path": "oss_sovereignty/sys_13_Platforms/06_Microcomputer/AMIGA_OS",
+        "url": "https://github.com/aros-development-team/aros.git",
+        "category": "06_Microcomputer"
+      },
+      {
+        "name": "AMQP",
+        "path": "oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/AMQP",
+        "url": null,
+        "category": "04_RPC_Messaging"
+      }
+    ],
+    "started_at": "2026-01-19T02:45:21.410653",
+    "completed_at": "2026-01-19T02:45:23.498290",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_12_Languages/01_Ancient/ADA FROM https://github.com/gcc-mirror/gcc.git\n!! Source dir exists at oss_sovereignty/sys_12_Languages/01_Ancient/ADA/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/01_Ancient/ADA/metadata.json\nSKIPPING AIX - NO MAPPED REPO\n>> ASSIMILATING: oss_sovereignty/sys_12_Languages/01_Ancient/ALGOL FROM https://github.com/maroon/algol68g.git\n!! Source dir exists at oss_sovereignty/sys_12_Languages/01_Ancient/ALGOL/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/01_Ancient/ALGOL/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_13_Platforms/06_Microcomputer/AMIGA_OS FROM https://github.com/aros-development-team/aros.git\n!! Source dir exists at oss_sovereignty/sys_13_Platforms/06_Microcomputer/AMIGA_OS/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/06_Microcomputer/AMIGA_OS/metadata.json\nSKIPPING AMQP - NO MAPPED REPO"
+  },
+  {
+    "id": "sov_world_batch_002",
+    "description": "WORLD ASSIMILATION BATCH 2: ANDROID, ANSI, APPLETALK, ARP, ASM_6502",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/08_Mobile/ANDROID https://github.com/aosp-mirror/platform_manifest.git && echo 'SKIPPING ANSI - NO MAPPED REPO' && echo 'SKIPPING APPLETALK - NO MAPPED REPO' && echo 'SKIPPING ARP - NO MAPPED REPO' && echo 'SKIPPING ASM_6502 - NO MAPPED REPO'",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "ANDROID",
+        "path": "oss_sovereignty/sys_13_Platforms/08_Mobile/ANDROID",
+        "url": "https://github.com/aosp-mirror/platform_manifest.git",
+        "category": "08_Mobile"
+      },
+      {
+        "name": "ANSI",
+        "path": "oss_sovereignty/sys_14_Accessors/01_Terminals/ANSI",
+        "url": null,
+        "category": "01_Terminals"
+      },
+      {
+        "name": "APPLETALK",
+        "path": "oss_sovereignty/sys_14_Accessors/03_Legacy_Net/APPLETALK",
+        "url": null,
+        "category": "03_Legacy_Net"
+      },
+      {
+        "name": "ARP",
+        "path": "oss_sovereignty/sys_14_Accessors/02_Network_Stack/ARP",
+        "url": null,
+        "category": "02_Network_Stack"
+      },
+      {
+        "name": "ASM_6502",
+        "path": "oss_sovereignty/sys_12_Languages/02_Assembly/ASM_6502",
+        "url": null,
+        "category": "02_Assembly"
+      }
+    ],
+    "started_at": "2026-01-19T02:45:23.500986",
+    "completed_at": "2026-01-19T02:45:25.538220",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_13_Platforms/08_Mobile/ANDROID FROM https://github.com/aosp-mirror/platform_manifest.git\n!! Source dir exists at oss_sovereignty/sys_13_Platforms/08_Mobile/ANDROID/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_13_Platforms/08_Mobile/ANDROID/metadata.json\nSKIPPING ANSI - NO MAPPED REPO\nSKIPPING APPLETALK - NO MAPPED REPO\nSKIPPING ARP - NO MAPPED REPO\nSKIPPING ASM_6502 - NO MAPPED REPO"
+  },
+  {
+    "id": "sov_world_batch_003",
+    "description": "WORLD ASSIMILATION BATCH 3: ASM_ARM, ASM_RISCV, ASM_Z80, ASM_x86, ASM_zARCH",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/02_Assembly/ASM_ARM https://github.com/ARM-software/arm-trusted-firmware.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/02_Assembly/ASM_RISCV https://github.com/riscv/riscv-isa-sim.git && echo 'SKIPPING ASM_Z80 - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/02_Assembly/ASM_x86 https://github.com/nasm/nasm.git && echo 'SKIPPING ASM_zARCH - NO MAPPED REPO'",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "ASM_ARM",
+        "path": "oss_sovereignty/sys_12_Languages/02_Assembly/ASM_ARM",
+        "url": "https://github.com/ARM-software/arm-trusted-firmware.git",
+        "category": "02_Assembly"
+      },
+      {
+        "name": "ASM_RISCV",
+        "path": "oss_sovereignty/sys_12_Languages/02_Assembly/ASM_RISCV",
+        "url": "https://github.com/riscv/riscv-isa-sim.git",
+        "category": "02_Assembly"
+      },
+      {
+        "name": "ASM_Z80",
+        "path": "oss_sovereignty/sys_12_Languages/02_Assembly/ASM_Z80",
+        "url": null,
+        "category": "02_Assembly"
+      },
+      {
+        "name": "ASM_x86",
+        "path": "oss_sovereignty/sys_12_Languages/02_Assembly/ASM_x86",
+        "url": "https://github.com/nasm/nasm.git",
+        "category": "02_Assembly"
+      },
+      {
+        "name": "ASM_zARCH",
+        "path": "oss_sovereignty/sys_12_Languages/02_Assembly/ASM_zARCH",
+        "url": null,
+        "category": "02_Assembly"
+      }
+    ],
+    "started_at": "2026-01-19T02:45:25.541187",
+    "completed_at": "2026-01-19T02:45:27.635075",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_12_Languages/02_Assembly/ASM_ARM FROM https://github.com/ARM-software/arm-trusted-firmware.git\n!! Source dir exists at oss_sovereignty/sys_12_Languages/02_Assembly/ASM_ARM/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/02_Assembly/ASM_ARM/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_12_Languages/02_Assembly/ASM_RISCV FROM https://github.com/riscv/riscv-isa-sim.git\n!! Source dir exists at oss_sovereignty/sys_12_Languages/02_Assembly/ASM_RISCV/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/02_Assembly/ASM_RISCV/metadata.json\nSKIPPING ASM_Z80 - NO MAPPED REPO\n>> ASSIMILATING: oss_sovereignty/sys_12_Languages/02_Assembly/ASM_x86 FROM https://github.com/nasm/nasm.git\n!! Source dir exists at oss_sovereignty/sys_12_Languages/02_Assembly/ASM_x86/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_12_Languages/02_Assembly/ASM_x86/metadata.json\nSKIPPING ASM_zARCH - NO MAPPED REPO"
+  },
+  {
+    "id": "sov_world_batch_004",
+    "description": "WORLD ASSIMILATION BATCH 4: BASH, BASIC, BEFUNGE, BLACKBERRY, BRAINFUCK",
+    "status": "processing",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/05_Scripting/BASH https://git.savannah.gnu.org/git/bash.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/01_Ancient/BASIC https://github.com/chip-basic/chip-basic.git && echo 'SKIPPING BEFUNGE - NO MAPPED REPO' && echo 'SKIPPING BLACKBERRY - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/08_Esoteric/BRAINFUCK https://github.com/brain-lang/brainfuck.git",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "BASH",
+        "path": "oss_sovereignty/sys_12_Languages/05_Scripting/BASH",
+        "url": "https://git.savannah.gnu.org/git/bash.git",
+        "category": "05_Scripting"
+      },
+      {
+        "name": "BASIC",
+        "path": "oss_sovereignty/sys_12_Languages/01_Ancient/BASIC",
+        "url": "https://github.com/chip-basic/chip-basic.git",
+        "category": "01_Ancient"
+      },
+      {
+        "name": "BEFUNGE",
+        "path": "oss_sovereignty/sys_12_Languages/08_Esoteric/BEFUNGE",
+        "url": null,
+        "category": "08_Esoteric"
+      },
+      {
+        "name": "BLACKBERRY",
+        "path": "oss_sovereignty/sys_13_Platforms/08_Mobile/BLACKBERRY",
+        "url": null,
+        "category": "08_Mobile"
+      },
+      {
+        "name": "BRAINFUCK",
+        "path": "oss_sovereignty/sys_12_Languages/08_Esoteric/BRAINFUCK",
+        "url": "https://github.com/brain-lang/brainfuck.git",
+        "category": "08_Esoteric"
+      }
+    ],
+    "started_at": "2026-01-19T02:45:27.638344"
+  },
+  {
+    "id": "sov_world_batch_005",
+    "description": "WORLD ASSIMILATION BATCH 5: C, CAN, CLOJURE, COBOL, CORBA",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/03_System/C https://github.com/gcc-mirror/gcc.git && echo 'SKIPPING CAN - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/06_Functional/CLOJURE https://github.com/clojure/clojure.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/01_Ancient/COBOL https://github.com/gnucobol/gnucobol.git && echo 'SKIPPING CORBA - NO MAPPED REPO'",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "C",
+        "path": "oss_sovereignty/sys_12_Languages/03_System/C",
+        "url": "https://github.com/gcc-mirror/gcc.git",
+        "category": "03_System"
+      },
+      {
+        "name": "CAN",
+        "path": "oss_sovereignty/sys_14_Accessors/05_Hardware_Bus/CAN",
+        "url": null,
+        "category": "05_Hardware_Bus"
+      },
+      {
+        "name": "CLOJURE",
+        "path": "oss_sovereignty/sys_12_Languages/06_Functional/CLOJURE",
+        "url": "https://github.com/clojure/clojure.git",
+        "category": "06_Functional"
+      },
+      {
+        "name": "COBOL",
+        "path": "oss_sovereignty/sys_12_Languages/01_Ancient/COBOL",
+        "url": "https://github.com/gnucobol/gnucobol.git",
+        "category": "01_Ancient"
+      },
+      {
+        "name": "CORBA",
+        "path": "oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/CORBA",
+        "url": null,
+        "category": "04_RPC_Messaging"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_006",
+    "description": "WORLD ASSIMILATION BATCH 6: CPP, C_SHARP, D, DART, DECNET",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/03_System/CPP https://github.com/gcc-mirror/gcc.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/04_Managed/C_SHARP https://github.com/dotnet/roslyn.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/03_System/D https://github.com/dlang/dmd.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/04_Managed/DART https://github.com/dart-lang/sdk.git && echo 'SKIPPING DECNET - NO MAPPED REPO'",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "CPP",
+        "path": "oss_sovereignty/sys_12_Languages/03_System/CPP",
+        "url": "https://github.com/gcc-mirror/gcc.git",
+        "category": "03_System"
+      },
+      {
+        "name": "C_SHARP",
+        "path": "oss_sovereignty/sys_12_Languages/04_Managed/C_SHARP",
+        "url": "https://github.com/dotnet/roslyn.git",
+        "category": "04_Managed"
+      },
+      {
+        "name": "D",
+        "path": "oss_sovereignty/sys_12_Languages/03_System/D",
+        "url": "https://github.com/dlang/dmd.git",
+        "category": "03_System"
+      },
+      {
+        "name": "DART",
+        "path": "oss_sovereignty/sys_12_Languages/04_Managed/DART",
+        "url": "https://github.com/dart-lang/sdk.git",
+        "category": "04_Managed"
+      },
+      {
+        "name": "DECNET",
+        "path": "oss_sovereignty/sys_14_Accessors/03_Legacy_Net/DECNET",
+        "url": null,
+        "category": "03_Legacy_Net"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_007",
+    "description": "WORLD ASSIMILATION BATCH 7: DHCP, DNS, DOS, DRAGONFLY, ELIXIR",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/02_Network_Stack/DHCP https://github.com/isc-projects/kea.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/02_Network_Stack/DNS https://github.com/isc-projects/bind9.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/06_Microcomputer/DOS https://github.com/microsoft/MS-DOS.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/05_Unix_BSD/DRAGONFLY https://github.com/DragonFlyBSD/DragonFlyBSD.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/06_Functional/ELIXIR https://github.com/elixir-lang/elixir.git",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "DHCP",
+        "path": "oss_sovereignty/sys_14_Accessors/02_Network_Stack/DHCP",
+        "url": "https://github.com/isc-projects/kea.git",
+        "category": "02_Network_Stack"
+      },
+      {
+        "name": "DNS",
+        "path": "oss_sovereignty/sys_14_Accessors/02_Network_Stack/DNS",
+        "url": "https://github.com/isc-projects/bind9.git",
+        "category": "02_Network_Stack"
+      },
+      {
+        "name": "DOS",
+        "path": "oss_sovereignty/sys_13_Platforms/06_Microcomputer/DOS",
+        "url": "https://github.com/microsoft/MS-DOS.git",
+        "category": "06_Microcomputer"
+      },
+      {
+        "name": "DRAGONFLY",
+        "path": "oss_sovereignty/sys_13_Platforms/05_Unix_BSD/DRAGONFLY",
+        "url": "https://github.com/DragonFlyBSD/DragonFlyBSD.git",
+        "category": "05_Unix_BSD"
+      },
+      {
+        "name": "ELIXIR",
+        "path": "oss_sovereignty/sys_12_Languages/06_Functional/ELIXIR",
+        "url": "https://github.com/elixir-lang/elixir.git",
+        "category": "06_Functional"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_008",
+    "description": "WORLD ASSIMILATION BATCH 8: ELM, ERLANG, FORTH, FORTRAN, FRAME_RELAY",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/06_Functional/ELM https://github.com/elm/compiler.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/06_Functional/ERLANG https://github.com/erlang/otp.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/03_System/FORTH https://github.com/ForthHub/gforth.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/01_Ancient/FORTRAN https://github.com/gcc-mirror/gcc.git && echo 'SKIPPING FRAME_RELAY - NO MAPPED REPO'",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "ELM",
+        "path": "oss_sovereignty/sys_12_Languages/06_Functional/ELM",
+        "url": "https://github.com/elm/compiler.git",
+        "category": "06_Functional"
+      },
+      {
+        "name": "ERLANG",
+        "path": "oss_sovereignty/sys_12_Languages/06_Functional/ERLANG",
+        "url": "https://github.com/erlang/otp.git",
+        "category": "06_Functional"
+      },
+      {
+        "name": "FORTH",
+        "path": "oss_sovereignty/sys_12_Languages/03_System/FORTH",
+        "url": "https://github.com/ForthHub/gforth.git",
+        "category": "03_System"
+      },
+      {
+        "name": "FORTRAN",
+        "path": "oss_sovereignty/sys_12_Languages/01_Ancient/FORTRAN",
+        "url": "https://github.com/gcc-mirror/gcc.git",
+        "category": "01_Ancient"
+      },
+      {
+        "name": "FRAME_RELAY",
+        "path": "oss_sovereignty/sys_14_Accessors/03_Legacy_Net/FRAME_RELAY",
+        "url": null,
+        "category": "03_Legacy_Net"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_009",
+    "description": "WORLD ASSIMILATION BATCH 9: FREEBSD, FREERTOS, F_SHARP, GO, GPIB",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/05_Unix_BSD/FREEBSD https://github.com/freebsd/freebsd-src.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/07_Embedded/FREERTOS https://github.com/FreeRTOS/FreeRTOS-Kernel.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/06_Functional/F_SHARP https://github.com/dotnet/fsharp.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/03_System/GO https://github.com/golang/go.git && echo 'SKIPPING GPIB - NO MAPPED REPO'",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "FREEBSD",
+        "path": "oss_sovereignty/sys_13_Platforms/05_Unix_BSD/FREEBSD",
+        "url": "https://github.com/freebsd/freebsd-src.git",
+        "category": "05_Unix_BSD"
+      },
+      {
+        "name": "FREERTOS",
+        "path": "oss_sovereignty/sys_13_Platforms/07_Embedded/FREERTOS",
+        "url": "https://github.com/FreeRTOS/FreeRTOS-Kernel.git",
+        "category": "07_Embedded"
+      },
+      {
+        "name": "F_SHARP",
+        "path": "oss_sovereignty/sys_12_Languages/06_Functional/F_SHARP",
+        "url": "https://github.com/dotnet/fsharp.git",
+        "category": "06_Functional"
+      },
+      {
+        "name": "GO",
+        "path": "oss_sovereignty/sys_12_Languages/03_System/GO",
+        "url": "https://github.com/golang/go.git",
+        "category": "03_System"
+      },
+      {
+        "name": "GPIB",
+        "path": "oss_sovereignty/sys_14_Accessors/05_Hardware_Bus/GPIB",
+        "url": null,
+        "category": "05_Hardware_Bus"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_010",
+    "description": "WORLD ASSIMILATION BATCH 10: GRAPHQL, GROOVY, GRPC, HASKELL, HP_UX",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/GRAPHQL https://github.com/graphql/graphql-js.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/04_Managed/GROOVY https://github.com/apache/groovy.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/GRPC https://github.com/grpc/grpc.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/06_Functional/HASKELL https://github.com/ghc/ghc.git && echo 'SKIPPING HP_UX - NO MAPPED REPO'",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "GRAPHQL",
+        "path": "oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/GRAPHQL",
+        "url": "https://github.com/graphql/graphql-js.git",
+        "category": "04_RPC_Messaging"
+      },
+      {
+        "name": "GROOVY",
+        "path": "oss_sovereignty/sys_12_Languages/04_Managed/GROOVY",
+        "url": "https://github.com/apache/groovy.git",
+        "category": "04_Managed"
+      },
+      {
+        "name": "GRPC",
+        "path": "oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/GRPC",
+        "url": "https://github.com/grpc/grpc.git",
+        "category": "04_RPC_Messaging"
+      },
+      {
+        "name": "HASKELL",
+        "path": "oss_sovereignty/sys_12_Languages/06_Functional/HASKELL",
+        "url": "https://github.com/ghc/ghc.git",
+        "category": "06_Functional"
+      },
+      {
+        "name": "HP_UX",
+        "path": "oss_sovereignty/sys_13_Platforms/04_Unix_Commercial/HP_UX",
+        "url": null,
+        "category": "04_Unix_Commercial"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_011",
+    "description": "WORLD ASSIMILATION BATCH 11: I2C, ICMP, IGMP, IOS, IPX_SPX",
+    "status": "pending",
+    "command": "echo 'SKIPPING I2C - NO MAPPED REPO' && echo 'SKIPPING ICMP - NO MAPPED REPO' && echo 'SKIPPING IGMP - NO MAPPED REPO' && echo 'SKIPPING IOS - NO MAPPED REPO' && echo 'SKIPPING IPX_SPX - NO MAPPED REPO'",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "I2C",
+        "path": "oss_sovereignty/sys_14_Accessors/05_Hardware_Bus/I2C",
+        "url": null,
+        "category": "05_Hardware_Bus"
+      },
+      {
+        "name": "ICMP",
+        "path": "oss_sovereignty/sys_14_Accessors/02_Network_Stack/ICMP",
+        "url": null,
+        "category": "02_Network_Stack"
+      },
+      {
+        "name": "IGMP",
+        "path": "oss_sovereignty/sys_14_Accessors/02_Network_Stack/IGMP",
+        "url": null,
+        "category": "02_Network_Stack"
+      },
+      {
+        "name": "IOS",
+        "path": "oss_sovereignty/sys_13_Platforms/08_Mobile/IOS",
+        "url": null,
+        "category": "08_Mobile"
+      },
+      {
+        "name": "IPX_SPX",
+        "path": "oss_sovereignty/sys_14_Accessors/03_Legacy_Net/IPX_SPX",
+        "url": null,
+        "category": "03_Legacy_Net"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_012",
+    "description": "WORLD ASSIMILATION BATCH 12: IRIX, JAVA, JAVASCRIPT, JULIA, KAFKA",
+    "status": "pending",
+    "command": "echo 'SKIPPING IRIX - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/04_Managed/JAVA https://github.com/openjdk/jdk.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/05_Scripting/JAVASCRIPT https://github.com/v8/v8.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/07_Data/JULIA https://github.com/JuliaLang/julia.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/KAFKA https://github.com/apache/kafka.git",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "IRIX",
+        "path": "oss_sovereignty/sys_13_Platforms/04_Unix_Commercial/IRIX",
+        "url": null,
+        "category": "04_Unix_Commercial"
+      },
+      {
+        "name": "JAVA",
+        "path": "oss_sovereignty/sys_12_Languages/04_Managed/JAVA",
+        "url": "https://github.com/openjdk/jdk.git",
+        "category": "04_Managed"
+      },
+      {
+        "name": "JAVASCRIPT",
+        "path": "oss_sovereignty/sys_12_Languages/05_Scripting/JAVASCRIPT",
+        "url": "https://github.com/v8/v8.git",
+        "category": "05_Scripting"
+      },
+      {
+        "name": "JULIA",
+        "path": "oss_sovereignty/sys_12_Languages/07_Data/JULIA",
+        "url": "https://github.com/JuliaLang/julia.git",
+        "category": "07_Data"
+      },
+      {
+        "name": "KAFKA",
+        "path": "oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/KAFKA",
+        "url": "https://github.com/apache/kafka.git",
+        "category": "04_RPC_Messaging"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_013",
+    "description": "WORLD ASSIMILATION BATCH 13: KOTLIN, LISP, LUA, MALBOLGE, MATLAB",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/04_Managed/KOTLIN https://github.com/JetBrains/kotlin.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/01_Ancient/LISP https://github.com/sbcl/sbcl.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/05_Scripting/LUA https://github.com/lua/lua.git && echo 'SKIPPING MALBOLGE - NO MAPPED REPO' && echo 'SKIPPING MATLAB - NO MAPPED REPO'",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "KOTLIN",
+        "path": "oss_sovereignty/sys_12_Languages/04_Managed/KOTLIN",
+        "url": "https://github.com/JetBrains/kotlin.git",
+        "category": "04_Managed"
+      },
+      {
+        "name": "LISP",
+        "path": "oss_sovereignty/sys_12_Languages/01_Ancient/LISP",
+        "url": "https://github.com/sbcl/sbcl.git",
+        "category": "01_Ancient"
+      },
+      {
+        "name": "LUA",
+        "path": "oss_sovereignty/sys_12_Languages/05_Scripting/LUA",
+        "url": "https://github.com/lua/lua.git",
+        "category": "05_Scripting"
+      },
+      {
+        "name": "MALBOLGE",
+        "path": "oss_sovereignty/sys_12_Languages/08_Esoteric/MALBOLGE",
+        "url": null,
+        "category": "08_Esoteric"
+      },
+      {
+        "name": "MATLAB",
+        "path": "oss_sovereignty/sys_12_Languages/07_Data/MATLAB",
+        "url": null,
+        "category": "07_Data"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_014",
+    "description": "WORLD ASSIMILATION BATCH 14: MCP, MQTT, NETBSD, NIM, OCAML",
+    "status": "pending",
+    "command": "echo 'SKIPPING MCP - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/MQTT https://github.com/eclipse/mosquitto.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/05_Unix_BSD/NETBSD https://github.com/NetBSD/src.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/03_System/NIM https://github.com/nim-lang/Nim.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/06_Functional/OCAML https://github.com/ocaml/ocaml.git",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "MCP",
+        "path": "oss_sovereignty/sys_13_Platforms/02_Unisys/MCP",
+        "url": null,
+        "category": "02_Unisys"
+      },
+      {
+        "name": "MQTT",
+        "path": "oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/MQTT",
+        "url": "https://github.com/eclipse/mosquitto.git",
+        "category": "04_RPC_Messaging"
+      },
+      {
+        "name": "NETBSD",
+        "path": "oss_sovereignty/sys_13_Platforms/05_Unix_BSD/NETBSD",
+        "url": "https://github.com/NetBSD/src.git",
+        "category": "05_Unix_BSD"
+      },
+      {
+        "name": "NIM",
+        "path": "oss_sovereignty/sys_12_Languages/03_System/NIM",
+        "url": "https://github.com/nim-lang/Nim.git",
+        "category": "03_System"
+      },
+      {
+        "name": "OCAML",
+        "path": "oss_sovereignty/sys_12_Languages/06_Functional/OCAML",
+        "url": "https://github.com/ocaml/ocaml.git",
+        "category": "06_Functional"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_015",
+    "description": "WORLD ASSIMILATION BATCH 15: ODIN, OPENBSD, OS_2, OS_2200, OS_400",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/03_System/ODIN https://github.com/odin-lang/Odin.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/05_Unix_BSD/OPENBSD https://github.com/openbsd/src.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/06_Microcomputer/OS_2 https://github.com/psmedley/os2-ports.git && echo 'SKIPPING OS_2200 - NO MAPPED REPO' && echo 'SKIPPING OS_400 - NO MAPPED REPO'",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "ODIN",
+        "path": "oss_sovereignty/sys_12_Languages/03_System/ODIN",
+        "url": "https://github.com/odin-lang/Odin.git",
+        "category": "03_System"
+      },
+      {
+        "name": "OPENBSD",
+        "path": "oss_sovereignty/sys_13_Platforms/05_Unix_BSD/OPENBSD",
+        "url": "https://github.com/openbsd/src.git",
+        "category": "05_Unix_BSD"
+      },
+      {
+        "name": "OS_2",
+        "path": "oss_sovereignty/sys_13_Platforms/06_Microcomputer/OS_2",
+        "url": "https://github.com/psmedley/os2-ports.git",
+        "category": "06_Microcomputer"
+      },
+      {
+        "name": "OS_2200",
+        "path": "oss_sovereignty/sys_13_Platforms/02_Unisys/OS_2200",
+        "url": null,
+        "category": "02_Unisys"
+      },
+      {
+        "name": "OS_400",
+        "path": "oss_sovereignty/sys_13_Platforms/01_IBM_Mainframe/OS_400",
+        "url": null,
+        "category": "01_IBM_Mainframe"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_016",
+    "description": "WORLD ASSIMILATION BATCH 16: PALM_OS, PASCAL, PCIE, PERL, PHP",
+    "status": "pending",
+    "command": "echo 'SKIPPING PALM_OS - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/01_Ancient/PASCAL https://github.com/fpc/FPCSource.git && echo 'SKIPPING PCIE - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/05_Scripting/PERL https://github.com/Perl/perl5.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/05_Scripting/PHP https://github.com/php/php-src.git",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "PALM_OS",
+        "path": "oss_sovereignty/sys_13_Platforms/08_Mobile/PALM_OS",
+        "url": null,
+        "category": "08_Mobile"
+      },
+      {
+        "name": "PASCAL",
+        "path": "oss_sovereignty/sys_12_Languages/01_Ancient/PASCAL",
+        "url": "https://github.com/fpc/FPCSource.git",
+        "category": "01_Ancient"
+      },
+      {
+        "name": "PCIE",
+        "path": "oss_sovereignty/sys_14_Accessors/05_Hardware_Bus/PCIE",
+        "url": null,
+        "category": "05_Hardware_Bus"
+      },
+      {
+        "name": "PERL",
+        "path": "oss_sovereignty/sys_12_Languages/05_Scripting/PERL",
+        "url": "https://github.com/Perl/perl5.git",
+        "category": "05_Scripting"
+      },
+      {
+        "name": "PHP",
+        "path": "oss_sovereignty/sys_12_Languages/05_Scripting/PHP",
+        "url": "https://github.com/php/php-src.git",
+        "category": "05_Scripting"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_017",
+    "description": "WORLD ASSIMILATION BATCH 17: PL_I, POWERSHELL, PYTHON, QNX, R",
+    "status": "pending",
+    "command": "echo 'SKIPPING PL_I - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/05_Scripting/POWERSHELL https://github.com/PowerShell/PowerShell.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/05_Scripting/PYTHON https://github.com/python/cpython.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/07_Embedded/QNX https://github.com/qnx/qnx-reference.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/07_Data/R https://github.com/wch/r-source.git",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "PL_I",
+        "path": "oss_sovereignty/sys_12_Languages/01_Ancient/PL_I",
+        "url": null,
+        "category": "01_Ancient"
+      },
+      {
+        "name": "POWERSHELL",
+        "path": "oss_sovereignty/sys_12_Languages/05_Scripting/POWERSHELL",
+        "url": "https://github.com/PowerShell/PowerShell.git",
+        "category": "05_Scripting"
+      },
+      {
+        "name": "PYTHON",
+        "path": "oss_sovereignty/sys_12_Languages/05_Scripting/PYTHON",
+        "url": "https://github.com/python/cpython.git",
+        "category": "05_Scripting"
+      },
+      {
+        "name": "QNX",
+        "path": "oss_sovereignty/sys_13_Platforms/07_Embedded/QNX",
+        "url": "https://github.com/qnx/qnx-reference.git",
+        "category": "07_Embedded"
+      },
+      {
+        "name": "R",
+        "path": "oss_sovereignty/sys_12_Languages/07_Data/R",
+        "url": "https://github.com/wch/r-source.git",
+        "category": "07_Data"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_018",
+    "description": "WORLD ASSIMILATION BATCH 18: RACKET, REST, RS232, RUBY, RUST",
+    "status": "pending",
+    "command": "echo 'SKIPPING RACKET - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/REST https://github.com/OAI/OpenAPI-Specification.git && echo 'SKIPPING RS232 - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/05_Scripting/RUBY https://github.com/ruby/ruby.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/03_System/RUST https://github.com/rust-lang/rust.git",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "RACKET",
+        "path": "oss_sovereignty/sys_12_Languages/06_Functional/RACKET",
+        "url": null,
+        "category": "06_Functional"
+      },
+      {
+        "name": "REST",
+        "path": "oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/REST",
+        "url": "https://github.com/OAI/OpenAPI-Specification.git",
+        "category": "04_RPC_Messaging"
+      },
+      {
+        "name": "RS232",
+        "path": "oss_sovereignty/sys_14_Accessors/05_Hardware_Bus/RS232",
+        "url": null,
+        "category": "05_Hardware_Bus"
+      },
+      {
+        "name": "RUBY",
+        "path": "oss_sovereignty/sys_12_Languages/05_Scripting/RUBY",
+        "url": "https://github.com/ruby/ruby.git",
+        "category": "05_Scripting"
+      },
+      {
+        "name": "RUST",
+        "path": "oss_sovereignty/sys_12_Languages/03_System/RUST",
+        "url": "https://github.com/rust-lang/rust.git",
+        "category": "03_System"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_019",
+    "description": "WORLD ASSIMILATION BATCH 19: SAS, SCALA, SCHEME, SCO_OPENSERVER, SCTP",
+    "status": "pending",
+    "command": "echo 'SKIPPING SAS - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/04_Managed/SCALA https://github.com/scala/scala.git && echo 'SKIPPING SCHEME - NO MAPPED REPO' && echo 'SKIPPING SCO_OPENSERVER - NO MAPPED REPO' && echo 'SKIPPING SCTP - NO MAPPED REPO'",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "SAS",
+        "path": "oss_sovereignty/sys_12_Languages/07_Data/SAS",
+        "url": null,
+        "category": "07_Data"
+      },
+      {
+        "name": "SCALA",
+        "path": "oss_sovereignty/sys_12_Languages/04_Managed/SCALA",
+        "url": "https://github.com/scala/scala.git",
+        "category": "04_Managed"
+      },
+      {
+        "name": "SCHEME",
+        "path": "oss_sovereignty/sys_12_Languages/06_Functional/SCHEME",
+        "url": null,
+        "category": "06_Functional"
+      },
+      {
+        "name": "SCO_OPENSERVER",
+        "path": "oss_sovereignty/sys_13_Platforms/04_Unix_Commercial/SCO_OPENSERVER",
+        "url": null,
+        "category": "04_Unix_Commercial"
+      },
+      {
+        "name": "SCTP",
+        "path": "oss_sovereignty/sys_14_Accessors/02_Network_Stack/SCTP",
+        "url": null,
+        "category": "02_Network_Stack"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_020",
+    "description": "WORLD ASSIMILATION BATCH 20: SIMULA, SNA, SOAP, SOLARIS, SPI",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/01_Ancient/SIMULA https://github.com/portablesimula/github.io.git && echo 'SKIPPING SNA - NO MAPPED REPO' && echo 'SKIPPING SOAP - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/04_Unix_Commercial/SOLARIS https://github.com/illumos/illumos-gate.git && echo 'SKIPPING SPI - NO MAPPED REPO'",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "SIMULA",
+        "path": "oss_sovereignty/sys_12_Languages/01_Ancient/SIMULA",
+        "url": "https://github.com/portablesimula/github.io.git",
+        "category": "01_Ancient"
+      },
+      {
+        "name": "SNA",
+        "path": "oss_sovereignty/sys_14_Accessors/03_Legacy_Net/SNA",
+        "url": null,
+        "category": "03_Legacy_Net"
+      },
+      {
+        "name": "SOAP",
+        "path": "oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/SOAP",
+        "url": null,
+        "category": "04_RPC_Messaging"
+      },
+      {
+        "name": "SOLARIS",
+        "path": "oss_sovereignty/sys_13_Platforms/04_Unix_Commercial/SOLARIS",
+        "url": "https://github.com/illumos/illumos-gate.git",
+        "category": "04_Unix_Commercial"
+      },
+      {
+        "name": "SPI",
+        "path": "oss_sovereignty/sys_14_Accessors/05_Hardware_Bus/SPI",
+        "url": null,
+        "category": "05_Hardware_Bus"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_021",
+    "description": "WORLD ASSIMILATION BATCH 21: SQL, SWIFT, SYMBIAN, TCL, TCP_IP",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/07_Data/SQL https://github.com/postgres/postgres.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/04_Managed/SWIFT https://github.com/swiftlang/swift.git && echo 'SKIPPING SYMBIAN - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/05_Scripting/TCL https://github.com/tcltk/tcl.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/02_Network_Stack/TCP_IP https://github.com/lwip-tcpip/lwip.git",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "SQL",
+        "path": "oss_sovereignty/sys_12_Languages/07_Data/SQL",
+        "url": "https://github.com/postgres/postgres.git",
+        "category": "07_Data"
+      },
+      {
+        "name": "SWIFT",
+        "path": "oss_sovereignty/sys_12_Languages/04_Managed/SWIFT",
+        "url": "https://github.com/swiftlang/swift.git",
+        "category": "04_Managed"
+      },
+      {
+        "name": "SYMBIAN",
+        "path": "oss_sovereignty/sys_13_Platforms/08_Mobile/SYMBIAN",
+        "url": null,
+        "category": "08_Mobile"
+      },
+      {
+        "name": "TCL",
+        "path": "oss_sovereignty/sys_12_Languages/05_Scripting/TCL",
+        "url": "https://github.com/tcltk/tcl.git",
+        "category": "05_Scripting"
+      },
+      {
+        "name": "TCP_IP",
+        "path": "oss_sovereignty/sys_14_Accessors/02_Network_Stack/TCP_IP",
+        "url": "https://github.com/lwip-tcpip/lwip.git",
+        "category": "02_Network_Stack"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_022",
+    "description": "WORLD ASSIMILATION BATCH 22: THRIFT, TN3270, TN5250, TOPS_10, TOPS_20",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/THRIFT https://github.com/apache/thrift.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/01_Terminals/TN3270 https://github.com/rbbrittain/x3270.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/01_Terminals/TN5250 https://github.com/tn5250/tn5250.git && echo 'SKIPPING TOPS_10 - NO MAPPED REPO' && echo 'SKIPPING TOPS_20 - NO MAPPED REPO'",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "THRIFT",
+        "path": "oss_sovereignty/sys_14_Accessors/04_RPC_Messaging/THRIFT",
+        "url": "https://github.com/apache/thrift.git",
+        "category": "04_RPC_Messaging"
+      },
+      {
+        "name": "TN3270",
+        "path": "oss_sovereignty/sys_14_Accessors/01_Terminals/TN3270",
+        "url": "https://github.com/rbbrittain/x3270.git",
+        "category": "01_Terminals"
+      },
+      {
+        "name": "TN5250",
+        "path": "oss_sovereignty/sys_14_Accessors/01_Terminals/TN5250",
+        "url": "https://github.com/tn5250/tn5250.git",
+        "category": "01_Terminals"
+      },
+      {
+        "name": "TOPS_10",
+        "path": "oss_sovereignty/sys_13_Platforms/03_DEC/TOPS_10",
+        "url": null,
+        "category": "03_DEC"
+      },
+      {
+        "name": "TOPS_20",
+        "path": "oss_sovereignty/sys_13_Platforms/03_DEC/TOPS_20",
+        "url": null,
+        "category": "03_DEC"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_023",
+    "description": "WORLD ASSIMILATION BATCH 23: TPF, TRU64, TYPESCRIPT, UART, UDP",
+    "status": "pending",
+    "command": "echo 'SKIPPING TPF - NO MAPPED REPO' && echo 'SKIPPING TRU64 - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/05_Scripting/TYPESCRIPT https://github.com/microsoft/TypeScript.git && echo 'SKIPPING UART - NO MAPPED REPO' && echo 'SKIPPING UDP - NO MAPPED REPO'",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "TPF",
+        "path": "oss_sovereignty/sys_13_Platforms/01_IBM_Mainframe/TPF",
+        "url": null,
+        "category": "01_IBM_Mainframe"
+      },
+      {
+        "name": "TRU64",
+        "path": "oss_sovereignty/sys_13_Platforms/03_DEC/TRU64",
+        "url": null,
+        "category": "03_DEC"
+      },
+      {
+        "name": "TYPESCRIPT",
+        "path": "oss_sovereignty/sys_12_Languages/05_Scripting/TYPESCRIPT",
+        "url": "https://github.com/microsoft/TypeScript.git",
+        "category": "05_Scripting"
+      },
+      {
+        "name": "UART",
+        "path": "oss_sovereignty/sys_14_Accessors/05_Hardware_Bus/UART",
+        "url": null,
+        "category": "05_Hardware_Bus"
+      },
+      {
+        "name": "UDP",
+        "path": "oss_sovereignty/sys_14_Accessors/02_Network_Stack/UDP",
+        "url": null,
+        "category": "02_Network_Stack"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_024",
+    "description": "WORLD ASSIMILATION BATCH 24: ULTRIX, USB, VMS, VT100, VT220",
+    "status": "pending",
+    "command": "echo 'SKIPPING ULTRIX - NO MAPPED REPO' && echo 'SKIPPING USB - NO MAPPED REPO' && echo 'SKIPPING VMS - NO MAPPED REPO' && echo 'SKIPPING VT100 - NO MAPPED REPO' && echo 'SKIPPING VT220 - NO MAPPED REPO'",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "ULTRIX",
+        "path": "oss_sovereignty/sys_13_Platforms/03_DEC/ULTRIX",
+        "url": null,
+        "category": "03_DEC"
+      },
+      {
+        "name": "USB",
+        "path": "oss_sovereignty/sys_14_Accessors/05_Hardware_Bus/USB",
+        "url": null,
+        "category": "05_Hardware_Bus"
+      },
+      {
+        "name": "VMS",
+        "path": "oss_sovereignty/sys_13_Platforms/03_DEC/VMS",
+        "url": null,
+        "category": "03_DEC"
+      },
+      {
+        "name": "VT100",
+        "path": "oss_sovereignty/sys_14_Accessors/01_Terminals/VT100",
+        "url": null,
+        "category": "01_Terminals"
+      },
+      {
+        "name": "VT220",
+        "path": "oss_sovereignty/sys_14_Accessors/01_Terminals/VT220",
+        "url": null,
+        "category": "01_Terminals"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_025",
+    "description": "WORLD ASSIMILATION BATCH 25: VXWORKS, WAYLAND, WHITESPACE, WINDOWS_3X, WINDOWS_9X",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/07_Embedded/VXWORKS https://github.com/Wind-River/vxworks7-layer-for-qemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/01_Terminals/WAYLAND https://github.com/wayland-project/wayland.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/08_Esoteric/WHITESPACE https://github.com/hostilefork/whitespacers.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/06_Microcomputer/WINDOWS_3X https://github.com/microsoft/winfile.git && echo 'SKIPPING WINDOWS_9X - NO MAPPED REPO'",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "VXWORKS",
+        "path": "oss_sovereignty/sys_13_Platforms/07_Embedded/VXWORKS",
+        "url": "https://github.com/Wind-River/vxworks7-layer-for-qemu.git",
+        "category": "07_Embedded"
+      },
+      {
+        "name": "WAYLAND",
+        "path": "oss_sovereignty/sys_14_Accessors/01_Terminals/WAYLAND",
+        "url": "https://github.com/wayland-project/wayland.git",
+        "category": "01_Terminals"
+      },
+      {
+        "name": "WHITESPACE",
+        "path": "oss_sovereignty/sys_12_Languages/08_Esoteric/WHITESPACE",
+        "url": "https://github.com/hostilefork/whitespacers.git",
+        "category": "08_Esoteric"
+      },
+      {
+        "name": "WINDOWS_3X",
+        "path": "oss_sovereignty/sys_13_Platforms/06_Microcomputer/WINDOWS_3X",
+        "url": "https://github.com/microsoft/winfile.git",
+        "category": "06_Microcomputer"
+      },
+      {
+        "name": "WINDOWS_9X",
+        "path": "oss_sovereignty/sys_13_Platforms/06_Microcomputer/WINDOWS_9X",
+        "url": null,
+        "category": "06_Microcomputer"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_026",
+    "description": "WORLD ASSIMILATION BATCH 26: WINDOWS_NT, WOLFRAM, X11, X_25, ZEPHYR",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/06_Microcomputer/WINDOWS_NT https://github.com/reactos/reactos.git && echo 'SKIPPING WOLFRAM - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/01_Terminals/X11 https://github.com/freedesktop/xorg-server.git && echo 'SKIPPING X_25 - NO MAPPED REPO' && python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/07_Embedded/ZEPHYR https://github.com/zephyrproject-rtos/zephyr.git",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "WINDOWS_NT",
+        "path": "oss_sovereignty/sys_13_Platforms/06_Microcomputer/WINDOWS_NT",
+        "url": "https://github.com/reactos/reactos.git",
+        "category": "06_Microcomputer"
+      },
+      {
+        "name": "WOLFRAM",
+        "path": "oss_sovereignty/sys_12_Languages/07_Data/WOLFRAM",
+        "url": null,
+        "category": "07_Data"
+      },
+      {
+        "name": "X11",
+        "path": "oss_sovereignty/sys_14_Accessors/01_Terminals/X11",
+        "url": "https://github.com/freedesktop/xorg-server.git",
+        "category": "01_Terminals"
+      },
+      {
+        "name": "X_25",
+        "path": "oss_sovereignty/sys_14_Accessors/03_Legacy_Net/X_25",
+        "url": null,
+        "category": "03_Legacy_Net"
+      },
+      {
+        "name": "ZEPHYR",
+        "path": "oss_sovereignty/sys_13_Platforms/07_Embedded/ZEPHYR",
+        "url": "https://github.com/zephyrproject-rtos/zephyr.git",
+        "category": "07_Embedded"
+      }
+    ]
+  },
+  {
+    "id": "sov_world_batch_027",
+    "description": "WORLD ASSIMILATION BATCH 27: ZIG, z_OS, z_VM, z_VSE",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/03_System/ZIG https://github.com/ziglang/zig.git && echo 'SKIPPING z_OS - NO MAPPED REPO' && echo 'SKIPPING z_VM - NO MAPPED REPO' && echo 'SKIPPING z_VSE - NO MAPPED REPO'",
+    "created_at": "2026-01-19T02:45:20.628412",
+    "batch_details": [
+      {
+        "name": "ZIG",
+        "path": "oss_sovereignty/sys_12_Languages/03_System/ZIG",
+        "url": "https://github.com/ziglang/zig.git",
+        "category": "03_System"
+      },
+      {
+        "name": "z_OS",
+        "path": "oss_sovereignty/sys_13_Platforms/01_IBM_Mainframe/z_OS",
+        "url": null,
+        "category": "01_IBM_Mainframe"
+      },
+      {
+        "name": "z_VM",
+        "path": "oss_sovereignty/sys_13_Platforms/01_IBM_Mainframe/z_VM",
+        "url": null,
+        "category": "01_IBM_Mainframe"
+      },
+      {
+        "name": "z_VSE",
+        "path": "oss_sovereignty/sys_13_Platforms/01_IBM_Mainframe/z_VSE",
+        "url": null,
+        "category": "01_IBM_Mainframe"
       }
     ]
   }
