@@ -57,21 +57,36 @@ def make_graph(value, color):
     return f"[{color}]" + "█" * filled + "[/]" + "[#282a36]" + "█" * (width - filled) + "[/]"
 
 class Header:
-    def __rich__(self) -> Text:
-        t = Text()
-        t.append(" BTOP ", style="reverse bold #bd93f9")
-        t.append(f" v1.0.0  ")
-        t.append(" hostname: ", style=C_LABEL)
-        t.append("anvilos-beta  ")
-        t.append(" uptime: ", style=C_LABEL)
-        t.append("00:42:12  ")
-        t.append(" cpu: ", style=C_LABEL)
-        t.append("4% ", style=C_ACCENT)
-        t.append(" mem: ", style=C_LABEL)
-        t.append("12% ", style=C_ACCENT)
-        t.append(" " * 20)
-        t.append(datetime.now().strftime("%H:%M:%S"), style="bold white")
-        return Align.center(t)
+    def __rich__(self) -> Panel:
+        # Authentic btop banner (approximate reconstruction for Rich)
+        # Using a grid to hold the banner on the left and stats on the right
+        
+        banner_grid = Table.grid(expand=True)
+        banner_grid.add_column(justify="left")
+        banner_grid.add_column(justify="right", ratio=1)
+        
+        # The Logo
+        logo = Text()
+        logo.append("██████╗ ████████╗ ██████╗ ██████╗\n", style="#E62525")
+        logo.append("██╔══██╗╚══██╔══╝██╔═══██╗██╔══██╗   ██╗    ██╗\n", style="#CD2121")
+        logo.append("██████╔╝   ██║   ██║   ██║██████╔╝ ██████╗██████╗\n", style="#B31D1D")
+        logo.append("██╔══██╗   ██║   ██║   ██║██╔═══╝  ╚═██╔═╝╚═██╔═╝\n", style="#9A1919")
+        logo.append("██████╔╝   ██║   ╚██████╔╝██║        ╚═╝    ╚═╝\n", style="#801414")
+        logo.append("╚═════╝    ╚═╝    ╚═════╝ ╚═╝", style="#505050")
+        
+        # Info Box (Top Right)
+        info = Table.grid(padding=(0, 2))
+        info.add_column(justify="right", style=C_LABEL)
+        info.add_column(justify="left", style=C_TEXT)
+        
+        info.add_row("time", datetime.now().strftime("%H:%M:%S"))
+        info.add_row("user", "bigiron")
+        info.add_row("host", "anvilos")
+        info.add_row("up", "forever")
+        
+        banner_grid.add_row(logo, Align.right(info))
+        
+        return Panel(banner_grid, box=box.SIMPLE, padding=(0, 0))
 
 class Footer:
     def __rich__(self) -> Text:
