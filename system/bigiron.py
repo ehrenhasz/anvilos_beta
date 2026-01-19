@@ -167,7 +167,7 @@ def cards_panel():
     except: pass
     
     # Format Subtitle
-    sub = f"[{C_ACCENT}]processing {count_proc}[/] | [{C_WARN}]Queue {count_queue}[/] | [{C_PRIMARY}]Complete {count_done}[/] | [{C_ERR}]failed {count_fail}[/]"
+    sub = f"[{C_ACCENT}]processing {count_proc}[/] | [{C_WARN}]queue {count_queue}[/] | [{C_PRIMARY}]complete {count_done}[/] | [{C_ERR}]failed {count_fail}[/]"
     
     return rich.panel.Panel(table, title="[bold #bd93f9]card_reader[/]", subtitle=sub, border_style=C_BORDER, box=rich.box.SQUARE, padding=(0,1))
 
