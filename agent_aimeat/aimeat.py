@@ -87,14 +87,14 @@ def process_jobs():
                     output = "Unknown format"
 
                 # Update Job
-                conn.execute("UPDATE jobs SET status=?, updated_at=CURRENT_TIMESTAMP WHERE correlation_id=?", (status, job_id))
+                conn.execute("UPDATE jobs SET status=?, result=?, updated_at=CURRENT_TIMESTAMP WHERE correlation_id=?", (status, output, job_id))
                 conn.commit()
                 
                 log_ujson(201, {"job": job_id, "status": status, "output": output})
                 return f"PROCESSED {job_id}: {status}"
                 
             except Exception as e:
-                conn.execute("UPDATE jobs SET status='FAILED', updated_at=CURRENT_TIMESTAMP WHERE correlation_id=?", (job_id,))
+                conn.execute("UPDATE jobs SET status='FAILED', result=?, updated_at=CURRENT_TIMESTAMP WHERE correlation_id=?", (str(e), job_id))
                 conn.commit()
                 return f"CRASH {job_id}: {str(e)}"
                 
