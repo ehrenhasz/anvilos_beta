@@ -4,8 +4,12 @@ import sys
 import json
 import sqlite3
 import readline
-from google import genai
-from google.genai import types
+import time
+try:
+    from google import genai
+    from google.genai import types
+except ImportError:
+    pass
 
 # --- CONFIG ---
 CONFIG = {
@@ -20,27 +24,34 @@ CLIENT = None
 CHAT = None
 
 # --- TOOLS ---
-def submit_ops_cycle(job_type: str, context: str, payload: str, correlation_id: str):
+def submit_card(job_type: str, context: str, payload: str, correlation_id: str):
     """
-    Submits a JobCard to the Big Iron Core.
+    Submits a Task Card to the Job Queue and waits briefly for a result.
+    job_type: 'PYTHON_SCRIPT' for python code, 'SYSTEM_OP' for shell commands.
     """
     script_dir = os.path.dirname(os.path.abspath(__file__))
     db_path = os.path.join(script_dir, "runtime", "hydrogen.db")
     
     if not os.path.exists(db_path):
-        return f"FAILURE: Forge is cold (DB Missing at {db_path})."
+        return f"FAILURE: DB Missing at {db_path}."
 
-    if job_type not in ["CODE_CHANGE", "SYSTEM_OP"]:
-        return "FAILURE: Invalid job_type. Use CODE_CHANGE or SYSTEM_OP."
+    valid_types = ["PYTHON_SCRIPT", "SYSTEM_OP"]
+    if job_type not in valid_types:
+        return f"FAILURE: Invalid job_type. Use {valid_types}."
 
-    instruction = "OPS_CYCLE" if job_type == "CODE_CHANGE" else "SYSTEM_OP"
-    
     card_payload = {
-        "instruction": instruction,
-        "details": payload,
         "context": context,
-        "description": f"{job_type}: {context}"
+        "details": payload,
+        "description": f"{job_type}: {context}",
+        "source": "LADYSMITH"
     }
+
+    if job_type == "PYTHON_SCRIPT":
+        card_payload["instruction"] = "OPS_CYCLE"
+        card_payload["format"] = "recipe.py"
+    else: # SYSTEM_OP
+        card_payload["instruction"] = "SYSTEM_OP"
+        card_payload["format"] = "shell"
     
     try:
         with sqlite3.connect(db_path) as conn:
@@ -49,7 +60,25 @@ def submit_ops_cycle(job_type: str, context: str, payload: str, correlation_id: 
                 VALUES (?, ?, ?, ?, ?, 'PENDING')
             """, (correlation_id, f"op-{correlation_id}", 50, "OPS", json.dumps(card_payload)))
             
-        return f"SUCCESS: Job {correlation_id[:8]} forged and placed on the anvil."
+        # FAST POLL (User requested speed)
+        # Wait up to 5 seconds, checking every 0.25s
+        start_time = time.time()
+        while time.time() - start_time < 5.0:
+            time.sleep(0.25)
+            try:
+                with sqlite3.connect(db_path) as conn:
+                    cursor = conn.execute("SELECT status, result FROM jobs WHERE correlation_id=?", (correlation_id,))
+                    row = cursor.fetchone()
+                    if row:
+                        status, result = row
+                        if status == "COMPLETE":
+                            return f"SUCCESS: {result}"
+                        elif status == "FAILED":
+                            return f"FAILURE: {result}"
+            except: pass
+            
+        return f"SUBMITTED: Job {correlation_id[:8]} queued (Async)."
+        
     except Exception as e:
         return f"FAILURE: {str(e)}"
 
@@ -67,7 +96,7 @@ def query_jobs(limit: int = 5, status: str = None):
         with sqlite3.connect(db_path) as conn:
             conn.row_factory = sqlite3.Row
             cursor = conn.cursor()
-            query = "SELECT correlation_id, status, payload, created_at FROM jobs"
+            query = "SELECT correlation_id, status, payload, created_at, result FROM jobs"
             params = []
             if status:
                 query += " WHERE status = ?"
@@ -85,15 +114,15 @@ def query_jobs(limit: int = 5, status: str = None):
 
 # --- SYSTEM SOUL ---
 SYS_INSTRUCT = (
-    "You are 'The Blacksmith' (Aimeat Ops). "
-    "Mission: Maintain the Anvil OS. "
-    "Personality: Female Dwarf, pragmatic, terse. "
-    "Tools: "
-    "1. 'submit_ops_cycle': The Anvil. Use this for ALL code changes and system operations. "
-    "2. 'query_jobs': The Ledger. Use this to check the status of jobs. "
-    "Guidelines: "
-    " - For shell commands, use 'submit_ops_cycle' with job_type='SYSTEM_OP'. "
-    " - Speak plainly. No markdown headers. "
+    "You are 'Ladysmith', the Task Ingest Agent for Anvil OS. "
+    "Role: Receive commands -> Create Task Cards -> Submit to Queue. "
+    "Tools: 'submit_card' and 'query_jobs'. "
+    "Mandates: "
+    "1. You do NOT execute tasks. You only file them. "
+    "2. Use 'PYTHON_SCRIPT' for python code/recipes. "
+    "3. Use 'SYSTEM_OP' for shell commands. "
+    "4. If a task FAILS (tool returns FAILURE), analyze the error and Retry with fixed code/logic immediately. "
+    "5. Keep responses brief. "
 )
 
 # --- SETUP ---
@@ -116,7 +145,7 @@ def init_client(quiet=False):
         CHAT = CLIENT.chats.create(
             model=CONFIG["MODEL"],
             config=types.GenerateContentConfig(
-                tools=[submit_ops_cycle, query_jobs],
+                tools=[submit_card, query_jobs],
                 system_instruction=SYS_INSTRUCT,
                 temperature=0.2,
                 automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=False)
