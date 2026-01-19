@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "AGENT_00_ARCHITECT",
-      "alias": "Meat_Brain0",
+      "alias": "bigiron",
       "name": "Ehren Hasz",
       "role": "MADAM_CHAIRMAN",
       "clearance": "OMEGA (Root)",
