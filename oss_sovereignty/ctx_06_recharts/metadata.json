@@ -1,0 +1,7 @@
+{
+  "name": "ctx_06_recharts",
+  "description": "Recharts data visualization component for Anvil OS.",
+  "version": "0.0.1",
+  "build_script": "oss_sovereignty/ctx_06_recharts/anvil.build.sh",
+  "dependencies": []
+}
