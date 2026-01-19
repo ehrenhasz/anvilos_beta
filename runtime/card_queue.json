@@ -2046,5 +2046,83 @@
     "started_at": "2026-01-19T02:51:54.020863",
     "completed_at": "2026-01-19T02:51:56.058877",
     "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_14_Accessors/03_Legacy_Net/SNA FROM https://github.com/moshix/MVS38j.SYS1.MACLIB.git\n!! Source dir exists at oss_sovereignty/sys_14_Accessors/03_Legacy_Net/SNA/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_14_Accessors/03_Legacy_Net/SNA/metadata.json"
+  },
+  {
+    "id": "sov_r2_plan_9",
+    "description": "ROUND 2: Assimilate PLAN_9 (Plan 9 from Bell Labs (Legacy Bootable))",
+    "status": "processing",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/04_Unix_Commercial/PLAN_9 https://github.com/rsc/plan9.git",
+    "created_at": "2026-01-19T03:11:32.779313",
+    "metadata": {
+      "system": "PLAN_9",
+      "proxy": "Plan 9 from Bell Labs (Legacy Bootable)"
+    },
+    "started_at": "2026-01-19T03:11:33.348751"
+  },
+  {
+    "id": "sov_r2_minix_3",
+    "description": "ROUND 2: Assimilate MINIX_3 (Minix 3 Microkernel OS)",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/04_Unix_Commercial/MINIX_3 https://github.com/Stichting-MINIX-Research-Foundation/minix.git",
+    "created_at": "2026-01-19T03:11:32.779313",
+    "metadata": {
+      "system": "MINIX_3",
+      "proxy": "Minix 3 Microkernel OS"
+    }
+  },
+  {
+    "id": "sov_r2_haiku",
+    "description": "ROUND 2: Assimilate HAIKU (Haiku (BeOS Re-implementation))",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_13_Platforms/06_Microcomputer/HAIKU https://github.com/haiku/haiku.git",
+    "created_at": "2026-01-19T03:11:32.779313",
+    "metadata": {
+      "system": "HAIKU",
+      "proxy": "Haiku (BeOS Re-implementation)"
+    }
+  },
+  {
+    "id": "sov_r2_decnet_linux",
+    "description": "ROUND 2: Assimilate DECNET_LINUX (DECnet Module for Linux)",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/03_Legacy_Net/DECNET_LINUX https://github.com/JohnForecast/LinuxDECnet.git",
+    "created_at": "2026-01-19T03:11:32.779313",
+    "metadata": {
+      "system": "DECNET_LINUX",
+      "proxy": "DECnet Module for Linux"
+    }
+  },
+  {
+    "id": "sov_r2_ipx_linux",
+    "description": "ROUND 2: Assimilate IPX_LINUX (IPX/SPX Module for Linux)",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/03_Legacy_Net/IPX_LINUX https://github.com/pasis/ipx.git",
+    "created_at": "2026-01-19T03:11:32.779313",
+    "metadata": {
+      "system": "IPX_LINUX",
+      "proxy": "IPX/SPX Module for Linux"
+    }
+  },
+  {
+    "id": "sov_r2_ghostscript",
+    "description": "ROUND 2: Assimilate GHOSTSCRIPT (PostScript & PDF Interpreter (The Printer))",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_14_Accessors/01_Terminals/GHOSTSCRIPT https://github.com/ArtifexSoftware/ghostpdl.git",
+    "created_at": "2026-01-19T03:11:32.779313",
+    "metadata": {
+      "system": "GHOSTSCRIPT",
+      "proxy": "PostScript & PDF Interpreter (The Printer)"
+    }
+  },
+  {
+    "id": "sov_r2_smalltalk",
+    "description": "ROUND 2: Assimilate SMALLTALK (Squeak Smalltalk Environment)",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_12_Languages/04_Managed/SMALLTALK https://github.com/squeak-smalltalk/squeak-app.git",
+    "created_at": "2026-01-19T03:11:32.779313",
+    "metadata": {
+      "system": "SMALLTALK",
+      "proxy": "Squeak Smalltalk Environment"
+    }
   }
 ]
