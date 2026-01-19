@@ -2230,3 +2230,10 @@ EXEC: git rev-parse HEAD
 !! Source dir exists at oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/source. Skipping clone (assuming manual placement or previous run).
 !! No .git found in source. Already severed?
 >> Assimilation Complete. Metadata saved to oss_sovereignty/sys_18_64Bit_Cloud/01_Operating_Systems/macOS_Modern/metadata.json
+[2026-01-19 15:47:32] Card Reader Service Started (PID: 99236)
+[2026-01-19 15:47:32] PROCESSING CARD: sys_runtime_fix_001 - RUNTIME: Fix Gemini API 400 errors (snake_case params).
+[2026-01-19 15:47:34] EXECUTING: echo 'Manual fix applied.'
+[2026-01-19 15:47:34] RESULT: SUCCESS: Manual fix applied.
+[2026-01-19 15:47:34] PROCESSING CARD: sov_dir_inventory_001 - SOVEREIGNTY: Generate a log of all directories in oss_sovereignty.
+[2026-01-19 15:47:36] EXECUTING: find oss_sovereignty -type d > oss_sovereignty_dirs.log
+[2026-01-19 15:47:37] RESULT: SUCCESS: 

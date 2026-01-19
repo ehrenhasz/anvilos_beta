@@ -18,7 +18,11 @@ class Collar:
     ]
 
     IGNORE_DIRS = [
-        ".git", "node_modules", "dist", "build", "__pycache__", "oss_sovereignty"
+        ".git", "node_modules", "dist", "build", "__pycache__"
+    ]
+    
+    IGNORE_SCAN_DIRS = [
+        "oss_sovereignty"
     ]
     
     IGNORE_FILES = [
@@ -163,7 +167,7 @@ class Collar:
         
         for root, dirs, files in os.walk(root_dir):
             # Filter directories
-            dirs[:] = [d for d in dirs if d not in self.IGNORE_DIRS]
+            dirs[:] = [d for d in dirs if d not in self.IGNORE_DIRS and d not in self.IGNORE_SCAN_DIRS]
             
             for file in files:
                 if file in self.IGNORE_FILES:

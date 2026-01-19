@@ -2,9 +2,12 @@
   {
     "id": "sys_runtime_fix_001",
     "description": "RUNTIME: Fix Gemini API 400 errors (snake_case params).",
-    "status": "pending",
+    "status": "complete",
     "command": "echo 'Manual fix applied.'",
-    "created_at": "2026-01-19T15:24:13.343959Z"
+    "created_at": "2026-01-19T15:24:13.343959Z",
+    "started_at": "2026-01-19T15:47:32.607707",
+    "completed_at": "2026-01-19T15:47:34.615338",
+    "result": "SUCCESS: Manual fix applied."
   },
   {
     "id": "sov_64bit_batch_4042132f",
@@ -3887,5 +3890,22 @@
     "started_at": "2026-01-19T03:37:36.256421",
     "completed_at": "2026-01-19T03:38:37.476355",
     "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/VolksForth FROM https://github.com/forth-ev/VolksForth.git\n>> Cloning https://github.com/forth-ev/VolksForth.git...\nEXEC: git clone --depth 1 https://github.com/forth-ev/VolksForth.git oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/VolksForth/source\nEXEC: git rev-parse HEAD\n>> Severing connection (removing .git)...\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_16_16Bit_Revolution/03_Toolchains/VolksForth/metadata.json"
+  },
+  {
+    "id": "sov_dir_inventory_001",
+    "description": "SOVEREIGNTY: Generate a log of all directories in oss_sovereignty.",
+    "status": "complete",
+    "command": "find oss_sovereignty -type d > oss_sovereignty_dirs.log",
+    "created_at": "2026-01-19T16:15:00.000Z",
+    "started_at": "2026-01-19T15:47:34.621658",
+    "completed_at": "2026-01-19T15:47:37.076320",
+    "result": "SUCCESS: "
+  },
+  {
+    "id": "sov_audit_remediate_001",
+    "description": "SOVEREIGNTY: Audit all folders. Clone missing source. Sever ties.",
+    "status": "pending",
+    "command": "python3 system/scripts/audit_and_remediate.py",
+    "created_at": "2026-01-19T16:25:00.000Z"
   }
 ]

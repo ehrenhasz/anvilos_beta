@@ -5,7 +5,8 @@ set -e
 # Target: x86_64-unknown-linux-musl
 # Goal: Produce a hermetic, static 'anvil' binary.
 
-PROJECT_ROOT="/home/aimeat/github/droppod"
+# Get the directory of the script, then go up three levels to the project root
+PROJECT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../../.." && pwd )"
 SOURCE_DIR="$PROJECT_ROOT/oss_sovereignty/sys_09_Anvil/source"
 TOOLCHAIN_BIN="$PROJECT_ROOT/ext/toolchain/bin/x86_64-unknown-linux-musl-"
 OUTPUT_DIR="$PROJECT_ROOT/oss_sovereignty/sys_09_Anvil/build"
@@ -43,8 +44,10 @@ make -j$(nproc) \
     MICROPY_PY_SOCKET=0 \
     MICROPY_PY_NETWORK=0 \
     MICROPY_PY_SSL=0 \
+    MICROPY_PY_AXTLS=0 \
     MICROPY_PY_FFI=0 \
     MICROPY_PY_JNI=0 \
+    MICROPY_PY_BLUETOOTH=0 \
     MPY_LIB_DIR=../.. \
     MICROPY_USE_READLINE=1 \
     CFLAGS_EXTRA="-static" \
