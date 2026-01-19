@@ -1,5 +1,130 @@
 [
   {
+    "id": "sov_32bit_batch_4161b2aa",
+    "description": "32BIT ASSIMILATION: Dreamcast, Nintendo_64, PlayStation_1",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/Dreamcast https://github.com/flyinghead/flycast.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/Nintendo_64 https://github.com/mupen64plus/mupen64plus-core.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PlayStation_1 https://github.com/duckstation/duckstation.git",
+    "created_at": "2026-01-19T04:30:09.354862Z",
+    "batch_details": [
+      {
+        "name": "Dreamcast",
+        "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/Dreamcast",
+        "url": "https://github.com/flyinghead/flycast.git"
+      },
+      {
+        "name": "Nintendo_64",
+        "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/Nintendo_64",
+        "url": "https://github.com/mupen64plus/mupen64plus-core.git"
+      },
+      {
+        "name": "PlayStation_1",
+        "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PlayStation_1",
+        "url": "https://github.com/duckstation/duckstation.git"
+      }
+    ],
+    "started_at": "2026-01-19T04:30:10.262499",
+    "completed_at": "2026-01-19T04:30:12.344941",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/01_Consoles/Dreamcast FROM https://github.com/flyinghead/flycast.git\n!! Source dir exists at oss_sovereignty/sys_17_32Bit_Era/01_Consoles/Dreamcast/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/01_Consoles/Dreamcast/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/01_Consoles/Nintendo_64 FROM https://github.com/mupen64plus/mupen64plus-core.git\n!! Source dir exists at oss_sovereignty/sys_17_32Bit_Era/01_Consoles/Nintendo_64/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/01_Consoles/Nintendo_64/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PlayStation_1 FROM https://github.com/duckstation/duckstation.git\n!! Source dir exists at oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PlayStation_1/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PlayStation_1/metadata.json"
+  },
+  {
+    "id": "sov_32bit_batch_0a587fa2",
+    "description": "32BIT ASSIMILATION: BeOS, Linux_Early, Mac_OS_Classic",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/02_Computers/BeOS https://github.com/haiku/haiku.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/02_Computers/Linux_Early https://github.com/torvalds/linux.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/02_Computers/Mac_OS_Classic https://github.com/kanjitalk755/mac-os-build.git",
+    "created_at": "2026-01-19T04:30:09.354886Z",
+    "batch_details": [
+      {
+        "name": "BeOS",
+        "path": "oss_sovereignty/sys_17_32Bit_Era/02_Computers/BeOS",
+        "url": "https://github.com/haiku/haiku.git"
+      },
+      {
+        "name": "Linux_Early",
+        "path": "oss_sovereignty/sys_17_32Bit_Era/02_Computers/Linux_Early",
+        "url": "https://github.com/torvalds/linux.git"
+      },
+      {
+        "name": "Mac_OS_Classic",
+        "path": "oss_sovereignty/sys_17_32Bit_Era/02_Computers/Mac_OS_Classic",
+        "url": "https://github.com/kanjitalk755/mac-os-build.git"
+      }
+    ],
+    "started_at": "2026-01-19T04:30:12.347649",
+    "completed_at": "2026-01-19T04:30:14.428773",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/02_Computers/BeOS FROM https://github.com/haiku/haiku.git\n!! Source dir exists at oss_sovereignty/sys_17_32Bit_Era/02_Computers/BeOS/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/02_Computers/BeOS/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/02_Computers/Linux_Early FROM https://github.com/torvalds/linux.git\n!! Source dir exists at oss_sovereignty/sys_17_32Bit_Era/02_Computers/Linux_Early/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/02_Computers/Linux_Early/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/02_Computers/Mac_OS_Classic FROM https://github.com/kanjitalk755/mac-os-build.git\n!! Source dir exists at oss_sovereignty/sys_17_32Bit_Era/02_Computers/Mac_OS_Classic/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/02_Computers/Mac_OS_Classic/metadata.json"
+  },
+  {
+    "id": "sov_32bit_batch_297ce5ca",
+    "description": "32BIT ASSIMILATION: OS_9, Windows_95_98_ME, Windows_NT_2000_XP",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/02_Computers/OS_9 https://github.com/jefftranter/6809/tree/master/nitros9 && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/02_Computers/Windows_95_98_ME https://github.com/microsoft/MS-DOS.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/02_Computers/Windows_NT_2000_XP https://github.com/reactos/reactos.git",
+    "created_at": "2026-01-19T04:30:09.354896Z",
+    "batch_details": [
+      {
+        "name": "OS_9",
+        "path": "oss_sovereignty/sys_17_32Bit_Era/02_Computers/OS_9",
+        "url": "https://github.com/jefftranter/6809/tree/master/nitros9"
+      },
+      {
+        "name": "Windows_95_98_ME",
+        "path": "oss_sovereignty/sys_17_32Bit_Era/02_Computers/Windows_95_98_ME",
+        "url": "https://github.com/microsoft/MS-DOS.git"
+      },
+      {
+        "name": "Windows_NT_2000_XP",
+        "path": "oss_sovereignty/sys_17_32Bit_Era/02_Computers/Windows_NT_2000_XP",
+        "url": "https://github.com/reactos/reactos.git"
+      }
+    ],
+    "started_at": "2026-01-19T04:30:14.431214",
+    "completed_at": "2026-01-19T04:30:16.527384",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/02_Computers/OS_9 FROM https://github.com/jefftranter/6809/tree/master/nitros9\n!! Source dir exists at oss_sovereignty/sys_17_32Bit_Era/02_Computers/OS_9/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/02_Computers/OS_9/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/02_Computers/Windows_95_98_ME FROM https://github.com/microsoft/MS-DOS.git\n!! Source dir exists at oss_sovereignty/sys_17_32Bit_Era/02_Computers/Windows_95_98_ME/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/02_Computers/Windows_95_98_ME/metadata.json\n>> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/02_Computers/Windows_NT_2000_XP FROM https://github.com/reactos/reactos.git\n!! Source dir exists at oss_sovereignty/sys_17_32Bit_Era/02_Computers/Windows_NT_2000_XP/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/02_Computers/Windows_NT_2000_XP/metadata.json"
+  },
+  {
+    "id": "sov_32bit_batch_764786d8",
+    "description": "32BIT ASSIMILATION: GCC_x86, Katana_SDK, PsyQ",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/GCC_x86 https://github.com/gcc-mirror/gcc.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/Katana_SDK https://github.com/KallistiOS/KallistiOS.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/PsyQ https://github.com/m-h-/psx-sdk-build.git",
+    "created_at": "2026-01-19T04:30:09.354902Z",
+    "batch_details": [
+      {
+        "name": "GCC_x86",
+        "path": "oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/GCC_x86",
+        "url": "https://github.com/gcc-mirror/gcc.git"
+      },
+      {
+        "name": "Katana_SDK",
+        "path": "oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/Katana_SDK",
+        "url": "https://github.com/KallistiOS/KallistiOS.git"
+      },
+      {
+        "name": "PsyQ",
+        "path": "oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/PsyQ",
+        "url": "https://github.com/m-h-/psx-sdk-build.git"
+      }
+    ],
+    "started_at": "2026-01-19T04:30:16.529830",
+    "completed_at": "2026-01-19T04:31:52.569224Z",
+    "result": "SUCCESS: Assimilated GCC_x86, Katana_SDK, PsyQ."
+  },
+  {
+    "id": "sov_32bit_batch_fd3392f5",
+    "description": "32BIT ASSIMILATION: Visual_C_Plus_Plus",
+    "status": "complete",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/Visual_C_Plus_Plus https://github.com/open-watcom/open-watcom-v2.git",
+    "created_at": "2026-01-19T04:30:09.354907Z",
+    "batch_details": [
+      {
+        "name": "Visual_C_Plus_Plus",
+        "path": "oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/Visual_C_Plus_Plus",
+        "url": "https://github.com/open-watcom/open-watcom-v2.git"
+      }
+    ],
+    "started_at": "2026-01-19T04:30:18.623870",
+    "completed_at": "2026-01-19T04:30:20.663613",
+    "result": "SUCCESS: >> ASSIMILATING: oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/Visual_C_Plus_Plus FROM https://github.com/open-watcom/open-watcom-v2.git\n!! Source dir exists at oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/Visual_C_Plus_Plus/source. Skipping clone (assuming manual placement or previous run).\n!! No .git found in source. Already severed?\n>> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/03_Toolchains/Visual_C_Plus_Plus/metadata.json"
+  },
+  {
     "id": "sov_64bit_batch_dc88f64d",
     "description": "64BIT ASSIMILATION: MIPS64, AARCH64, RISCV64",
     "status": "failed",
@@ -110,7 +235,7 @@
   {
     "id": "sov_64bit_batch_3e73413b",
     "description": "64BIT ASSIMILATION: SATURN",
-    "status": "complete",
+    "status": "failed",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/SATURN https://github.com/yabause/yabause.git",
     "created_at": "2026-01-19T04:15:15Z",
     "batch_details": [
@@ -121,8 +246,8 @@
       }
     ],
     "started_at": "2026-01-19T04:23:52.591976",
-    "completed_at": "2026-01-19T04:25:46.974524Z",
-    "result": "SUCCESS: Assimilated SATURN."
+    "completed_at": "2026-01-19T04:26:07.751791",
+    "result": "FAILURE: "
   },
   {
     "id": "repo_clean_8bit_16bit_exclusion",
