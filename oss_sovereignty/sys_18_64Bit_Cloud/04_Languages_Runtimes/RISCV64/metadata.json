@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T04:19:26.096865",
+  "origin": {
+    "url": "https://github.com/riscv/riscv-isa-sim.git",
+    "commit": "efdaa0837137ddd4b4154196251d52daae3277bc",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

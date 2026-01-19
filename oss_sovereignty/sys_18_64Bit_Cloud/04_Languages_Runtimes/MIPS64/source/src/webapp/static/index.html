@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>EduMIPS64 Experimental Web Frontend</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+  </head>
+  <body>
+    <noscript>
+      <div id="nojs">
+        Your web browser must have JavaScript enabled in order for this
+        application to display correctly.
+      </div>
+    </noscript>
+
+    <!-- React mount node. -->
+    <div id="simulator"></div>
+  </body>
+  <!-- Import the React UI code. Done after <body> is created
+       because some code in the Monaco Editor depends on <body>
+       to exist when it's initialized. -->
+  <script type="text/javascript" src="ui.js"></script>
+</html>

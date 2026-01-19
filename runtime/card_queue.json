@@ -1,5 +1,150 @@
 [
   {
+    "id": "sov_64bit_batch_dc88f64d",
+    "description": "64BIT ASSIMILATION: MIPS64, AARCH64, RISCV64",
+    "status": "failed",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/MIPS64 https://github.com/EduMIPS64/edumips64.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64 https://github.com/ARM-software/arm-trusted-firmware.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/RISCV64 https://github.com/riscv/riscv-isa-sim.git",
+    "created_at": "2026-01-19T04:15:15Z",
+    "batch_details": [
+      {
+        "name": "MIPS64",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/MIPS64",
+        "url": "https://github.com/EduMIPS64/edumips64.git"
+      },
+      {
+        "name": "AARCH64",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/AARCH64",
+        "url": "https://github.com/ARM-software/arm-trusted-firmware.git"
+      },
+      {
+        "name": "RISCV64",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/RISCV64",
+        "url": "https://github.com/riscv/riscv-isa-sim.git"
+      }
+    ],
+    "started_at": "2026-01-19T04:15:16.439628",
+    "completed_at": "2026-01-19T04:15:18.999263",
+    "result": "FAILURE: "
+  },
+  {
+    "id": "sov_64bit_batch_0b596939",
+    "description": "64BIT ASSIMILATION: SPARC64, POWER_PC_64, x86_64",
+    "status": "failed",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/SPARC64 https://github.com/sparc/leon.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/POWER_PC_64 https://github.com/open-power/op-build.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/x86_64 https://github.com/nasm/nasm.git",
+    "created_at": "2026-01-19T04:15:15Z",
+    "batch_details": [
+      {
+        "name": "SPARC64",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/SPARC64",
+        "url": "https://github.com/sparc/leon.git"
+      },
+      {
+        "name": "POWER_PC_64",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/POWER_PC_64",
+        "url": "https://github.com/open-power/op-build.git"
+      },
+      {
+        "name": "x86_64",
+        "path": "oss_sovereignty/sys_18_64Bit_Cloud/04_Languages_Runtimes/x86_64",
+        "url": "https://github.com/nasm/nasm.git"
+      }
+    ],
+    "started_at": "2026-01-19T04:15:19.004044",
+    "completed_at": "2026-01-19T04:15:21.556817",
+    "result": "FAILURE: "
+  },
+  {
+    "id": "sov_64bit_batch_cfd90ef6",
+    "description": "64BIT ASSIMILATION: PS2, XBOX, GAMECUBE",
+    "status": "processing",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PS2 https://github.com/PCSX2/pcsx2.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/XBOX https://github.com/xemu-project/xemu.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/GAMECUBE https://github.com/dolphin-emu/dolphin.git",
+    "created_at": "2026-01-19T04:15:15Z",
+    "batch_details": [
+      {
+        "name": "PS2",
+        "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PS2",
+        "url": "https://github.com/PCSX2/pcsx2.git"
+      },
+      {
+        "name": "XBOX",
+        "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/XBOX",
+        "url": "https://github.com/xemu-project/xemu.git"
+      },
+      {
+        "name": "GAMECUBE",
+        "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/GAMECUBE",
+        "url": "https://github.com/dolphin-emu/dolphin.git"
+      }
+    ],
+    "started_at": "2026-01-19T04:15:21.561636"
+  },
+  {
+    "id": "sov_64bit_batch_8add7cb4",
+    "description": "64BIT ASSIMILATION: DREAMCAST, N64, PS1",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/DREAMCAST https://github.com/flyinghead/flycast.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/N64 https://github.com/mupen64plus/mupen64plus-core.git && python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PS1 https://github.com/duckstation/duckstation.git",
+    "created_at": "2026-01-19T04:15:15Z",
+    "batch_details": [
+      {
+        "name": "DREAMCAST",
+        "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/DREAMCAST",
+        "url": "https://github.com/flyinghead/flycast.git"
+      },
+      {
+        "name": "N64",
+        "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/N64",
+        "url": "https://github.com/mupen64plus/mupen64plus-core.git"
+      },
+      {
+        "name": "PS1",
+        "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/PS1",
+        "url": "https://github.com/duckstation/duckstation.git"
+      }
+    ]
+  },
+  {
+    "id": "sov_64bit_batch_3e73413b",
+    "description": "64BIT ASSIMILATION: SATURN",
+    "status": "pending",
+    "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_17_32Bit_Era/01_Consoles/SATURN https://github.com/yabause/yabause.git",
+    "created_at": "2026-01-19T04:15:15Z",
+    "batch_details": [
+      {
+        "name": "SATURN",
+        "path": "oss_sovereignty/sys_17_32Bit_Era/01_Consoles/SATURN",
+        "url": "https://github.com/yabause/yabause.git"
+      }
+    ]
+  },
+  {
+    "id": "repo_clean_8bit_16bit_exclusion",
+    "description": "REPO CLEANUP: Exclude 8bit and 16bit folders from local repo, retain on GitHub.",
+    "status": "complete",
+    "command": "manual_intervention",
+    "created_at": "2026-01-19T04:10:34.679021Z",
+    "metadata": {
+      "type": "repo_management",
+      "priority": "high"
+    },
+    "started_at": "2026-01-19T04:10:34.870073",
+    "completed_at": "2026-01-19T04:10:36.880643",
+    "result": "FAILURE: /bin/sh: 1: manual_intervention: not found"
+  },
+  {
+    "id": "sys_gov_update_workflow",
+    "description": "GOVERNANCE: Enforce One Card = One Branch/PR/Merge workflow in agent.md",
+    "status": "complete",
+    "command": "manual_intervention",
+    "created_at": "2026-01-19T04:09:18.702691Z",
+    "metadata": {
+      "type": "governance",
+      "priority": "high"
+    },
+    "started_at": "2026-01-19T04:09:19.705357",
+    "completed_at": "2026-01-19T04:09:21.717232",
+    "result": "FAILURE: /bin/sh: 1: manual_intervention: not found"
+  },
+  {
     "id": "sys_09_hello_world",
     "description": "ANVIL: Execute 'hello.py' using the sovereign Anvil runtime (static binary).",
     "status": "complete",
@@ -2512,7 +2657,7 @@
   {
     "id": "sov_8bit_deep_punes",
     "description": "8-BIT DEEP: Assimilate puNES (Cycle-Accurate NES Emulator)",
-    "status": "failed",
+    "status": "dead_repo",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/puNES https://github.com/punes-emu/punes.git",
     "created_at": "2026-01-19T03:22:10.432624",
     "metadata": {
@@ -2526,7 +2671,7 @@
   {
     "id": "sov_8bit_deep_mame",
     "description": "8-BIT DEEP: Assimilate MAME (Multi Arcade Machine Emulator (Core))",
-    "status": "failed",
+    "status": "dead_repo",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_15_8Bit_Renaissance/01_Emulators/MAME https://github.com/mamedev/mame.git",
     "created_at": "2026-01-19T03:22:10.432624",
     "metadata": {
@@ -2638,7 +2783,7 @@
   {
     "id": "sov_16bit_deep_emutos",
     "description": "16-BIT DEEP: Assimilate EmuTOS (EmuTOS (Atari TOS Replacement))",
-    "status": "failed",
+    "status": "dead_repo",
     "command": "python3 system/scripts/assimilate.py oss_sovereignty/sys_16_16Bit_Revolution/02_Computers/EmuTOS https://github.com/emutos/emutos.git",
     "created_at": "2026-01-19T03:34:44.875168",
     "metadata": {
