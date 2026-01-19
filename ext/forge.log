@@ -2813,3 +2813,13 @@ EXEC: git rev-parse HEAD
 >> Severing connection (removing .git)...
 >> Assimilation Complete. Metadata saved to oss_sovereignty/sys_17_32Bit_Era/01_Consoles/GAMECUBE/metadata.json
 [2026-01-19 16:59:44] Card Reader Service Started (PID: 151655)
+[2026-01-19 17:54:45] Card Reader Service Started (PID: 170677)
+{"@ID": 1, "data": "BIG IRON v3.0 ONLINE. Watching /home/aimeat/github/anvilos_beta/runtime/hydrogen.db", "ts": "2026-01-19T18:52:44.086453"}
+{"@ID": 2, "data": "JOB_START: 992638ef-cc60-4c1a-b56a-a24eaa609e13 (99)", "ts": "2026-01-19T18:52:44.090389"}
+{"@ID": 2, "data": "JOB_COMPLETE: 992638ef-cc60-4c1a-b56a-a24eaa609e13", "ts": "2026-01-19T18:52:46.095937"}
+{"@ID": 2, "data": "JOB_START: 287153a5-e243-49ad-834b-9e4b63da9964 (99)", "ts": "2026-01-19T18:52:46.098765"}
+{"@ID": 4, "data": "Unknown Instruction: CRASH", "ts": "2026-01-19T18:52:46.098912"}
+{"@ID": 2, "data": "JOB_COMPLETE: 287153a5-e243-49ad-834b-9e4b63da9964", "ts": "2026-01-19T18:52:46.100930"}
+{"@ID": 2, "data": "JOB_START: 995d918b-29e1-4e8e-ac5d-a51b4bdc7287 (99)", "ts": "2026-01-19T18:52:46.103186"}
+{"@ID": 5, "data": "OPS_STEP: Creating Isolation Branch", "ts": "2026-01-19T18:52:46.103318"}
+{"@ID": 5, "data": "OPS_STEP: Staging Artifacts", "ts": "2026-01-19T18:52:46.108122"}
