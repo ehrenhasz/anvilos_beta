@@ -4,7 +4,7 @@
   "category": "03_Virtualization",
   "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL.",
   "sovereignty_level": "assimilated",
-  "assimilated_at": "2026-01-19T04:43:17.862361",
+  "assimilated_at": "2026-01-19T04:45:10.694079",
   "origin": {
     "url": "https://github.com/microsoft/hvc.git",
     "commit": "unknown",
