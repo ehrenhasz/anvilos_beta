@@ -1,0 +1,11 @@
+[Unit]
+Description=Card Reader Service - The Anvil Executor
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/aimeat/github/droppod/runtime/services/card_reader.py
+WorkingDirectory=/home/aimeat/github/droppod
+Restart=always
+
+[Install]
+WantedBy=default.target
