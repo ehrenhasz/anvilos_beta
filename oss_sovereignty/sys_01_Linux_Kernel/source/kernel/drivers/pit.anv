@@ -1,1 +1,1 @@
-struct Pit;impl Pit{fn init(){unsafe{asm!("outb %al,$0x43",in("al")0x36);asm!("outb %al,$0x40",in("al")0);asm!("outb %al,$0x40",in("al")0);}}}
+fn pit_init(h:u16){unsafe{asm!("outb %al, $0x43",in("al")0x36);asm!("outb %al, $0x40",in("al")(h&0xff)as u8);asm!("outb %al, $0x40",in("al")(h>>8)as u8)}}

@@ -1,1 +1,1 @@
-struct Cpio;impl Cpio{fn parse(p:*const u8){}}
+struct CpioHeader{m:u16,d:u16,i:u16,mde:u16,u:u16,g:u16,nl:u16,mt:u32,sz:u32,nm:u16}

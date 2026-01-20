@@ -1,0 +1,36 @@
+<labwc_config>
+  <theme>
+    <name>CyberRoyal</name>
+    <cornerRadius>12</cornerRadius>
+    <keepBorder>no</keepBorder>
+    <font place="ActiveWindow">JetBrains Mono 10</font>
+  </theme>
+
+  <windowRules>
+    <windowRule identifier="*">
+       <dropShadow>yes</dropShadow>
+    </windowRule>
+  </windowRules>
+
+  <margin>
+    <top>10</top>
+    <bottom>10</bottom>
+    <left>10</left>
+    <right>10</right>
+  </margin>
+  
+  <snapping>
+    <left>50%</left>
+    <right>50%</right>
+    <top>100%</top>
+  </snapping>
+
+  <keyboard>
+    <keybind key="W-p">
+      <action name="Execute" command="wofi --show drun" />
+    </keybind>
+    <keybind key="W-Return">
+      <action name="Execute" command="x-terminal-emulator" />
+    </keybind>
+  </keyboard>
+</labwc_config>

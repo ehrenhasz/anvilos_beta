@@ -264,44 +264,67 @@ def panel_agents(reader):
     return rich.panel.Panel(table, title=f"[bold {C_PRIMARY}]AGENTS[/]", border_style=C_BORDER)
 
 class LogTail:
-    def __init__(self):
+    def __init__(self, log_path, title):
+        self.log_path = log_path
+        self.title = title
         self.lines = deque(maxlen=15)
+
     def update(self):
-        if not os.path.exists(LOG_FILE): return
+        if not os.path.exists(self.log_path): return
         try:
-            with open(LOG_FILE, 'r') as f:
+            with open(self.log_path, 'r') as f:
                 for line in f.readlines()[-15:]:
-                    clean = line.strip()
-                    if clean not in self.lines:
-                        # Colorize logs based on keywords
+                    try:
+                        data = json.loads(line)
+                        msg = data.get("data", "")
+                        ts = data.get("ts", "")
+                        try:
+                            ts_short = datetime.fromisoformat(ts).strftime("%H:%M:%S")
+                        except: ts_short = "??"
+                        clean = f"{ts_short} | {msg}"
+                    except:
+                        clean = line.strip()
+                    
+                    # Deduplicate based on text content (excluding color tags if any)
+                    if clean not in [l.split(']', 1)[-1] if ']' in l else l for l in self.lines]:
                         col = C_TEXT
                         if "SUCCESS" in clean or "COMPLETED" in clean: col = C_OK
                         elif "FAILED" in clean or "ERROR" in clean or "CRASH" in clean: col = C_ERR
-                        elif "STARTING" in clean or "RUNNING" in clean: col = C_RUN
+                        elif "STARTING" in clean or "RUNNING" in clean or "USER:" in clean: col = C_RUN
                         elif "PENDING" in clean: col = C_QUE
                         
                         self.lines.append(f"[{col}]{clean}[/]")
         except: pass
+
     def get(self):
         t = rich.text.Text.from_markup("\n".join(self.lines))
-        return rich.panel.Panel(t, title="LOGS", border_style=C_BORDER)
+        return rich.panel.Panel(t, title=self.title, border_style=C_BORDER)
 
 # --- MAIN ---
 def main():
     layout = make_layout()
     reader = CortexReader()
-    logs = LogTail()
+    forge_logs = LogTail(LOG_FILE, "SYSTEM LOGS")
+    ls_logs = LogTail(os.path.join(PROJECT_ROOT, "ext", "ladysmith.log"), "LADYSMITH")
+    
+    # Split logs layout
+    layout["logs"].split_column(
+        rich.layout.Layout(name="forge_logs"),
+        rich.layout.Layout(name="ls_logs")
+    )
     
     with rich.live.Live(layout, refresh_per_second=4, screen=True):
         while True:
             reader.scan()
-            logs.update()
+            forge_logs.update()
+            ls_logs.update()
             
             layout["header"].update(panel_header())
             layout["upper"].update(panel_feed(reader))
             layout["sys"].update(panel_system())
             layout["agents"].update(panel_agents(reader))
-            layout["logs"].update(logs.get())
+            layout["forge_logs"].update(forge_logs.get())
+            layout["ls_logs"].update(ls_logs.get())
             layout["footer"].update(rich.align.Align.center("[Q] Quit  [C] Clear Jobs"))
             
             # Input handling simplified

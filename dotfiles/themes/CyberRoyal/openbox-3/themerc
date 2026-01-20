@@ -1,0 +1,37 @@
+# CyberRoyal Theme for Labwc/Openbox
+# A modern 90s Cyberpunk Royal Purple theme
+
+border.width: 2
+padding.width: 4
+padding.height: 4
+window.handle.width: 0
+
+# Active Window
+window.active.border.color: #6200ea
+window.active.title.bg.color: #1a0b2e
+window.active.title.bg.color.to: #6200ea
+window.active.label.text.color: #00f3ff
+window.active.button.unpressed.image.color: #ffffff
+window.active.button.hover.bg.color: #ff00ff
+
+# Inactive Window
+window.inactive.border.color: #311b92
+window.inactive.title.bg.color: #1a0b2e
+window.inactive.title.bg.color.to: #311b92
+window.inactive.label.text.color: #b388ff
+window.inactive.button.unpressed.image.color: #b388ff
+
+# Menu
+menu.border.color: #6200ea
+menu.title.bg.color: #6200ea
+menu.title.text.color: #ffffff
+menu.items.bg.color: #1a0b2e
+menu.items.text.color: #ffffff
+menu.items.active.bg.color: #ff00ff
+menu.items.active.text.color: #ffffff
+
+# OSD (On Screen Display)
+osd.border.width: 2
+osd.border.color: #6200ea
+osd.bg.color: #1a0b2e
+osd.label.text.color: #00f3ff

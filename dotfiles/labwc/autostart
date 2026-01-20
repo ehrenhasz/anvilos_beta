@@ -1,0 +1,12 @@
+# Set a wallpaper (swww is great for animated transitions)
+swww init &
+swww img ~/Pictures/wallpapers/cyber_royal.svg &
+
+# The Bar
+waybar &
+
+# Notification Center (Daemon)
+swaync &
+
+# Network Manager Applet (So you can click to connect to WiFi)
+nm-applet --indicator &

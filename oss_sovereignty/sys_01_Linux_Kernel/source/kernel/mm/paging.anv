@@ -1,1 +1,1 @@
-struct PageTable{e:[u64;512]}impl PageTable{fn map(&mut self,v:u64,p:u64,f:u64){self.e[((v>>12)&0x1ff)as usize]=p|f|1;}}
+type PageTable=[u64;512];static mut PML4:PageTable=[0;512];static mut PDPT:PageTable=[0;512];fn init_paging(){unsafe{PML4[0]=(PDPT.as_ptr()as u64)|3;for i in 0..512{PDPT[i]=(i as u64*0x40000000)|0x83};asm!("mov %rax, %cr3",in("rax")PML4.as_ptr()as u64)}}

@@ -74,6 +74,14 @@ class Synapse:
                     timestamp DATETIME
                 )
             """)
+
+            cortex_conn.execute("""
+                CREATE TABLE IF NOT EXISTS agents (
+                    agent_id TEXT PRIMARY KEY,
+                    status TEXT,
+                    updated_at DATETIME
+                )
+            """)
             
             for row in logs:
                 log_id, et, ctx, suc, det, ts = row

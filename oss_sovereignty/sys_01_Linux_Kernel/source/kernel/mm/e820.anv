@@ -1,1 +1,1 @@
-struct MemMap{b:u64,l:u64,t:u32}impl MemMap{fn parse(t:*mut u32)->Self{MemMap{b:0,l:0,t:0}}}
+struct E820Entry{base:u64,len:u64,typ:u32,ext:u32}struct MemMap{entries:[E820Entry;128],count:usize}impl MemMap{fn parse(p:u64,c:usize)->Self{let mut m=MemMap{entries:[E820Entry{base:0,len:0,typ:0,ext:0};128],count:c};unsafe{core::ptr::copy_nonoverlapping(p as*const E820Entry,m.entries.as_mut_ptr(),c);};m}}

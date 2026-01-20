@@ -1,0 +1,31 @@
+# Anvil Kernel: init/main.mpy
+import sys
+try:
+    from kernel import printk
+except ImportError:
+    # Placeholder for dev env
+    class MockPrintk:
+        def early_init_console(self):
+            pass
+        def printk(self, msg):
+            print(f"[KERNEL] {msg}")
+    printk = MockPrintk()
+
+def start_kernel():
+    printk.early_init_console()
+    printk.printk("-- Anvil Kernel v0.1 --")
+    printk.printk("Copyright (C) 2026, The Committee")
+    printk.printk("Booting ANVIL-OS...")
+    printk.printk("Performing critical initializations (stubs)...")
+    
+    # Initialize Memory (Phase 2)
+    # from mm import bootmem
+    # bootmem.init()
+
+    printk.printk("HELLO SOVEREIGN")
+    printk.printk("System Halted.")
+    while True:
+        pass
+
+if __name__ == "__main__":
+    start_kernel()

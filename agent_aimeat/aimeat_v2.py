@@ -44,17 +44,57 @@ def log_ujson(id_code, data):
     print(json.dumps({"@ID": id_code, "data": data}))
 
 # --- CORE: WORKER FUNCTIONS ---
+# --- BEGIN BOOT SEQUENCE (PROTECTED - DO NOT MODIFY) ---
 def fast_boot():
+    """
+    State-First Boot: Pulls identity from Cortex DB, logs to temp, no filesystem crawling.
+    """
+    boot_log_path = "/mnt/anvil_temp/boot.log"
+    os.makedirs(os.path.dirname(boot_log_path), exist_ok=True)
+    
     try:
-        SYNAPSE.log_experience("BOOT", "Aimeat v2 Online", True, {"identity": CONFIG["IDENTITY"]})
-        log_ujson(100, {
-            "agent": CONFIG["AGENT_ID"],
-            "identity": CONFIG["IDENTITY"],
-            "status": "ONLINE"
-        })
+        # Direct DB pull for speed and truth
+        import sqlite3
+        cortex_db_path = os.path.join(PROJECT_ROOT, "runtime", "cortex.db")
+        
+        identity = CONFIG["IDENTITY"]
+        status = "UNKNOWN"
+        
+        if os.path.exists(cortex_db_path):
+            with sqlite3.connect(cortex_db_path) as conn:
+                cursor = conn.cursor()
+                # Ensure agents table exists (it might not if fresh)
+                cursor.execute("CREATE TABLE IF NOT EXISTS agents (agent_id TEXT PRIMARY KEY, status TEXT, updated_at DATETIME)")
+                
+                # Register/Update Presence
+                cursor.execute("INSERT OR REPLACE INTO agents (agent_id, status, updated_at) VALUES (?, 'ONLINE', CURRENT_TIMESTAMP)", (CONFIG["AGENT_ID"],))
+                conn.commit()
+                status = "ONLINE"
+        
+        # MicroJSON Log to File (The Collar)
+        boot_data = {
+            "@ID": 100,
+            "data": {
+                "agent": CONFIG["AGENT_ID"],
+                "identity": identity,
+                "mode": "STATE_FIRST",
+                "status": status
+            }
+        }
+        
+        with open(boot_log_path, "a") as f:
+            f.write(json.dumps(boot_data) + "\n")
+
+        # Standard Output for CLI
+        log_ujson(100, boot_data["data"])
+        
         return "ONLINE"
+
     except Exception as e:
+        err_data = {"@ID": 500, "data": {"error": str(e)}}
+        print(json.dumps(err_data))
         return f"FAILURE: {str(e)}"
+# --- END BOOT SEQUENCE ---
 
 def process_jobs():
     try:
@@ -103,6 +143,28 @@ def process_jobs():
             
     except Exception as e:
         return f"SYNAPSE_ERROR: {str(e)}"
+
+def poll_for_failures(poll_duration=30, delay=5):
+    """Polls the DB for failed jobs for a specific duration."""
+    end_time = time.time() + poll_duration
+    log_ujson(300, {"status": "START_POLLING", "duration": poll_duration})
+    
+    while time.time() < end_time:
+        try:
+            with SYNAPSE._get_cortex_conn() as conn:
+                conn.row_factory = sqlite3.Row
+                failed = conn.execute("SELECT correlation_id, result FROM jobs WHERE status='FAILED'").fetchall()
+                if failed:
+                    failures = {row['correlation_id']: row['result'] for row in failed}
+                    log_ujson(301, {"status": "FAILURES_FOUND", "count": len(failures)})
+                    return f"FOUND FAILURES: {json.dumps(failures)}"
+        except Exception as e:
+            return f"DB_POLL_ERROR: {str(e)}"
+        
+        time.sleep(delay)
+        
+    log_ujson(302, {"status": "POLL_COMPLETE_NONE_FOUND"})
+    return "NO_FAILURES"
 
 # --- CORE: AGENT TOOLS ---
 def submit_ops_cycle(job_type: str, context: str, payload: str, correlation_id: str):

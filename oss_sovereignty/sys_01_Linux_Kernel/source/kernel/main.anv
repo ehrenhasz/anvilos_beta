@@ -1,0 +1,1 @@
+fn main(){let mut vga=Vga_new();Vga_write(&vga,0,0x4f);Vga_write(&vga,1,0x4b);loop{unsafe{asm!("hlt");}}}

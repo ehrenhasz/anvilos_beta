@@ -1,1 +1,1 @@
-struct Elf{h:u64}impl Elf{fn load(&self){}}
+struct ElfHeader{m:[u8;4],cl:u8,d:u8,v:u8,os:u8,abiv:u8,p:[u8;7],t:u16,mac:u16,ver:u32,e:u64,ph:u64,sh:u64,f:u32,hs:u16,ps:u16,pc:u16,ss:u16,sc:u16,si:u16}

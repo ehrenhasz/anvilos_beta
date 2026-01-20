@@ -1,1 +1,1 @@
-struct Task{id:u64,sp:u64,pt:u64}impl Task{fn new(id:u64)->Self{Task{id,sp:0,pt:0}}}
+struct Task{rsp:u64,cr3:u64,pid:u32,state:u8}static mut TASKS:[Task;64]=[Task{rsp:0,cr3:0,pid:0,state:0};64];static mut CUR:usize=0;

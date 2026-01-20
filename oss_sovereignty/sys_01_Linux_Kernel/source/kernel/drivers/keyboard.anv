@@ -1,1 +1,1 @@
-struct Kb;impl Kb{fn read()->u8{let s:u8;unsafe{asm!("inb $0x64,%al",out("al")s)};if s&1==1{let k:u8;unsafe{asm!("inb $0x60,%al",out("al")k)};k}else{0}}}
+fn kbd_read()->u8{let mut b:u8=0;unsafe{asm!("inb %dx, %al",out("al")b,in("dx")0x60);};b}

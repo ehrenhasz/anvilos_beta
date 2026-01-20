@@ -1,1 +1,1 @@
-struct Heap{s:u64,e:u64,c:u64}impl Heap{fn alloc(&mut self,l:u64)->*mut u8{let p=self.c;self.c+=l;p as *mut u8}}
+struct Heap{start:u64,size:u64,used:u64}impl Heap{fn alloc(&mut self,size:usize)->u64{let s=size as u64;if self.used+s>self.size{return 0;}else{let p=self.start+self.used;self.used+=s;return p;}}}

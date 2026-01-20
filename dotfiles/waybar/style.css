@@ -1,0 +1,101 @@
+@define-color royal-purple #6200ea;
+@define-color dark-purple #1a0b2e;
+@define-color neon-pink #ff00ff;
+@define-color neon-cyan #00f3ff;
+@define-color text-white #ffffff;
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono", "Roboto Mono", monospace;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(26, 11, 46, 0.90); /* Dark deep purple background */
+    color: @text-white;
+    border-bottom: 2px solid @royal-purple; /* Cyberpunk underline */
+    border-radius: 12px;
+    margin: 10px 10px 0 10px;
+}
+
+#workspaces {
+    background: transparent;
+    margin: 0 4px;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    background-color: transparent;
+    color: #bd93f9;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#workspaces button:hover {
+    background: rgba(98, 0, 234, 0.3);
+    color: @neon-cyan;
+}
+
+#workspaces button.focused {
+    background: @royal-purple;
+    color: @text-white;
+    box-shadow: 0 0 8px @royal-purple; /* Glowing effect */
+}
+
+#workspaces button.urgent {
+    background-color: @neon-pink;
+    color: @text-white;
+}
+
+/* Standard module styling */
+#clock,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray {
+    padding: 0 12px;
+    margin: 4px 3px;
+    color: @text-white;
+    border-radius: 6px;
+    background-color: #311b92; /* Deep purple base */
+    border: 1px solid #4527a0;
+}
+
+#clock {
+    background-color: @royal-purple;
+    color: @neon-cyan;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(98, 0, 234, 0.5);
+}
+
+#battery {
+    color: @neon-pink;
+}
+
+#battery.charging, #battery.plugged {
+    color: @neon-cyan;
+}
+
+#cpu {
+    color: #b388ff;
+}
+
+#memory {
+    color: #b388ff;
+}
+
+#network {
+    color: #ea80fc;
+}
+
+#pulseaudio {
+    color: #82b1ff;
+}
+
+#tray {
+    background-color: rgba(0, 0, 0, 0.2);
+}

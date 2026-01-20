@@ -1,1 +1,1 @@
-trait File{fn read(&self,b:&mut[u8])->usize;}trait Inode{fn open(&self)->&dyn File;}
+trait Vfs{fn read(&self,p:&str)->Vec<u8>;fn write(&mut self,p:&str,d:&[u8]);}

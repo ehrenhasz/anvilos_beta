@@ -14,6 +14,7 @@ PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, '..'))
 sys.path.append(os.path.join(PROJECT_ROOT, "runtime"))
 
 from synapse import Synapse
+from logger import MicroLogger
 
 TOKEN_PATH = os.path.join(CURRENT_DIR, "token")
 
@@ -183,6 +184,8 @@ def run_agent(prompt=None):
             )
         )
 
+        logger = MicroLogger(CONFIG["AGENT_ID"])
+
         if not prompt:
             print("LADYSMITH ONLINE. (Type /quit to exit)")
             SYNAPSE.log_experience("SESSION_START", "Interactive Session", True, {})
@@ -205,6 +208,7 @@ def run_agent(prompt=None):
             
             try:
                 # 1. Send User Input
+                logger.log(11, f"USER: {user_input}")
                 response = chat.send_message(user_input)
                 
                 # 2. Tool Execution Loop
@@ -217,6 +221,7 @@ def run_agent(prompt=None):
                     
                     # If we have text, print it (it might be a question from the model)
                     if part.text:
+                        logger.log(12, f"LADYSMITH: {part.text.strip()}")
                         print(f"\n{part.text.strip()}\n")
 
                     if part.function_call:
@@ -224,6 +229,7 @@ def run_agent(prompt=None):
                         tool_name = fc.name
                         tool_args = fc.args
                         
+                        logger.log(13, f"TOOL: {tool_name}({tool_args})")
                         print(f"\033[1;32m[TOOL CALL] {tool_name}({tool_args})\033[0m")
                         
                         if tool_name in TOOL_MAP:
@@ -236,6 +242,7 @@ def run_agent(prompt=None):
                             result = f"UNKNOWN_TOOL: {tool_name}"
                         
                         # FEEDBACK: Print the result immediately
+                        logger.log(14, f"RESULT: {result}")
                         print(f"\033[0;36m=> {result}\033[0m")
                             
                         # Send Result Back and continue loop (get next step)

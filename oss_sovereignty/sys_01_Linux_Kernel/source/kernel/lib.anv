@@ -1,0 +1,1 @@
+fn memcpy(dst:*mut void,src:*const void,n:usize)->*mut void{let mut d=dst as*mut u8;let mut s=src as*const u8;let mut i:usize=0;while i<n{unsafe{*d.add(i)=*s.add(i);}i+=1;}return dst;}fn memset(dst:*mut void,c:i32,n:usize)->*mut void{let mut d=dst as*mut u8;let mut i:usize=0;while i<n{unsafe{*d.add(i)=c as u8;}i+=1;}return dst;}
