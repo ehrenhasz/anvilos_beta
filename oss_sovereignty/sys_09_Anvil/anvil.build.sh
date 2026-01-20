@@ -5,8 +5,8 @@ set -e
 # Target: x86_64-unknown-linux-musl
 # Goal: Produce a hermetic, static 'anvil' binary.
 
-# Get the directory of the script, then go up three levels to the project root
-PROJECT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../../.." && pwd )"
+# Get the directory of the script, then go up two levels to the project root
+PROJECT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../.." && pwd )"
 SOURCE_DIR="$PROJECT_ROOT/oss_sovereignty/sys_09_Anvil/source"
 TOOLCHAIN_BIN="$PROJECT_ROOT/ext/toolchain/bin/x86_64-unknown-linux-musl-"
 OUTPUT_DIR="$PROJECT_ROOT/oss_sovereignty/sys_09_Anvil/build"

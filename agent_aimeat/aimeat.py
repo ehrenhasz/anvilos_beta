@@ -1,112 +1,45 @@
 #!/usr/bin/env python3
 import os
 import sys
-import json
-import sqlite3
+from google import genai
 
-# --- PATH RESOLUTION ---
-CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, '..'))
-DB_PATH = os.path.join(PROJECT_ROOT, "runtime", "hydrogen.db")
+# 1. Load Key
+try:
+    token_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'token')
+    with open(token_path, 'r') as f:
+        api_key = f.read().strip()
+    if not api_key: raise ValueError("File is empty")
+except Exception as e:
+    print(f"Error loading 'token' file: {e}")
+    sys.exit(1)
 
-# --- SOVEREIGN CONFIG ---
-CONFIG = {
-    "DB_PATH": DB_PATH,
-    "AGENT_ID": "aimeat",
-    "IDENTITY": "meat0"
-}
+# 2. Initialize Client (New SDK)
+try:
+    client = genai.Client(api_key=api_key)
+except Exception as e:
+    print(f"Client Init Error: {e}")
+    sys.exit(1)
 
-def log_ujson(id_code, data):
-    print(json.dumps({"@ID": id_code, "data": data}))
-
-def fast_boot():
-    if not os.path.exists(CONFIG["DB_PATH"]):
-        return f"FAILURE: DB Missing at {CONFIG['DB_PATH']}"
-    try:
-        with sqlite3.connect(CONFIG["DB_PATH"]) as conn:
-            conn.execute("INSERT OR IGNORE INTO agents (agent_id, status) VALUES (?, 'OFFLINE')", (CONFIG["AGENT_ID"],))
-            conn.execute("UPDATE agents SET status='ONLINE', updated_at=CURRENT_TIMESTAMP WHERE agent_id=?", (CONFIG["AGENT_ID"],))
-            jobs = conn.execute("SELECT count(*) FROM jobs WHERE status='PENDING'").fetchone()[0]
-        
-        log_ujson(100, {
-            "agent": CONFIG["AGENT_ID"],
-            "identity": CONFIG["IDENTITY"],
-            "status": "ONLINE",
-            "pending_jobs": jobs
-        })
-        return "ONLINE"
-    except Exception as e:
-        return f"FAILURE: {str(e)}"
-
-def process_jobs():
-    if not os.path.exists(CONFIG["DB_PATH"]):
-        return "FAILURE: DB Missing"
-    
-    try:
-        with sqlite3.connect(CONFIG["DB_PATH"]) as conn:
-            conn.row_factory = sqlite3.Row
-            # Find a pending job
-            cursor = conn.execute("SELECT * FROM jobs WHERE status='PENDING' ORDER BY priority DESC, created_at ASC LIMIT 1")
-            job = cursor.fetchone()
-            
-            if not job:
-                return "NO_JOBS"
-            
-            job_id = job["correlation_id"]
-            
-            # Lock the job
-            conn.execute("UPDATE jobs SET status='RUNNING', worker=?, updated_at=CURRENT_TIMESTAMP WHERE correlation_id=?", (CONFIG["AGENT_ID"], job_id))
-            conn.commit()
-            
-            try:
-                payload = json.loads(job["payload"])
-                log_ujson(200, {"job": job_id, "status": "STARTING", "desc": payload.get("description")})
-                
-                # Execute Logic
-                if payload.get("format") == "recipe.py":
-                    # Write recipe to temp file
-                    import tempfile
-                    import subprocess
-                    
-                    with tempfile.NamedTemporaryFile(mode='w', suffix='.py', delete=False) as tmp:
-                        tmp.write(payload["details"])
-                        tmp_path = tmp.name
-                    
-                    # Run it
-                    result = subprocess.run([sys.executable, tmp_path], capture_output=True, text=True)
-                    os.remove(tmp_path)
-                    
-                    if result.returncode == 0:
-                        status = "COMPLETED"
-                        output = result.stdout
-                    else:
-                        status = "FAILED"
-                        output = result.stderr
-                else:
-                    status = "FAILED"
-                    output = "Unknown format"
-
-                # Update Job
-                conn.execute("UPDATE jobs SET status=?, result=?, updated_at=CURRENT_TIMESTAMP WHERE correlation_id=?", (status, output, job_id))
-                conn.commit()
-                
-                log_ujson(201, {"job": job_id, "status": status, "output": output})
-                return f"PROCESSED {job_id}: {status}"
-                
-            except Exception as e:
-                conn.execute("UPDATE jobs SET status='FAILED', result=?, updated_at=CURRENT_TIMESTAMP WHERE correlation_id=?", (str(e), job_id))
-                conn.commit()
-                return f"CRASH {job_id}: {str(e)}"
-                
-    except Exception as e:
-        return f"DB_ERROR: {str(e)}"
-
+# 3. Main Loop
 if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        cmd = sys.argv[1]
-        if cmd == "boot":
-            print(f"Aimeat: {fast_boot()}")
-        elif cmd == "work":
-            print(f"Aimeat: {process_jobs()}")
-    else:
-        print("Usage: aimeat.py [boot|work]")
+    model_id = "gemini-2.0-flash"
+    print(f"--- AI Studio Connected ({model_id}) ---")
+    
+    # Create a chat session
+    chat = client.chats.create(model=model_id)
+
+    while True:
+        try:
+            user_input = input("\nYou: ")
+            if user_input.lower() in ["quit", "exit"]:
+                break
+            
+            # New SDK syntax for sending messages
+            response = chat.send_message(user_input)
+            print(f"Agent: {response.text}")
+
+        except KeyboardInterrupt:
+            print("\nExiting...")
+            break
+        except Exception as e:
+            print(f"Error: {e}")

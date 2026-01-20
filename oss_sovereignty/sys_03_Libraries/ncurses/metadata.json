@@ -1,0 +1,10 @@
+{
+  "sovereignty_level": "assimilated",
+  "assimilated_at": "2026-01-19T20:39:48.166538",
+  "origin": {
+    "url": "https://github.com/mirror/ncurses.git",
+    "commit": "87c2c84cbd2332d6d94b12a1dcaf12ad1a51a938",
+    "policy": "monitor_only"
+  },
+  "mandate": "NEVER APPLY UPDATES AUTOMATICALLY. REWRITE IN ANVIL."
+}

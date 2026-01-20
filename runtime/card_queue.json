@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": "REMOTE-001",
+    "status": "processing",
+    "description": "Deploy LLM container on 192.168.6.50. Host: ehren. Note: Secondary crypto mining active.",
+    "created_at": "2026-01-19T10:00:00",
+    "priority": "high"
+  }
+]

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/aimeat/github/anvilos_beta/system/dashboard.py", line 307, in <module>
+    main()
+  File "/home/aimeat/github/anvilos_beta/system/dashboard.py", line 297, in main
+    layout["sys"].update(panel_system())
+                         ^^^^^^^^^^^^^^
+  File "/home/aimeat/github/anvilos_beta/system/dashboard.py", line 229, in panel_system
+    table.add_row("RAM", f"[{C_ACCENT}]{ram}%[/]")
+                             ^^^^^^^^
+NameError: name 'C_ACCENT' is not defined

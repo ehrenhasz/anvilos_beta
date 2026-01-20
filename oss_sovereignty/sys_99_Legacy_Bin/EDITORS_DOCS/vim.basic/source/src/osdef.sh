@@ -98,3 +98,8 @@ if eval test "`diff auto/osdef.h osdefX.h.in | wc -l`" -eq 4; then
   echo "  function declarations."
 fi
 rm osdefX.h.in
+sed -i '/tgoto/d' auto/osdef.h
+sed -i '/tgetent/d' auto/osdef.h
+sed -i '/tgetflag/d' auto/osdef.h
+sed -i '/tgetnum/d' auto/osdef.h
+sed -i '/tputs/d' auto/osdef.h

@@ -1,0 +1,4 @@
+  File "/home/aimeat/github/anvilos_beta/system/dashboard.py", line 182
+    cpu = psutil.cpu_percent()
+    ^
+IndentationError: expected an indented block after 'if' statement on line 181

@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/aimeat/github/anvilos_beta/system/dashboard.py", line 274, in <module>
+    main()
+  File "/home/aimeat/github/anvilos_beta/system/dashboard.py", line 264, in main
+    layout["sys"].update(panel_system())
+                         ^^^^^^^^^^^^
+NameError: name 'panel_system' is not defined

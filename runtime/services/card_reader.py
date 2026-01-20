@@ -12,7 +12,7 @@ from typing import Optional, Dict, Any, Union
 
 # --- CONFIGURATION ---
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-DB_PATH = os.path.join(PROJECT_ROOT, "runtime", "hydrogen.db")
+DB_PATH = os.path.join(PROJECT_ROOT, "runtime", "cortex.db")
 LOG_FILE = os.path.join(PROJECT_ROOT, "ext", "forge.log")
 POLL_INTERVAL = 2.0
 GIT_MAIN_BRANCH = "main"
@@ -217,4 +217,40 @@ class BigIronCore:
 
 if __name__ == "__main__":
     warden = BigIronCore(DB_PATH)
-    warden.run()
+    
+    if len(sys.argv) > 1:
+        # Single-shot CLI mode (for Aimeat integration)
+        try:
+            raw_input = sys.argv[1]
+            data = json.loads(raw_input)
+            
+            # Map Aimeat 'type' to BigIron 'instruction'
+            instr = data.get("type", "UNKNOWN")
+            if instr == "CODE_CHANGE": instr = "OPS_CYCLE"
+            
+            # Construct Payload for JobCard
+            payload_data = {
+                "instruction": instr,
+                "details": data.get("payload"),
+                "payload": data.get("payload"),
+                "context": data.get("context")
+            }
+            
+            # Create Ephemeral Card
+            card = JobCard(
+                correlation_id=data.get("id", str(uuid.uuid4())),
+                idempotency_key=str(uuid.uuid4()),
+                status="PROCESSING",
+                payload=payload_data
+            )
+            
+            # Execute
+            success = warden.execute_logic(card)
+            sys.exit(0 if success else 1)
+            
+        except Exception as e:
+            print(f"[CLI ERROR] {e}")
+            sys.exit(1)
+    else:
+        # Daemon Mode
+        warden.run()
