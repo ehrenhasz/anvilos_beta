@@ -1,9 +1,1 @@
-[
-  {
-    "id": "cleanup_repo_v1",
-    "description": "Cleanup Repository: Remove untracked artifacts while preserving truth",
-    "status": "pending",
-    "command": "git clean -fdX",
-    "created_at": "2026-01-20T21:20:00.000000Z"
-  }
-]
+[]
