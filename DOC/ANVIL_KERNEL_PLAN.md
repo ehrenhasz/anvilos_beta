@@ -3,11 +3,11 @@
 This document tracks the serial execution of recipes to transition from a standard Linux source tree to the custom Anvil kernel.
 
 ## Phase 1: The Great Purge (Environment & Assets)
-- [ ] **purge_foreign_architectures**: Iterate `arch/`, delete non-x86. Hard-lock to x86_64.
-- [ ] **purge_localization_files**: Recursive delete `.po`, `.mo`, locale dirs. Enforce English-only.
-- [ ] **sanitize_documentation**: `Documentation/` -> Keep only man/apropos sources.
-- [ ] **strip_kconfig_system**: Remove `scripts/kconfig`.
-- [ ] **remove_firmware_blobs**: Delete `firmware/`.
+- [x] **purge_foreign_architectures**: Iterate `arch/`, delete non-x86. Hard-lock to x86_64.
+- [x] **purge_localization_files**: Recursive delete `.po`, `.mo`, locale dirs. Enforce English-only.
+- [x] **sanitize_documentation**: `Documentation/` -> Keep only man/apropos sources.
+- [x] **strip_kconfig_system**: Remove `scripts/kconfig`.
+- [x] **remove_firmware_blobs**: Delete `firmware/`.
 
 ## Phase 2: The Anvil Bootstrap (Core Kernel Rewrite)
 - [ ] **init_anvil_manifest**: Create root `anvil.toml` (target: x86_64-unknown-anvil-kernel).
