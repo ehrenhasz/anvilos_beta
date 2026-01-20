@@ -6,12 +6,12 @@ from datetime import datetime
 
 # --- PATH RESOLUTION ---
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-CORTEX_DB = os.path.join(PROJECT_ROOT, "runtime", "cortex.db")
+CORTEX_DB = "/var/lib/anvilos/db/cortex.db"
 
 class Synapse:
     def __init__(self, agent_id):
         self.agent_id = agent_id
-        self.local_db = os.path.join(PROJECT_ROOT, "runtime", f"agent_{agent_id}.db")
+        self.local_db = f"/var/lib/anvilos/db/agent_{agent_id}.db"
         self._init_local_db()
 
     def _get_local_conn(self):

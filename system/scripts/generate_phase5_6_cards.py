@@ -4,7 +4,7 @@ import json
 import uuid
 import os
 
-DB_PATH = "runtime/cortex.db"
+DB_PATH = "/var/lib/anvilos/db/cortex.db"
 KERNEL_ROOT = "oss_sovereignty/sys_01_Linux_Kernel/source"
 
 def submit_card(conn, context, command):

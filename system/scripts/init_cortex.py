@@ -2,7 +2,7 @@ import sqlite3
 import os
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-DB_PATH = os.path.join(PROJECT_ROOT, "runtime", "cortex.db")
+DB_PATH = "/var/lib/anvilos/db/cortex.db"
 
 def init_cortex():
     print(f">> INITIALIZING CORTEX AT {DB_PATH}")

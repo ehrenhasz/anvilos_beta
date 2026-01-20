@@ -7,7 +7,7 @@ import os
 # This script generates cards but does not submit them to the database.
 # To submit, change SUBMIT_CARDS to True.
 SUBMIT_CARDS = True
-DB_PATH = "runtime/cortex.db"
+DB_PATH = "/var/lib/anvilos/db/cortex.db"
 CARD_OUTPUT_DIR = "runtime/card_staging"
 
 def generate_card_json(context, description, command):

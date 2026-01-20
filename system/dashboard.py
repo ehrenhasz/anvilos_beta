@@ -29,7 +29,7 @@ except ImportError:
 
 # --- CONFIGURATION ---
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-DB_PATH = os.path.join(PROJECT_ROOT, "runtime", "cortex.db")
+DB_PATH = "/var/lib/anvilos/db/cortex.db"
 LOG_FILE = os.path.join(PROJECT_ROOT, "ext", "forge.log")
 SERVICE_NAME = "bigiron"
 

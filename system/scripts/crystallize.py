@@ -4,7 +4,7 @@ import sqlite3
 import uuid
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-DB_PATH = os.path.join(PROJECT_ROOT, "runtime", "cortex.db")
+DB_PATH = "/var/lib/anvilos/db/cortex.db"
 KERNEL_ROOT = os.path.join(PROJECT_ROOT, "oss_sovereignty", "sys_01_Linux_Kernel", "source")
 
 def crystallize():

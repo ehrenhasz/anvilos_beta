@@ -55,7 +55,7 @@ def fast_boot():
     try:
         # Direct DB pull for speed and truth
         import sqlite3
-        cortex_db_path = os.path.join(PROJECT_ROOT, "runtime", "cortex.db")
+        cortex_db_path = "/var/lib/anvilos/db/cortex.db"
         
         identity = CONFIG["IDENTITY"]
         status = "UNKNOWN"

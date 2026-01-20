@@ -3,7 +3,7 @@ import os
 import sys
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-DB_PATH = os.path.join(PROJECT_ROOT, "runtime", "cortex.db")
+DB_PATH = "/var/lib/anvilos/db/cortex.db"
 
 def genesis():
     hostname = "anvil-node-01" # Simulated hostname

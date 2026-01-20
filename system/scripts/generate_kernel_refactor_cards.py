@@ -5,7 +5,7 @@ import uuid
 import os
 
 # SUBMIT_CARDS = True
-DB_PATH = "runtime/cortex.db"
+DB_PATH = "/var/lib/anvilos/db/cortex.db"
 
 def generate_job(card_id, description, file_path, file_content):
     """

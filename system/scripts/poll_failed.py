@@ -2,7 +2,7 @@
 import sqlite3
 import json
 
-DB_PATH = "runtime/cortex.db"
+DB_PATH = "/var/lib/anvilos/db/cortex.db"
 
 def poll_phase1_failures():
     """Queries the database for failed jobs related to Phase 1 and prints them."""
