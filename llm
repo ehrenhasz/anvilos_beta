@@ -1,9 +1,0 @@
-connect to ehren@192.168.6.50 pass: 6dD69Kio9S9o
-it's windows and stupid, so just save the pass
-It's a 16 core, 64GB, nvida gpu tower. 
-Has podman
-has python
-you have admin
-configre a new pod, ubuntu server lts and install llm tools
-and crypto for when it's not in use.
-need to connect from any host on it's vlan, for remote offloading of LLM jobs
