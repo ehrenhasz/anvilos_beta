@@ -1,0 +1,1 @@
+struct GdtEntry{l:u16,b_l:u16,b_m:u8,a:u8,f:u8,b_h:u8}struct GdtPtr{limit:u16,base:u64}static mut GDT:[GdtEntry;3]=[GdtEntry{l:0,b_l:0,b_m:0,a:0,f:0,b_h:0},GdtEntry{l:0,b_l:0,b_m:0,a:0x9a,f:0xaf,b_h:0},GdtEntry{l:0,b_l:0,b_m:0,a:0x92,f:0xaf,b_h:0}];

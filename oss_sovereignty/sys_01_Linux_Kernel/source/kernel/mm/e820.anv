@@ -1,0 +1,1 @@
+struct MemMap{b:u64,l:u64,t:u32}impl MemMap{fn parse(t:*mut u32)->Self{MemMap{b:0,l:0,t:0}}}

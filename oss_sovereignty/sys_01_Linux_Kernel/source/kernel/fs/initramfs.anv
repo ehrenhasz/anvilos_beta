@@ -1,0 +1,1 @@
+struct Cpio;impl Cpio{fn parse(p:*const u8){}}

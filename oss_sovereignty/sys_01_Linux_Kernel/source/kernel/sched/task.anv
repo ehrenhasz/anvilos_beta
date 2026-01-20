@@ -1,0 +1,1 @@
+struct Task{id:u64,sp:u64,pt:u64}impl Task{fn new(id:u64)->Self{Task{id,sp:0,pt:0}}}

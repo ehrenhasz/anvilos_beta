@@ -1,0 +1,1 @@
+fn fault_handler(i:u8,e:u64){let vga=Vga::new();vga.write(0,0x46);vga.write(1,0x41);vga.write(2,0x55);vga.write(3,0x4c);vga.write(4,0x54);loop{unsafe{asm!("hlt")}}}

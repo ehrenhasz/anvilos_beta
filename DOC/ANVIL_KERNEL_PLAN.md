@@ -16,36 +16,36 @@ This document tracks the serial execution of recipes to transition from a standa
 - [x] **remove_firmware_blobs**: Delete `firmware/`.
 
 ## Phase 2: The Anvil Bootstrap (Core Kernel Rewrite)
-- [ ] **init_anvil_manifest**: Create `anvil.toml` (MicroJSON format if applicable). Target: `x86_64-unknown-anvil-kernel`.
-- [ ] **transmute_entry_point**: Rewrite `arch/x86/boot/header.S`. Minimal Multiboot2, `_start`. No comments.
-- [ ] **vga_buffer_driver**: Create `kernel/drivers/vga.anv`. 0xb8000 wrapper. Minified.
-- [ ] **serial_port_shim**: Create `kernel/drivers/serial.anv`. COM1 0x3F8. Minified.
-- [ ] **gdt_rewrite**: Create `kernel/cpu/gdt.anv`. GDT implementation. Minified.
-- [ ] **idt_structure**: Create `kernel/cpu/idt.anv`. IDT struct & interrupt wrapper. Minified.
-- [ ] **pic_remap**: Create `kernel/cpu/pic.anv`. 8259 PIC remapping. Minified.
-- [ ] **cpu_exceptions**: Create `kernel/cpu/exceptions.anv`. Fault handlers. Minified.
+- [x] **init_anvil_manifest**: Create `anvil.toml` (MicroJSON format if applicable). Target: `x86_64-unknown-anvil-kernel`.
+- [x] **transmute_entry_point**: Rewrite `arch/x86/boot/header.S`. Minimal Multiboot2, `_start`. No comments.
+- [x] **vga_buffer_driver**: Create `kernel/drivers/vga.anv`. 0xb8000 wrapper. Minified.
+- [x] **serial_port_shim**: Create `kernel/drivers/serial.anv`. COM1 0x3F8. Minified.
+- [x] **gdt_rewrite**: Create `kernel/cpu/gdt.anv`. GDT implementation. Minified.
+- [x] **idt_structure**: Create `kernel/cpu/idt.anv`. IDT struct & interrupt wrapper. Minified.
+- [x] **pic_remap**: Create `kernel/cpu/pic.anv`. 8259 PIC remapping. Minified.
+- [x] **cpu_exceptions**: Create `kernel/cpu/exceptions.anv`. Fault handlers. Minified.
 
 ## Phase 3: Memory Management (The Heavy Lifting)
-- [ ] **physical_memory_map**: Create `kernel/mm/e820.anv`. Parse bootloader map. STRICT EVALUATION: Only keep usable RAM regions.
-- [ ] **paging_init**: Create `kernel/mm/paging.anv`. PML4, PDP. Minified.
-- [ ] **kernel_heap_allocator**: Create `kernel/mm/heap.anv`. Basic allocator. Minified.
+- [x] **physical_memory_map**: Create `kernel/mm/e820.anv`. Parse bootloader map. STRICT EVALUATION: Only keep usable RAM regions.
+- [x] **paging_init**: Create `kernel/mm/paging.anv`. PML4, PDP. Minified.
+- [x] **kernel_heap_allocator**: Create `kernel/mm/heap.anv`. Basic allocator. Minified.
 
 ## Phase 4: Process Management
-- [ ] **context_switch_asm**: Create `kernel/sched/switch.S`. Stack swap. Minified asm.
-- [ ] **process_struct**: Create `kernel/sched/task.anv`. PCB (pid, state, stack, cr3). Minified.
-- [ ] **pit_scheduler**: Create `kernel/drivers/pit.anv`. PIT config. Minified.
+- [x] **context_switch_asm**: Create `kernel/sched/switch.S`. Stack swap. Minified asm.
+- [x] **process_struct**: Create `kernel/sched/task.anv`. PCB (pid, state, stack, cr3). Minified.
+- [x] **pit_scheduler**: Create `kernel/drivers/pit.anv`. PIT config. Minified.
 
 ## Phase 5: Input/Output & Filesystem
-- [ ] **ps2_keyboard_poller**: Create `kernel/drivers/keyboard.anv`. Port 0x60. Minified.
-- [ ] **vfs_trait_definition**: Create `kernel/fs/vfs.anv`. Trait defs only. Minified.
-- [ ] **initramfs_parser**: Create `kernel/fs/initramfs.anv`. CPIO parser. Minified.
+- [x] **ps2_keyboard_poller**: Create `kernel/drivers/keyboard.anv`. Port 0x60. Minified.
+- [x] **vfs_trait_definition**: Create `kernel/fs/vfs.anv`. Trait defs only. Minified.
+- [x] **initramfs_parser**: Create `kernel/fs/initramfs.anv`. CPIO parser. Minified.
 
 ## Phase 6: Userland Support
-- [ ] **syscall_dispatcher**: Create `kernel/syscalls/handler.anv`. MSR 0xC0000080. Minified.
-- [ ] **elf_loader**: Create `kernel/binfmt/elf.anv`. ELF64 loader. Minified.
-- [ ] **man_page_viewer**: Port minimal cat-like utility. Minified.
+- [x] **syscall_dispatcher**: Create `kernel/syscalls/handler.anv`. MSR 0xC0000080. Minified.
+- [x] **elf_loader**: Create `kernel/binfmt/elf.anv`. ELF64 loader. Minified.
+- [x] **man_page_viewer**: Port minimal cat-like utility. Minified.
 
 ## Phase 7: Final Cleanup
-- [ ] **strip_symbols**: Configure build to strip all symbols.
-- [ ] **final_link_script**: Create `linker.ld`. Minified.
-- [ ] **generate_iso_recipe**: Script to bundle ISO.
+- [x] **strip_symbols**: Configure build to strip all symbols.
+- [x] **final_link_script**: Create `linker.ld`. Minified.
+- [x] **generate_iso_recipe**: Script to bundle ISO.

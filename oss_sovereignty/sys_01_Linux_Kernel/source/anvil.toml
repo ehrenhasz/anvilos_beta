@@ -1,0 +1,3 @@
+{"@ID":1,"data":{"project":"Anvil-Kernel","target":"x86_64-unknown-anvil-kernel","version":"0.1.0-genesis"}}
+STRIP_DEBUG=1
+STRIP_DEBUG=1

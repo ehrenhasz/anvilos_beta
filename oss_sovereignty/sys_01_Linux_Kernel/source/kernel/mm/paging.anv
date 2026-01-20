@@ -1,0 +1,1 @@
+struct PageTable{e:[u64;512]}impl PageTable{fn map(&mut self,v:u64,p:u64,f:u64){self.e[((v>>12)&0x1ff)as usize]=p|f|1;}}

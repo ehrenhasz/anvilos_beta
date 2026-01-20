@@ -1,0 +1,1 @@
+struct Vga{p:*mut u8}impl Vga{fn new()->Self{Vga{p:0xb8000 as*mut u8}}fn write(&self,i:usize,b:u8){unsafe{*self.p.add(i*2)=b;*self.p.add(i*2+1)=0x0f}}}

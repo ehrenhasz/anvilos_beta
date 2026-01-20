@@ -1,0 +1,1 @@
+struct Serial{p:u16}impl Serial{fn new(p:u16)->Self{Serial{p}}fn write(&self,b:u8){unsafe{asm!("outb %al, %dx",in("al")b,in("dx")self.p,options(nostack,nomem))}}}

@@ -1,0 +1,1 @@
+trait File{fn read(&self,b:&mut[u8])->usize;}trait Inode{fn open(&self)->&dyn File;}

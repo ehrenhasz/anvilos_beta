@@ -1,0 +1,1 @@
+struct IdtEntry{o_l:u16,s:u16,i:u8,t:u8,o_m:u16,o_h:u32,r:u32}struct IdtPtr{l:u16,b:u64}static mut IDT:[IdtEntry;256]=[IdtEntry{o_l:0,s:0,i:0,t:0,o_m:0,o_h:0,r:0};256];

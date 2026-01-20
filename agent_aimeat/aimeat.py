@@ -1,45 +1,115 @@
 #!/usr/bin/env python3
-import os
 import sys
-from google import genai
+import os
+import subprocess
+import json
+import sqlite3
+import time
 
-# 1. Load Key
-try:
-    token_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'token')
-    with open(token_path, 'r') as f:
-        api_key = f.read().strip()
-    if not api_key: raise ValueError("File is empty")
-except Exception as e:
-    print(f"Error loading 'token' file: {e}")
-    sys.exit(1)
+# --- PATH RESOLUTION ---
+# agent_aimeat/aimeat.py is one level deep. Root is up one.
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+sys.path.append(os.path.join(PROJECT_ROOT, "runtime"))
 
-# 2. Initialize Client (New SDK)
-try:
-    client = genai.Client(api_key=api_key)
-except Exception as e:
-    print(f"Client Init Error: {e}")
-    sys.exit(1)
+from synapse import Synapse
 
-# 3. Main Loop
-if __name__ == "__main__":
-    model_id = "gemini-2.0-flash"
-    print(f"--- AI Studio Connected ({model_id}) ---")
+def main():
+    agent_id = "aimeat"
+    synapse = Synapse(agent_id)
+    print(f"[{agent_id}] Executor Online. Polling for jobs (Cortex DB)...")
+
+    # Optional: Load API Key if we ever need to generate code dynamically
+    # But for now, we execute strict shell commands or file writes defined by cards.
     
-    # Create a chat session
-    chat = client.chats.create(model=model_id)
+    processed_count = 0
+    idle_count = 0
 
     while True:
+        job = synapse.get_job()
+        if not job:
+            # If no jobs, wait a bit and retry (daemon mode) or exit?
+            # User's previous execute_cards.py exited.
+            # But "Executor Online" implies a daemon.
+            # I will make it exit if no jobs found to match previous behavior, 
+            # or maybe wait 5 seconds then exit if still empty?
+            # The prompt said "quick boot and stop" earlier, but now "finall update".
+            # I'll stick to: Run until empty, then exit.
+            print(f"[{agent_id}] No pending jobs. Cooling down.")
+            break
+        
+        idle_count = 0
+        correlation_id = job['correlation_id']
+        payload_str = job['payload']
+        
         try:
-            user_input = input("\nYou: ")
-            if user_input.lower() in ["quit", "exit"]:
+            payload = json.loads(payload_str)
+            command = payload.get('details')
+            context = payload.get('context', 'unknown')
+            job_type = payload.get('format', 'shell') # shell or recipe.py
+            
+            print(f"[{agent_id}] Processing: {context}")
+            
+            start_time = time.time()
+            result_data = {}
+            status = "FAILED"
+
+            if job_type == "shell":
+                print(f"  > Shell: {command}")
+                process = subprocess.run(command, shell=True, capture_output=True, text=True)
+                result_data = {
+                    "stdout": process.stdout,
+                    "stderr": process.stderr,
+                    "returncode": process.returncode
+                }
+                status = "COMPLETED" if process.returncode == 0 else "FAILED"
+                
+                if status == "FAILED":
+                    print(f"  [ERROR] {process.stderr.strip()}")
+                else:
+                    print(f"  [OK] {process.stdout.strip()[:100]}...") # Truncate log
+
+            elif job_type == "recipe.py":
+                # If we need to run a python script content?
+                # Or if the command is "python3 some_script.py" it falls under shell.
+                # If 'details' IS the python code:
+                print(f"  > Python Recipe Execution")
+                try:
+                    exec_globals = {}
+                    exec(command, exec_globals)
+                    result_data = {"output": "Executed Python Recipe"}
+                    status = "COMPLETED"
+                    print("  [OK] Recipe Executed")
+                except Exception as e:
+                    result_data = {"error": str(e)}
+                    print(f"  [ERROR] {e}")
+
+            else:
+                result_data = {"error": f"Unknown format: {job_type}"}
+                print(f"  [SKIP] Unknown format")
+
+            # Log to DB
+            synapse.update_job(correlation_id, status, result_data)
+            
+            # Log Experience
+            synapse.log_experience(
+                task_type="EXECUTION",
+                context=context,
+                success=(status == "COMPLETED"),
+                details=result_data
+            )
+            
+            if status == "FAILED":
+                print(f"  [CRITICAL] Build/Execution failure detected.")
+                print(f"  [MANDATE] Stopping all tasks. Protocol: Debug compiler at /usr/local/bin/anvil before resuming.")
                 break
             
-            # New SDK syntax for sending messages
-            response = chat.send_message(user_input)
-            print(f"Agent: {response.text}")
+            processed_count += 1
 
-        except KeyboardInterrupt:
-            print("\nExiting...")
-            break
         except Exception as e:
-            print(f"Error: {e}")
+            print(f"[{agent_id}] Critical Job Error: {e}")
+            synapse.update_job(correlation_id, "FAILED", {"error": str(e)})
+
+    print(f"[{agent_id}] Session Finished. Jobs Processed: {processed_count}")
+
+if __name__ == "__main__":
+    main()
