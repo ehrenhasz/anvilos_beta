@@ -8,7 +8,7 @@ import subprocess
 import uuid
 from datetime import datetime
 from pydantic import BaseModel, Field, ValidationError
-from typing import Optional, Dict, Any, Union
+from typing import Optional, Dict, Any, Union, List
 
 # --- CONFIGURATION ---
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
@@ -40,7 +40,7 @@ class JobCard(BaseModel):
     priority: int = 50
     cost_center: str = "general"
     status: str = "PENDING"
-    payload: Union[str, Dict[str, Any], list]
+    payload: Union[str, Dict[str, Any], List[Any]]
     created_at: Optional[str] = None
 
     def validate_micro_chunking(self):
@@ -200,9 +200,28 @@ class BigIronCore:
             data = {}
 
         instruction = data.get("instruction", "UNKNOWN")
+        context = data.get("context")
+        details = data.get("details")
         
         if instruction == "GIT_COMMIT" or instruction == "OPS_CYCLE":
-            msg = data.get("details", f"Ops Update {card.correlation_id[:8]}")
+            if instruction == "OPS_CYCLE" and context and details:
+                # Write the file to disk first
+                file_path = os.path.join(PROJECT_ROOT, context)
+                os.makedirs(os.path.dirname(file_path), exist_ok=True)
+                with open(file_path, "w") as f:
+                    f.write(details)
+                logger.log(5, f"OPS_WRITE: {context}")
+                
+                # Construct a valid commit message
+                msg = f"feat: implement {context}"
+                if len(msg) > 100: msg = "feat: automated code update"
+            else:
+                msg = details or f"chore: Ops Update {card.correlation_id[:8]}"
+            
+            # Ensure msg follows Conventional Commits for REAPER
+            if not msg.lower().startswith(("feat:", "fix:", "docs:", "chore:", "refactor:", "test:", "style:", "perf:")):
+                msg = f"chore: {msg}"
+
             return self.execute_ops_lifecycle(msg, card.correlation_id)
 
         elif instruction == "SYSTEM_OP":
