@@ -1,0 +1,2 @@
+{"@ID": 1001, "event": "ANVIL_ENGAGE", "data": {"target": "kernel_v2", "status": "REFACTORING_TO_NATIVE"}}
+{"@ID": 1002, "event": "COMPLIANCE_CHECK", "data": {"rfc": "0009", "result": "PASS"}}

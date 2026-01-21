@@ -1,7 +1,7 @@
 ﻿Network Working Group                                          A. Architect
 Request for Comments: 0009                                BICAMERAL PROJECT
 Category: Standards Track                                  January 11, 2026
-Legacy: Black Triangle                                     Status: STANDARD
+Legacy: Black Triangle                                     Status: RATIFIED
 
                THE ANVIL: THE SOVEREIGN COMPILER
                      AND 'AI MACHINE CODE'

@@ -12,7 +12,7 @@ from typing import Optional, Dict, Any, Union
 
 # --- CONFIGURATION ---
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-DB_PATH = "/var/lib/anvilos/db/cortex.db"
+DB_PATH = os.path.join(PROJECT_ROOT, "runtime", "cortex.db")
 LOG_FILE = os.path.join(PROJECT_ROOT, "ext", "forge.log")
 POLL_INTERVAL = 2.0
 GIT_MAIN_BRANCH = "main"
@@ -40,8 +40,14 @@ class JobCard(BaseModel):
     priority: int = 50
     cost_center: str = "general"
     status: str = "PENDING"
-    payload: Union[str, Dict[str, Any]]
+    payload: Union[str, Dict[str, Any], list]
     created_at: Optional[str] = None
+
+    def validate_micro_chunking(self):
+        """ RFC-0002: Enforce Micro-Chunking. """
+        raw_len = len(str(self.payload))
+        if raw_len > 10000: # 10KB limit (roughly 200 lines of code)
+            raise ValueError(f"Payload too large ({raw_len} chars). Violation of Micro-Chunking Doctrine. Split the card.")
 
 # --- THE WARDEN ---
 class BigIronCore:
@@ -74,7 +80,18 @@ class BigIronCore:
                     p_data = json.loads(payload_raw) if isinstance(payload_raw, str) else payload_raw
                 except:
                     p_data = {"raw": payload_raw}
-                return JobCard(correlation_id=c_id, idempotency_key=idem_key, priority=prio, cost_center=cost, status="PROCESSING", payload=p_data)
+                
+                card = JobCard(correlation_id=c_id, idempotency_key=idem_key, priority=prio, cost_center=cost, status="PROCESSING", payload=p_data)
+                
+                # ENFORCE MICRO-CHUNKING
+                try:
+                    card.validate_micro_chunking()
+                    return card
+                except ValueError as ve:
+                    logger.log(666, f"MICRO-CHUNKING VIOLATION: {ve}")
+                    self.update_job_status(c_id, "FAILED")
+                    return None
+
             else:
                 conn.commit()
                 return None
@@ -107,6 +124,12 @@ class BigIronCore:
         """
         OPS PROTOCOL: Branch -> Code (Already done) -> Commit -> Push -> PR -> Merge -> Clean
         """
+        # RFC-0006: REAPER (Hygiene Enforcement)
+        valid_prefixes = ("feat:", "fix:", "docs:", "chore:", "refactor:", "test:", "style:", "perf:")
+        if not message.strip().lower().startswith(valid_prefixes):
+            logger.log(666, f"REAPER VIOLATION: Commit message '{message}' does not follow Conventional Commits.")
+            return False
+
         # Generate ephemeral branch name
         branch_name = f"ops/job-{correlation_id[:8]}"
         
@@ -167,7 +190,15 @@ class BigIronCore:
     def execute_logic(self, card: JobCard):
         logger.log(2, f"JOB_START: {card.correlation_id} ({card.priority})")
         
-        data = card.payload if isinstance(card.payload, dict) else {}
+        # Unwrap list if necessary
+        raw_payload = card.payload
+        if isinstance(raw_payload, list) and len(raw_payload) > 0:
+            data = raw_payload[0]
+        elif isinstance(raw_payload, dict):
+            data = raw_payload
+        else:
+            data = {}
+
         instruction = data.get("instruction", "UNKNOWN")
         
         if instruction == "GIT_COMMIT" or instruction == "OPS_CYCLE":
@@ -180,7 +211,8 @@ class BigIronCore:
                 logger.log(4, "No command found in SYSTEM_OP payload.")
                 return False
             logger.log(5, f"SYS_EXEC: {cmd}")
-            res = subprocess.run(cmd, shell=True, cwd=PROJECT_ROOT, capture_output=True, text=True)
+            # Force /bin/bash for 'source' compatibility
+            res = subprocess.run(cmd, shell=True, cwd=PROJECT_ROOT, capture_output=True, text=True, executable='/bin/bash')
             if res.returncode == 0:
                 logger.log(2, f"SYS_SUCCESS: {res.stdout.strip()}")
                 return True

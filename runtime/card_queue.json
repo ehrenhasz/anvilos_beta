@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "id": "ker-002",
+    "description": "ANVIL_KERNEL_V2: Configure and Compile Linux Kernel for Dev Laptop & Hypervisor.",
+    "command": "bash system/scripts/card_ker_002.sh",
+    "status": "processing",
+    "created_at": "2026-01-21T10:00:00.000000",
+    "started_at": "2026-01-21T16:42:30.812604"
+  },
+  {
+    "id": "fw-001",
+    "description": "ANVIL_PKG: Implement 'sys_04_Linux_Firmware'.",
+    "command": "bash system/scripts/card_fw_001.sh",
+    "status": "pending",
+    "created_at": "2026-01-21T10:00:05.000000"
+  }
+]

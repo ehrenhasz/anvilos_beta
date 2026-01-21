@@ -1,0 +1,17 @@
+[Unit]
+Description=Ladysmith (The Anvil Coder) - Headless AI Daemon
+After=network.target bigiron.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/aimeat/github/anvilos_beat/runtime/services/ladysmith_daemon.py
+WorkingDirectory=/home/aimeat/github/anvilos_beat
+Restart=always
+RestartSec=5
+# Requires API Key. We load from the token file in the script, 
+# but ensuring environment variables are clean is good practice.
+StandardOutput=append:/home/aimeat/github/anvilos_beat/ext/ladysmith.log
+StandardError=append:/home/aimeat/github/anvilos_beat/ext/ladysmith.err
+
+[Install]
+WantedBy=default.target

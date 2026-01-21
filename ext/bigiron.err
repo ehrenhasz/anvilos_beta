@@ -1,0 +1,57 @@
+Traceback (most recent call last):
+  File "/home/aimeat/github/anvilos_beat/runtime/services/card_reader.py", line 279, in <module>
+    warden.run()
+  File "/home/aimeat/github/anvilos_beat/runtime/services/card_reader.py", line 228, in run
+    job = self.fetch_next_job()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aimeat/github/anvilos_beat/runtime/services/card_reader.py", line 84, in fetch_next_job
+    card = JobCard(correlation_id=c_id, idempotency_key=idem_key, priority=prio, cost_center=cost, status="PROCESSING", payload=p_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aimeat/.local/lib/python3.12/site-packages/pydantic/main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for JobCard
+payload.str
+  Input should be a valid string [type=string_type, input_value=[{'instruction': 'SYSTEM_...\n', 'format': 'shell'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+payload.dict[str,any]
+  Input should be a valid dictionary [type=dict_type, input_value=[{'instruction': 'SYSTEM_...\n', 'format': 'shell'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/dict_type
+Traceback (most recent call last):
+  File "/home/aimeat/github/anvilos_beat/runtime/services/card_reader.py", line 279, in <module>
+    warden.run()
+  File "/home/aimeat/github/anvilos_beat/runtime/services/card_reader.py", line 228, in run
+    job = self.fetch_next_job()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aimeat/github/anvilos_beat/runtime/services/card_reader.py", line 84, in fetch_next_job
+    card = JobCard(correlation_id=c_id, idempotency_key=idem_key, priority=prio, cost_center=cost, status="PROCESSING", payload=p_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aimeat/.local/lib/python3.12/site-packages/pydantic/main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for JobCard
+payload.str
+  Input should be a valid string [type=string_type, input_value=[{'instruction': 'SYSTEM_...\n', 'format': 'shell'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+payload.dict[str,any]
+  Input should be a valid dictionary [type=dict_type, input_value=[{'instruction': 'SYSTEM_...\n', 'format': 'shell'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/dict_type
+Traceback (most recent call last):
+  File "/home/aimeat/github/anvilos_beat/runtime/services/card_reader.py", line 279, in <module>
+    warden.run()
+  File "/home/aimeat/github/anvilos_beat/runtime/services/card_reader.py", line 228, in run
+    job = self.fetch_next_job()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aimeat/github/anvilos_beat/runtime/services/card_reader.py", line 84, in fetch_next_job
+    card = JobCard(correlation_id=c_id, idempotency_key=idem_key, priority=prio, cost_center=cost, status="PROCESSING", payload=p_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aimeat/.local/lib/python3.12/site-packages/pydantic/main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for JobCard
+payload.str
+  Input should be a valid string [type=string_type, input_value=[{'instruction': 'SYSTEM_...\n', 'format': 'shell'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+payload.dict[str,any]
+  Input should be a valid dictionary [type=dict_type, input_value=[{'instruction': 'SYSTEM_...\n', 'format': 'shell'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/dict_type

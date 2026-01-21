@@ -28,14 +28,11 @@ CONFIG = {
 SYNAPSE = Synapse(CONFIG["AGENT_ID"])
 
 # --- AUTHENTICATION ---
-API_KEY = None
+API_KEY = os.environ.get("GEMINI_API_KEY")
 try:
-    if os.path.exists(TOKEN_PATH):
+    if not API_KEY and os.path.exists(TOKEN_PATH):
         with open(TOKEN_PATH, 'r') as f:
             API_KEY = f.read().strip()
-    
-    if not API_KEY:
-        API_KEY = os.environ.get("GEMINI_API_KEY")
 
 except Exception as e:
     print(f"[WARN] Auth load issue: {e}")

@@ -1,0 +1,15 @@
+[Unit]
+Description=BigIron (The Anvil Warden) - Card Execution Engine
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/aimeat/github/anvilos_beat/runtime/services/card_reader.py
+WorkingDirectory=/home/aimeat/github/anvilos_beat
+Restart=always
+RestartSec=5
+StandardOutput=append:/home/aimeat/github/anvilos_beat/ext/bigiron.log
+StandardError=append:/home/aimeat/github/anvilos_beat/ext/bigiron.err
+
+[Install]
+WantedBy=default.target

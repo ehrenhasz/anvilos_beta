@@ -6,12 +6,12 @@ from datetime import datetime
 
 # --- PATH RESOLUTION ---
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-CORTEX_DB = "/var/lib/anvilos/db/cortex.db"
+CORTEX_DB = os.path.join(PROJECT_ROOT, "runtime", "cortex.db")
 
 class Synapse:
     def __init__(self, agent_id):
         self.agent_id = agent_id
-        self.local_db = f"/var/lib/anvilos/db/agent_{agent_id}.db"
+        self.local_db = os.path.join(PROJECT_ROOT, "runtime", f"agent_{agent_id}.db")
         self._init_local_db()
 
     def _get_local_conn(self):
@@ -41,6 +41,80 @@ class Synapse:
                     synced BOOLEAN DEFAULT 0
                 )
             """)
+
+    def set_active_plan(self, plan_name, plan_content, current_step=0):
+        """Stores or updates the active plan in Cortex."""
+        try:
+            with self._get_cortex_conn() as conn:
+                conn.execute("""
+                    CREATE TABLE IF NOT EXISTS active_plans (
+                        agent_id TEXT PRIMARY KEY,
+                        plan_name TEXT,
+                        content TEXT,
+                        current_step INTEGER,
+                        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+                    )
+                """)
+                conn.execute("""
+                    INSERT INTO active_plans (agent_id, plan_name, content, current_step, updated_at)
+                    VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)
+                    ON CONFLICT(agent_id) DO UPDATE SET
+                        plan_name=excluded.plan_name,
+                        content=excluded.content,
+                        current_step=excluded.current_step,
+                        updated_at=CURRENT_TIMESTAMP
+                """, (self.agent_id, plan_name, plan_content, current_step))
+            print(f"[SYNAPSE] Plan '{plan_name}' saved for {self.agent_id}.")
+        except Exception as e:
+            print(f"[SYNAPSE] Failed to save plan: {e}")
+
+    def get_active_plan(self):
+        """Retrieves the active plan for this agent."""
+        try:
+            with self._get_cortex_conn() as conn:
+                conn.row_factory = sqlite3.Row
+                cursor = conn.execute("SELECT * FROM active_plans WHERE agent_id=?", (self.agent_id,))
+                return dict(cursor.fetchone()) if cursor.fetchone() else None
+        except Exception as e:
+            # Table might not exist yet
+            return None
+
+    def save_snapshot(self, memory_dump):
+        """
+        Saves the current cognitive state (stack/thought) to the Cortex.
+        Used for resurrection after a crash.
+        """
+        try:
+            with self._get_cortex_conn() as conn:
+                conn.execute("""
+                    CREATE TABLE IF NOT EXISTS cognitive_snapshots (
+                        agent_id TEXT PRIMARY KEY,
+                        memory_dump TEXT,
+                        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+                    )
+                """)
+                conn.execute("""
+                    INSERT INTO cognitive_snapshots (agent_id, memory_dump, timestamp)
+                    VALUES (?, ?, CURRENT_TIMESTAMP)
+                    ON CONFLICT(agent_id) DO UPDATE SET
+                        memory_dump=excluded.memory_dump,
+                        timestamp=CURRENT_TIMESTAMP
+                """, (self.agent_id, json.dumps(memory_dump)))
+        except Exception as e:
+            print(f"[SYNAPSE] Snapshot Failed: {e}")
+
+    def load_snapshot(self):
+        """Retrieves the last known cognitive state."""
+        try:
+            with self._get_cortex_conn() as conn:
+                conn.row_factory = sqlite3.Row
+                cursor = conn.execute("SELECT memory_dump, timestamp FROM cognitive_snapshots WHERE agent_id=?", (self.agent_id,))
+                row = cursor.fetchone()
+                if row:
+                    return json.loads(row['memory_dump']), row['timestamp']
+                return None, None
+        except Exception as e:
+            return None, None
 
     def log_experience(self, task_type, context, success, details):
         try:
